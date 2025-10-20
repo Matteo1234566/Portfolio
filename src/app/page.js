@@ -1,103 +1,178 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    const root = useRef(null);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    useEffect(() => {
+        if (typeof window === "undefined") return;
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        // 🔥 Dichiaro ctx prima di tutto
+        const ctx = gsap.context(() => {
+            gsap.set([".reveal", ".card", ".footer-link"], { autoAlpha: 0, y: 24 });
+            gsap.set(".orb", { scale: 0.9, yPercent: -10, xPercent: -10, willChange: "transform, filter" });
+
+            if (!reduce) {
+                const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+                tl.fromTo(".bg-grid", { opacity: 0 }, { opacity: 1, duration: 0.6 })
+                    .from(".logo", { y: 20, opacity: 0, duration: 0.6 }, "-=0.2")
+                    .from(".headline span", { yPercent: 120, stagger: 0.05, duration: 0.6 }, "-=0.2")
+                    .from(".subline", { y: 14, opacity: 0, duration: 0.5 }, "-=0.2")
+                    .from(".cta .magnet", { opacity: 0, scale: 0.9, stagger: 0.08, duration: 0.5 }, "-=0.2")
+                    .to(".orb", { scale: 1, duration: 0.6, ease: "power2.out" }, "-=0.4");
+            } else {
+                gsap.set([".reveal", ".card", ".footer-link", ".orb"], { autoAlpha: 1, y: 0, scale: 1 });
+            }
+
+            // 🎯 Parallax
+            if (!reduce) {
+                const parallaxEls = gsap.utils.toArray("[data-speed]");
+                const onMove = (e) => {
+                    const { innerWidth, innerHeight } = window;
+                    const x = (e.clientX / innerWidth - 0.5) * 2;
+                    const y = (e.clientY / innerHeight - 0.5) * 2;
+                    parallaxEls.forEach((el) => {
+                        const speed = parseFloat(el.getAttribute("data-speed") || "0.1");
+                        gsap.to(el, { x: x * 20 * speed, y: y * 20 * speed, duration: 0.6, overwrite: true });
+                    });
+                };
+                window.addEventListener("mousemove", onMove);
+                // 👇 cleanup nel return del context
+                return () => window.removeEventListener("mousemove", onMove);
+            }
+
+            // 🎯 Magnetic buttons
+            if (!reduce) {
+                document.querySelectorAll(".magnet").forEach((btn) => {
+                    const strength = 18;
+                    const onMouseMove = (e) => {
+                        const rect = btn.getBoundingClientRect();
+                        const x = e.clientX - (rect.left + rect.width / 2);
+                        const y = e.clientY - (rect.top + rect.height / 2);
+                        gsap.to(btn, { x: x / strength, y: y / strength, duration: 0.3, ease: "power2.out" });
+                    };
+                    const onLeave = () => gsap.to(btn, { x: 0, y: 0, duration: 0.4, ease: "power3.out" });
+                    btn.addEventListener("mousemove", onMouseMove);
+                    btn.addEventListener("mouseleave", onLeave);
+                    // cleanup
+                    ctx.add(() => {
+                        btn.removeEventListener("mousemove", onMouseMove);
+                        btn.removeEventListener("mouseleave", onLeave);
+                    });
+                });
+            }
+
+            // 🎯 Reveal
+            gsap.utils.toArray(".section").forEach((sec) => {
+                gsap.fromTo(
+                    sec.querySelectorAll(".reveal"),
+                    { autoAlpha: 0, y: 24 },
+                    {
+                        autoAlpha: 1,
+                        y: 0,
+                        stagger: 0.06,
+                        duration: 0.6,
+                        ease: "power3.out",
+                        scrollTrigger: { trigger: sec, start: "top 75%", once: true },
+                    }
+                );
+            });
+
+            gsap.utils.toArray(".card").forEach((card) => {
+                gsap.from(card, {
+                    y: 26,
+                    autoAlpha: 0,
+                    duration: 0.5,
+                    ease: "power3.out",
+                    scrollTrigger: { trigger: card, start: "top 85%", once: true },
+                });
+            });
+
+            gsap.from(".footer-link", {
+                y: 10,
+                autoAlpha: 0,
+                duration: 0.4,
+                stagger: 0.05,
+                scrollTrigger: { trigger: "footer", start: "top 95%", once: true },
+            });
+
+            if (!reduce) {
+                gsap.to(".orb", {
+                    yPercent: "+=10",
+                    xPercent: "+=6",
+                    yoyo: true,
+                    repeat: -1,
+                    duration: 6,
+                    ease: "sine.inOut",
+                });
+                gsap.to(".orb", {
+                    filter: "blur(8px)",
+                    yoyo: true,
+                    repeat: -1,
+                    duration: 5,
+                    ease: "sine.inOut",
+                });
+            }
+        }, root);
+
+        // ✅ Cleanup
+        return () => ctx.revert();
+    }, []);
+
+    return (
+        <div ref={root} className="relative min-h-screen overflow-x-clip bg-background text-foreground">
+            {/* background */}
+            <div className="pointer-events-none absolute inset-0">
+                <div className="bg-grid absolute inset-0 [background-image:radial-gradient(hsl(var(--foreground)/0.08)_1px,transparent_1px)] [background-size:24px_24px]" />
+                <div className="orb absolute -top-24 -right-24 h-72 w-72 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#06b6d4] opacity-30 blur-2xl" data-speed="0.25" />
+                <div className="orb absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-gradient-to-br from-[#22c55e] to-[#3b82f6] opacity-25 blur-2xl" data-speed="0.18" />
+            </div>
+
+            {/* hero */}
+            <main className="relative mx-auto max-w-6xl px-6 pt-28 pb-16 sm:pt-32">
+                <div className="logo reveal flex items-center gap-3">
+                    <Image src="/next.svg" alt="Next.js" width={160} height={34} className="dark:invert" priority />
+                    <span className="text-sm opacity-70">+ GSAP</span>
+                </div>
+
+                <h1 className="mt-6 text-4xl font-semibold leading-tight sm:text-6xl headline">
+                    {["Make", "it", "move", "—", "with", "style."].map((w, i) => (
+                        <span key={i} className="inline-block overflow-hidden align-bottom">
+              <span className="inline-block">{w}&nbsp;</span>
+            </span>
+                    ))}
+                </h1>
+
+                <p className="subline mt-4 max-w-2xl text-base opacity-80 sm:text-lg">
+                    Next.js + Tailwind + GSAP: intro timeline, parallax, magnetic CTAs e reveal on-scroll.
+                </p>
+
+                <div className="cta mt-8 flex flex-col items-start gap-3 sm:flex-row">
+                    <a
+                        className="magnet rounded-full border border-foreground/20 px-5 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-foreground hover:text-background"
+                        href="https://greensock.com/docs/"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        GSAP Docs →
+                    </a>
+                    <a
+                        className="magnet rounded-full border border-foreground/10 px-5 py-3 text-sm font-medium opacity-90 hover:opacity-100"
+                        href="https://nextjs.org/docs"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Next.js Docs
+                    </a>
+                </div>
+            </main>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }
