@@ -139,7 +139,7 @@ export default function Home() {
             <main className="relative mx-auto max-w-6xl px-6 pt-28 pb-16 sm:pt-32">
                 <div className="logo reveal flex items-center gap-3">
                     <Image src="/next.svg" alt="Next.js" width={160} height={34} className="dark:invert" priority />
-                    <span className="text-sm opacity-70">+ GSAP</span>
+                    <span className="text-sm opacity-70">+ GSAPPONE</span>
                 </div>
 
                 <h1 className="mt-6 text-4xl font-semibold leading-tight sm:text-6xl headline">
