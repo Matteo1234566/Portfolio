@@ -1,0 +1,101 @@
+'use client';
+
+import React from 'react';
+import Button from '@/app/sections/ui/Button';
+import { ArrowDoodle } from '@/app/sections/Doodles';
+import { motion } from 'framer-motion';
+
+export default function Hero() {
+  return (
+    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#1e1b4b_1px,transparent_1px)] dark:bg-[radial-gradient(#f8fafc_1px,transparent_1px)] [background-size:16px_16px] transition-all duration-300"></div>
+      
+      <div className="relative z-10 max-w-5xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mb-6 inline-flex items-center space-x-2 bg-white dark:bg-white/5 border border-ink dark:border-white/20 px-4 py-1 rounded-full shadow-soft transform -rotate-2 hover:rotate-0 transition-transform"
+        >
+          <span className="w-2 h-2 bg-bubblegum rounded-full animate-pulse"></span>
+          <span className="text-sm font-bold tracking-wide text-ink/70 dark:text-white/70">OPEN FOR NEW VENTURES</span>
+        </motion.div>
+
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.9] mb-8 text-ink dark:text-white transition-colors duration-300"
+        >
+          COMPLEX TECH
+          <br />
+          MADE 
+          <span className="relative inline-block ml-2 md:ml-4">
+            <motion.span 
+                className="absolute inset-0 bg-bubblegum transform -skew-x-3"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.8, ease: "circOut" }}
+                style={{ originX: 0 }}
+            ></motion.span>
+            <span className="relative z-10 px-2 text-white">SIMPLE</span>
+          </span>
+        </motion.h1>
+
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="text-lg md:text-xl max-w-2xl mx-auto text-ink/80 dark:text-smoke/80 mb-10 leading-relaxed transition-colors duration-300"
+        >
+          We are <span className="font-bold text-bubblegum">Simone & Matteo</span>. 
+          An AI + Full-Stack duo building products that feel 
+          <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
+            human
+             <motion.span
+                className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                style={{ originX: 0 }}
+            />
+          </span>, 
+          scalable, and fast.
+        </motion.p>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+          className="flex flex-col md:flex-row items-center justify-center gap-4"
+        >
+          <Button onClick={() => document.getElementById('projects')?.scrollIntoView({behavior: 'smooth'})}>
+            View Our Work
+          </Button>
+          <button 
+            onClick={() => document.getElementById('duo')?.scrollIntoView({ behavior: 'smooth' })}
+            className="group flex items-center gap-2 font-display font-bold text-lg hover:underline decoration-wavy decoration-bubblegum underline-offset-4 text-ink dark:text-white"
+          >
+            Read about the duo
+            <ArrowDoodle className="w-6 h-6 transform group-hover:translate-x-1 transition-transform text-ink dark:text-white" />
+          </button>
+        </motion.div>
+      </div>
+      
+      {/* Abstract Elements */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute -bottom-24 -left-24 w-64 h-64 bg-bubblegum/20 rounded-full blur-3xl pointer-events-none"
+      ></motion.div>
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
+        className="absolute top-1/4 -right-24 w-80 h-80 bg-forest/10 dark:bg-white/5 rounded-full blur-3xl pointer-events-none"
+      ></motion.div>
+    </section>
+  );
+};
