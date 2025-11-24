@@ -4,6 +4,7 @@ import React from 'react';
 import Button from '@/app/sections/ui/Button';
 import { ArrowDoodle } from '@/app/sections/Doodles';
 import { motion } from 'framer-motion';
+import {ExternalLink} from "lucide-react";
 
 export default function Hero() {
   return (
@@ -62,7 +63,39 @@ export default function Hero() {
                 style={{ originX: 0 }}
             />
           </span>
-            , scalable, and fast.
+            , scalable, and fast. We also co-founded
+            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
+            4AI
+              <motion.span
+                  className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  style={{ originX: 0 }}
+              />
+            </span>, an innovative startup born within
+            Sapienza University.
+            And when we’re not coding, you can probably find us chatting away on our
+            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
+              <a
+                  href="https://your-podcast-link.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 hover:text-bubblegum transition-colors"
+              >
+                podcast
+                <ExternalLink size={16} />
+              </a>
+
+              <motion.span
+                  className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  style={{ originX: 0 }}
+              />
+            </span>.
+
           </motion.p>
 
           <motion.div

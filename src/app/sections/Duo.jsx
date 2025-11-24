@@ -11,14 +11,18 @@ const profiles = [
     role: "The Architect",
     description: "Deep learning specialist and system architect. I translate research papers into production code and chaotic data into clear insights.",
     stats: ["Co-Founder & CTO", "Wi-Fi Sensing", "Computer Vision"],
-    skills: ["Deep Learning", "Data Engineering", "System Arch"]
+    // skills: ["Deep Learning", "Data Engineering", "System Arch"]
   },
   {
     name: "Matteo Cese",
     role: "The Builder",
-    description: "Full-stack engineer with an eye for scale. I build robust platforms that handle real-time data without breaking a sweat.",
-    stats: ["Enterprise Soft.", "Speech-to-Text", "Scalable APIs"],
-    skills: ["React / Next.js", "Cloud Infra", "Product UX"]
+    description: "Full-Stack engineer with a research-driven mindset. I design and ship end-to-end products from scalable web platforms to computer vision and deep learning pipelines bridging innovation with real-world impact.",
+    stats: ["Deep Learning", "Computer Vision", "Scalable Architectures & DevOps"],
+    // skills: [
+    //   "React / Next.js",
+    //   "Python / CV / Deep Learning",
+    //   "Scalable Architectures & DevOps"
+    // ]
   }
 ];
 
@@ -58,8 +62,7 @@ export default function Duo({ onNavigate }) {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-lg text-ink/70 dark:text-smoke/70 max-w-xl mx-auto"
           >
-            One brain for AI logic, one brain for system scale.
-            Combined, we ship faster than your average agency.
+            One brain for AI, one brain for scale — forged together to move faster than any agency.
           </motion.p>
         </div>
 

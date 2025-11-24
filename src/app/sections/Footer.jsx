@@ -54,14 +54,9 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false }}
           transition={{ delay: 0.3 }}
-          className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-between items-center text-sm text-white/40 font-mono"
+          className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-center items-center text-sm text-white/40 font-mono"
         >
           <p>&copy; {new Date().getFullYear()} Simone & Matteo. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-bubblegum transition-colors">LinkedIn</a>
-            <a href="#" className="hover:text-bubblegum transition-colors">GitHub</a>
-            <a href="#" className="hover:text-bubblegum transition-colors">Twitter</a>
-          </div>
         </motion.div>
       </div>
     </footer>

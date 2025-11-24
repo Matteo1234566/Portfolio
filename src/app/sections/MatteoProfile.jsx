@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Brain, Server, Wifi, Plane, Film, Code } from 'lucide-react';
+import { Brain, Server, Wifi, Plane, Film, Code, Mail, Linkedin } from 'lucide-react';
 import Card from '@/app/sections/ui/Card';
 import Button from '@/app/sections/ui/Button';
 
@@ -13,10 +13,12 @@ import {
     SiNextdotjs,
     SiSpring,
     SiJenkins,
-    SiGooglecloud
+    SiGooglecloud, SiDocker
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
+import Footer from "@/app/sections/Footer";
+import {DoodleThumbsUp} from "@/app/sections/Doodles";
 
 export const MatteoProfile = ({ onBack }) => {
     return (
@@ -70,9 +72,8 @@ export const MatteoProfile = ({ onBack }) => {
                         transition={{ delay: 0.6 }}
                         className="text-2xl md:text-4xl font-display text-ink/80 dark:text-white/80 border-l-4 border-forest dark:border-bubblegum pl-6 py-2 italic max-w-3xl"
                     >
-                        "Faber est suae quisque fortunae."
+                        "Faber est suae quisque fortunae"
                         <span className="block text-lg font-body text-ink/50 dark:text-white/50 mt-2 not-italic">
-              (Every man is the architect of his own fortune)
             </span>
                     </motion.blockquote>
                 </div>
@@ -104,15 +105,22 @@ export const MatteoProfile = ({ onBack }) => {
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
+                        transition={{ type: "spring", stiffness: 80, damping: 18 }}
                         className="relative"
                     >
-                        <Card className="!p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center">
-                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/40 via-forest to-forest"></div>
-                            <div className="relative z-10 text-center p-8">
-                                <Code size={80} className="text-white mx-auto mb-6 opacity-80" />
-                                <h3 className="font-display text-3xl text-white uppercase mb-2">The Builder</h3>
-                                <div className="w-16 h-1 bg-blue-500 mx-auto"></div>
-                            </div>
+                        <Card className="!p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
+                            <img
+                                src="/images/matteo.webp"
+                                alt="Matteo Cese"
+                                loading="lazy"
+                                className="
+                                    absolute inset-0 w-full h-full object-cover
+                                    transition-transform duration-700 ease-out
+                                    group-hover:scale-[1.03]
+                                  "
+                            />
+                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/25 via-forest/55 to-forest/90" />
+                            <div className="absolute inset-0 bg-black/10" />
                         </Card>
                     </motion.div>
                 </div>
@@ -153,10 +161,10 @@ export const MatteoProfile = ({ onBack }) => {
                                 </div>
                                 <div className="flex items-center gap-3 text-white/90">
                                     <div className="flex gap-2 opacity-80">
+                                        <SiDocker className="w-5 h-5" />
                                         <SiJenkins className="w-5 h-5" />
-                                        <SiGooglecloud className="w-5 h-5" />
                                     </div>
-                                    <span className="font-bold">Jenkins / GCP</span>
+                                    <span className="font-bold">Docker / Jenkins</span>
                                 </div>
                             </div>
                         </Card>
@@ -165,7 +173,7 @@ export const MatteoProfile = ({ onBack }) => {
                             <div className="mb-6 bg-forest/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Brain className="text-forest dark:text-white" size={32} />
                             </div>
-                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">Computer Vision</h3>
+                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">Computer Vision & Deep Learning</h3>
                             <p className="text-ink/60 dark:text-white/60 mb-6 text-sm">
                                 Translating visual data into actionable insights using state-of-the-art frameworks.
                             </p>
@@ -196,16 +204,22 @@ export const MatteoProfile = ({ onBack }) => {
                             <div className="mb-6 bg-purple-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Wifi className="text-purple-500" size={32} />
                             </div>
-                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">Applied Research</h3>
+
+                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">
+                                Applied Research
+                            </h3>
+
                             <p className="text-ink/60 dark:text-white/60 mb-6 text-sm">
-                                Exploring the frontier of Wi-Fi Sensing for environmental perception.
+                                Research fellow focused on Wi-Fi sensing and environmental perception, exploring how wireless signals can capture human presence and motion.
                             </p>
+
                             <ul className="space-y-2 list-disc pl-4 text-ink/80 dark:text-white/80 font-medium">
-                                <li>Wi-Fi Sensing</li>
-                                <li>Motion Analysis</li>
-                                <li>Signal Preprocessing</li>
+                                <li>Wi-Fi Sensing & Environmental Perception</li>
+                                <li>Human Motion Analysis</li>
+                                <li>Signal Processing & Preprocessing</li>
                             </ul>
                         </Card>
+
                     </div>
                 </div>
             </section>
@@ -235,18 +249,16 @@ export const MatteoProfile = ({ onBack }) => {
 
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">Wi-Fi Sensing</h3>
-                                <span className="text-blue-400 font-mono font-bold">Research Project</span>
+                                <h3 className="font-display text-4xl font-bold">AiLights</h3>
+                                <span className="text-blue-400 font-mono font-bold">Startup Project</span>
                             </div>
                             <p className="text-white/60 mb-4 max-w-2xl">
-                                Research at La Sapienza University.
+                                Creating a platform for automated sports statistics and live streaming.
                             </p>
                             <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
-                                    The Tech
-                                </h4>
+                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">My Role</h4>
                                 <p className="text-white/70">
-                                    Developed AI pipelines for signal preprocessing and real-time inference to detect movement using standard Wi-Fi signals.
+                                    Developed the full-stack infrastructure, integrating AI models for computer vision and ffmpeg for real-time video processing.
                                 </p>
                             </div>
                         </div>
@@ -256,16 +268,24 @@ export const MatteoProfile = ({ onBack }) => {
                                 <h3 className="font-display text-4xl font-bold">Gesture Analysis</h3>
                                 <span className="text-blue-400 font-mono font-bold">Deep Learning</span>
                             </div>
+
                             <p className="text-white/60 mb-4 max-w-2xl">
-                                Hand Gesture Recognition & Lie Detection.
+                                Hand gesture understanding for deception detection and real-time ASL digit recognition.
                             </p>
-                            <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
-                                    My Role
-                                </h4>
-                                <p className="text-white/70">
-                                    Created neural networks capable of recognizing American Sign Language (ASL) digits and analyzing hand gestures to detect deception in video feeds.
-                                </p>
+
+                            <div className="bg-white/5 p-6 rounded-xl border border-white/10 space-y-4">
+                                <div>
+                                    <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
+                                        My Role
+                                    </h4>
+                                    <p className="text-white/70">
+                                        Designed and trained recurrent neural models to detect deception from hand-gesture dynamics in video datasets,
+                                        as part of my B.Sc. thesis at Sapienza University.
+                                        <br />
+                                        Built a real-time computer-vision system for recognizing ASL digits (0–9) through hand-gesture analysis,
+                                        combining neural networks with live video inference.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -288,7 +308,7 @@ export const MatteoProfile = ({ onBack }) => {
                             </div>
                             <h3 className="font-bold text-xl mb-3">Culture & Travel</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                I love traveling and discovering new cultures; they are my constant sources of inspiration.
+                                I enjoy exploring new places and cultures — they're a constant source of inspiration and perspective.
                             </p>
                         </div>
 
@@ -298,7 +318,7 @@ export const MatteoProfile = ({ onBack }) => {
                             </div>
                             <h3 className="font-bold text-xl mb-3">Cinema</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                A passionate movie buff, finding creativity in storytelling.
+                                A lifelong movie lover, always inspired by powerful storytelling and visual imagination.
                             </p>
                         </div>
 
@@ -306,24 +326,61 @@ export const MatteoProfile = ({ onBack }) => {
                             <div className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
                                 <Brain size={32} />
                             </div>
-                            <h3 className="font-bold text-xl mb-3">Philosophy</h3>
+                            <h3 className="font-bold text-xl mb-3">Curiosity & Learning</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                "Faber est suae quisque fortunae"—I apply this proactive philosophy to my life and code.
+                                Driven by curiosity, I’m always exploring new ideas, fields, and technologies — learning is my way of staying alive and evolving.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <section className="py-20 text-center bg-forest text-white">
+            <section className="pt-20 pb-10 text-center bg-forest text-white">
                 <h2 className="font-display text-4xl mb-2">MATTEO CESE</h2>
                 <p className="text-white/50 mb-8">Rome, Italy • Full Stack & AI Expert</p>
                 <div className="flex justify-center gap-4">
-                    <a href="mailto:matteo@example.com">
-                        <Button>Let's Build Your Solution</Button>
+                    <a
+                        href="/cv/matteo.pdf"  // <-- sostituisci con il percorso reale del tuo CV
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button>
+                            View My CV
+                        </Button>
                     </a>
                 </div>
             </section>
+            <div className="bg-forest text-white pb-12 overflow-hidden relative">
+                <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: false }}
+                        transition={{ delay: 0.2 }}
+                        className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center text-sm text-white/40 font-mono"
+                    >
+                        <div className="flex justify-center gap-6 mb-10">
+                            <a
+                                href="mailto:matteo.cese@4aitech.it"
+                                className="text-white/50 hover:text-white transition-colors"
+                                aria-label="Email"
+                            >
+                                <Mail size={24} />
+                            </a>
+
+                            <a
+                                href="https://www.linkedin.com/in/matteo-cese-b8461422a"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/50 hover:text-white transition-colors"
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin size={24} />
+                            </a>
+                        </div>
+                    </motion.div>
+
+                </div>
+            </div>
         </div>
     );
 };

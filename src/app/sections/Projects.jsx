@@ -13,8 +13,9 @@ const projects = [
     category: 'Computer Vision',
     description:
         'Real-time sports analytics platform. Uses advanced computer vision to track player movements and ball trajectory from video streams automatically.',
-    techStack: ['Python', 'OpenCV', 'React', 'WebSockets'],
+    techStack: ['Python', 'OpenCV', 'React', 'Ultralytics'],
     highlight: true,
+    link: ""
   },
   {
     id: 'traid',
@@ -22,7 +23,8 @@ const projects = [
     category: 'FinTech AI',
     description:
         'AI-driven trading platform utilizing neural time-series models to predict market trends and visualize data in a real-time dashboard.',
-    techStack: ['TensorFlow', 'Next.js', 'Data Viz', 'Node.js'],
+    techStack: ['TensorFlow', 'Next.js', 'Redis', 'React'],
+    link: "https://traid.it/it/"
   },
   {
     id: 'screeba',
@@ -30,7 +32,8 @@ const projects = [
     category: 'NLP Pipeline',
     description:
         'Advanced speech-to-text pipeline designed for academic transcription, handling multi-speaker identification and specialized terminology.',
-    techStack: ['Whisper', 'Django', 'PostgreSQL', 'Docker'],
+    techStack: ['Whisper', 'Django', 'Docker'],
+    link: ""
   },
   {
     id: 'sensing',
@@ -39,6 +42,7 @@ const projects = [
     description:
         'Environmental perception system using standard Wi-Fi signals to detect human presence and movement without cameras.',
     techStack: ['Signal Processing', 'IoT', 'Edge Computing'],
+    link: ""
   },
 ];
 
@@ -119,10 +123,17 @@ export default function Projects() {
                 <span className="font-mono text-xs font-bold text-forest bg-green-100 px-2 py-1 rounded uppercase">
                   {project.category}
                 </span>
-                    <ExternalLink
-                        className="text-ink/30 dark:text-white/30 group-hover:text-ink dark:group-hover:text-white transition-colors"
-                        size={20}
-                    />
+                    {project.link !== "" && (
+                        <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-ink/30 dark:text-white/30 group-hover:text-ink dark:group-hover:text-white transition-colors"
+                        >
+                          <ExternalLink size={20} />
+                        </a>
+                    )}
+
                   </div>
 
                   <h3 className="font-display text-4xl font-bold mb-4 text-ink dark:text-white group-hover:text-forest dark:group-hover:text-bubblegum transition-colors">
@@ -155,9 +166,15 @@ export default function Projects() {
             transition={{ delay: 0.2 }}
             className="mt-16 text-center"
         >
-          <Button variant="secondary">
-            View GitHub Profiles
-          </Button>
+          <a
+              href="https://www.4aitech.it/"
+              target="_blank"
+              rel="noopener noreferrer"
+          >
+            <Button variant="secondary">
+              View 4AI Website
+            </Button>
+          </a>
         </motion.div>
       </div>
   );
