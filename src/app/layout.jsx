@@ -14,23 +14,24 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-  title: "Simone & Matteo - AI Duo Portfolio",
-  description: "A soft-brutalist, bubblegum-tech portfolio for an AI/Full-Stack freelance duo.",
+    title: "Simone & Matteo - AI Duo Portfolio",
+    description:
+        "A soft-brutalist, bubblegum-tech portfolio for an AI/Full-Stack freelance duo.",
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
+    return (
+        <html lang="en" className="scroll-smooth">
         <body
             className={`
-              ${dmSans.variable}
-              ${oswald.variable}
-              font-body
-              antialiased
-            `}
+          ${dmSans.variable}
+          ${oswald.variable}
+          font-body
+          antialiased
+        `}
         >
         {children}
-      </body>
-    </html>
-  );
+        </body>
+        </html>
+    );
 }
