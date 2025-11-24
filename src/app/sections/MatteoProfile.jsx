@@ -4,8 +4,6 @@ import { Brain, Server, Wifi, Plane, Film, Code } from 'lucide-react';
 import Card from '@/app/sections/ui/Card';
 import Button from '@/app/sections/ui/Button';
 
-// 1. IMPORTO LE ICONE UFFICIALI
-// Uso 'si' (Simple Icons) per la maggior parte dei brand
 import {
     SiPython,
     SiDjango,
@@ -18,14 +16,12 @@ import {
     SiGooglecloud
 } from "react-icons/si";
 
-// Uso 'fa' (FontAwesome) per Java perché l'icona della tazza è più iconica del duca di OpenJDK
 import { FaJava } from "react-icons/fa";
 
 export const MatteoProfile = ({ onBack }) => {
     return (
         <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white pb-20">
 
-            {/* Hero Section */}
             <section className="relative pt-32 pb-20 px-4 overflow-hidden">
                 <div className="absolute top-0 right-0 opacity-10 dark:opacity-5 pointer-events-none">
                     <Code size={400} />
@@ -82,7 +78,6 @@ export const MatteoProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* About Me */}
             <section className="py-20 px-4 bg-smoke/30 dark:bg-white/5">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <motion.div
@@ -123,7 +118,6 @@ export const MatteoProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* Toolkit */}
             <section className="py-24 px-4">
                 <div className="max-w-6xl mx-auto">
                     <motion.div className="mb-16">
@@ -134,7 +128,6 @@ export const MatteoProfile = ({ onBack }) => {
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-6">
-                        {/* Full Stack Column */}
                         <Card dark className="!bg-ink !border-white/10">
                             <div className="mb-6 bg-blue-500/20 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Server className="text-blue-500" size={32} />
@@ -144,7 +137,6 @@ export const MatteoProfile = ({ onBack }) => {
                                 I manage the entire development lifecycle, from robust backends to scalable infrastructure.
                             </p>
                             <div className="space-y-4">
-                                {/* REPLACED: Java & Spring */}
                                 <div className="flex items-center gap-3 text-white/90">
                                     <div className="flex gap-2 opacity-80">
                                         <FaJava className="w-5 h-5" />
@@ -152,7 +144,6 @@ export const MatteoProfile = ({ onBack }) => {
                                     </div>
                                     <span className="font-bold">Java / Spring Boot</span>
                                 </div>
-                                {/* REPLACED: React & Next */}
                                 <div className="flex items-center gap-3 text-white/90">
                                     <div className="flex gap-2 opacity-80">
                                         <SiReact className="w-5 h-5" />
@@ -160,7 +151,6 @@ export const MatteoProfile = ({ onBack }) => {
                                     </div>
                                     <span className="font-bold">React / Next.js</span>
                                 </div>
-                                {/* REPLACED: Jenkins & GCP */}
                                 <div className="flex items-center gap-3 text-white/90">
                                     <div className="flex gap-2 opacity-80">
                                         <SiJenkins className="w-5 h-5" />
@@ -171,7 +161,6 @@ export const MatteoProfile = ({ onBack }) => {
                             </div>
                         </Card>
 
-                        {/* AI/CV Column */}
                         <Card className="bg-paper border-ink/10">
                             <div className="mb-6 bg-forest/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Brain className="text-forest dark:text-white" size={32} />
@@ -181,7 +170,6 @@ export const MatteoProfile = ({ onBack }) => {
                                 Translating visual data into actionable insights using state-of-the-art frameworks.
                             </p>
                             <div className="space-y-4">
-                                {/* REPLACED: Python & Django */}
                                 <div className="flex items-center gap-3 text-ink dark:text-white">
                                     <div className="flex gap-2 opacity-80">
                                         <SiPython className="w-5 h-5" />
@@ -189,14 +177,12 @@ export const MatteoProfile = ({ onBack }) => {
                                     </div>
                                     <span className="font-bold">Python / Django</span>
                                 </div>
-                                {/* REPLACED: TF */}
                                 <div className="flex items-center gap-3 text-ink dark:text-white">
                                     <div className="flex gap-2 opacity-80">
                                         <SiTensorflow className="w-5 h-5" />
                                     </div>
                                     <span className="font-bold">TensorFlow / YOLO</span>
                                 </div>
-                                {/* REPLACED: OpenCV */}
                                 <div className="flex items-center gap-3 text-ink dark:text-white">
                                     <div className="flex gap-2 opacity-80">
                                         <SiOpencv className="w-5 h-5" />
@@ -206,7 +192,6 @@ export const MatteoProfile = ({ onBack }) => {
                             </div>
                         </Card>
 
-                        {/* Research Column */}
                         <Card className="bg-white border-ink/10 dark:bg-white/5">
                             <div className="mb-6 bg-purple-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Wifi className="text-purple-500" size={32} />
@@ -225,13 +210,11 @@ export const MatteoProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* Selected Work */}
             <section className="py-20 px-4 bg-ink text-white">
                 <div className="max-w-5xl mx-auto">
                     <h2 className="font-display text-5xl font-bold mb-12 text-center">SELECTED WORK</h2>
 
                     <div className="space-y-12">
-                        {/* Project 1 */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">Traid</h3>
@@ -250,7 +233,6 @@ export const MatteoProfile = ({ onBack }) => {
                             </div>
                         </div>
 
-                        {/* Project 2 */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">Wi-Fi Sensing</h3>
@@ -269,7 +251,6 @@ export const MatteoProfile = ({ onBack }) => {
                             </div>
                         </div>
 
-                        {/* Project 3 */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">Gesture Analysis</h3>
@@ -291,7 +272,6 @@ export const MatteoProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* Beyond Code */}
             <section className="py-24 px-4 relative overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-forest/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -335,7 +315,6 @@ export const MatteoProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* Footer Contact */}
             <section className="py-20 text-center bg-forest text-white">
                 <h2 className="font-display text-4xl mb-2">MATTEO CESE</h2>
                 <p className="text-white/50 mb-8">Rome, Italy • Full Stack & AI Expert</p>

@@ -22,7 +22,6 @@ export default function Navbar({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -34,7 +33,6 @@ export default function Navbar({
   const scrollTo = (id) => {
     if (currentView !== 'home') {
       onNavigate('home');
-      // Wait for navigation transition then scroll
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) element.scrollIntoView({ behavior: 'smooth' });
@@ -77,7 +75,6 @@ export default function Navbar({
               S<span className="text-bubblegum">&</span>M
             </button>
 
-            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 font-medium text-ink dark:text-smoke">
               {isHome ? (
                   <>
@@ -103,7 +100,6 @@ export default function Navbar({
               )}
             </div>
 
-            {/* Desktop Actions */}
             <div className="hidden md:flex items-center gap-3">
               <button
                   onClick={toggleTheme}
@@ -120,7 +116,6 @@ export default function Navbar({
               )}
             </div>
 
-            {/* Mobile Toggle */}
             <button
                 className="md:hidden p-2 text-ink dark:text-white focus:outline-none relative z-50"
                 onClick={() => setIsOpen(!isOpen)}
@@ -131,7 +126,6 @@ export default function Navbar({
           </div>
         </nav>
 
-        {/* Mobile Menu Overlay */}
         <AnimatePresence>
           {isOpen && (
               <motion.div

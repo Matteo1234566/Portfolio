@@ -16,9 +16,8 @@ import {MatteoProfile} from "@/app/sections/MatteoProfile";
 export default function PortfolioLanding() {
     const [theme, setTheme] = useState('light');
     const [isLoading, setIsLoading] = useState(true);
-    const [currentView, setCurrentView] = useState('home'); // 'home' | 'simone' | 'matteo'
+    const [currentView, setCurrentView] = useState('home');
 
-    // Gestione tema dark/light
     useEffect(() => {
         if (theme === 'dark') {
             document.documentElement.classList.add('dark');
@@ -27,7 +26,6 @@ export default function PortfolioLanding() {
         }
     }, [theme]);
 
-    // Loading iniziale (2.2s)
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsLoading(false);

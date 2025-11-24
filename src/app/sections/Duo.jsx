@@ -70,7 +70,6 @@ export default function Duo({ onNavigate }) {
             viewport={{ once: false, margin: "-100px" }}
             className="grid md:grid-cols-2 gap-8"
         >
-          {/* Simone */}
           <motion.div
               variants={item}
               onClick={() => onNavigate && onNavigate('simone')}
@@ -112,7 +111,6 @@ export default function Duo({ onNavigate }) {
             </Card>
           </motion.div>
 
-          {/* Matteo */}
           <motion.div
               variants={item}
               onClick={() => onNavigate && onNavigate('matteo')}

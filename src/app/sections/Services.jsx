@@ -75,15 +75,15 @@ export default function Services() {
                     whileInView={{
                       opacity: 1,
                       y: 0,
-                      rotateX: 5, // Tilted back slightly for 3D effect
-                      rotateZ: isEven ? -2 : 2, // Diagonal placement
+                      rotateX: 5,
+                      rotateZ: isEven ? -2 : 2,
                       scale: 1,
                     }}
                     whileHover={{
                       scale: 1.05,
                       rotateX: 0,
                       rotateZ: 0,
-                      zIndex: 50, // Bring to front on hover
+                      zIndex: 50,
                       transition: { duration: 0.2, ease: 'easeOut' },
                     }}
                     viewport={{ once: false, margin: '-10%' }}
@@ -100,16 +100,13 @@ export default function Services() {
                     }}
                 >
                   <Card dark className="!bg-ink !border-white/10 shadow-2xl backdrop-blur-md overflow-hidden group">
-                    {/* Decorative gradient blob */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-bubblegum/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-bubblegum/20 transition-colors duration-500 pointer-events-none"></div>
 
                     <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 relative z-10 p-2">
-                      {/* Big Icon */}
                       <div className="shrink-0 p-4 bg-white/5 rounded-2xl border border-white/10 shadow-inner group-hover:scale-110 transition-transform duration-300">
                         {service.icon}
                       </div>
 
-                      {/* Text Info */}
                       <div className="flex-grow">
                         <h3 className="font-display text-3xl font-bold text-white mb-3 group-hover:text-bubblegum transition-colors">
                           {service.title}
@@ -119,7 +116,6 @@ export default function Services() {
                         </p>
                       </div>
 
-                      {/* Tags (Vertical on desktop for style) */}
                       <div className="flex flex-row md:flex-col gap-2 flex-wrap justify-end md:w-32 shrink-0 mt-4 md:mt-0">
                         {service.tags.map((tag) => (
                             <span

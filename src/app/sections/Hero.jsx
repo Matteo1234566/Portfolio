@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 export default function Hero() {
   return (
       <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
-        {/* Background Elements */}
         <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#1e1b4b_1px,transparent_1px)] dark:bg-[radial-gradient(#f8fafc_1px,transparent_1px)] [background-size:16px_16px] transition-all duration-300"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
@@ -95,7 +94,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Abstract Elements */}
         <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

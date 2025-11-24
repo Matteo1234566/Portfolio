@@ -4,7 +4,6 @@ import Card from '@/app/sections/ui/Card';
 import Button from '@/app/sections/ui/Button';
 import { Brain, Layers, Cpu, Music, Dumbbell, Globe, Code, Database } from 'lucide-react';
 
-// 1. IMPORTO LE ICONE DA REACT-ICONS (Simple Icons)
 import {
     SiPython,
     SiTensorflow,
@@ -22,7 +21,6 @@ export const SimoneProfile = ({ onBack }) => {
     return (
         <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white pb-20">
 
-            {/* Hero Section */}
             <section className="relative pt-32 pb-20 px-4 overflow-hidden">
                 <div className="absolute top-0 right-0 opacity-10 dark:opacity-5 pointer-events-none">
                     <Brain size={400} />
@@ -76,7 +74,6 @@ export const SimoneProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* About Me */}
             <section className="py-20 px-4 bg-smoke/30 dark:bg-white/5">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <motion.div
@@ -117,7 +114,6 @@ export const SimoneProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* Toolkit */}
             <section className="py-24 px-4">
                 <div className="max-w-6xl mx-auto">
                     <motion.div className="mb-16">
@@ -126,7 +122,6 @@ export const SimoneProfile = ({ onBack }) => {
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-6">
-                        {/* AI Column */}
                         <Card dark className="!bg-ink !border-white/10">
                             <div className="mb-6 bg-bubblegum/20 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Brain className="text-bubblegum" size={32} />
@@ -136,12 +131,10 @@ export const SimoneProfile = ({ onBack }) => {
                                 I specialize in Computer Vision and Deep Learning, managing complex multimodal datasets.
                             </p>
                             <div className="space-y-4">
-                                {/* 2. SOSTITUZIONE ICONE AI */}
                                 <div className="flex items-center gap-3 text-white/90">
                                     <SiPython className="w-5 h-5" /> <span className="font-bold">Python</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-white/90">
-                                    {/* Ho messo sia TF che PyTorch dato che li citi entrambi */}
                                     <div className="flex gap-2 text-white/80">
                                         <SiTensorflow className="w-5 h-5" />
                                         <SiPytorch className="w-5 h-5" />
@@ -149,7 +142,6 @@ export const SimoneProfile = ({ onBack }) => {
                                     <span className="font-bold">TensorFlow / PyTorch</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-white/90">
-                                    {/* Uso ScikitLearn + Database generico per YOLO/Data */}
                                     <div className="flex gap-2 text-white/80">
                                         <Database className="w-5 h-5" />
                                         <SiScikitlearn className="w-5 h-5" />
@@ -159,7 +151,6 @@ export const SimoneProfile = ({ onBack }) => {
                             </div>
                         </Card>
 
-                        {/* Full Stack Column */}
                         <Card className="bg-paper border-ink/10">
                             <div className="mb-6 bg-forest/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Layers className="text-forest dark:text-white" size={32} />
@@ -169,7 +160,6 @@ export const SimoneProfile = ({ onBack }) => {
                                 From robust backends to responsive frontends, ensuring scalable architecture.
                             </p>
                             <div className="space-y-4">
-                                {/* 3. SOSTITUZIONE ICONE FULL STACK */}
                                 <div className="flex items-center gap-3 text-ink dark:text-white">
                                     <div className="flex gap-2 opacity-80">
                                         <SiReact className="w-5 h-5" />
@@ -194,7 +184,6 @@ export const SimoneProfile = ({ onBack }) => {
                             </div>
                         </Card>
 
-                        {/* Research Column */}
                         <Card className="bg-white border-ink/10 dark:bg-white/5">
                             <div className="mb-6 bg-orange-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Globe className="text-orange-500" size={32} />
@@ -213,13 +202,11 @@ export const SimoneProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* Selected Work */}
             <section className="py-20 px-4 bg-ink text-white">
                 <div className="max-w-5xl mx-auto">
                     <h2 className="font-display text-5xl font-bold mb-12 text-center">SELECTED WORK</h2>
 
                     <div className="space-y-12">
-                        {/* Project 1 */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">AiLights</h3>
@@ -236,7 +223,6 @@ export const SimoneProfile = ({ onBack }) => {
                             </div>
                         </div>
 
-                        {/* Project 2 */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">Screeba</h3>
@@ -253,7 +239,6 @@ export const SimoneProfile = ({ onBack }) => {
                             </div>
                         </div>
 
-                        {/* Project 3 */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">Traid</h3>
@@ -274,7 +259,6 @@ export const SimoneProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* Beyond Screen */}
             <section className="py-24 px-4 relative overflow-hidden">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bubblegum/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -315,7 +299,6 @@ export const SimoneProfile = ({ onBack }) => {
                 </div>
             </section>
 
-            {/* Footer Contact */}
             <section className="py-20 text-center bg-forest text-white">
                 <h2 className="font-display text-4xl mb-2">SIMONE ZANNINI</h2>
                 <p className="text-white/50 mb-8">Rome, Italy • Fluent in Italian & English</p>
