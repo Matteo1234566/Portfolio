@@ -78,7 +78,7 @@ export default function Navbar({
                   alt="Logo"
                   width={180}
                   height={180}
-                  className="object-contain h-10 w-auto"
+                  className="object-contain h-10 w-auto cursor-pointer"
                   priority
               />
             </button>

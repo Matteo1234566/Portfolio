@@ -37,7 +37,7 @@ export const MatteoProfile = ({ onBack }) => {
                     >
                         <button
                             onClick={onBack}
-                            className="z-100 flex items-center gap-2 text-ink/50 dark:text-white/50 hover:text-bubblegum transition-colors uppercase tracking-widest font-bold text-sm"
+                            className="z-100 cursor-pointer flex items-center gap-2 text-ink/50 dark:text-white/50 hover:text-bubblegum transition-colors uppercase tracking-widest font-bold text-sm"
                         >
                             ← Back to Home
                         </button>

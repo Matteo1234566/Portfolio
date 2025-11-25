@@ -78,7 +78,17 @@ export default function PortfolioLanding() {
 
                                 <section
                                     id="duo"
-                                    className="relative py-24 bg-smoke/50 dark:bg-white/5 overflow-hidden transition-colors duration-300"
+                                    className="relative py-24 overflow-hidden transition-all duration-300"
+                                    style={{
+                                        backgroundImage: theme === 'dark'
+                                            // Modalità Dark: Overlay Nero (0.7 = 70% opacità) + Luna
+                                            ? `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/moon_bg.webp')`
+                                            // Modalità Light: Overlay Bianco (0.8 = 80% opacità) + Sole
+                                            : `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/sun_bg.webp')`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                        backgroundRepeat: 'no-repeat'
+                                    }}
                                 >
                                     {/* Decorative Doodle */}
                                     <motion.div
@@ -119,7 +129,7 @@ export default function PortfolioLanding() {
                                     <Projects/>
                                 </section>
 
-                                <Footer theme={theme} />
+                                <Footer theme={theme}/>
                             </motion.main>
                         )}
 
