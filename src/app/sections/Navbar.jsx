@@ -76,8 +76,6 @@ export default function Navbar({
               <Image
                   src={theme === 'dark' ? '/logo_moon.webp' : '/logo_sun.webp'}
                   alt="Logo"
-                  // Aumenta la risoluzione sorgente (es. 80x80 o 120x120)
-                  // Anche se il CSS la forzerà a h-10 (40px), l'immagine sarà nitida su schermi Retina
                   width={180}
                   height={180}
                   className="object-contain h-10 w-auto"

@@ -119,7 +119,7 @@ export default function PortfolioLanding() {
                                     <Projects/>
                                 </section>
 
-                                <Footer/>
+                                <Footer theme={theme} />
                             </motion.main>
                         )}
 

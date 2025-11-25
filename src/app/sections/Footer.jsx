@@ -2,24 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'; // Importiamo il componente Image
-import { useTheme } from 'next-themes'; // Hook per rilevare il tema
 import Button from '@/app/sections/ui/Button';
 import { motion } from 'framer-motion';
 
-export default function Footer() {
-    const { resolvedTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    // Necessario per evitare errori di idratazione (mismatch tra server e client)
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    // Determina quale immagine mostrare
-    // Nota: Se non è ancora montato, usiamo un fallback (es. sun) o null per evitare flickering
-    const imageSrc = mounted && resolvedTheme === 'dark'
-        ? '/pittogramma_flat_moon.webp'
-        : '/pittogramma_flat_moon.webp';
+export default function Footer({theme}) {
 
     return (
         <footer id="footer" className="bg-forest text-white pt-24 pb-12 overflow-hidden relative">
@@ -47,15 +33,13 @@ export default function Footer() {
                     {/* Sostituzione Doodle con Image */}
                     <div className="w-24 h-24 mx-auto mb-8 relative animate-bounce">
                         {/* Mostriamo l'immagine solo quando il componente è montato lato client */}
-                        {mounted && (
-                            <Image
-                                src={imageSrc}
-                                alt="Theme illustration"
-                                width={96} // 24 * 4 (w-24)
-                                height={96} // 24 * 4 (h-24)
-                                className="object-contain"
-                            />
-                        )}
+                        <Image
+                            src={theme === 'dark' ? '/pittogramma_flat_moon.webp' : '/pittogramma_flat_sun.webp'}
+                            alt="Theme illustration"
+                            width={96} // 24 * 4 (w-24)
+                            height={96} // 24 * 4 (h-24)
+                            className="object-contain"
+                        />
                     </div>
 
                     <h2 className="font-display text-6xl md:text-8xl font-bold mb-6 leading-none">
