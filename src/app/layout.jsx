@@ -14,7 +14,7 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-    title: "Simone & Matteo - AI Duo Portfolio",
+    title: "DevOP", // TITOLO AGGIORNATO QUI!
     description:
         "A soft-brutalist, bubblegum-tech portfolio for an AI/Full-Stack freelance duo.",
 };
@@ -22,6 +22,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className="scroll-smooth">
+        <head>
+            <meta name="apple-mobile-web-app-title" content="DevOP"/>
+            <title>DevOP</title>
+        </head>
         <body
             className={`
           ${dmSans.variable}

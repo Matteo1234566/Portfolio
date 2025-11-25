@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Button from '@/app/sections/ui/Button';
 import { Sun, Moon, Menu, X, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Navbar({
                                  theme,
@@ -70,9 +71,18 @@ export default function Navbar({
           >
             <button
                 onClick={() => onNavigate('home')}
-                className="font-display font-bold text-xl tracking-tight text-ink dark:text-white relative z-50 hover:opacity-70 transition-opacity"
+                className="relative z-50 hover:opacity-80 transition-opacity flex items-center"
             >
-              S<span className="text-bubblegum">&</span>M
+              <Image
+                  src={theme === 'dark' ? '/logo_moon.webp' : '/logo_sun.webp'}
+                  alt="Logo"
+                  // Aumenta la risoluzione sorgente (es. 80x80 o 120x120)
+                  // Anche se il CSS la forzerà a h-10 (40px), l'immagine sarà nitida su schermi Retina
+                  width={180}
+                  height={180}
+                  className="object-contain h-10 w-auto"
+                  priority
+              />
             </button>
 
             <div className="hidden md:flex items-center space-x-8 font-medium text-ink dark:text-smoke">
@@ -85,7 +95,8 @@ export default function Navbar({
                             className="hover:text-forest dark:hover:text-bubblegum transition-colors relative group"
                         >
                           {item}
-                          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-bubblegum transition-all group-hover:w-full"></span>
+                          <span
+                              className="absolute -bottom-1 left-0 w-0 h-0.5 bg-bubblegum transition-all group-hover:w-full"></span>
                         </button>
                     ))}
                   </>
@@ -94,7 +105,7 @@ export default function Navbar({
                       onClick={() => onNavigate('home')}
                       className="flex items-center gap-2 hover:text-bubblegum transition-colors"
                   >
-                    <ArrowLeft size={16} />
+                    <ArrowLeft size={16}/>
                     Back to Home
                   </button>
               )}
@@ -106,7 +117,7 @@ export default function Navbar({
                   className="p-2 rounded-full hover:bg-smoke dark:hover:bg-white/10 transition-colors text-ink dark:text-white"
                   aria-label="Toggle theme"
               >
-                {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+                {theme === 'light' ? <Moon size={20}/> : <Sun size={20}/>}
               </button>
 
               {isHome && (
@@ -121,7 +132,7 @@ export default function Navbar({
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={isOpen ? 'Close menu' : 'Open menu'}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={24}/> : <Menu size={24}/>}
             </button>
           </div>
         </nav>
@@ -129,14 +140,14 @@ export default function Navbar({
         <AnimatePresence>
           {isOpen && (
               <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  initial={{opacity: 0, y: -20}}
+                  animate={{opacity: 1, y: 0}}
+                  exit={{opacity: 0, y: -20}}
+                  transition={{duration: 0.3, ease: 'easeInOut'}}
                   className="fixed inset-0 z-40 bg-paper dark:bg-ink pt-32 px-6 md:hidden flex flex-col items-center justify-start overflow-y-auto"
               >
                 <div className="flex flex-col items-center gap-8 w-full max-w-sm pb-10">
-                  {isHome ? (
+                {isHome ? (
                       ['Duo', 'Services', 'Projects'].map((item) => (
                           <button
                               key={item}

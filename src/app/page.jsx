@@ -69,12 +69,12 @@ export default function PortfolioLanding() {
                         {currentView === 'home' && (
                             <motion.main
                                 key="home"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
+                                initial={{opacity: 0}}
+                                animate={{opacity: 1}}
+                                exit={{opacity: 0}}
+                                transition={{duration: 0.3}}
                             >
-                                <Hero />
+                                <Hero/>
 
                                 <section
                                     id="duo"
@@ -82,56 +82,66 @@ export default function PortfolioLanding() {
                                 >
                                     {/* Decorative Doodle */}
                                     <motion.div
-                                        animate={{ y: [0, -15, 0], rotate: [12, 15, 12] }}
-                                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                                        className="absolute top-10 right-[-50px] md:right-10 w-32 md:w-48 opacity-20 md:opacity-100 pointer-events-none text-ink dark:text-white"
+                                        animate={{y: [0, -15, 0], rotate: [12, 15, 12]}}
+                                        transition={{duration: 5, repeat: Infinity, ease: "easeInOut"}}
+                                        className="absolute top-10 right-[-50px] md:right-10 w-32 md:w-48 opacity-20 md:opacity-100 pointer-events-none"
                                     >
-                                        <DoodlePeace className="text-ink dark:text-white" />
+                                        {/* LOGICA SWAP IMMAGINE */}
+                                        <img
+                                            src={theme === 'dark' ? '/pittogramma_moon.webp' : '/pittogramma_sun.webp'}
+                                            alt="Decorative Element"
+                                            className="w-full h-full object-contain drop-shadow-lg"
+                                        />
                                     </motion.div>
-                                    <Duo onNavigate={handleNavigate} />
+                                    <Duo onNavigate={handleNavigate}/>
                                 </section>
 
                                 <section id="services" className="py-24 bg-forest text-white relative">
                                     <motion.div
-                                        animate={{ y: [0, 10, 0], rotate: [-12, -10, -12] }}
-                                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                                        animate={{y: [0, 10, 0], rotate: [-12, -10, -12]}}
+                                        transition={{duration: 6, repeat: Infinity, ease: "easeInOut"}}
                                         className="absolute bottom-10 left-10 w-24 md:w-32 opacity-10 pointer-events-none"
                                     >
-                                        <DoodleSnap className="text-white" />
+                                        {/* Sostituzione di DoodleSnap con gli SVG sun.svg o moon.svg */}
+                                        <img
+                                            src={theme === 'dark' ? '/moon.svg' : '/sun.svg'}
+                                            alt="Decorative Element"
+                                            className="w-full h-full object-contain drop-shadow-lg"
+                                        />
                                     </motion.div>
-                                    <Services />
+                                    <Services/>
                                 </section>
 
                                 <section
                                     id="projects"
                                     className="py-24 bg-paper dark:bg-ink transition-colors duration-300"
                                 >
-                                    <Projects />
+                                    <Projects/>
                                 </section>
 
-                                <Footer />
+                                <Footer/>
                             </motion.main>
                         )}
 
                         {currentView === 'simone' && (
                             <motion.div
                                 key="simone"
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 50 }}
-                                transition={{ duration: 0.4 }}
+                                initial={{opacity: 0, x: 50}}
+                                animate={{opacity: 1, x: 0}}
+                                exit={{opacity: 0, x: 50}}
+                                transition={{duration: 0.4}}
                             >
-                                <SimoneProfile onBack={() => handleNavigate('home')} />
+                                <SimoneProfile onBack={() => handleNavigate('home')}/>
                             </motion.div>
                         )}
 
                         {currentView === 'matteo' && (
                             <motion.div
                                 key="matteo"
-                                initial={{ opacity: 0, x: 50 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 50 }}
-                                transition={{ duration: 0.4 }}
+                                initial={{opacity: 0, x: 50}}
+                                animate={{opacity: 1, x: 0}}
+                                exit={{opacity: 0, x: 50}}
+                                transition={{duration: 0.4}}
                             >
                                 <MatteoProfile onBack={() => handleNavigate('home')} />
                             </motion.div>

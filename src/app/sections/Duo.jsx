@@ -9,8 +9,8 @@ const profiles = [
   {
     name: "Simone Zannini",
     role: "The Architect",
-    description: "Deep learning specialist and system architect. I translate research papers into production code and chaotic data into clear insights.",
-    stats: ["Co-Founder & CTO", "Wi-Fi Sensing", "Computer Vision"],
+    description: "Deep learning specialist and system architect. I translate innovative ideas into production code and chaotic data into clear insights.",
+    stats: ["Deep Neural Networks", "Data Analysys", "Computer Vision"],
     // skills: ["Deep Learning", "Data Engineering", "System Arch"]
   },
   {
