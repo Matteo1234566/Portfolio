@@ -1,5 +1,6 @@
 import { DM_Sans, Oswald } from "next/font/google";
 import "./globals.css";
+import ClientLayout from "@/app/ClientLayout";
 
 const dmSans = DM_Sans({
     subsets: ["latin"],
@@ -14,28 +15,29 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-    title: "DevOP", // TITOLO AGGIORNATO QUI!
+    title: "DevOP",
+    appleWebApp: {
+        title: "DevOP",
+    },
     description:
         "A soft-brutalist, bubblegum-tech portfolio for an AI/Full-Stack freelance duo.",
 };
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en" className="scroll-smooth">
-        <head>
-            <meta name="apple-mobile-web-app-title" content="DevOP"/>
-            <title>DevOP</title>
-        </head>
-        <body
-            className={`
-          ${dmSans.variable}
-          ${oswald.variable}
-          font-body
-          antialiased
-        `}
-        >
-        {children}
-        </body>
+        <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+            <body
+                className={`
+              ${dmSans.variable}
+              ${oswald.variable}
+              font-body
+              antialiased
+            `}
+            >
+                <ClientLayout>
+                    {children}
+                </ClientLayout>
+            </body>
         </html>
     );
 }

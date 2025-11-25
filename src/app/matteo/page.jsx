@@ -1,8 +1,11 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Server, Wifi, Plane, Film, Code, Mail, Linkedin } from 'lucide-react';
 import Card from '@/app/sections/ui/Card';
 import Button from '@/app/sections/ui/Button';
+import Image from 'next/image';
 
 import {
     SiPython,
@@ -13,16 +16,14 @@ import {
     SiNextdotjs,
     SiSpring,
     SiJenkins,
-    SiGooglecloud, SiDocker
+    SiDocker
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
-import Footer from "@/app/sections/Footer";
-import {DoodleThumbsUp} from "@/app/sections/Doodles";
 
-export const MatteoProfile = ({ onBack }) => {
+export default function MatteoProfile({ onBack }) {
     return (
-        <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white pb-20">
+        <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
 
             <section className="relative pt-32 pb-20 px-4 overflow-hidden">
                 <div className="absolute top-0 right-0 opacity-10 dark:opacity-5 pointer-events-none">
@@ -35,12 +36,6 @@ export const MatteoProfile = ({ onBack }) => {
                         animate={{ opacity: 1, y: 0 }}
                         className="mb-6 flex items-center gap-4"
                     >
-                        <button
-                            onClick={onBack}
-                            className="z-100 cursor-pointer flex items-center gap-2 text-ink/50 dark:text-white/50 hover:text-bubblegum transition-colors uppercase tracking-widest font-bold text-sm"
-                        >
-                            ← Back to Home
-                        </button>
                     </motion.div>
 
                     <motion.h1
@@ -109,12 +104,13 @@ export const MatteoProfile = ({ onBack }) => {
                         className="relative"
                     >
                         <Card className="!p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
-                            <img
+                            <Image
                                 src="/images/matteo.webp"
                                 alt="Matteo Cese"
+                                fill
                                 loading="lazy"
                                 className="
-                                    absolute inset-0 w-full h-full object-cover
+                                    absolute inset-0 object-cover
                                     transition-transform duration-700 ease-out
                                     group-hover:scale-[1.03]
                                   "
@@ -339,7 +335,7 @@ export const MatteoProfile = ({ onBack }) => {
                 <p className="text-white/50 mb-8">Rome, Italy • Full Stack & AI Expert</p>
                 <div className="flex justify-center gap-4">
                     <a
-                        href="/cv/matteo.pdf"  // <-- sostituisci con il percorso reale del tuo CV
+                        href="/cv/matteo.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -378,7 +374,6 @@ export const MatteoProfile = ({ onBack }) => {
                             </a>
                         </div>
                     </motion.div>
-
                 </div>
             </div>
         </div>

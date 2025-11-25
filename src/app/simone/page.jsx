@@ -1,13 +1,15 @@
+"use client";
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import Card from '@/app/sections/ui/Card';
 import Button from '@/app/sections/ui/Button';
-import {Brain, Layers, Cpu, Music, Dumbbell, Globe, Code, Database, Wifi} from 'lucide-react';
+import {Brain, Layers, Music, Dumbbell, Wifi} from 'lucide-react';
+import Image from 'next/image';
 
 import {
     SiPython,
     SiTensorflow,
-    SiPytorch,
     SiScikitlearn,
     SiReact,
     SiNextdotjs,
@@ -17,9 +19,9 @@ import {
     SiRedis, SiRoboflow, SiNumpy
 } from "react-icons/si";
 
-export const SimoneProfile = ({ onBack }) => {
+export default function SimoneProfile({ onBack }) {
     return (
-        <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white pb-20">
+        <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
 
             <section
                 className="relative pt-32 pb-20 px-4 overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/simone_bg_light.webp')] dark:bg-[url('/simone_bg_dark.webp')]">
@@ -32,12 +34,6 @@ export const SimoneProfile = ({ onBack }) => {
                         animate={{opacity: 1, y: 0}}
                         className="mb-6 flex items-center gap-4"
                     >
-                        <button
-                            onClick={onBack}
-                            className="z-100 cursor-pointer flex items-center gap-2 text-ink/50 dark:text-white/50 hover:text-bubblegum transition-colors uppercase tracking-widest font-bold text-sm"
-                        >
-                            ← Back to Home
-                        </button>
                     </motion.div>
 
                     <motion.h1
@@ -113,12 +109,13 @@ export const SimoneProfile = ({ onBack }) => {
                     >
                         <Card
                             className="!p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
-                            <img
+                            <Image
                                 src="/images/simone.webp"
                                 alt="Simone Zannini"
+                                fill
                                 loading="lazy"
                                 className="
-                                    absolute inset-0 w-full h-full object-cover
+                                    absolute inset-0 object-cover
                                     transition-transform duration-700 ease-out
                                     group-hover:scale-[1.03]
                                   "

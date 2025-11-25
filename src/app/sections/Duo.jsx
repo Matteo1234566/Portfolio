@@ -4,6 +4,7 @@ import React from 'react';
 import Card from '@/app/sections/ui/Card';
 import { Cpu, Code, Music, Search, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const profiles = [
   {
@@ -75,8 +76,6 @@ export default function Duo({ onNavigate }) {
         >
           <motion.div
               variants={item}
-              onClick={() => onNavigate && onNavigate('simone')}
-              className="cursor-pointer"
           >
             <Card className="relative overflow-hidden group text-ink dark:text-smoke h-full border-ink dark:border-white/20 hover:border-bubblegum dark:hover:border-bubblegum transition-colors">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-ink dark:text-white">
@@ -108,16 +107,20 @@ export default function Duo({ onNavigate }) {
                   ))}
                 </div>
               </div>
-              <div className="flex items-center text-bubblegum font-bold uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
-                View Profile <ArrowRight className="ml-2 w-4 h-4" />
+              <div>
+                <Link
+                  href="/simone"
+                  className="flex items-center text-bubblegum font-bold uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform"
+                >
+                  View Profile
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </div>
             </Card>
           </motion.div>
 
           <motion.div
               variants={item}
-              onClick={() => onNavigate && onNavigate('matteo')}
-              className="cursor-pointer"
           >
             <Card className="relative overflow-hidden group text-ink dark:text-smoke h-full border-ink dark:border-white/20 hover:border-bubblegum dark:hover:border-bubblegum transition-colors">
               <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-ink dark:text-white">
@@ -149,8 +152,14 @@ export default function Duo({ onNavigate }) {
                   ))}
                 </div>
               </div>
-              <div className="flex items-center text-bubblegum font-bold uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform">
-                View Profile <ArrowRight className="ml-2 w-4 h-4" />
+              <div>
+                <Link
+                    href="/matteo"
+                    className="flex items-center text-bubblegum font-bold uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform"
+                >
+                  View Profile
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </div>
             </Card>
           </motion.div>

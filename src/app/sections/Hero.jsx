@@ -5,10 +5,11 @@ import Button from '@/app/sections/ui/Button';
 import { ArrowDoodle } from '@/app/sections/Doodles';
 import { motion } from 'framer-motion';
 import {ExternalLink} from "lucide-react";
+import Link from 'next/link';
 
 export default function Hero() {
   return (
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#1e1b4b_1px,transparent_1px)] dark:bg-[radial-gradient(#f8fafc_1px,transparent_1px)] [background-size:16px_16px] transition-all duration-300"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
@@ -104,26 +105,20 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               className="flex flex-col md:flex-row items-center justify-center gap-4"
           >
-            <Button
-                onClick={() =>
-                    document
-                        .getElementById('projects')
-                        ?.scrollIntoView({ behavior: 'smooth' })
-                }
-            >
-              View Our Work
+            <Button>
+              <Link
+                href="/#projects"
+              >
+                View Our Work
+              </Link>
             </Button>
-            <button
-                onClick={() =>
-                    document
-                        .getElementById('duo')
-                        ?.scrollIntoView({ behavior: 'smooth' })
-                }
+            <Link
+               href="/#duo"
                 className="group flex items-center gap-2 font-display font-bold text-lg hover:underline decoration-wavy decoration-bubblegum underline-offset-4 text-ink dark:text-white"
             >
               Read about the duo
               <ArrowDoodle className="w-8 h-8 transform group-hover:translate-x-1 transition-transform text-ink dark:text-white" />
-            </button>
+            </Link>
           </motion.div>
         </div>
 
