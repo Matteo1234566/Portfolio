@@ -335,5 +335,10 @@
       "cta": "Let's Build Something",
       "cv_button": "View My CV"
     }
+  },
+  "NotFound": {
+    "title": "Oops! AI Hallucination Detected.",
+    "description": "It looks like this page doesn't exist in our training dataset. Must be a glitch in the matrix.",
+    "cta": "Return to Reality"
   }
 }

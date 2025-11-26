@@ -335,5 +335,10 @@
       "cta": "Costruiamo Qualcosa",
       "cv_button": "Vedi il mio CV"
     }
+  },
+  "NotFound": {
+    "title": "Ops! Allucinazione AI Rilevata.",
+    "description": "Sembra che questa pagina non esista nel nostro dataset di addestramento. Potrebbe essere un glitch nella matrice.",
+    "cta": "Torna alla Realtà"
   }
 }
