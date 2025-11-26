@@ -33,10 +33,10 @@
       "intro": "We are",
       "names": "Simone & Matteo",
       "role_start": "An AI + Full-Stack duo building products that feel",
-      "human": "human",
+      "human": "innovative",
       "role_end": ", scalable, and fast. We also co-founded",
       "startup_name": "4AI",
-      "startup_desc": ", an innovative startup born within Sapienza University.",
+      "startup_desc": ", a startup born within Sapienza University.",
       "podcast_start": "And when we’re not coding, you can probably find us chatting away on our",
       "podcast_link": "podcast"
     },
@@ -63,7 +63,7 @@
     "matteo": {
       "name": "Matteo Cese",
       "role": "The Builder",
-      "description": "Full-Stack engineer with a research-driven mindset. I design and ship end-to-end products from scalable web platforms to computer vision and deep learning pipelines bridging innovation with real-world impact.",
+      "description": "Full-Stack developer with a research-driven mindset. I design and ship end-to-end products from scalable web platforms to computer vision and deep learning pipelines bridging innovation with real-world impact.",
       "stats": {
         "0": "Deep Learning",
         "1": "Computer Vision",

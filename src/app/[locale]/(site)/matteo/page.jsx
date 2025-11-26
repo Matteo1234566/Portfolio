@@ -21,10 +21,12 @@ import {
 } from "react-icons/si";
 
 import { FaJava } from "react-icons/fa";
+import {usePathname} from "next/navigation";
 
 export default function MatteoProfile() {
     const t = useTranslations('MatteoProfile');
-
+    const pathname = usePathname();
+    const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
     return (
         <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
 
@@ -338,7 +340,7 @@ export default function MatteoProfile() {
                 <p className="text-white/50 mb-8">{t('contact.location')}</p>
                 <div className="flex justify-center gap-4">
                     <a
-                        href="/cv/matteo.pdf"
+                        href={currentLocale === "it" ? "/cv/matteo_it.pdf" : "/cv/matteo_en.pdf"}
                         target="_blank"
                         rel="noopener noreferrer"
                     >

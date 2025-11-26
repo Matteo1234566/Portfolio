@@ -33,10 +33,10 @@
       "intro": "Siamo",
       "names": "Simone & Matteo",
       "role_start": "Un duo AI + Full-Stack che crea prodotti",
-      "human": "umani",
+      "human": "innovativi",
       "role_end": ", scalabili e veloci. Abbiamo co-fondato",
       "startup_name": "4AI",
-      "startup_desc": ", una startup innovativa nata in Sapienza.",
+      "startup_desc": ", una startup nata in Sapienza.",
       "podcast_start": "E quando non programmiamo, probabilmente ci trovi a chiacchierare sul nostro",
       "podcast_link": "podcast"
     },
@@ -53,17 +53,17 @@
     "simone": {
       "name": "Simone Zannini",
       "role": "L'Architetto",
-      "description": "Specialista di Deep Learning e architetto di sistemi. Traduco idee innovative in codice di produzione e dati caotici in intuizioni chiare.",
+      "description": "Specialista di Deep Learning e architetto di sistemi. Traduco idee innovative in codice da produzione e dati caotici in intuizioni chiare.",
       "stats": {
-        "0": "Reti Neurali",
+        "0": "Deep Learning",
         "1": "Analisi Dati",
         "2": "Computer Vision"
       }
     },
     "matteo": {
       "name": "Matteo Cese",
-      "role": "Il Costruttore",
-      "description": "Ingegnere Full-Stack con mentalità orientata alla ricerca. Progetto e rilascio prodotti end-to-end, da piattaforme web scalabili a pipeline di visione artificiale.",
+      "role": "Lo sviluppatore",
+      "description": "Sviluppatore Full-Stack con mentalità orientata alla ricerca. Progetto e rilascio prodotti end-to-end, da piattaforme web scalabili a pipeline di di intelligenza artificiale.",
       "stats": {
         "0": "Deep Learning",
         "1": "Computer Vision",
@@ -183,79 +183,79 @@
   "MatteoProfile": {
     "header": {
       "role_badge": "Co-Founder & Full Stack AI Engineer",
-      "role_mono": "// The Builder",
+      "role_mono": "// Lo Sviluppatore",
       "quote": "\"Faber est suae quisque fortunae\"",
       "quote_sub": ""
     },
     "about": {
-      "title_start": "BUILDING THE",
-      "title_highlight": "FUTURE",
-      "p1": "<strong>Architecting Scalable Intelligence.</strong> I am a builder at heart. My approach to technology is grounded in a sociable and optimistic nature, believing that the best solutions come from open dialogue and teamwork. With a solid foundation in Computer Science from <strong>La Sapienza University</strong> (graduating with 110/110 Cum Laude), I have always sought to understand how things work to make them work better.",
-      "p2": "My background bridges two worlds: the rigorous standards of enterprise IT consulting and the agile innovation of the startup ecosystem. Today, as Co-Founder of 4AI, I design the architectures that power our vision, ensuring that our AI models run on robust, scalable, and efficient full-stack systems.",
-      "p3": "I am driven by the challenge of connecting academic research with real-world applications."
+      "title_start": "COSTRUENDO IL",
+      "title_highlight": "FUTURO",
+      "p1": "<strong>Progettare un'Intelligenza Scalabile.</strong> Sono un builder nell’anima. Il mio approccio alla tecnologia nasce da una natura socievole e ottimista, convinto che le migliori soluzioni emergano dal dialogo aperto e dal lavoro di squadra. Con una solida formazione in Informatica presso <strong>l’Università La Sapienza</strong> (laurea con 110/110 e Lode), ho sempre cercato di capire come funzionano le cose per farle funzionare meglio.",
+      "p2": "Il mio percorso unisce due mondi: gli standard rigorosi della consulenza IT enterprise e l’innovazione agile dell’ecosistema startup. Oggi, come Co-Founder di 4AI, progetto le architetture che alimentano la nostra visione, assicurando che i modelli di AI funzionino su sistemi full-stack robusti, scalabili ed efficienti.",
+      "p3": "Sono guidato dalla sfida di collegare la ricerca accademica alle applicazioni reali."
     },
     "toolkit": {
       "label": "Engineering Core",
-      "title": "THE TOOLKIT",
+      "title": "IL TOOLKIT",
       "fullstack": {
         "title": "Full Stack Arch.",
-        "description": "I manage the entire development lifecycle, from robust backends to scalable infrastructure."
+        "description": "Gestisco l’intero ciclo di sviluppo, dai backend robusti alle infrastrutture scalabili."
       },
       "vision": {
         "title": "Computer Vision & Deep Learning",
-        "description": "Translating visual data into actionable insights using state-of-the-art frameworks."
+        "description": "Trasformo dati visivi in insight concreti utilizzando framework all’avanguardia."
       },
       "research": {
         "title": "Applied Research",
-        "description": "Research fellow focused on Wi-Fi sensing and environmental perception, exploring how wireless signals can capture human presence and motion.",
+        "description": "Research fellow specializzato in Wi-Fi sensing e percezione ambientale, esplorando come i segnali wireless possano rilevare presenza e movimento umano.",
         "list": {
-          "0": "Wi-Fi Sensing & Environmental Perception",
-          "1": "Human Motion Analysis",
+          "0": "Wi-Fi Sensing & Percezione Ambientale",
+          "1": "Analisi del Movimento Umano",
           "2": "Signal Processing & Preprocessing"
         }
       }
     },
     "work": {
-      "title": "SELECTED WORK",
-      "role_label": "My Role",
+      "title": "PROGETTI SELEZIONATI",
+      "role_label": "Il Mio Ruolo",
       "traid": {
         "title": "Traid",
-        "tag": "AI-FinTech Platform",
-        "subtitle": "Making financial markets accessible through intelligence.",
-        "description": "Built the web platform delivering AI-assisted trading signals and performance dashboards based on neural time-series models."
+        "tag": "Piattaforma AI-FinTech",
+        "subtitle": "Rendere i mercati finanziari accessibili attraverso l’intelligenza.",
+        "description": "Ho realizzato la piattaforma web che offre segnali di trading assistiti dall’AI e dashboard di performance basate su modelli neurali di serie temporali."
       },
       "ailights": {
         "title": "AiLights",
-        "tag": "Startup Project",
-        "subtitle": "Creating a platform for automated sports statistics and live streaming.",
-        "description": "Developed the full-stack infrastructure, integrating AI models for computer vision and ffmpeg for real-time video processing."
+        "tag": "Progetto Startup",
+        "subtitle": "Una piattaforma per statistiche sportive automatizzate e live streaming.",
+        "description": "Ho sviluppato l’infrastruttura full-stack, integrando modelli di computer vision e ffmpeg per l’elaborazione video in tempo reale."
       },
       "gesture": {
         "title": "Gesture Analysis",
         "tag": "Deep Learning",
-        "subtitle": "Hand gesture understanding for deception detection and real-time ASL digit recognition.",
-        "description": "Designed and trained recurrent neural models to detect deception from hand-gesture dynamics in video datasets, as part of my B.Sc. thesis at Sapienza University.<br /><br />Built a real-time computer-vision system for recognizing ASL digits (0–9) through hand-gesture analysis, combining neural networks with live video inference."
+        "subtitle": "Comprensione del gesto della mano per rilevamento dell’inganno e riconoscimento ASL in tempo reale.",
+        "description": "Ho progettato e addestrato modelli neurali ricorrenti per rilevare l’inganno attraverso la dinamica dei gesti delle mani in dataset video, parte della mia tesi di laurea triennale alla Sapienza University.<br /><br />Ho costruito un sistema di computer vision in tempo reale per il riconoscimento delle cifre ASL (0–9) tramite analisi dei movimenti della mano, combinando reti neurali e inferenza video live."
       }
     },
     "interests": {
-      "title": "BEYOND THE CODE",
-      "subtitle": "Technology is my profession, but discovery is my passion.",
+      "title": "OLTRE IL CODICE",
+      "subtitle": "La tecnologia è la mia professione, la scoperta è la mia passione.",
       "travel": {
-        "title": "Culture & Travel",
-        "description": "I enjoy exploring new places and cultures — they're a constant source of inspiration and perspective."
+        "title": "Cultura & Viaggi",
+        "description": "Mi piace esplorare nuovi luoghi e culture — sono una costante fonte di ispirazione e prospettiva."
       },
       "cinema": {
         "title": "Cinema",
-        "description": "A lifelong movie lover, always inspired by powerful storytelling and visual imagination."
+        "description": "Appassionato di cinema da sempre, ispirato dal potere della narrazione e dell’immaginazione visiva."
       },
       "learning": {
-        "title": "Curiosity & Learning",
-        "description": "Driven by curiosity, I’m always exploring new ideas, fields, and technologies — learning is my way of staying alive and evolving."
+        "title": "Curiosità & Apprendimento",
+        "description": "Guidato dalla curiosità, esploro costantemente nuove idee, campi e tecnologie — imparare è il mio modo di restare vivo ed evolvere."
       }
     },
     "contact": {
-      "location": "Rome, Italy • Full Stack & AI Expert",
-      "cv_button": "View My CV"
+      "location": "Roma, Italia • Full Stack & AI Expert",
+      "cv_button": "Visualizza il Mio CV"
     }
   },
   "SimoneProfile": {

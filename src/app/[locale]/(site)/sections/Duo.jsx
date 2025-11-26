@@ -24,7 +24,7 @@ const item = {
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50, damping: 20 } }
 };
 
-export default function Duo({ onNavigate }) {
+export default function Duo() {
   const t = useTranslations('Duo');
   const pathname = usePathname();
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
@@ -66,15 +66,24 @@ export default function Duo({ onNavigate }) {
           >
             {t('title_start')} <span className="text-forest dark:text-bubblegum">{t('title_highlight')}</span>
           </motion.h2>
-          <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, margin: "-100px" }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-lg text-ink/70 dark:text-smoke/70 max-w-xl mx-auto"
-          >
-            {t('subtitle')}
-          </motion.p>
+            <motion.blockquote
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="relative max-w-xl mx-auto pl-6 text-lg italic text-ink/70 dark:text-smoke/70"
+            >
+              <span className="absolute left-0 top-0 text-4xl leading-none text-primary/40">
+                “
+              </span>
+
+                        {t('subtitle')}
+
+                        <span className="absolute right-0 bottom-0 text-4xl leading-none text-primary/40">
+                ”
+              </span>
+            </motion.blockquote>
+
         </div>
 
         <motion.div
