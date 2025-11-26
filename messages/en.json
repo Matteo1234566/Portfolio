@@ -340,5 +340,17 @@
     "title": "Oops! AI Hallucination Detected.",
     "description": "It looks like this page doesn't exist in our training dataset. Must be a glitch in the matrix.",
     "cta": "Return to Reality"
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Scattered thoughts on frontend, AI, and dev life.",
+    "readMore": "Read more",
+    "posts": {
+      "1": {
+        "title": "How I designed this portfolio",
+        "excerpt": "A breakdown of the bubblegum-tech aesthetic and the technical decisions behind it.",
+        "content": "sdhughsdgsd"
+      }
+    }
   }
 }

@@ -10,11 +10,13 @@ import {LoadingScreen} from "@/app/[locale]/(site)/sections/LoadingScreen";
 import Image from 'next/image';
 import { useTheme } from "next-themes";
 import Footer from "@/app/[locale]/(site)/sections/Footer";
+import { useSearchParams } from 'next/navigation';
 
 export default function PortfolioLanding() {
     const [isLoading, setIsLoading] = useState(true);
     const { theme, systemTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
+    const searchParams = useSearchParams();
 
     useEffect(() => {
         setMounted(true);
@@ -40,6 +42,18 @@ export default function PortfolioLanding() {
 
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        if (isLoading) return;
+        const section = searchParams.get('scrollTo');
+        if (!section) return;
+
+        const el = document.getElementById(section);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, [isLoading, searchParams]);
+
 
     return (
         <>

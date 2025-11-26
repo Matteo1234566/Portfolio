@@ -340,5 +340,17 @@
     "title": "Ops! Allucinazione AI Rilevata.",
     "description": "Sembra che questa pagina non esista nel nostro dataset di addestramento. Potrebbe essere un glitch nella matrice.",
     "cta": "Torna alla Realtà"
+  },
+  "Blog": {
+    "title": "Blog",
+    "subtitle": "Pensieri sparsi su frontend, AI e dev life.",
+    "readMore": "Leggi di più",
+    "posts": {
+      "1": {
+        "title": "Come ho progettato questo portfolio",
+        "excerpt": "Un breakdown del design bubblegum-tech e delle scelte tecniche.",
+        "content": "sdhughsdgsd"
+      }
+    }
   }
 }

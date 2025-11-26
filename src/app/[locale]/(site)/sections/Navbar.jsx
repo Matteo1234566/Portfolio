@@ -55,6 +55,21 @@ export default function Navbar() {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
   }, [isOpen]);
 
+  const handleNavClick = (key) => {
+    const basePath = `/${currentLocale}`;
+
+    if (pathname === basePath || pathname === `${basePath}/`) {
+      const el = document.getElementById(key);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      router.push(`${basePath}?scrollTo=${key}`);
+    }
+
+    setIsOpen(false);
+  };
+
   return (
       <>
         <nav
@@ -73,10 +88,10 @@ export default function Navbar() {
             ${scrolled ? 'scale-95' : 'scale-100'}
           `}
           >
-            <Link
-                href={`/${currentLocale}#hero`}
+            <button
+                onClick={() => handleNavClick("hero")}
                 className="relative z-50 hover:opacity-80 transition-opacity flex items-center"
-                onClick={() => setIsOpen(false)}
+                aria-label="Scroll to top"
             >
               <Image
                   src={
@@ -90,19 +105,18 @@ export default function Navbar() {
                   className="object-contain h-10 w-auto cursor-pointer"
                   priority
               />
-            </Link>
+            </button>
 
             <div className="hidden md:flex items-center space-x-8 font-medium text-ink dark:text-smoke">
               {navLinks.map((key) => (
-                  <Link
+                  <button
                       key={key}
-                      href={`/${currentLocale}#${key}`}
-                      onClick={() => setIsOpen(false)}
+                      onClick={() => handleNavClick(key)}
                       className="hover:text-forest dark:hover:text-bubblegum transition-colors relative group capitalize"
                   >
                     {t(`links.${key}`)}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-bubblegum transition-all group-hover:w-full" />
-                  </Link>
+                  </button>
               ))}
             </div>
 
@@ -129,10 +143,8 @@ export default function Navbar() {
                 )}
               </button>
 
-              <Button className="text-sm px-5 py-2">
-                <Link href={`/${currentLocale}#footer`} onClick={() => setIsOpen(false)}>
-                  {t('cta')}
-                </Link>
+              <Button className="text-sm px-5 py-2" onClick={() => handleNavClick("footer")}>
+                {t('cta')}
               </Button>
             </div>
 
@@ -157,14 +169,13 @@ export default function Navbar() {
               >
                 <div className="flex flex-col items-center gap-8 w-full max-w-sm pb-10">
                   {navLinks.map((key) => (
-                      <Link
+                      <button
                           key={key}
-                          href={`/${currentLocale}#${key}`}
-                          onClick={() => setIsOpen(false)}
+                          onClick={() => handleNavClick(key)}
                           className="font-display text-4xl font-bold text-ink dark:text-white hover:text-bubblegum transition-colors w-full text-center capitalize"
                       >
                         {t(`links.${key}`)}
-                      </Link>
+                      </button>
                   ))}
 
                   <div className="w-24 h-px bg-ink/10 dark:bg-white/10 my-2" />
@@ -195,10 +206,8 @@ export default function Navbar() {
                     </span>
                   </button>
 
-                  <Button className="w-full text-lg py-4 mt-4">
-                    <Link href={`/${currentLocale}#footer`} onClick={() => setIsOpen(false)}>
+                  <Button className="w-full text-lg py-4 mt-4" onClick={() => handleNavClick("footer")}>
                       {t('cta')}
-                    </Link>
                   </Button>
                 </div>
               </motion.div>
