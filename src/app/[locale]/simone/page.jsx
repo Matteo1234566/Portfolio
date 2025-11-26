@@ -2,10 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Card from '@/app/sections/ui/Card';
-import Button from '@/app/sections/ui/Button';
-import {Brain, Layers, Music, Dumbbell, Wifi} from 'lucide-react';
+import Card from '@/app/[locale]/sections/ui/Card';
+import Button from '@/app/[locale]/sections/ui/Button';
+import { Brain, Layers, Music, Dumbbell, Wifi } from 'lucide-react';
 import Image from 'next/image';
+// 1. Import Hook
+import { useTranslations } from 'next-intl';
 
 import {
     SiPython,
@@ -20,6 +22,9 @@ import {
 } from "react-icons/si";
 
 export default function SimoneProfile({ onBack }) {
+    // 2. Inizializza Hook
+    const t = useTranslations('SimoneProfile');
+
     return (
         <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
 
@@ -53,10 +58,10 @@ export default function SimoneProfile({ onBack }) {
                     >
             <span
                 className="bg-forest text-white px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm md:text-base">
-              AI Engineer
+              {t('header.role_badge')}
             </span>
                         <span className="text-ink/60 dark:text-white/60 font-mono text-lg">
-              // Deep learning, computer vision and data analysis
+              {t('header.role_mono')}
             </span>
                     </motion.div>
 
@@ -66,7 +71,7 @@ export default function SimoneProfile({ onBack }) {
                         transition={{delay: 0.6}}
                         className="text-2xl md:text-4xl font-display text-ink/80 dark:text-white/80 border-l-4 border-bubblegum pl-6 py-2 italic max-w-3xl"
                     >
-                        "For the roads, they go on without end."
+                        {t('header.quote')}
                     </motion.blockquote>
                 </div>
             </section>
@@ -79,25 +84,26 @@ export default function SimoneProfile({ onBack }) {
                         viewport={{once: true}}
                     >
                         <h2 className="font-display text-5xl font-bold mb-8">
-                            FROM CURIOSITY <br/> TO <span className="text-bubblegum">CODE</span>
+                            {t('about.title_start')} <br/> {t('about.title_bottom')} <span
+                            className="text-bubblegum">{t('about.title_highlight')}</span>
                         </h2>
                         <div className="space-y-6 text-lg leading-relaxed text-ink/80 dark:text-smoke">
                             <p>
-                                My journey into technology began in my teenage years, fueled by a curiosity for building
-                                websites and experimenting with design. That spark led me to a formal path in Computer
-                                Science at <strong className="text-ink dark:text-white">La Sapienza University of
-                                Rome</strong>, where I graduated with top honors <span
-                                className="bg-bubblegum/20 px-2 py-0.5 rounded text-bubblegum font-bold">(110/110 cum laude)</span>.
+                                {/* Gestione complessa: Grassetto normale E highlight colorato */}
+                                {t.rich('about.p1', {
+                                    strong: (chunks) => <strong className="text-ink dark:text-white">{chunks}</strong>,
+                                    highlight: (chunks) => (
+                                        <span className="bg-bubblegum/20 px-2 py-0.5 rounded text-bubblegum font-bold">
+                                            {chunks}
+                                        </span>
+                                    )
+                                })}
                             </p>
                             <p>
-                                Today, as Co-Founder of 4AI, I bridge the gap between academic research and
-                                production-ready software. I don't just write code; I architect systems. Whether it's
-                                Deep Learning, Computer Vision, or Data Engineering, my goal is to transform advanced
-                                concepts into innovative, usable platforms.
+                                {t('about.p2')}
                             </p>
                             <p>
-                                I thrive in dynamic environments where technical precision meets creative
-                                problem-solving.
+                                {t('about.p3')}
                             </p>
                         </div>
                     </motion.div>
@@ -131,8 +137,9 @@ export default function SimoneProfile({ onBack }) {
             <section className="py-24 px-4">
                 <div className="max-w-6xl mx-auto">
                     <motion.div className="mb-16">
-                        <span className="text-bubblegum font-bold tracking-widest uppercase text-sm mb-2 block">My Arsenal</span>
-                        <h2 className="font-display text-5xl md:text-7xl font-bold">THE TOOLKIT</h2>
+                        <span
+                            className="text-bubblegum font-bold tracking-widest uppercase text-sm mb-2 block">{t('toolkit.label')}</span>
+                        <h2 className="font-display text-5xl md:text-7xl font-bold">{t('toolkit.title')}</h2>
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-6">
@@ -141,9 +148,9 @@ export default function SimoneProfile({ onBack }) {
                                 className="mb-6 bg-bubblegum/20 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Brain className="text-bubblegum" size={32}/>
                             </div>
-                            <h3 className="font-display text-2xl font-bold text-white mb-4">AI & Data</h3>
+                            <h3 className="font-display text-2xl font-bold text-white mb-4">{t('toolkit.ai.title')}</h3>
                             <p className="text-white/60 mb-6 text-sm">
-                                I specialize in Computer Vision and Deep Learning, managing complex multimodal datasets.
+                                {t('toolkit.ai.description')}
                             </p>
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3 text-white/90">
@@ -170,10 +177,9 @@ export default function SimoneProfile({ onBack }) {
                             <div className="mb-6 bg-forest/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Layers className="text-forest dark:text-white" size={32}/>
                             </div>
-                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">Full
-                                Stack</h3>
+                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">{t('toolkit.fullstack.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60 mb-6 text-sm">
-                                From robust backends to responsive frontends, ensuring scalable architecture.
+                                {t('toolkit.fullstack.description')}
                             </p>
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3 text-ink dark:text-white">
@@ -205,15 +211,14 @@ export default function SimoneProfile({ onBack }) {
                                 className="mb-6 bg-orange-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Wifi className="text-orange-500" size={32}/>
                             </div>
-                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">R&D</h3>
+                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">{t('toolkit.research.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60 mb-6 text-sm">
-                                Research fellow focused on Wi-Fi sensing and environmental perception, exploring how
-                                wireless signals can capture human presence and motion.
+                                {t('toolkit.research.description')}
                             </p>
                             <ul className="space-y-2 list-disc pl-4 text-ink/80 dark:text-white/80 font-medium">
-                                <li>Wi-Fi Sensing & Environmental Perception</li>
-                                <li>Human Motion Analysis</li>
-                                <li>Signal Processing & Preprocessing</li>
+                                <li>{t('toolkit.research.list.0')}</li>
+                                <li>{t('toolkit.research.list.1')}</li>
+                                <li>{t('toolkit.research.list.2')}</li>
                             </ul>
                         </Card>
                     </div>
@@ -222,61 +227,65 @@ export default function SimoneProfile({ onBack }) {
 
             <section className="py-20 px-4 bg-ink text-white">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="font-display text-5xl font-bold mb-12 text-center">SELECTED WORK</h2>
+                    <h2 className="font-display text-5xl font-bold mb-12 text-center">{t('work.title')}</h2>
 
                     <div className="space-y-12">
+                        {/* AILIGHTS */}
                         <div
                             className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">AiLights</h3>
-                                <span className="text-bubblegum font-mono font-bold">Startup Project</span>
+                                <h3 className="font-display text-4xl font-bold">{t('work.ailights.title')}</h3>
+                                <span className="text-bubblegum font-mono font-bold">{t('work.ailights.tag')}</span>
                             </div>
                             <p className="text-white/60 mb-4 max-w-2xl">
-                                Creating a platform for automated sports statistics and live streaming.
+                                {t('work.ailights.subtitle')}
                             </p>
                             <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">My
-                                    Role</h4>
+                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
+                                    {t('work.role_label')}
+                                </h4>
                                 <p className="text-white/70">
-                                    Developed a new Computer Vision model to track tiny and fast objects with frequent
-                                    occlusions. Contributed to develop the full-stack architecture of the platform.
+                                    {t('work.ailights.description')}
                                 </p>
                             </div>
                         </div>
 
+                        {/* SCREEBA */}
                         <div
                             className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">Screeba</h3>
-                                <span className="text-bubblegum font-mono font-bold">Speech-to-Text Framework</span>
+                                <h3 className="font-display text-4xl font-bold">{t('work.screeba.title')}</h3>
+                                <span className="text-bubblegum font-mono font-bold">{t('work.screeba.tag')}</span>
                             </div>
                             <p className="text-white/60 mb-4 max-w-2xl">
-                                Automating the transcription of university lectures.
+                                {t('work.screeba.subtitle')}
                             </p>
                             <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">My
-                                    Role</h4>
+                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
+                                    {t('work.role_label')}
+                                </h4>
                                 <p className="text-white/70">
-                                    Engineered advanced pre- and post-processing pipelines to ensure high-accuracy text
-                                    generation.
+                                    {t('work.screeba.description')}
                                 </p>
                             </div>
                         </div>
 
+                        {/* TRAID */}
                         <div
                             className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">Traid</h3>
-                                <span className="text-bubblegum font-mono font-bold">AI Trading Platform</span>
+                                <h3 className="font-display text-4xl font-bold">{t('work.traid.title')}</h3>
+                                <span className="text-bubblegum font-mono font-bold">{t('work.traid.tag')}</span>
                             </div>
                             <p className="text-white/60 mb-4 max-w-2xl">
-                                Providing AI-driven market signals.
+                                {t('work.traid.subtitle')}
                             </p>
                             <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">My
-                                    Role</h4>
+                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
+                                    {t('work.role_label')}
+                                </h4>
                                 <p className="text-white/70">
-                                    Full-stack development with server-side inference for real-time data analysis.
+                                    {t('work.traid.description')}
                                 </p>
                             </div>
                         </div>
@@ -289,7 +298,7 @@ export default function SimoneProfile({ onBack }) {
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bubblegum/5 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <h2 className="font-display text-5xl font-bold mb-12">BEYOND THE SCREEN</h2>
+                    <h2 className="font-display text-5xl font-bold mb-12">{t('interests.title')}</h2>
 
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="flex flex-col items-center">
@@ -297,9 +306,9 @@ export default function SimoneProfile({ onBack }) {
                                 className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
                                 <Music size={32}/>
                             </div>
-                            <h3 className="font-bold text-xl mb-3">Music & Art</h3>
+                            <h3 className="font-bold text-xl mb-3">{t('interests.music.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                Self-taught pianist and amateur illustrator fueling technical creativity.
+                                {t('interests.music.description')}
                             </p>
                         </div>
 
@@ -308,9 +317,9 @@ export default function SimoneProfile({ onBack }) {
                                 className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
                                 <Dumbbell size={32}/>
                             </div>
-                            <h3 className="font-bold text-xl mb-3">Sport</h3>
+                            <h3 className="font-bold text-xl mb-3">{t('interests.sport.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                Padel, Tennis, and weightlifting for focus and energy.
+                                {t('interests.sport.description')}
                             </p>
                         </div>
 
@@ -319,21 +328,37 @@ export default function SimoneProfile({ onBack }) {
                                 className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
                                 <Brain size={32}/>
                             </div>
-                            <h3 className="font-bold text-xl mb-3">Learning</h3>
+                            <h3 className="font-bold text-xl mb-3">{t('interests.learning.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                Learning Japanese and solving Rubik's cube variants.
+                                {t('interests.learning.description')}
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <section className="pt-20 pb-10 text-center bg-forest text-white">
+                <h2 className="font-display text-4xl mb-2">SIMONE ZANNINI</h2>
+                <p className="text-white/50 mb-8">{t('contact.location')}</p>
+                <div className="flex justify-center gap-4">
+                    <a
+                        href="/cv/simone_eng.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button>
+                            {t('contact.cv_button')}
+                        </Button>
+                    </a>
+                </div>
+            </section>
+
             <section className="py-20 text-center bg-forest text-white">
                 <h2 className="font-display text-4xl mb-2">SIMONE ZANNINI</h2>
-                <p className="text-white/50 mb-8">Rome, Italy • Fluent in Italian & English</p>
+                <p className="text-white/50 mb-8">{t('contact.location')}</p>
                 <div className="flex justify-center gap-4">
                     <a href="mailto:simone@example.com">
-                        <Button>Let's Build Something</Button>
+                        <Button>{t('contact.cta')}</Button>
                     </a>
                 </div>
             </section>

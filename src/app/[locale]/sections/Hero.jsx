@@ -1,18 +1,29 @@
 'use client';
 
 import React from 'react';
-import Button from '@/app/sections/ui/Button';
-import { ArrowDoodle } from '@/app/sections/Doodles';
+import Button from '@/app/[locale]/sections/ui/Button';
+import { ArrowDoodle } from '@/app/[locale]/sections/Doodles'; // Controlla che il percorso sia corretto
 import { motion } from 'framer-motion';
-import {ExternalLink} from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from 'next/link';
+// 1. Import hook necessari
+import { useTranslations } from 'next-intl';
+import { usePathname } from 'next/navigation';
 
 export default function Hero() {
+  // 2. Inizializza traduzioni e percorso
+  const t = useTranslations('Hero');
+  const pathname = usePathname();
+
+  // Rileva la lingua corrente per i Link interni (come fatto nella Navbar)
+  const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
+
   return (
       <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#1e1b4b_1px,transparent_1px)] dark:bg-[radial-gradient(#f8fafc_1px,transparent_1px)] [background-size:16px_16px] transition-all duration-300"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
+          {/* BADGE */}
           <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -20,20 +31,21 @@ export default function Hero() {
               className="mb-6 inline-flex items-center space-x-2 bg-white dark:bg-white/5 border border-ink dark:border-white/20 px-4 py-1 rounded-full shadow-soft transform -rotate-2 hover:rotate-0 transition-transform"
           >
             <span className="w-2 h-2 bg-bubblegum rounded-full animate-pulse"></span>
-            <span className="text-sm font-bold tracking-wide text-ink/70 dark:text-white/70">
-            OPEN FOR NEW VENTURES
+            <span className="text-sm font-bold tracking-wide text-ink/70 dark:text-white/70 uppercase">
+            {t('badge')}
           </span>
           </motion.div>
 
+          {/* HEADLINE */}
           <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.9] mb-8 text-ink dark:text-white transition-colors duration-300"
           >
-            COMPLEX TECH
+            {t('headline.start')}
             <br />
-            MADE{" "}
+            {t('headline.middle')}{" "}
             <span className="relative inline-block ml-2 md:ml-4">
             <motion.span
                 className="absolute inset-0 bg-bubblegum transform -skew-x-3"
@@ -42,31 +54,23 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.8, ease: "circOut" }}
                 style={{ originX: 0 }}
             ></motion.span>
-            <span className="relative z-10 px-2 text-white">SIMPLE</span>
+            <span className="relative z-10 px-2 text-white">{t('headline.highlight')}</span>
           </span>
           </motion.h1>
 
+          {/* BIO PARAGRAPH - Composto pezzo per pezzo per mantenere gli stili */}
           <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="text-lg md:text-xl max-w-2xl mx-auto text-ink/80 dark:text-smoke/80 mb-10 leading-relaxed transition-colors duration-300"
           >
-            We are <span className="font-bold text-bubblegum">Simone & Matteo</span>.
-            An AI + Full-Stack duo building products that feel{" "}
+            {t('bio.intro')} <span className="font-bold text-bubblegum">{t('bio.names')}</span>.
+            {" "}{t('bio.role_start')}{" "}
+
+            {/* Parola "human" / "umani" animata */}
             <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
-            human
-            <motion.span
-                className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                style={{ originX: 0 }}
-            />
-          </span>
-            , scalable, and fast. We also co-founded
-            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
-            4AI
+            {t('bio.human')}
               <motion.span
                   className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
                   initial={{ scaleX: 0 }}
@@ -74,9 +78,24 @@ export default function Hero() {
                   transition={{ duration: 0.6, delay: 1.2 }}
                   style={{ originX: 0 }}
               />
-            </span>, an innovative startup born within
-            Sapienza University.
-            And when we’re not coding, you can probably find us chatting away on our
+            </span>
+            {t('bio.role_end')}{" "}
+
+            {/* Parola "4AI" animata */}
+            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
+            {t('bio.startup_name')}
+              <motion.span
+                  className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  style={{ originX: 0 }}
+              />
+            </span>
+            {t('bio.startup_desc')}
+            {" "}{t('bio.podcast_start')}
+
+            {/* Link Podcast animato */}
             <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
               <a
                   href="https://your-podcast-link.com"
@@ -84,7 +103,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 hover:text-bubblegum transition-colors"
               >
-                podcast
+                {t('bio.podcast_link')}
                 <ExternalLink size={16} />
               </a>
 
@@ -99,6 +118,7 @@ export default function Hero() {
 
           </motion.p>
 
+          {/* BUTTONS */}
           <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -107,21 +127,22 @@ export default function Hero() {
           >
             <Button>
               <Link
-                href="/#projects"
+                  href={`/${currentLocale}#projects`} // Usa currentLocale
               >
-                View Our Work
+                {t('buttons.work')}
               </Link>
             </Button>
             <Link
-               href="/#duo"
+                href={`/${currentLocale}#duo`} // Usa currentLocale
                 className="group flex items-center gap-2 font-display font-bold text-lg hover:underline decoration-wavy decoration-bubblegum underline-offset-4 text-ink dark:text-white"
             >
-              Read about the duo
+              {t('buttons.duo')}
               <ArrowDoodle className="w-8 h-8 transform group-hover:translate-x-1 transition-transform text-ink dark:text-white" />
             </Link>
           </motion.div>
         </div>
 
+        {/* BACKGROUND BLOBS (Invariati) */}
         <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

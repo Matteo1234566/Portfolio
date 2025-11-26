@@ -1,0 +1,339 @@
+{
+  "Navbar": {
+    "links": {
+      "duo": "Duo",
+      "services": "Servizi",
+      "projects": "Progetti"
+    },
+    "cta": "Contattaci",
+    "theme": {
+      "dark_mode": "Tema Scuro",
+      "light_mode": "Tema Chiaro",
+      "toggle_label": "Cambia tema"
+    },
+    "lang": {
+      "switch_label": "Cambia lingua",
+      "to_en": "Switch to English",
+      "to_it": "Passa in Italiano"
+    },
+    "menu": {
+      "open": "Apri menu",
+      "close": "Chiudi menu"
+    },
+    "logo_alt": "Logo"
+  },
+  "Hero": {
+    "badge": "DISPONIBILI PER NUOVI PROGETTI",
+    "headline": {
+      "start": "TECNOLOGIA COMPLESSA",
+      "middle": "RESA",
+      "highlight": "SEMPLICE"
+    },
+    "bio": {
+      "intro": "Siamo",
+      "names": "Simone & Matteo",
+      "role_start": "Un duo AI + Full-Stack che crea prodotti",
+      "human": "umani",
+      "role_end": ", scalabili e veloci. Abbiamo co-fondato",
+      "startup_name": "4AI",
+      "startup_desc": ", una startup innovativa nata in Sapienza.",
+      "podcast_start": "E quando non programmiamo, probabilmente ci trovi a chiacchierare sul nostro",
+      "podcast_link": "podcast"
+    },
+    "buttons": {
+      "work": "Vedi i Lavori",
+      "duo": "Leggi del duo"
+    }
+  },
+  "Duo": {
+    "title_start": "IL",
+    "title_highlight": "DUO",
+    "subtitle": "Una mente per l'AI, una per la scalabilità — forgiati insieme per muoversi più velocemente di qualsiasi agenzia.",
+    "cta_profile": "Vedi Profilo",
+    "simone": {
+      "name": "Simone Zannini",
+      "role": "L'Architetto",
+      "description": "Specialista di Deep Learning e architetto di sistemi. Traduco idee innovative in codice di produzione e dati caotici in intuizioni chiare.",
+      "stats": {
+        "0": "Reti Neurali",
+        "1": "Analisi Dati",
+        "2": "Computer Vision"
+      }
+    },
+    "matteo": {
+      "name": "Matteo Cese",
+      "role": "Il Costruttore",
+      "description": "Ingegnere Full-Stack con mentalità orientata alla ricerca. Progetto e rilascio prodotti end-to-end, da piattaforme web scalabili a pipeline di visione artificiale.",
+      "stats": {
+        "0": "Deep Learning",
+        "1": "Computer Vision",
+        "2": "Architetture Scalabili & DevOps"
+      }
+    }
+  },
+  "Services": {
+    "label": "Cosa facciamo",
+    "heading": {
+      "top": "DALLA RICERCA",
+      "bottom": "ALLA",
+      "highlight": "PRODUZIONE"
+    },
+    "items": {
+      "ai": {
+        "title": "Ingegneria AI & ML",
+        "description": "Costruiamo modelli personalizzati, pipeline NLP e sistemi di computer vision che risolvono problemi reali.",
+        "tags": {
+          "0": "Modelli Predittivi",
+          "1": "Computer Vision",
+          "2": "Data Pipelines"
+        }
+      },
+      "fullstack": {
+        "title": "Sistemi Full-Stack",
+        "description": "Backend robusti e scalabili, frontend reattivi. Ci assicuriamo che la tua infrastruttura cresca con te.",
+        "tags": {
+          "0": "React / Next.js",
+          "1": "Django / Python",
+          "2": "API Scalabili"
+        }
+      },
+      "product": {
+        "title": "Architettura di Prodotto",
+        "description": "Non ci limitiamo a scrivere codice; progettiamo. UI umane e solidi principi di UX design fin dal primo giorno.",
+        "tags": {
+          "0": "UX Design",
+          "1": "Architettura Sistemi",
+          "2": "Soft Brutalism"
+        }
+      },
+      "consulting": {
+        "title": "Consulenza Startup",
+        "description": "Ti serve un MVP per ieri? Ti aiutiamo a definire la strategia tecnica e a costruire velocemente per validare il mercato.",
+        "tags": {
+          "0": "Sviluppo MVP",
+          "1": "Strategia Tech",
+          "2": "Iterazione Rapida"
+        }
+      }
+    }
+  },
+  "Projects": {
+    "heading": "LAVORI",
+    "heading_highlight": "SELEZIONATI",
+    "subtitle": "Schiocchiamo le dita,\nil tuo prodotto prende vita.",
+    "cta": "Visita il sito 4AI",
+    "items": {
+      "ailights": {
+        "title": "AiLights",
+        "category": "Computer Vision",
+        "description": "Piattaforma di analisi sportiva in tempo reale. Usa la visione artificiale per tracciare automaticamente movimenti dei giocatori e traiettorie.",
+        "techStack": {
+          "0": "Python",
+          "1": "OpenCV",
+          "2": "React",
+          "3": "Ultralytics"
+        }
+      },
+      "traid": {
+        "title": "Traid",
+        "category": "AI FinTech",
+        "description": "Piattaforma di trading basata su AI che utilizza modelli neurali time-series per prevedere trend di mercato e visualizzare dati in tempo reale.",
+        "techStack": {
+          "0": "TensorFlow",
+          "1": "Next.js",
+          "2": "Redis",
+          "3": "React"
+        }
+      },
+      "screeba": {
+        "title": "Screeba",
+        "category": "Pipeline NLP",
+        "description": "Pipeline avanzata speech-to-text progettata per trascrizioni accademiche, con identificazione multi-speaker e terminologia specializzata.",
+        "techStack": {
+          "0": "Whisper",
+          "1": "Django",
+          "2": "Docker"
+        }
+      },
+      "sensing": {
+        "title": "Wi-Fi Sensing",
+        "category": "R&S",
+        "description": "Sistema di percezione ambientale che usa segnali Wi-Fi standard per rilevare presenza e movimento umano senza l'uso di telecamere.",
+        "techStack": {
+          "0": "Elaborazione Segnali",
+          "1": "IoT",
+          "2": "Edge Computing"
+        }
+      }
+    }
+  },
+  "Footer": {
+    "alt_illustration": "Illustrazione tema",
+    "heading": {
+      "start": "PRONTO A",
+      "highlight": "COSTRUIRE?"
+    },
+    "description": "Che sia una pipeline AI complessa o un nuovo MVP, siamo pronti a trasformare il tuo caos in codice.",
+    "cta": {
+      "email": "Scrivici",
+      "book": "Prenota una Call"
+    },
+    "copyright": "Simone & Matteo. Tutti i diritti riservati."
+  },
+  "MatteoProfile": {
+    "header": {
+      "role_badge": "Co-Founder & Full Stack AI Engineer",
+      "role_mono": "// The Builder",
+      "quote": "\"Faber est suae quisque fortunae\"",
+      "quote_sub": ""
+    },
+    "about": {
+      "title_start": "BUILDING THE",
+      "title_highlight": "FUTURE",
+      "p1": "<strong>Architecting Scalable Intelligence.</strong> I am a builder at heart. My approach to technology is grounded in a sociable and optimistic nature, believing that the best solutions come from open dialogue and teamwork. With a solid foundation in Computer Science from <strong>La Sapienza University</strong> (graduating with 110/110 Cum Laude), I have always sought to understand how things work to make them work better.",
+      "p2": "My background bridges two worlds: the rigorous standards of enterprise IT consulting and the agile innovation of the startup ecosystem. Today, as Co-Founder of 4AI, I design the architectures that power our vision, ensuring that our AI models run on robust, scalable, and efficient full-stack systems.",
+      "p3": "I am driven by the challenge of connecting academic research with real-world applications."
+    },
+    "toolkit": {
+      "label": "Engineering Core",
+      "title": "THE TOOLKIT",
+      "fullstack": {
+        "title": "Full Stack Arch.",
+        "description": "I manage the entire development lifecycle, from robust backends to scalable infrastructure."
+      },
+      "vision": {
+        "title": "Computer Vision & Deep Learning",
+        "description": "Translating visual data into actionable insights using state-of-the-art frameworks."
+      },
+      "research": {
+        "title": "Applied Research",
+        "description": "Research fellow focused on Wi-Fi sensing and environmental perception, exploring how wireless signals can capture human presence and motion.",
+        "list": {
+          "0": "Wi-Fi Sensing & Environmental Perception",
+          "1": "Human Motion Analysis",
+          "2": "Signal Processing & Preprocessing"
+        }
+      }
+    },
+    "work": {
+      "title": "SELECTED WORK",
+      "role_label": "My Role",
+      "traid": {
+        "title": "Traid",
+        "tag": "AI-FinTech Platform",
+        "subtitle": "Making financial markets accessible through intelligence.",
+        "description": "Built the web platform delivering AI-assisted trading signals and performance dashboards based on neural time-series models."
+      },
+      "ailights": {
+        "title": "AiLights",
+        "tag": "Startup Project",
+        "subtitle": "Creating a platform for automated sports statistics and live streaming.",
+        "description": "Developed the full-stack infrastructure, integrating AI models for computer vision and ffmpeg for real-time video processing."
+      },
+      "gesture": {
+        "title": "Gesture Analysis",
+        "tag": "Deep Learning",
+        "subtitle": "Hand gesture understanding for deception detection and real-time ASL digit recognition.",
+        "description": "Designed and trained recurrent neural models to detect deception from hand-gesture dynamics in video datasets, as part of my B.Sc. thesis at Sapienza University.<br /><br />Built a real-time computer-vision system for recognizing ASL digits (0–9) through hand-gesture analysis, combining neural networks with live video inference."
+      }
+    },
+    "interests": {
+      "title": "BEYOND THE CODE",
+      "subtitle": "Technology is my profession, but discovery is my passion.",
+      "travel": {
+        "title": "Culture & Travel",
+        "description": "I enjoy exploring new places and cultures — they're a constant source of inspiration and perspective."
+      },
+      "cinema": {
+        "title": "Cinema",
+        "description": "A lifelong movie lover, always inspired by powerful storytelling and visual imagination."
+      },
+      "learning": {
+        "title": "Curiosity & Learning",
+        "description": "Driven by curiosity, I’m always exploring new ideas, fields, and technologies — learning is my way of staying alive and evolving."
+      }
+    },
+    "contact": {
+      "location": "Rome, Italy • Full Stack & AI Expert",
+      "cv_button": "View My CV"
+    }
+  },
+  "SimoneProfile": {
+    "header": {
+      "role_badge": "AI Engineer",
+      "role_mono": "// Deep learning, computer vision e analisi dati",
+      "quote": "\"Poiché le strade, loro proseguono senza fine.\""
+    },
+    "about": {
+      "title_start": "DALLA CURIOSITÀ",
+      "title_bottom": "AL",
+      "title_highlight": "CODICE",
+      "p1": "Il mio viaggio nella tecnologia è iniziato nell'adolescenza, alimentato dalla curiosità di costruire siti web e sperimentare col design. Quella scintilla mi ha portato al percorso in Informatica presso <strong>La Sapienza Università di Roma</strong>, dove mi sono laureato con il massimo dei voti <highlight>(110/110 e Lode)</highlight>.",
+      "p2": "Oggi, come Co-Founder di 4AI, colmo il divario tra ricerca accademica e software pronto per la produzione. Non scrivo solo codice; architetto sistemi. Che si tratti di Deep Learning, Computer Vision o Data Engineering, il mio obiettivo è trasformare concetti avanzati in piattaforme innovative e utilizzabili.",
+      "p3": "Prospero in ambienti dinamici dove la precisione tecnica incontra il problem-solving creativo."
+    },
+    "toolkit": {
+      "label": "Il Mio Arsenale",
+      "title": "IL TOOLKIT",
+      "ai": {
+        "title": "AI & Data",
+        "description": "Specializzato in Computer Vision e Deep Learning, gestisco dataset multimodali complessi."
+      },
+      "fullstack": {
+        "title": "Full Stack",
+        "description": "Da backend robusti a frontend reattivi, garantendo architetture scalabili."
+      },
+      "research": {
+        "title": "R&S",
+        "description": "Assegnista di ricerca focalizzato su Wi-Fi sensing e percezione ambientale, esplorando come i segnali wireless possano catturare presenza e movimento umano.",
+        "list": {
+          "0": "Wi-Fi Sensing & Percezione Ambientale",
+          "1": "Analisi del Movimento Umano",
+          "2": "Signal Processing & Preprocessing"
+        }
+      }
+    },
+    "work": {
+      "title": "LAVORI SELEZIONATI",
+      "role_label": "Il Mio Ruolo",
+      "ailights": {
+        "title": "AiLights",
+        "tag": "Progetto Startup",
+        "subtitle": "Creazione di una piattaforma per statistiche sportive automatizzate e live streaming.",
+        "description": "Sviluppato un nuovo modello di Computer Vision per tracciare oggetti piccoli e veloci con frequenti occlusioni. Contribuito allo sviluppo dell'architettura full-stack della piattaforma."
+      },
+      "screeba": {
+        "title": "Screeba",
+        "tag": "Framework Speech-to-Text",
+        "subtitle": "Automatizzare la trascrizione delle lezioni universitarie.",
+        "description": "Ingegnerizzato pipeline avanzate di pre e post-processing per garantire una generazione di testo ad alta precisione."
+      },
+      "traid": {
+        "title": "Traid",
+        "tag": "Piattaforma Trading AI",
+        "subtitle": "Fornire segnali di mercato guidati dall'AI.",
+        "description": "Sviluppo full-stack con inferenza lato server per l'analisi dati in tempo reale."
+      }
+    },
+    "interests": {
+      "title": "OLTRE LO SCHERMO",
+      "music": {
+        "title": "Musica & Arte",
+        "description": "Pianista autodidatta e illustratore amatoriale, alimento la creatività tecnica."
+      },
+      "sport": {
+        "title": "Sport",
+        "description": "Padel, Tennis e sollevamento pesi per concentrazione ed energia."
+      },
+      "learning": {
+        "title": "Apprendimento",
+        "description": "Studio il giapponese e risolvo varianti del cubo di Rubik."
+      }
+    },
+    "contact": {
+      "location": "Roma, Italia • Fluente in Italiano & Inglese",
+      "cta": "Costruiamo Qualcosa",
+      "cv_button": "Vedi il mio CV"
+    }
+  }
+}

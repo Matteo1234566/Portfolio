@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Hero from "@/app/sections/Hero";
-import Duo from "@/app/sections/Duo";
-import Services from "@/app/sections/Services";
-import Projects from "@/app/sections/Projects";
+import Hero from "@/app/[locale]/sections/Hero";
+import Duo from "@/app/[locale]/sections/Duo";
+import Services from "@/app/[locale]/sections/Services";
+import Projects from "@/app/[locale]/sections/Projects";
 import { motion, AnimatePresence } from 'framer-motion';
-import {LoadingScreen} from "@/app/sections/LoadingScreen";
+import {LoadingScreen} from "@/app/[locale]/sections/LoadingScreen";
 import Image from 'next/image';
 import { useTheme } from "next-themes";
-import Footer from "@/app/sections/Footer";
+import Footer from "@/app/[locale]/sections/Footer";
 
 export default function PortfolioLanding() {
     const [isLoading, setIsLoading] = useState(true);
@@ -79,7 +79,7 @@ export default function PortfolioLanding() {
                                 <motion.div
                                     animate={{y: [0, -15, 0], rotate: [12, 15, 12]}}
                                     transition={{duration: 5, repeat: Infinity, ease: "easeInOut"}}
-                                    className="absolute top-10 right-[-50px] md:right-10 w-32 md:w-48 opacity-20 md:opacity-100 pointer-events-none"
+                                    className="absolute top-10 right-[-50px] md:right-10 w-32 md:w-48 aspect-square opacity-20 md:opacity-100 pointer-events-none"
                                 >
                                     <Image
                                         src={currentTheme === 'dark' ? '/pittogramma_moon.webp' : '/pittogramma_sun.webp'}
@@ -88,7 +88,7 @@ export default function PortfolioLanding() {
                                         className="object-contain drop-shadow-lg"
                                     />
                                 </motion.div>
-                                <Duo />
+                                <Duo/>
                             </section>
 
                             <section id="services" className="py-24 bg-forest text-white relative">

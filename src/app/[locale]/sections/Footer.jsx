@@ -2,11 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Button from '@/app/sections/ui/Button';
+import Button from '@/app/[locale]/sections/ui/Button';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
+// 1. Import hook
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+    // 2. Inizializza hook
+    const t = useTranslations('Footer');
+
     const { theme, systemTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
@@ -51,7 +56,7 @@ export default function Footer() {
                                     ? '/pittogramma_flat_moon.webp'
                                     : '/pittogramma_flat_sun.webp'
                             }
-                            alt="Theme illustration"
+                            alt={t('alt_illustration')}
                             width={96}
                             height={96}
                             className="object-contain"
@@ -59,20 +64,19 @@ export default function Footer() {
                     </div>
 
                     <h2 className="font-display text-6xl md:text-8xl font-bold mb-6 leading-none">
-                        READY TO <br /> <span className="text-bubblegum">BUILD?</span>
+                        {t('heading.start')} <br /> <span className="text-bubblegum">{t('heading.highlight')}</span>
                     </h2>
                     <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
-                        Whether it's a complex AI pipeline or a fresh MVP,
-                        we are ready to turn your chaos into code.
+                        {t('description')}
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
                         <a href="mailto:hello@simoneandmatteo.com" className="no-underline">
                             <Button variant="primary" className="text-lg px-10 py-4">
-                                Email Us
+                                {t('cta.email')}
                             </Button>
                         </a>
                         <Button variant="outline" className="text-lg px-10 py-4">
-                            Book a Call
+                            {t('cta.book')}
                         </Button>
                     </div>
                 </motion.div>
@@ -85,8 +89,7 @@ export default function Footer() {
                     className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-center items-center text-sm text-white/40 font-mono"
                 >
                     <p>
-                        &copy; {new Date().getFullYear()} Simone &amp; Matteo. All rights
-                        reserved.
+                        &copy; {new Date().getFullYear()} {t('copyright')}
                     </p>
                 </motion.div>
             </div>

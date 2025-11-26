@@ -3,9 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Server, Wifi, Plane, Film, Code, Mail, Linkedin } from 'lucide-react';
-import Card from '@/app/sections/ui/Card';
-import Button from '@/app/sections/ui/Button';
+import Card from '@/app/[locale]/sections/ui/Card';
+import Button from '@/app/[locale]/sections/ui/Button';
 import Image from 'next/image';
+// 1. Import Hook
+import { useTranslations } from 'next-intl';
 
 import {
     SiPython,
@@ -22,6 +24,9 @@ import {
 import { FaJava } from "react-icons/fa";
 
 export default function MatteoProfile({ onBack }) {
+    // 2. Inizializza Hook
+    const t = useTranslations('MatteoProfile');
+
     return (
         <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
 
@@ -54,10 +59,10 @@ export default function MatteoProfile({ onBack }) {
                         className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-12"
                     >
             <span className="bg-bubblegum text-white px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm md:text-base">
-              Co-Founder & Full Stack AI Engineer
+              {t('header.role_badge')}
             </span>
                         <span className="text-ink/60 dark:text-white/60 font-mono text-lg">
-              // The Builder
+              {t('header.role_mono')}
             </span>
                     </motion.div>
 
@@ -67,7 +72,7 @@ export default function MatteoProfile({ onBack }) {
                         transition={{ delay: 0.6 }}
                         className="text-2xl md:text-4xl font-display text-ink/80 dark:text-white/80 border-l-4 border-forest dark:border-bubblegum pl-6 py-2 italic max-w-3xl"
                     >
-                        "Faber est suae quisque fortunae"
+                        {t('header.quote')}
                         <span className="block text-lg font-body text-ink/50 dark:text-white/50 mt-2 not-italic">
             </span>
                     </motion.blockquote>
@@ -82,17 +87,20 @@ export default function MatteoProfile({ onBack }) {
                         viewport={{ once: true }}
                     >
                         <h2 className="font-display text-5xl font-bold mb-8">
-                            BUILDING THE <br/> <span className="text-forest dark:text-bubblegum">FUTURE</span>
+                            {t('about.title_start')} <br/> <span className="text-forest dark:text-bubblegum">{t('about.title_highlight')}</span>
                         </h2>
                         <div className="space-y-6 text-lg leading-relaxed text-ink/80 dark:text-smoke">
                             <p>
-                                <strong className="text-ink dark:text-white">Architecting Scalable Intelligence.</strong> I am a builder at heart. My approach to technology is grounded in a sociable and optimistic nature, believing that the best solutions come from open dialogue and teamwork. With a solid foundation in Computer Science from <strong className="text-ink dark:text-white">La Sapienza University</strong> (graduating with 110/110 Cum Laude), I have always sought to understand how things work to make them work better.
+                                {/* t.rich permette di usare tag HTML come <strong> dentro la stringa JSON */}
+                                {t.rich('about.p1', {
+                                    strong: (chunks) => <strong className="text-ink dark:text-white">{chunks}</strong>
+                                })}
                             </p>
                             <p>
-                                My background bridges two worlds: the rigorous standards of enterprise IT consulting and the agile innovation of the startup ecosystem. Today, as Co-Founder of 4AI, I design the architectures that power our vision, ensuring that our AI models run on robust, scalable, and efficient full-stack systems.
+                                {t('about.p2')}
                             </p>
                             <p>
-                                I am driven by the challenge of connecting academic research with real-world applications.
+                                {t('about.p3')}
                             </p>
                         </div>
                     </motion.div>
@@ -105,7 +113,7 @@ export default function MatteoProfile({ onBack }) {
                     >
                         <Card className="!p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
                             <Image
-                                src="/images/matteo.webp"
+                                src="/images/matteo.webp" // Assicurati che il percorso immagine esista
                                 alt="Matteo Cese"
                                 fill
                                 loading="lazy"
@@ -126,9 +134,9 @@ export default function MatteoProfile({ onBack }) {
                 <div className="max-w-6xl mx-auto">
                     <motion.div className="mb-16">
             <span className="text-forest dark:text-bubblegum font-bold tracking-widest uppercase text-sm mb-2 block">
-              Engineering Core
+              {t('toolkit.label')}
             </span>
-                        <h2 className="font-display text-5xl md:text-7xl font-bold">THE TOOLKIT</h2>
+                        <h2 className="font-display text-5xl md:text-7xl font-bold">{t('toolkit.title')}</h2>
                     </motion.div>
 
                     <div className="grid md:grid-cols-3 gap-6">
@@ -136,9 +144,9 @@ export default function MatteoProfile({ onBack }) {
                             <div className="mb-6 bg-blue-500/20 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Server className="text-blue-500" size={32} />
                             </div>
-                            <h3 className="font-display text-2xl font-bold text-white mb-4">Full Stack Arch.</h3>
+                            <h3 className="font-display text-2xl font-bold text-white mb-4">{t('toolkit.fullstack.title')}</h3>
                             <p className="text-white/60 mb-6 text-sm">
-                                I manage the entire development lifecycle, from robust backends to scalable infrastructure.
+                                {t('toolkit.fullstack.description')}
                             </p>
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3 text-white/90">
@@ -169,9 +177,9 @@ export default function MatteoProfile({ onBack }) {
                             <div className="mb-6 bg-forest/10 w-16 h-16 rounded-2xl flex items-center justify-center">
                                 <Brain className="text-forest dark:text-white" size={32} />
                             </div>
-                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">Computer Vision & Deep Learning</h3>
+                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">{t('toolkit.vision.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60 mb-6 text-sm">
-                                Translating visual data into actionable insights using state-of-the-art frameworks.
+                                {t('toolkit.vision.description')}
                             </p>
                             <div className="space-y-4">
                                 <div className="flex items-center gap-3 text-ink dark:text-white">
@@ -202,17 +210,17 @@ export default function MatteoProfile({ onBack }) {
                             </div>
 
                             <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">
-                                Applied Research
+                                {t('toolkit.research.title')}
                             </h3>
 
                             <p className="text-ink/60 dark:text-white/60 mb-6 text-sm">
-                                Research fellow focused on Wi-Fi sensing and environmental perception, exploring how wireless signals can capture human presence and motion.
+                                {t('toolkit.research.description')}
                             </p>
 
                             <ul className="space-y-2 list-disc pl-4 text-ink/80 dark:text-white/80 font-medium">
-                                <li>Wi-Fi Sensing & Environmental Perception</li>
-                                <li>Human Motion Analysis</li>
-                                <li>Signal Processing & Preprocessing</li>
+                                <li>{t('toolkit.research.list.0')}</li>
+                                <li>{t('toolkit.research.list.1')}</li>
+                                <li>{t('toolkit.research.list.2')}</li>
                             </ul>
                         </Card>
 
@@ -222,64 +230,66 @@ export default function MatteoProfile({ onBack }) {
 
             <section className="py-20 px-4 bg-ink text-white">
                 <div className="max-w-5xl mx-auto">
-                    <h2 className="font-display text-5xl font-bold mb-12 text-center">SELECTED WORK</h2>
+                    <h2 className="font-display text-5xl font-bold mb-12 text-center">{t('work.title')}</h2>
 
                     <div className="space-y-12">
+                        {/* TRAID */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">Traid</h3>
-                                <span className="text-blue-400 font-mono font-bold">AI-FinTech Platform</span>
+                                <h3 className="font-display text-4xl font-bold">{t('work.traid.title')}</h3>
+                                <span className="text-blue-400 font-mono font-bold">{t('work.traid.tag')}</span>
                             </div>
                             <p className="text-white/60 mb-4 max-w-2xl">
-                                Making financial markets accessible through intelligence.
+                                {t('work.traid.subtitle')}
                             </p>
                             <div className="bg-white/5 p-6 rounded-xl border border-white/10">
                                 <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
-                                    My Role
+                                    {t('work.role_label')}
                                 </h4>
                                 <p className="text-white/70">
-                                    Built the web platform delivering AI-assisted trading signals and performance dashboards based on neural time-series models.
+                                    {t('work.traid.description')}
                                 </p>
                             </div>
                         </div>
 
+                        {/* AILIGHTS */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">AiLights</h3>
-                                <span className="text-blue-400 font-mono font-bold">Startup Project</span>
+                                <h3 className="font-display text-4xl font-bold">{t('work.ailights.title')}</h3>
+                                <span className="text-blue-400 font-mono font-bold">{t('work.ailights.tag')}</span>
                             </div>
                             <p className="text-white/60 mb-4 max-w-2xl">
-                                Creating a platform for automated sports statistics and live streaming.
+                                {t('work.ailights.subtitle')}
                             </p>
                             <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">My Role</h4>
+                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">{t('work.role_label')}</h4>
                                 <p className="text-white/70">
-                                    Developed the full-stack infrastructure, integrating AI models for computer vision and ffmpeg for real-time video processing.
+                                    {t('work.ailights.description')}
                                 </p>
                             </div>
                         </div>
 
+                        {/* GESTURE */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">Gesture Analysis</h3>
-                                <span className="text-blue-400 font-mono font-bold">Deep Learning</span>
+                                <h3 className="font-display text-4xl font-bold">{t('work.gesture.title')}</h3>
+                                <span className="text-blue-400 font-mono font-bold">{t('work.gesture.tag')}</span>
                             </div>
 
                             <p className="text-white/60 mb-4 max-w-2xl">
-                                Hand gesture understanding for deception detection and real-time ASL digit recognition.
+                                {t('work.gesture.subtitle')}
                             </p>
 
                             <div className="bg-white/5 p-6 rounded-xl border border-white/10 space-y-4">
                                 <div>
                                     <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
-                                        My Role
+                                        {t('work.role_label')}
                                     </h4>
                                     <p className="text-white/70">
-                                        Designed and trained recurrent neural models to detect deception from hand-gesture dynamics in video datasets,
-                                        as part of my B.Sc. thesis at Sapienza University.
-                                        <br />
-                                        Built a real-time computer-vision system for recognizing ASL digits (0–9) through hand-gesture analysis,
-                                        combining neural networks with live video inference.
+                                        {/* Qui usiamo t.rich per gestire i <br/> */}
+                                        {t.rich('work.gesture.description', {
+                                            br: () => <br />
+                                        })}
                                     </p>
                                 </div>
                             </div>
@@ -292,9 +302,9 @@ export default function MatteoProfile({ onBack }) {
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-forest/5 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <h2 className="font-display text-5xl font-bold mb-12">BEYOND THE CODE</h2>
+                    <h2 className="font-display text-5xl font-bold mb-12">{t('interests.title')}</h2>
                     <p className="text-xl text-ink/70 dark:text-white/70 mb-12 max-w-2xl mx-auto">
-                        Technology is my profession, but discovery is my passion.
+                        {t('interests.subtitle')}
                     </p>
 
                     <div className="grid md:grid-cols-3 gap-8">
@@ -302,9 +312,9 @@ export default function MatteoProfile({ onBack }) {
                             <div className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
                                 <Plane size={32} />
                             </div>
-                            <h3 className="font-bold text-xl mb-3">Culture & Travel</h3>
+                            <h3 className="font-bold text-xl mb-3">{t('interests.travel.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                I enjoy exploring new places and cultures — they're a constant source of inspiration and perspective.
+                                {t('interests.travel.description')}
                             </p>
                         </div>
 
@@ -312,9 +322,9 @@ export default function MatteoProfile({ onBack }) {
                             <div className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
                                 <Film size={32} />
                             </div>
-                            <h3 className="font-bold text-xl mb-3">Cinema</h3>
+                            <h3 className="font-bold text-xl mb-3">{t('interests.cinema.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                A lifelong movie lover, always inspired by powerful storytelling and visual imagination.
+                                {t('interests.cinema.description')}
                             </p>
                         </div>
 
@@ -322,9 +332,9 @@ export default function MatteoProfile({ onBack }) {
                             <div className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
                                 <Brain size={32} />
                             </div>
-                            <h3 className="font-bold text-xl mb-3">Curiosity & Learning</h3>
+                            <h3 className="font-bold text-xl mb-3">{t('interests.learning.title')}</h3>
                             <p className="text-ink/60 dark:text-white/60">
-                                Driven by curiosity, I’m always exploring new ideas, fields, and technologies — learning is my way of staying alive and evolving.
+                                {t('interests.learning.description')}
                             </p>
                         </div>
                     </div>
@@ -332,7 +342,7 @@ export default function MatteoProfile({ onBack }) {
             </section>
             <section className="pt-20 pb-10 text-center bg-forest text-white">
                 <h2 className="font-display text-4xl mb-2">MATTEO CESE</h2>
-                <p className="text-white/50 mb-8">Rome, Italy • Full Stack & AI Expert</p>
+                <p className="text-white/50 mb-8">{t('contact.location')}</p>
                 <div className="flex justify-center gap-4">
                     <a
                         href="/cv/matteo.pdf"
@@ -340,7 +350,7 @@ export default function MatteoProfile({ onBack }) {
                         rel="noopener noreferrer"
                     >
                         <Button>
-                            View My CV
+                            {t('contact.cv_button')}
                         </Button>
                     </a>
                 </div>

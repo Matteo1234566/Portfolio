@@ -1,6 +1,6 @@
 "use client";
 
-import Navbar from "@/app/sections/Navbar";
+import Navbar from "@/app/[locale]/sections/Navbar";
 import React from "react";
 import {Providers} from "@/app/providers";
 export default function ClientLayout({ children }) {

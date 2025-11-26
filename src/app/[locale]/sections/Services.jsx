@@ -1,46 +1,48 @@
 'use client';
 
 import React from 'react';
-import Card from '@/app/sections/ui/Card';
+import Card from '@/app/[locale]/sections/ui/Card';
 import { Brain, Layers, Smartphone, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const services = [
-  {
-    id: 'ai',
-    title: 'AI & ML Engineering',
-    icon: <Brain size={48} className="text-bubblegum" />,
-    description:
-        "We build custom models, NLP pipelines, and computer vision systems that actually solve problems.",
-    tags: ['Prediction Models', 'Computer Vision', 'Data Pipelines'],
-  },
-  {
-    id: 'fullstack',
-    title: 'Full-Stack Systems',
-    icon: <Layers size={48} className="text-bubblegum" />,
-    description:
-        'Robust, scalable backends and reactive frontends. We ensure your infrastructure grows with you.',
-    tags: ['React / Next.js', 'Django / Python', 'Scalable APIs'],
-  },
-  {
-    id: 'product',
-    title: 'Product Architecture',
-    icon: <Smartphone size={48} className="text-bubblegum" />,
-    description:
-        "We don't just code; we design. Human-friendly UIs and solid user experience principles from day one.",
-    tags: ['UX Design', 'System Arch', 'Soft Brutalism'],
-  },
-  {
-    id: 'consulting',
-    title: 'Startup Consulting',
-    icon: <Zap size={48} className="text-bubblegum" />,
-    description:
-        'Need an MVP yesterday? We help define technical strategy and build fast to validate your market.',
-    tags: ['MVP Development', 'Tech Strategy', 'Fast Iteration'],
-  },
-];
+// 1. Import hook
+import { useTranslations } from 'next-intl';
 
 export default function Services() {
+  // 2. Inizializza hook
+  const t = useTranslations('Services');
+
+  // 3. Ricostruisci l'array usando le traduzioni
+  const services = [
+    {
+      id: 'ai',
+      title: t('items.ai.title'),
+      icon: <Brain size={48} className="text-bubblegum" />,
+      description: t('items.ai.description'),
+      tags: [t('items.ai.tags.0'), t('items.ai.tags.1'), t('items.ai.tags.2')],
+    },
+    {
+      id: 'fullstack',
+      title: t('items.fullstack.title'),
+      icon: <Layers size={48} className="text-bubblegum" />,
+      description: t('items.fullstack.description'),
+      tags: [t('items.fullstack.tags.0'), t('items.fullstack.tags.1'), t('items.fullstack.tags.2')],
+    },
+    {
+      id: 'product',
+      title: t('items.product.title'),
+      icon: <Smartphone size={48} className="text-bubblegum" />,
+      description: t('items.product.description'),
+      tags: [t('items.product.tags.0'), t('items.product.tags.1'), t('items.product.tags.2')],
+    },
+    {
+      id: 'consulting',
+      title: t('items.consulting.title'),
+      icon: <Zap size={48} className="text-bubblegum" />,
+      description: t('items.consulting.description'),
+      tags: [t('items.consulting.tags.0'), t('items.consulting.tags.1'), t('items.consulting.tags.2')],
+    },
+  ];
+
   return (
       <div className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="mb-24 text-center md:text-left">
@@ -50,7 +52,7 @@ export default function Services() {
               viewport={{ once: false }}
               className="text-bubblegum font-bold tracking-widest uppercase text-sm mb-2 block"
           >
-            What we do
+            {t('label')}
           </motion.span>
           <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -59,8 +61,8 @@ export default function Services() {
               transition={{ delay: 0.1 }}
               className="font-display text-5xl md:text-7xl font-bold text-white leading-tight"
           >
-            FROM RESEARCH <br />
-            TO <span className="text-bubblegum italic">PRODUCTION</span>
+            {t('heading.top')} <br />
+            {t('heading.bottom')} <span className="text-bubblegum italic">{t('heading.highlight')}</span>
           </motion.h2>
         </div>
 

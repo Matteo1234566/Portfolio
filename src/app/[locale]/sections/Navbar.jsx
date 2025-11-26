@@ -1,18 +1,32 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Button from '@/app/sections/ui/Button';
+import Button from '@/app/[locale]/sections/ui/Button';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import { usePathname, useRouter } from 'next/navigation';
+// 1. IMPORT NUOVO
+import { useTranslations } from 'next-intl';
 
 export default function Navbar() {
+  // 2. INIZIALIZZA TRADUZIONI
+  const t = useTranslations('Navbar');
+
   const { theme, setTheme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
+
+  // Array delle chiavi per i link (minuscolo per matchare il JSON)
+  const navLinks = ['duo', 'services', 'projects'];
 
   useEffect(() => {
     setMounted(true);
@@ -24,6 +38,12 @@ export default function Navbar() {
 
   const toggleTheme = () => {
     setTheme(currentTheme === 'light' ? 'dark' : 'light');
+  };
+
+  const toggleLanguage = () => {
+    const newLocale = currentLocale === 'it' ? 'en' : 'it';
+    const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
+    router.push(newPath);
   };
 
   useEffect(() => {
@@ -56,8 +76,9 @@ export default function Navbar() {
             ${scrolled ? 'scale-95' : 'scale-100'}
           `}
           >
+            {/* LOGO */}
             <Link
-                href="/#hero"
+                href={`/${currentLocale}#hero`}
                 className="relative z-50 hover:opacity-80 transition-opacity flex items-center"
                 onClick={() => setIsOpen(false)}
             >
@@ -67,7 +88,7 @@ export default function Navbar() {
                         ? '/logo_moon.webp'
                         : '/logo_sun.webp'
                   }
-                  alt="Logo"
+                  alt={t('logo_alt')}
                   width={180}
                   height={180}
                   className="object-contain h-10 w-auto cursor-pointer"
@@ -75,25 +96,38 @@ export default function Navbar() {
               />
             </Link>
 
+            {/* DESKTOP LINKS */}
             <div className="hidden md:flex items-center space-x-8 font-medium text-ink dark:text-smoke">
-              {['Duo', 'Services', 'Projects'].map((item) => (
+              {navLinks.map((key) => (
                   <Link
-                      key={item}
-                      href={`/#${item.toLowerCase()}`}
+                      key={key}
+                      href={`/${currentLocale}#${key}`}
                       onClick={() => setIsOpen(false)}
-                      className="hover:text-forest dark:hover:text-bubblegum transition-colors relative group"
+                      className="hover:text-forest dark:hover:text-bubblegum transition-colors relative group capitalize"
                   >
-                    {item}
+                    {t(`links.${key}`)}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-bubblegum transition-all group-hover:w-full" />
                   </Link>
               ))}
             </div>
 
+            {/* DESKTOP ACTIONS */}
             <div className="hidden md:flex items-center gap-3">
+
+              {/* LANGUAGE SWITCHER (DESKTOP) */}
+              <button
+                  onClick={toggleLanguage}
+                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-smoke dark:hover:bg-white/10 transition-colors text-lg leading-none"
+                  aria-label={t('lang.switch_label')}
+                  title={currentLocale === 'it' ? t('lang.to_en') : t('lang.to_it')}
+              >
+                <span className="mb-0.5">{currentLocale === 'it' ? '🇬🇧' : '🇮🇹'}</span>
+              </button>
+
               <button
                   onClick={toggleTheme}
                   className="p-2 rounded-full hover:bg-smoke dark:hover:bg-white/10 transition-colors text-ink dark:text-white"
-                  aria-label="Toggle theme"
+                  aria-label={t('theme.toggle_label')}
               >
                 {currentTheme === 'light' ? (
                     <Moon size={20} />
@@ -103,22 +137,24 @@ export default function Navbar() {
               </button>
 
               <Button className="text-sm px-5 py-2">
-                <Link href="/#footer" onClick={() => setIsOpen(false)}>
-                  Let's Talk
+                <Link href={`/${currentLocale}#footer`} onClick={() => setIsOpen(false)}>
+                  {t('cta')}
                 </Link>
               </Button>
             </div>
 
+            {/* HAMBURGER TOGGLE */}
             <button
                 className="md:hidden p-2 text-ink dark:text-white focus:outline-none relative z-50"
                 onClick={() => setIsOpen(!isOpen)}
-                aria-label={isOpen ? 'Close menu' : 'Open menu'}
+                aria-label={isOpen ? t('menu.close') : t('menu.open')}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </nav>
 
+        {/* MOBILE MENU */}
         <AnimatePresence>
           {isOpen && (
               <motion.div
@@ -129,19 +165,20 @@ export default function Navbar() {
                   className="fixed inset-0 z-40 bg-paper dark:bg-ink pt-32 px-6 md:hidden flex flex-col items-center justify-start overflow-y-auto"
               >
                 <div className="flex flex-col items-center gap-8 w-full max-w-sm pb-10">
-                  {['Duo', 'Services', 'Projects'].map((item) => (
+                  {navLinks.map((key) => (
                       <Link
-                          key={item}
-                          href={`/#${item.toLowerCase()}`}
+                          key={key}
+                          href={`/${currentLocale}#${key}`}
                           onClick={() => setIsOpen(false)}
-                          className="font-display text-4xl font-bold text-ink dark:text-white hover:text-bubblegum transition-colors w-full text-center"
+                          className="font-display text-4xl font-bold text-ink dark:text-white hover:text-bubblegum transition-colors w-full text-center capitalize"
                       >
-                        {item}
+                        {t(`links.${key}`)}
                       </Link>
                   ))}
 
                   <div className="w-24 h-px bg-ink/10 dark:bg-white/10 my-2" />
 
+                  {/* THEME SWITCHER MOBILE */}
                   <button
                       onClick={toggleTheme}
                       className="flex items-center gap-3 font-medium text-xl text-ink dark:text-white hover:text-bubblegum transition-colors"
@@ -152,13 +189,26 @@ export default function Navbar() {
                         <Sun size={24} />
                     )}
                     <span>
-                  {currentTheme === 'light' ? 'Dark Mode' : 'Light Mode'}
-                </span>
+                      {currentTheme === 'light' ? t('theme.dark_mode') : t('theme.light_mode')}
+                    </span>
+                  </button>
+
+                  {/* LANGUAGE SWITCHER MOBILE */}
+                  <button
+                      onClick={() => toggleLanguage()}
+                      className="flex items-center gap-3 font-medium text-xl text-ink dark:text-white hover:text-bubblegum transition-colors"
+                  >
+                    <span className="text-2xl leading-none">
+                        {currentLocale === 'it' ? '🇬🇧' : '🇮🇹'}
+                    </span>
+                    <span>
+                      {currentLocale === 'it' ? t('lang.to_en') : t('lang.to_it')}
+                    </span>
                   </button>
 
                   <Button className="w-full text-lg py-4 mt-4">
-                    <Link href="/#footer" onClick={() => setIsOpen(false)}>
-                      Let's Talk
+                    <Link href={`/${currentLocale}#footer`} onClick={() => setIsOpen(false)}>
+                      {t('cta')}
                     </Link>
                   </Button>
                 </div>
