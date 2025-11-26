@@ -2,14 +2,12 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import Button from '@/app/[locale]/sections/ui/Button';
+import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
-// 1. Import hook
 import { useTranslations } from 'next-intl';
 
 export default function Footer() {
-    // 2. Inizializza hook
     const t = useTranslations('Footer');
 
     const { theme, systemTheme } = useTheme();

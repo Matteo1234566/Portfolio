@@ -1,21 +1,18 @@
 'use client';
 
 import React from 'react';
-import Button from '@/app/[locale]/sections/ui/Button';
-import { ArrowDoodle } from '@/app/[locale]/sections/Doodles'; // Controlla che il percorso sia corretto
+import Button from '@/app/[locale]/(site)/sections/ui/Button';
+import { ArrowDoodle } from '@/app/[locale]/(site)/sections/Doodles';
 import { motion } from 'framer-motion';
 import { ExternalLink } from "lucide-react";
 import Link from 'next/link';
-// 1. Import hook necessari
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
 export default function Hero() {
-  // 2. Inizializza traduzioni e percorso
   const t = useTranslations('Hero');
   const pathname = usePathname();
 
-  // Rileva la lingua corrente per i Link interni (come fatto nella Navbar)
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
   return (
@@ -23,7 +20,6 @@ export default function Hero() {
         <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#1e1b4b_1px,transparent_1px)] dark:bg-[radial-gradient(#f8fafc_1px,transparent_1px)] [background-size:16px_16px] transition-all duration-300"></div>
 
         <div className="relative z-10 max-w-5xl mx-auto">
-          {/* BADGE */}
           <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -36,7 +32,6 @@ export default function Hero() {
           </span>
           </motion.div>
 
-          {/* HEADLINE */}
           <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,7 +53,6 @@ export default function Hero() {
           </span>
           </motion.h1>
 
-          {/* BIO PARAGRAPH - Composto pezzo per pezzo per mantenere gli stili */}
           <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -68,7 +62,6 @@ export default function Hero() {
             {t('bio.intro')} <span className="font-bold text-bubblegum">{t('bio.names')}</span>.
             {" "}{t('bio.role_start')}{" "}
 
-            {/* Parola "human" / "umani" animata */}
             <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
             {t('bio.human')}
               <motion.span
@@ -81,7 +74,6 @@ export default function Hero() {
             </span>
             {t('bio.role_end')}{" "}
 
-            {/* Parola "4AI" animata */}
             <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
             {t('bio.startup_name')}
               <motion.span
@@ -95,7 +87,6 @@ export default function Hero() {
             {t('bio.startup_desc')}
             {" "}{t('bio.podcast_start')}
 
-            {/* Link Podcast animato */}
             <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
               <a
                   href="https://your-podcast-link.com"
@@ -118,7 +109,6 @@ export default function Hero() {
 
           </motion.p>
 
-          {/* BUTTONS */}
           <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -127,13 +117,13 @@ export default function Hero() {
           >
             <Button>
               <Link
-                  href={`/${currentLocale}#projects`} // Usa currentLocale
+                  href={`/${currentLocale}#projects`}
               >
                 {t('buttons.work')}
               </Link>
             </Button>
             <Link
-                href={`/${currentLocale}#duo`} // Usa currentLocale
+                href={`/${currentLocale}#duo`}
                 className="group flex items-center gap-2 font-display font-bold text-lg hover:underline decoration-wavy decoration-bubblegum underline-offset-4 text-ink dark:text-white"
             >
               {t('buttons.duo')}
@@ -142,7 +132,6 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* BACKGROUND BLOBS (Invariati) */}
         <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}

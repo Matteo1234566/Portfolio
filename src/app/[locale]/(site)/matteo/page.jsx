@@ -3,10 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Server, Wifi, Plane, Film, Code, Mail, Linkedin } from 'lucide-react';
-import Card from '@/app/[locale]/sections/ui/Card';
-import Button from '@/app/[locale]/sections/ui/Button';
+import Card from '@/app/[locale]/(site)/sections/ui/Card';
+import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import Image from 'next/image';
-// 1. Import Hook
 import { useTranslations } from 'next-intl';
 
 import {
@@ -23,8 +22,7 @@ import {
 
 import { FaJava } from "react-icons/fa";
 
-export default function MatteoProfile({ onBack }) {
-    // 2. Inizializza Hook
+export default function MatteoProfile() {
     const t = useTranslations('MatteoProfile');
 
     return (
@@ -91,7 +89,6 @@ export default function MatteoProfile({ onBack }) {
                         </h2>
                         <div className="space-y-6 text-lg leading-relaxed text-ink/80 dark:text-smoke">
                             <p>
-                                {/* t.rich permette di usare tag HTML come <strong> dentro la stringa JSON */}
                                 {t.rich('about.p1', {
                                     strong: (chunks) => <strong className="text-ink dark:text-white">{chunks}</strong>
                                 })}
@@ -113,7 +110,7 @@ export default function MatteoProfile({ onBack }) {
                     >
                         <Card className="!p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
                             <Image
-                                src="/images/matteo.webp" // Assicurati che il percorso immagine esista
+                                src="/images/matteo.webp"
                                 alt="Matteo Cese"
                                 fill
                                 loading="lazy"
@@ -233,7 +230,6 @@ export default function MatteoProfile({ onBack }) {
                     <h2 className="font-display text-5xl font-bold mb-12 text-center">{t('work.title')}</h2>
 
                     <div className="space-y-12">
-                        {/* TRAID */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">{t('work.traid.title')}</h3>
@@ -252,7 +248,6 @@ export default function MatteoProfile({ onBack }) {
                             </div>
                         </div>
 
-                        {/* AILIGHTS */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">{t('work.ailights.title')}</h3>
@@ -269,7 +264,6 @@ export default function MatteoProfile({ onBack }) {
                             </div>
                         </div>
 
-                        {/* GESTURE */}
                         <div className="group border-l-2 border-white/20 pl-8 hover:border-blue-500 transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
                                 <h3 className="font-display text-4xl font-bold">{t('work.gesture.title')}</h3>
@@ -286,7 +280,6 @@ export default function MatteoProfile({ onBack }) {
                                         {t('work.role_label')}
                                     </h4>
                                     <p className="text-white/70">
-                                        {/* Qui usiamo t.rich per gestire i <br/> */}
                                         {t.rich('work.gesture.description', {
                                             br: () => <br />
                                         })}

@@ -33,7 +33,6 @@ export const DoodleSnap = ({ className }) => (
 
 export const ArrowDoodle = ({ className }) => (
     <svg className={className} width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
-        {/* Cambia stroke="black" in stroke="currentColor" */}
         <g fill="none" stroke="currentColor" strokeWidth="16" strokeLinecap="round" strokeLinejoin="round">
 
             <path d="M 20,110 C 60,30 200,30 270,110"/>

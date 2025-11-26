@@ -1,11 +1,10 @@
 'use client';
 
 import React from 'react';
-import Card from '@/app/[locale]/sections/ui/Card';
-import Button from '@/app/[locale]/sections/ui/Button';
+import Card from '@/app/[locale]/(site)/sections/ui/Card';
+import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
-// 1. Import hook
 import { useTranslations } from 'next-intl';
 
 const container = {
@@ -30,10 +29,8 @@ const item = {
 };
 
 export default function Projects() {
-  // 2. Inizializza hook
   const t = useTranslations('Projects');
 
-  // 3. Ricostruzione dell'array projects
   const projects = [
     {
       id: 'ailights',
@@ -119,7 +116,6 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-ink/60 dark:text-smoke/60 max-w-xs mt-4 md:mt-0 text-right hidden md:block"
           >
-            {/* Gestione delle "a capo" nel sottotitolo */}
             {t.rich('subtitle', {
               br: () => <br />
             })}

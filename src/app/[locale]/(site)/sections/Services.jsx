@@ -1,17 +1,14 @@
 'use client';
 
 import React from 'react';
-import Card from '@/app/[locale]/sections/ui/Card';
+import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import { Brain, Layers, Smartphone, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
-// 1. Import hook
 import { useTranslations } from 'next-intl';
 
 export default function Services() {
-  // 2. Inizializza hook
   const t = useTranslations('Services');
 
-  // 3. Ricostruisci l'array usando le traduzioni
   const services = [
     {
       id: 'ai',

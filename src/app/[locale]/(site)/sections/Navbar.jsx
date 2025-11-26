@@ -1,18 +1,16 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Button from '@/app/[locale]/sections/ui/Button';
+import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { usePathname, useRouter } from 'next/navigation';
-// 1. IMPORT NUOVO
 import { useTranslations } from 'next-intl';
 
 export default function Navbar() {
-  // 2. INIZIALIZZA TRADUZIONI
   const t = useTranslations('Navbar');
 
   const { theme, setTheme, systemTheme } = useTheme();
@@ -25,7 +23,6 @@ export default function Navbar() {
 
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
-  // Array delle chiavi per i link (minuscolo per matchare il JSON)
   const navLinks = ['duo', 'services', 'projects'];
 
   useEffect(() => {
@@ -76,7 +73,6 @@ export default function Navbar() {
             ${scrolled ? 'scale-95' : 'scale-100'}
           `}
           >
-            {/* LOGO */}
             <Link
                 href={`/${currentLocale}#hero`}
                 className="relative z-50 hover:opacity-80 transition-opacity flex items-center"
@@ -96,7 +92,6 @@ export default function Navbar() {
               />
             </Link>
 
-            {/* DESKTOP LINKS */}
             <div className="hidden md:flex items-center space-x-8 font-medium text-ink dark:text-smoke">
               {navLinks.map((key) => (
                   <Link
@@ -111,10 +106,8 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* DESKTOP ACTIONS */}
             <div className="hidden md:flex items-center gap-3">
 
-              {/* LANGUAGE SWITCHER (DESKTOP) */}
               <button
                   onClick={toggleLanguage}
                   className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-smoke dark:hover:bg-white/10 transition-colors text-lg leading-none"
@@ -143,7 +136,6 @@ export default function Navbar() {
               </Button>
             </div>
 
-            {/* HAMBURGER TOGGLE */}
             <button
                 className="md:hidden p-2 text-ink dark:text-white focus:outline-none relative z-50"
                 onClick={() => setIsOpen(!isOpen)}
@@ -154,7 +146,6 @@ export default function Navbar() {
           </div>
         </nav>
 
-        {/* MOBILE MENU */}
         <AnimatePresence>
           {isOpen && (
               <motion.div
@@ -178,7 +169,6 @@ export default function Navbar() {
 
                   <div className="w-24 h-px bg-ink/10 dark:bg-white/10 my-2" />
 
-                  {/* THEME SWITCHER MOBILE */}
                   <button
                       onClick={toggleTheme}
                       className="flex items-center gap-3 font-medium text-xl text-ink dark:text-white hover:text-bubblegum transition-colors"
@@ -193,7 +183,6 @@ export default function Navbar() {
                     </span>
                   </button>
 
-                  {/* LANGUAGE SWITCHER MOBILE */}
                   <button
                       onClick={() => toggleLanguage()}
                       className="flex items-center gap-3 font-medium text-xl text-ink dark:text-white hover:text-bubblegum transition-colors"

@@ -1,11 +1,10 @@
 'use client';
 
 import React from 'react';
-import Card from '@/app/[locale]/sections/ui/Card';
+import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import { Cpu, Code, Music, Search, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-// 1. Import Hook
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 
@@ -26,19 +25,16 @@ const item = {
 };
 
 export default function Duo({ onNavigate }) {
-  // 2. Inizializzazione Hook
   const t = useTranslations('Duo');
   const pathname = usePathname();
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
-  // 3. Array Profiles ricostruito DENTRO il componente per usare t()
   const profiles = [
     {
-      id: "simone", // Utile per link univoci se servisse
+      id: "simone",
       name: t('simone.name'),
       role: t('simone.role'),
       description: t('simone.description'),
-      // Mappiamo manualmente le chiavi stats 0, 1, 2
       stats: [t('simone.stats.0'), t('simone.stats.1'), t('simone.stats.2')],
       iconBig: <Cpu size={120} />,
       iconSmall: <Music size={24} className="text-ink" />,
@@ -88,7 +84,6 @@ export default function Duo({ onNavigate }) {
             viewport={{ once: false, margin: "-100px" }}
             className="grid md:grid-cols-2 gap-8"
         >
-          {/* Mappiamo l'array profiles per evitare codice duplicato */}
           {profiles.map((profile, index) => (
               <motion.div
                   key={index}
@@ -107,7 +102,6 @@ export default function Duo({ onNavigate }) {
                       {profile.role}
                     </span>
                     </div>
-                    {/* Icona piccola dinamica */}
                     <div className={`w-16 h-16 ${profile.smallIconColorClass} rounded-full border-2 border-ink dark:border-white flex items-center justify-center group-hover:scale-110 transition-transform`}>
                       {profile.iconSmall}
                     </div>

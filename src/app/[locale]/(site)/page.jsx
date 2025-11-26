@@ -1,15 +1,15 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Hero from "@/app/[locale]/sections/Hero";
-import Duo from "@/app/[locale]/sections/Duo";
-import Services from "@/app/[locale]/sections/Services";
-import Projects from "@/app/[locale]/sections/Projects";
+import Hero from "@/app/[locale]/(site)/sections/Hero";
+import Duo from "@/app/[locale]/(site)/sections/Duo";
+import Services from "@/app/[locale]/(site)/sections/Services";
+import Projects from "@/app/[locale]/(site)/sections/Projects";
 import { motion, AnimatePresence } from 'framer-motion';
-import {LoadingScreen} from "@/app/[locale]/sections/LoadingScreen";
+import {LoadingScreen} from "@/app/[locale]/(site)/sections/LoadingScreen";
 import Image from 'next/image';
 import { useTheme } from "next-themes";
-import Footer from "@/app/[locale]/sections/Footer";
+import Footer from "@/app/[locale]/(site)/sections/Footer";
 
 export default function PortfolioLanding() {
     const [isLoading, setIsLoading] = useState(true);

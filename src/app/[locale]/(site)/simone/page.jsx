@@ -2,11 +2,10 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Card from '@/app/[locale]/sections/ui/Card';
-import Button from '@/app/[locale]/sections/ui/Button';
+import Card from '@/app/[locale]/(site)/sections/ui/Card';
+import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { Brain, Layers, Music, Dumbbell, Wifi } from 'lucide-react';
 import Image from 'next/image';
-// 1. Import Hook
 import { useTranslations } from 'next-intl';
 
 import {
@@ -21,8 +20,7 @@ import {
     SiRedis, SiRoboflow, SiNumpy
 } from "react-icons/si";
 
-export default function SimoneProfile({ onBack }) {
-    // 2. Inizializza Hook
+export default function SimoneProfile() {
     const t = useTranslations('SimoneProfile');
 
     return (
@@ -89,7 +87,6 @@ export default function SimoneProfile({ onBack }) {
                         </h2>
                         <div className="space-y-6 text-lg leading-relaxed text-ink/80 dark:text-smoke">
                             <p>
-                                {/* Gestione complessa: Grassetto normale E highlight colorato */}
                                 {t.rich('about.p1', {
                                     strong: (chunks) => <strong className="text-ink dark:text-white">{chunks}</strong>,
                                     highlight: (chunks) => (
@@ -230,7 +227,6 @@ export default function SimoneProfile({ onBack }) {
                     <h2 className="font-display text-5xl font-bold mb-12 text-center">{t('work.title')}</h2>
 
                     <div className="space-y-12">
-                        {/* AILIGHTS */}
                         <div
                             className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
@@ -250,7 +246,6 @@ export default function SimoneProfile({ onBack }) {
                             </div>
                         </div>
 
-                        {/* SCREEBA */}
                         <div
                             className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
@@ -270,7 +265,6 @@ export default function SimoneProfile({ onBack }) {
                             </div>
                         </div>
 
-                        {/* TRAID */}
                         <div
                             className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
                             <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
