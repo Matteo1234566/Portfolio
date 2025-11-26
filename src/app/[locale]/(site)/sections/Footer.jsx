@@ -68,14 +68,33 @@ export default function Footer() {
                         {t('description')}
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                        <a href="mailto:hello@simoneandmatteo.com" className="no-underline">
+                        <a href="mailto:magosimo99@gmail.com" className="no-underline">
                             <Button variant="primary" className="text-lg px-10 py-4">
                                 {t('cta.email')}
                             </Button>
                         </a>
-                        <Button variant="outline" className="text-lg px-10 py-4">
-                            {t('cta.book')}
-                        </Button>
+                        <a
+                            href="https://calendly.com/magosimo99/30min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="no-underline"
+                        >
+                            <Button variant="outline" className="text-lg px-10 py-4">
+                                {t('cta.book')}
+                            </Button>
+                        </a>
+                    </div>
+                    <div className="mt-6 flex justify-center">
+                        <a
+                            href="https://liberapay.com/MagoSimo/donate"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="no-underline"
+                        >
+                            <Button variant="outline" className="text-lg px-10 py-4">
+                                {t('buyCoffee')}
+                            </Button>
+                        </a>
                     </div>
                 </motion.div>
 
