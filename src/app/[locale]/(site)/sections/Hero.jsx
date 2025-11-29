@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { ArrowDoodle } from '@/app/[locale]/(site)/sections/Doodles';
 import { motion } from 'framer-motion';
@@ -8,12 +8,19 @@ import { ExternalLink } from "lucide-react";
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+import CookingModal from "@/app/[locale]/(site)/sections/ui/Modal";
 
 export default function Hero() {
   const t = useTranslations('Hero');
   const pathname = usePathname();
 
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
+  const [isCooking, setIsCooking] = useState(false);
+
+  const handlePodcastClick = (e) => {
+    e.preventDefault();
+    setIsCooking(true);
+  };
 
   return (
       <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
@@ -59,7 +66,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="text-lg md:text-xl max-w-2xl mx-auto text-ink/80 dark:text-smoke/80 mb-10 leading-relaxed transition-colors duration-300"
           >
-            {t('bio.intro')} <span className="font-bold text-bubblegum">{t('bio.names')}</span>.
+            {t('bio.intro')} <span className="font-bold text-bubblegum">{t('bio.names')}</span>
             {" "}{t('bio.role_start')}{" "}
 
             <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
@@ -75,7 +82,15 @@ export default function Hero() {
             {t('bio.role_end')}{" "}
 
             <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
-            {t('bio.startup_name')}
+              <a
+                  href="https://4aitech.it"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 hover:text-bubblegum transition-colors"
+              >
+                {t('bio.startup_name')}
+                <ExternalLink size={16} />
+              </a>
               <motion.span
                   className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
                   initial={{ scaleX: 0 }}
@@ -87,11 +102,9 @@ export default function Hero() {
             {t('bio.startup_desc')}
             {" "}{t('bio.podcast_start')}
 
-            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
+            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white cursor-pointer">
               <a
-                  href="https://your-podcast-link.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={handlePodcastClick}
                   className="inline-flex items-center gap-1 hover:text-bubblegum transition-colors"
               >
                 {t('bio.podcast_link')}
@@ -144,6 +157,7 @@ export default function Hero() {
             transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
             className="absolute top-1/4 -right-24 w-80 h-80 bg-forest/10 dark:bg-white/5 rounded-full blur-3xl pointer-events-none"
         ></motion.div>
+        <CookingModal isOpen={isCooking} onClose={() => setIsCooking(false)} />
       </section>
   );
 }

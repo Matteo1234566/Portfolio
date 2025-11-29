@@ -23,7 +23,8 @@ export default function Navbar() {
 
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
-  const navLinks = ['duo', 'services', 'projects', 'blogs'];
+  // const navLinks = ['duo', 'services', 'projects', 'blogs'];
+  const navLinks = ['duo', 'services', 'projects'];
 
   useEffect(() => {
     setMounted(true);

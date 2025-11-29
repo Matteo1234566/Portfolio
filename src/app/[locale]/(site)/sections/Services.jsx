@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
-import { Brain, Layers, Smartphone, Zap } from 'lucide-react';
+import { Brain, Layers, Hammer, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
@@ -25,19 +25,19 @@ export default function Services() {
       tags: [t('items.fullstack.tags.0'), t('items.fullstack.tags.1'), t('items.fullstack.tags.2')],
     },
     {
-      id: 'product',
-      title: t('items.product.title'),
-      icon: <Smartphone size={48} className="text-bubblegum" />,
-      description: t('items.product.description'),
-      tags: [t('items.product.tags.0'), t('items.product.tags.1'), t('items.product.tags.2')],
-    },
-    {
       id: 'consulting',
       title: t('items.consulting.title'),
       icon: <Zap size={48} className="text-bubblegum" />,
       description: t('items.consulting.description'),
       tags: [t('items.consulting.tags.0'), t('items.consulting.tags.1'), t('items.consulting.tags.2')],
     },
+    {
+      id: 'product',
+      title: t('items.product.title'),
+      icon: <Hammer size={48} className="text-bubblegum" />,
+      description: t('items.product.description'),
+      tags: [t('items.product.tags.0'), t('items.product.tags.1'), t('items.product.tags.2')],
+    }
   ];
 
   return (

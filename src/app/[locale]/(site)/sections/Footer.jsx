@@ -64,8 +64,11 @@ export default function Footer() {
                     <h2 className="font-display text-6xl md:text-8xl font-bold mb-6 leading-none">
                         {t('heading.start')} <br /> <span className="text-bubblegum">{t('heading.highlight')}</span>
                     </h2>
-                    <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+                    <p className="text-xl text-white/80 max-w-2xl mx-auto">
                         {t('description')}
+                    </p>
+                    <p className="text-xl text-white/80 max-w-2xl mx-auto mb-10">
+                        {t('description2')}
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
                         <a href="mailto:magosimo99@gmail.com" className="no-underline">

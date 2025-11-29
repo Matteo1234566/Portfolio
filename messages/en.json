@@ -32,13 +32,13 @@
     },
     "bio": {
       "intro": "We are",
-      "names": "Simone & Matteo",
-      "role_start": "An AI + Full-Stack duo building products that feel",
+      "names": "Simone & Matteo,",
+      "role_start": "a pair of full-stack developer friends, experts in Computer Vision and Deep Learning. We develop",
       "human": "innovative",
-      "role_end": ", scalable, and fast. We also co-founded",
+      "role_end": "solutions and provide technical consulting. We co-founded",
       "startup_name": "4AI",
-      "startup_desc": ", a startup born within Sapienza University.",
-      "podcast_start": "And when we’re not coding, you can probably find us chatting away on our",
+      "startup_desc": ", a startup born at Sapienza University.",
+      "podcast_start": "If we’re not working on one of our projects, you can probably find us chatting on our",
       "podcast_link": "podcast"
     },
     "buttons": {
@@ -49,25 +49,25 @@
   "Duo": {
     "title_start": "THE",
     "title_highlight": "DUO",
-    "subtitle": "One brain for AI, one brain for scale — forged together to move faster than any agency.",
+    "subtitle": "Problems & Solutions: one mind to rule them all, one mind to find them, and faster with the code release them",
     "cta_profile": "View Profile",
     "simone": {
       "name": "Simone Zannini",
-      "role": "The Architect",
-      "description": "Deep learning specialist and system architect. I translate innovative ideas into production code and chaotic data into clear insights.",
+      "role": "aka er nanno",
+      "description": "At 13, I was already deep into HTML and CSS, and my passion for development has never faded. The tricky part is that I now spend too many hours at the PC: I would have preferred development to remain a pure hobby, but here we are!\nI do a lot of other things, but... There is a time and place for everything, but not now!",
       "stats": {
         "0": "Deep Neural Networks",
-        "1": "Data Analysis",
-        "2": "Computer Vision"
+        "1": "Focaccia",
+        "2": "ADHD"
       }
     },
     "matteo": {
       "name": "Matteo Cese",
-      "role": "The Builder",
-      "description": "Full-Stack developer with a research-driven mindset. I design and ship end-to-end products from scalable web platforms to computer vision and deep learning pipelines bridging innovation with real-world impact.",
+      "role": "aka er mago",
+      "description": "I turned my interest in computer science first into a field of study and then into a career. Eager for knowledge, I am constantly seeking to try my hand at new projects. I design and develop scalable solutions. Returning to the finer things in life: I am an avid reader and film enthusiast\uD83D\uDE05.",
       "stats": {
-        "0": "Deep Learning",
-        "1": "Computer Vision",
+        "0": "DOC",
+        "1": "Deep Learning",
         "2": "Scalable Architectures & DevOps"
       }
     }
@@ -98,30 +98,30 @@
           "2": "Scalable APIs"
         }
       },
-      "product": {
-        "title": "Product Architecture",
-        "description": "We don't just code; we design. Human-friendly UIs and solid user experience principles from day one.",
+      "consulting": {
+        "title": "IT Consulting",
+        "description": "Do you have an IT problem or question? Contact us for advice and start designing the right solution for you with us.",
         "tags": {
-          "0": "UX Design",
-          "1": "System Arch",
-          "2": "Soft Brutalism"
+          "0": "Experience",
+          "1": "Tech Strategy",
+          "2": "Speed"
         }
       },
-      "consulting": {
-        "title": "Startup Consulting",
-        "description": "Need an MVP yesterday? We help define technical strategy and build fast to validate your market.",
+      "product": {
+        "title": "Get our hands dirty",
+        "description": "We disassemble, repair, and customize all types of electronic devices. Entrust us with your device, and we will return it to you in worse condition than before, with no returns or guarantees.",
         "tags": {
-          "0": "MVP Development",
-          "1": "Tech Strategy",
-          "2": "Fast Iteration"
+          "0": "Passion",
+          "1": "Perfectionism",
+          "2": "Practice"
         }
       }
     }
   },
   "Projects": {
-    "heading": "SELECTED",
-    "heading_highlight": "WORK",
-    "subtitle": "We snap our fingers,\nyour product comes alive.",
+    "heading": "OUR",
+    "heading_highlight": "PROJECTS",
+    "subtitle": "A man's dream will never die.",
     "cta": "View 4AI Website",
     "items": {
       "ailights": {
@@ -156,14 +156,14 @@
           "2": "Docker"
         }
       },
-      "sensing": {
-        "title": "Wi-Fi Sensing",
-        "category": "R&D",
-        "description": "Environmental perception system using standard Wi-Fi signals to detect human presence and movement without cameras.",
+      "ai2sql": {
+        "title": "2Sequel",
+        "category": "Text-to-sql",
+        "description": "Automatic translation system from natural language to SQL. It enables interaction with databases even for those who are unfamiliar with this language.",
         "techStack": {
-          "0": "Signal Processing",
-          "1": "IoT",
-          "2": "Edge Computing"
+          "0": "LLM",
+          "1": "SQL",
+          "2": "NLP"
         }
       }
     }
@@ -172,11 +172,12 @@
     "alt_illustration": "Theme illustration",
     "heading": {
       "start": "READY TO",
-      "highlight": "BUILD?"
+      "highlight": "INNOVATE?"
     },
-    "description": "Whether it's a complex AI pipeline or a fresh MVP, we are ready to turn your chaos into code.",
+    "description": "Whether it's a website, an app, a neural network, or your bathroom, we're ready for anything.",
+    "description2": "P.S. we also do take-away",
     "cta": {
-      "email": "Email Us",
+      "email": "Write to us",
       "book": "Book a Call"
     },
     "copyright": "Simone & Matteo. All rights reserved.",
@@ -184,40 +185,40 @@
   },
   "MatteoProfile": {
     "header": {
-      "role_badge": "Co-Founder & Full Stack AI Engineer",
-      "role_mono": "// The Builder",
+      "role_badge": "Full Stack Developer & AI Engineer",
       "quote": "\"Faber est suae quisque fortunae\"",
       "quote_sub": ""
     },
     "about": {
-      "title_start": "BUILDING THE",
-      "title_highlight": "FUTURE",
-      "p1": "<strong>Architecting Scalable Intelligence.</strong> I am a builder at heart. My approach to technology is grounded in a sociable and optimistic nature, believing that the best solutions come from open dialogue and teamwork. With a solid foundation in Computer Science from <strong>La Sapienza University</strong> (graduating with <highlight>110/110 Cum Laude</highlight>), I have always sought to understand how things work to make them work better.",
-      "p2": "My background bridges two worlds: the rigorous standards of enterprise IT consulting and the agile innovation of the startup ecosystem. Today, as Co-Founder of 4AI, I design the architectures that power our vision, ensuring that our AI models run on robust, scalable, and efficient full-stack systems.",
-      "p3": "I am driven by the challenge of connecting academic research with real-world applications."
+      "title_start": "BEHIND THE",
+      "title_highlight": "SCREEN",
+      "p1": "I embraced computer science for the sense of freedom it gives. The freedom to act, to create, to change and, when possible, to innovate.",
+      "p2": "I graduated from Sapienza University of Rome, completing both my bachelor's and master's degrees with top marks. I am a dynamic person, sometimes contradictory, constantly evolving. I never stand still: my creative restlessness and the drive to challenge myself and push my limits are what keep me working for hours on a project I consider “mine.”",
+      "p3": "After years of working while studying and gaining professional experience in different companies, I decided to give myself a different opportunity: to build something truly my own. I founded a startup, putting my experience, years of study and personal sacrifices at the service of my own ideas and vision. I design software architectures and develop full-stack solutions, integrating AI systems built to solve real-world problems.",
+      "p4": "I am a positive, curious and meticulous person. I constantly question myself. I am always looking for new paths to explore, new ways to grow, and new projects worth dedicating myself to."
     },
-    "toolkit": {
-      "label": "Engineering Core",
-      "title": "THE TOOLKIT",
-      "fullstack": {
-        "title": "Full Stack Arch.",
-        "description": "I manage the entire development lifecycle, from robust backends to scalable infrastructure."
-      },
-      "vision": {
-        "title": "Computer Vision & Deep Learning",
-        "description": "Translating visual data into actionable insights using state-of-the-art frameworks."
-      },
-      "research": {
-        "title": "Applied Research",
-        "description": "Research fellow focused on Wi-Fi sensing and environmental perception, exploring how wireless signals can capture human presence and motion.",
-        "list": {
-          "0": "Wi-Fi Sensing & Environmental Perception",
-          "1": "Human Motion Analysis",
-          "2": "Signal Processing & Preprocessing"
-        }
+  "toolkit": {
+    "label": "My Arsenal",
+    "title": "THE TOOLKIT",
+    "fullstack": {
+      "title": "Full Stack Dev",
+      "description": "I manage the entire development lifecycle, from robust backend systems to scalable infrastructures."
+    },
+    "vision": {
+      "title": "Computer Vision & Deep Learning",
+      "description": "I transform visual data into actionable insights using cutting-edge frameworks."
+    },
+    "research": {
+      "title": "Applied Research",
+      "description": "Research fellow specializing in Wi-Fi sensing and environmental perception, exploring how wireless signals can detect human presence and motion.",
+      "list": {
+        "0": "Wi-Fi Sensing",
+        "1": "Human Motion Analysis & Material Classification",
+        "2": "Signal Processing & Preprocessing"
       }
-    },
-    "work": {
+    }
+  },
+  "work": {
       "title": "SELECTED WORK",
       "role_label": "My Role",
       "traid": {
@@ -244,7 +245,7 @@
       "subtitle": "Technology is my profession, but discovery is my passion.",
       "travel": {
         "title": "Culture & Travel",
-        "description": "I enjoy exploring new places and cultures — they're a constant source of inspiration and perspective."
+        "description": "I enjoy exploring new places and cultures: they're a constant source of inspiration and perspective."
       },
       "cinema": {
         "title": "Cinema",
@@ -252,45 +253,43 @@
       },
       "learning": {
         "title": "Curiosity & Learning",
-        "description": "Driven by curiosity, I’m always exploring new ideas, fields, and technologies — learning is my way of staying alive and evolving."
+        "description": "Driven by curiosity, I’m always exploring new ideas, fields, and technologies. Learning is my way of staying alive and evolving."
       }
     },
     "contact": {
-      "location": "Rome, Italy • Full Stack & AI Expert",
+      "location": "Rome, Italy",
       "cv_button": "View My CV"
     }
   },
   "SimoneProfile": {
     "header": {
-      "role_badge": "AI Engineer",
-      "role_mono": "// Deep learning, computer vision and data analysis",
+      "role_badge": "Full Stack Developer & AI Engineer",
       "quote": "\"For the roads, they go on without end.\""
     },
     "about": {
-      "title_start": "FROM CURIOSITY",
-      "title_bottom": "TO",
-      "title_highlight": "CODE",
-      "p1": "My journey into technology began in my teenage years, fueled by a curiosity for building websites and experimenting with design. That spark led me to a formal path in Computer Science at <strong>La Sapienza University of Rome</strong>, where I graduated with top honors <highlight>(110/110 cum laude)</highlight>.",
-      "p2": "Today, as Co-Founder of 4AI, I bridge the gap between academic research and production-ready software. I don't just write code; I architect systems. Whether it's Deep Learning, Computer Vision, or Data Engineering, my goal is to transform advanced concepts into innovative, usable platforms.",
-      "p3": "I thrive in dynamic environments where technical precision meets creative problem-solving."
+      "title_start": "BEHIND THE",
+      "title_highlight": "SCREEN",
+      "p1": "Since the dawn of time, humanity has lived in God's shadow, seeking Him and envying His greatest privilege: the capacity to create. Condemned to finitude, man invented art to emulate that miracle, shaping stories and figures to feel like the master of a destiny.",
+      "p2": "However, only computer science allows us to transcend the stasis of the canvas. Programming is the ultimate creative act, where logic becomes matter and thought becomes action. The thirst for omnipotence is quenched in every algorithm that works, in every system that springs to life beneath our fingers. If art imitates life, computer science simulates it. And in that microcosm of rules and variables, man finally touches the divine illusion of having created life itself.",
+      "p3": "Perhaps one day the spell will break, for I have realized that giving life to one’s own creatures consumes the soul. Yet, it is a destiny I cannot evade. Every morning, facing the glow of the screen, I listen to that whisper which overpowers all reason: it is not a choice, it is a necessity. I must continue playing God until the voice of sleep screams louder than the voice of programming."
     },
     "toolkit": {
       "label": "My Arsenal",
       "title": "THE TOOLKIT",
       "ai": {
         "title": "AI & Data",
-        "description": "I specialize in Computer Vision and Deep Learning, managing complex multimodal datasets."
+        "description": "Specialized in Computer Vision and Deep Learning, I manage complex multimodal datasets."
       },
       "fullstack": {
-        "title": "Full Stack",
-        "description": "From robust backends to responsive frontends, ensuring scalable architecture."
+        "title": "Full Stack Dev",
+        "description": "I manage the entire development lifecycle, from robust backend systems to scalable infrastructures."
       },
       "research": {
-        "title": "R&D",
-        "description": "Research fellow focused on Wi-Fi sensing and environmental perception, exploring how wireless signals can capture human presence and motion.",
+        "title": "Applied Research",
+        "description": "Research fellow specializing in Wi-Fi sensing and environmental perception, exploring how wireless signals can detect human presence and movement.",
         "list": {
-          "0": "Wi-Fi Sensing & Environmental Perception",
-          "1": "Human Motion Analysis",
+          "0": "Wi-Fi Sensing",
+          "1": "Human Motion Analysis & Material Classification",
           "2": "Signal Processing & Preprocessing"
         }
       }
@@ -318,7 +317,8 @@
       }
     },
     "interests": {
-      "title": "BEYOND THE SCREEN",
+      "title": "BEYOND THE CODE",
+      "subtitle": "There are two types of computer scientists: those who have opened a farm stay and those who have yet to open one",
       "music": {
         "title": "Music & Art",
         "description": "Self-taught pianist and amateur illustrator fueling technical creativity."
@@ -333,7 +333,7 @@
       }
     },
     "contact": {
-      "location": "Rome, Italy • Fluent in Italian & English",
+      "location": "Rome, Italy",
       "cta": "Let's Build Something",
       "cv_button": "View My CV"
     }
@@ -369,5 +369,69 @@
       "title": "No thoughts found here.",
       "description": "Maybe you should write one?"
     }
+  },
+  "AiLights": {
+    "badge": "Sport Technology",
+    "tagline": "Amateur sport like you've never seen before",
+    "description": "Bringing major stadium technology to local fields. Smart cameras, automated AI direction, and advanced statistics for athletes and coaches.",
+    "cta_demo": "Contact us",
+    "features": {
+      "camera": {
+        "title": "4K Quality",
+        "desc": "Ideal in all weather and lighting conditions. Maximum quality at the best price."
+      },
+      "lens": {
+        "title": "180° Lenses",
+        "desc": "Thanks to dual lenses, every corner of the field is under control. You won't miss a single action."
+      },
+      "ai": {
+        "title": "AI Direction",
+        "desc": "Our AI models follow the match automatically, just like a professional cameraman."
+      }
+    },
+    "sports_title": "Clear Data,",
+    "sports_subtitle": "AI for everyone: unlimited access for amateurs, enthusiasts, and coaches.",
+    "sports": {
+      "futsal": ["Auto Highlights", "Match Stats", "Live Streaming"],
+      "tennis": ["Bounce Zones", "First Serve Analysis", "Court Heatmap"],
+      "padel": ["Trajectory Analysis", "Shot Efficiency", "Tactical Heatmaps"]
+    },
+    "funding_note": "Project supported under the PR FESR Lazio 2021-2027 Notice"
+  },
+  "Screeba": {
+    "tagline": "Stop typing, start studying.",
+    "description": "Tired of spending days transcribing hours of lectures? Upload your audio and let our AI do the heavy lifting. Get formatted Word notes in minutes.",
+    "how_it_works": "How it works",
+    "steps": {
+      "upload": {
+        "title": "Upload Lecture",
+        "desc": "We support audio or video files. You can add a description to help the AI with context (e.g., 'Law Class')."
+      },
+      "process": {
+        "title": "AI Processing",
+        "desc": "Our model analyzes the audio. Important: the quality of the transcription depends on the clarity of the original audio."
+      },
+      "download": {
+        "title": "Download Word",
+        "desc": "Receive a formatted document ready to be printed, highlighted, and studied."
+      }
+    },
+    "cta_demo": "Contact Us",
+    "demo": {
+      "label_name": "Lecture Name / Context",
+      "placeholder_name": "E.g. Medieval History 12/10...",
+      "drop_text": "Drag & drop your audio file",
+      "drop_sub": "or click to browse (MP3, WAV)",
+      "btn_action": "Transcribe Now",
+      "btn_loading": "Analyzing...",
+      "processing": "GENERATING TRANSCRIPT...",
+      "success": "Done! (Demo)",
+      "quality_warning": "Warning: Audio with heavy background noise may result in poor transcriptions. Please use clear recordings."
+    }
+  },
+  "CookingModal": {
+    "title": "We are cooking!",
+    "description": "The episodes are still in the oven. We are finishing the editing to serve you piping hot content. Come back soon for a taste!",
+    "cta": "My mouth is watering"
   }
 }

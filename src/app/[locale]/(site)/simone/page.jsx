@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
-import { Brain, Layers, Music, Dumbbell, Wifi } from 'lucide-react';
+import {Brain, Layers, Music, Dumbbell, Wifi, Mail, Linkedin} from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -19,9 +19,12 @@ import {
     SiDocker,
     SiRedis, SiRoboflow, SiNumpy
 } from "react-icons/si";
+import {usePathname} from "next/navigation";
 
 export default function SimoneProfile() {
     const t = useTranslations('SimoneProfile');
+    const pathname = usePathname();
+    const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
     return (
         <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
@@ -58,9 +61,6 @@ export default function SimoneProfile() {
                 className="bg-forest text-white px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm md:text-base">
               {t('header.role_badge')}
             </span>
-                        <span className="text-ink/60 dark:text-white/60 font-mono text-lg">
-              {t('header.role_mono')}
-            </span>
                     </motion.div>
 
                     <motion.blockquote
@@ -82,7 +82,7 @@ export default function SimoneProfile() {
                         viewport={{once: true}}
                     >
                         <h2 className="font-display text-5xl font-bold mb-8">
-                            {t('about.title_start')} <br/> {t('about.title_bottom')} <span
+                            {t('about.title_start')} <br/> <span
                             className="text-bubblegum">{t('about.title_highlight')}</span>
                         </h2>
                         <div className="space-y-6 text-lg leading-relaxed text-ink/80 dark:text-smoke">
@@ -222,78 +222,15 @@ export default function SimoneProfile() {
                 </div>
             </section>
 
-            <section className="py-20 px-4 bg-ink text-white">
-                <div className="max-w-5xl mx-auto">
-                    <h2 className="font-display text-5xl font-bold mb-12 text-center">{t('work.title')}</h2>
-
-                    <div className="space-y-12">
-                        <div
-                            className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
-                            <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">{t('work.ailights.title')}</h3>
-                                <span className="text-bubblegum font-mono font-bold">{t('work.ailights.tag')}</span>
-                            </div>
-                            <p className="text-white/60 mb-4 max-w-2xl">
-                                {t('work.ailights.subtitle')}
-                            </p>
-                            <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
-                                    {t('work.role_label')}
-                                </h4>
-                                <p className="text-white/70">
-                                    {t('work.ailights.description')}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
-                            <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">{t('work.screeba.title')}</h3>
-                                <span className="text-bubblegum font-mono font-bold">{t('work.screeba.tag')}</span>
-                            </div>
-                            <p className="text-white/60 mb-4 max-w-2xl">
-                                {t('work.screeba.subtitle')}
-                            </p>
-                            <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
-                                    {t('work.role_label')}
-                                </h4>
-                                <p className="text-white/70">
-                                    {t('work.screeba.description')}
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            className="group border-l-2 border-white/20 pl-8 hover:border-bubblegum transition-colors duration-300">
-                            <div className="flex flex-col md:flex-row md:items-baseline gap-4 mb-2">
-                                <h3 className="font-display text-4xl font-bold">{t('work.traid.title')}</h3>
-                                <span className="text-bubblegum font-mono font-bold">{t('work.traid.tag')}</span>
-                            </div>
-                            <p className="text-white/60 mb-4 max-w-2xl">
-                                {t('work.traid.subtitle')}
-                            </p>
-                            <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <h4 className="font-bold mb-2 text-sm uppercase tracking-wider text-white/80">
-                                    {t('work.role_label')}
-                                </h4>
-                                <p className="text-white/70">
-                                    {t('work.traid.description')}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
             <section className="py-24 px-4 relative overflow-hidden">
                 <div
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-bubblegum/5 rounded-full blur-3xl pointer-events-none"></div>
 
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <h2 className="font-display text-5xl font-bold mb-12">{t('interests.title')}</h2>
-
+                    <p className="text-xl text-ink/70 dark:text-white/70 mb-12 max-w-2xl mx-auto italic">
+                        {t('interests.subtitle')}
+                    </p>
                     <div className="grid md:grid-cols-3 gap-8">
                         <div className="flex flex-col items-center">
                             <div
@@ -336,7 +273,7 @@ export default function SimoneProfile() {
                 <p className="text-white/50 mb-8">{t('contact.location')}</p>
                 <div className="flex justify-center gap-4">
                     <a
-                        href="/cv/simone_eng.pdf"
+                        href={currentLocale === "it" ? "/cv/simone_it.pdf" : "/cv/simone_en.pdf"}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -346,16 +283,37 @@ export default function SimoneProfile() {
                     </a>
                 </div>
             </section>
+            <div className="bg-forest text-white pb-12 overflow-hidden relative">
+                <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: false }}
+                        transition={{ delay: 0.2 }}
+                        className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center text-sm text-white/40 font-mono"
+                    >
+                        <div className="flex justify-center gap-6 mb-10">
+                            <a
+                                href="mailto:simone.zannini@4aitech.it"
+                                className="text-white/50 hover:text-white transition-colors"
+                                aria-label="Email"
+                            >
+                                <Mail size={24} />
+                            </a>
 
-            <section className="py-20 text-center bg-forest text-white">
-                <h2 className="font-display text-4xl mb-2">SIMONE ZANNINI</h2>
-                <p className="text-white/50 mb-8">{t('contact.location')}</p>
-                <div className="flex justify-center gap-4">
-                    <a href="mailto:simone@example.com">
-                        <Button>{t('contact.cta')}</Button>
-                    </a>
+                            <a
+                                href="https://www.linkedin.com/in/simone-zannini-66a743225/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white/50 hover:text-white transition-colors"
+                                aria-label="LinkedIn"
+                            >
+                                <Linkedin size={24} />
+                            </a>
+                        </div>
+                    </motion.div>
                 </div>
-            </section>
+            </div>
         </div>
     );
 };

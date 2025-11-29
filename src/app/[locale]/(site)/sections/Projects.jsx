@@ -43,7 +43,7 @@ export default function Projects() {
         t('items.ailights.techStack.2'),
         t('items.ailights.techStack.3')
       ],
-      link: ""
+      link: "/ailights"
     },
     {
       id: 'traid',
@@ -68,19 +68,19 @@ export default function Projects() {
         t('items.screeba.techStack.1'),
         t('items.screeba.techStack.2')
       ],
-      link: ""
+      link: "/screeba"
     },
     {
-      id: 'sensing',
-      title: t('items.sensing.title'),
-      category: t('items.sensing.category'),
-      description: t('items.sensing.description'),
+      id: 'ai2sql',
+      title: t('items.ai2sql.title'),
+      category: t('items.ai2sql.category'),
+      description: t('items.ai2sql.description'),
       techStack: [
-        t('items.sensing.techStack.0'),
-        t('items.sensing.techStack.1'),
-        t('items.sensing.techStack.2')
+        t('items.ai2sql.techStack.0'),
+        t('items.ai2sql.techStack.1'),
+        t('items.ai2sql.techStack.2')
       ],
-      link: ""
+      link: "https://4aitech.it/two-sequel"
     },
   ];
 
@@ -113,7 +113,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-ink/60 dark:text-smoke/60 max-w-xs mt-4 md:mt-0 text-right hidden md:block"
+              className="text-ink/60 dark:text-smoke/60 max-w-xs mt-4 md:mt-0 text-right hidden md:block italic"
           >
             {t.rich('subtitle', {
               br: () => <br />
@@ -173,24 +173,6 @@ export default function Projects() {
                 </Card>
               </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ delay: 0.2 }}
-            className="mt-16 text-center"
-        >
-          <a
-              href="https://www.4aitech.it/"
-              target="_blank"
-              rel="noopener noreferrer"
-          >
-            <Button variant="secondary" className="cursor-pointer">
-              {t('cta')}
-            </Button>
-          </a>
         </motion.div>
       </div>
   );
