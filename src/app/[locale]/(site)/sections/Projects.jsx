@@ -43,7 +43,6 @@ export default function Projects() {
         t('items.ailights.techStack.2'),
         t('items.ailights.techStack.3')
       ],
-      highlight: true,
       link: ""
     },
     {
@@ -188,7 +187,7 @@ export default function Projects() {
               target="_blank"
               rel="noopener noreferrer"
           >
-            <Button variant="secondary">
+            <Button variant="secondary" className="cursor-pointer">
               {t('cta')}
             </Button>
           </a>

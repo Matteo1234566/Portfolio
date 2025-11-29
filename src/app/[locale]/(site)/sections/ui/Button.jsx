@@ -6,7 +6,7 @@ export default function Button({
   className = '',
   ...props 
 }) {
-  const baseStyles = "inline-flex items-center justify-center px-8 py-3 rounded-full font-display font-bold uppercase tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
+  const baseStyles = "cursor-pointer inline-flex items-center justify-center px-8 py-3 rounded-full font-display font-bold uppercase tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2";
   
   const variants = {
     primary: "bg-bubblegum text-white hover:bg-indigo-400 hover:scale-105 shadow-hard dark:shadow-hard-white border-2 border-ink dark:border-white",

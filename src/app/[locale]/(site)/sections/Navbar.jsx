@@ -23,7 +23,7 @@ export default function Navbar() {
 
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
-  const navLinks = ['duo', 'services', 'projects'];
+  const navLinks = ['duo', 'services', 'projects', 'blogs'];
 
   useEffect(() => {
     setMounted(true);
@@ -58,13 +58,19 @@ export default function Navbar() {
   const handleNavClick = (key) => {
     const basePath = `/${currentLocale}`;
 
-    if (pathname === basePath || pathname === `${basePath}/`) {
-      const el = document.getElementById(key);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (key === "blogs") {
+      router.push(`${basePath}/blogs`);
+    }
+
+    else {
+      if (pathname === basePath || pathname === `${basePath}/`) {
+        const el = document.getElementById(key);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        router.push(`${basePath}?scrollTo=${key}`);
       }
-    } else {
-      router.push(`${basePath}?scrollTo=${key}`);
     }
 
     setIsOpen(false);
@@ -112,7 +118,7 @@ export default function Navbar() {
                   <button
                       key={key}
                       onClick={() => handleNavClick(key)}
-                      className="hover:text-forest dark:hover:text-bubblegum transition-colors relative group capitalize"
+                      className="hover:text-forest dark:hover:text-bubblegum transition-colors relative group capitalize cursor-pointer"
                   >
                     {t(`links.${key}`)}
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-bubblegum transition-all group-hover:w-full" />
@@ -124,7 +130,7 @@ export default function Navbar() {
 
               <button
                   onClick={toggleLanguage}
-                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-smoke dark:hover:bg-white/10 transition-colors text-lg leading-none"
+                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-smoke dark:hover:bg-white/10 transition-colors text-lg leading-none cursor-pointer"
                   aria-label={t('lang.switch_label')}
                   title={currentLocale === 'it' ? t('lang.to_en') : t('lang.to_it')}
               >
@@ -133,7 +139,7 @@ export default function Navbar() {
 
               <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-full hover:bg-smoke dark:hover:bg-white/10 transition-colors text-ink dark:text-white"
+                  className="p-2 rounded-full hover:bg-smoke dark:hover:bg-white/10 transition-colors text-ink dark:text-white cursor-pointer"
                   aria-label={t('theme.toggle_label')}
               >
                 {currentTheme === 'light' ? (
@@ -143,7 +149,7 @@ export default function Navbar() {
                 )}
               </button>
 
-              <Button className="text-sm px-5 py-2" onClick={() => handleNavClick("footer")}>
+              <Button className="text-sm px-5 py-2 cursor-pointer" onClick={() => handleNavClick("footer")}>
                 {t('cta')}
               </Button>
             </div>

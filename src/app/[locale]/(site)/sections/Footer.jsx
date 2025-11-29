@@ -69,7 +69,7 @@ export default function Footer() {
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
                         <a href="mailto:magosimo99@gmail.com" className="no-underline">
-                            <Button variant="primary" className="text-lg px-10 py-4">
+                            <Button variant="primary" className="text-lg px-10 py-4 cursor-pointer">
                                 {t('cta.email')}
                             </Button>
                         </a>

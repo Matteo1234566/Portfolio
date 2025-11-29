@@ -3,7 +3,8 @@
     "links": {
       "duo": "Duo",
       "services": "Services",
-      "projects": "Projects"
+      "projects": "Projects",
+      "blogs": "Blog"
     },
     "cta": "Let's Talk",
     "theme": {
@@ -191,7 +192,7 @@
     "about": {
       "title_start": "BUILDING THE",
       "title_highlight": "FUTURE",
-      "p1": "<strong>Architecting Scalable Intelligence.</strong> I am a builder at heart. My approach to technology is grounded in a sociable and optimistic nature, believing that the best solutions come from open dialogue and teamwork. With a solid foundation in Computer Science from <strong>La Sapienza University</strong> (graduating with 110/110 Cum Laude), I have always sought to understand how things work to make them work better.",
+      "p1": "<strong>Architecting Scalable Intelligence.</strong> I am a builder at heart. My approach to technology is grounded in a sociable and optimistic nature, believing that the best solutions come from open dialogue and teamwork. With a solid foundation in Computer Science from <strong>La Sapienza University</strong> (graduating with <highlight>110/110 Cum Laude</highlight>), I have always sought to understand how things work to make them work better.",
       "p2": "My background bridges two worlds: the rigorous standards of enterprise IT consulting and the agile innovation of the startup ecosystem. Today, as Co-Founder of 4AI, I design the architectures that power our vision, ensuring that our AI models run on robust, scalable, and efficient full-stack systems.",
       "p3": "I am driven by the challenge of connecting academic research with real-world applications."
     },
@@ -343,15 +344,30 @@
     "cta": "Return to Reality"
   },
   "Blog": {
-    "title": "Blog",
-    "subtitle": "Scattered thoughts on frontend, AI, and dev life.",
-    "readMore": "Read more",
-    "posts": {
-      "1": {
-        "title": "How I designed this portfolio",
-        "excerpt": "A breakdown of the bubblegum-tech aesthetic and the technical decisions behind it.",
-        "content": "sdhughsdgsd"
-      }
+    "back": "Back",
+    "min_read": "min read",
+    "tags_label": "Tags:",
+    "not_found": {
+      "title": "404",
+      "description": "Article not found.",
+      "button": "Back Home"
+    }
+  },
+  "BlogList": {
+    "header": {
+      "title_line1": "BRAIN",
+      "title_line2": "DUMP",
+      "description": "Scattered thoughts, tech tutorials, and lessons learned the hard way. No filter, just code and design."
+    },
+    "filters": {
+      "all": "All"
+    },
+    "card": {
+      "read_more": "Read Article"
+    },
+    "empty_state": {
+      "title": "No thoughts found here.",
+      "description": "Maybe you should write one?"
     }
   }
 }

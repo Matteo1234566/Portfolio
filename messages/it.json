@@ -3,7 +3,8 @@
     "links": {
       "duo": "Duo",
       "services": "Servizi",
-      "projects": "Progetti"
+      "projects": "Progetti",
+      "blogs": "Blog"
     },
     "cta": "Contattaci",
     "theme": {
@@ -191,7 +192,7 @@
     "about": {
       "title_start": "COSTRUENDO IL",
       "title_highlight": "FUTURO",
-      "p1": "<strong>Progettare un'Intelligenza Scalabile.</strong> Sono un builder nell’anima. Il mio approccio alla tecnologia nasce da una natura socievole e ottimista, convinto che le migliori soluzioni emergano dal dialogo aperto e dal lavoro di squadra. Con una solida formazione in Informatica presso <strong>l’Università La Sapienza</strong> (laurea con 110/110 e Lode), ho sempre cercato di capire come funzionano le cose per farle funzionare meglio.",
+      "p1": "<strong>Progettare un'Intelligenza Scalabile.</strong> Sono un builder nell’anima. Il mio approccio alla tecnologia nasce da una natura socievole e ottimista, convinto che le migliori soluzioni emergano dal dialogo aperto e dal lavoro di squadra. Con una solida formazione in Informatica presso <strong>l’Università La Sapienza</strong> (laurea con <highlight>110/110 e Lode</highlight>), ho sempre cercato di capire come funzionano le cose per farle funzionare meglio.",
       "p2": "Il mio percorso unisce due mondi: gli standard rigorosi della consulenza IT enterprise e l’innovazione agile dell’ecosistema startup. Oggi, come Co-Founder di 4AI, progetto le architetture che alimentano la nostra visione, assicurando che i modelli di AI funzionino su sistemi full-stack robusti, scalabili ed efficienti.",
       "p3": "Sono guidato dalla sfida di collegare la ricerca accademica alle applicazioni reali."
     },
@@ -343,15 +344,30 @@
     "cta": "Torna alla Realtà"
   },
   "Blog": {
-    "title": "Blog",
-    "subtitle": "Pensieri sparsi su frontend, AI e dev life.",
-    "readMore": "Leggi di più",
-    "posts": {
-      "1": {
-        "title": "Come ho progettato questo portfolio",
-        "excerpt": "Un breakdown del design bubblegum-tech e delle scelte tecniche.",
-        "content": "sdhughsdgsd"
-      }
+    "back": "Indietro",
+    "min_read": "min lettura",
+    "tags_label": "Tag:",
+    "not_found": {
+      "title": "404",
+      "description": "Articolo non trovato.",
+      "button": "Torna alla Home"
+    }
+  },
+  "BlogList": {
+    "header": {
+      "title_line1": "BRAIN",
+      "title_line2": "DUMP",
+      "description": "Pensieri sparsi, tutorial tecnici e lezioni imparate a duro prezzo. Nessun filtro, solo codice e design."
+    },
+    "filters": {
+      "all": "Tutti"
+    },
+    "card": {
+      "read_more": "Leggi Articolo"
+    },
+    "empty_state": {
+      "title": "Nessun pensiero qui.",
+      "description": "Forse dovresti scriverne uno tu?"
     }
   }
 }

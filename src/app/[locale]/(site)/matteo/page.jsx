@@ -92,7 +92,12 @@ export default function MatteoProfile() {
                         <div className="space-y-6 text-lg leading-relaxed text-ink/80 dark:text-smoke">
                             <p>
                                 {t.rich('about.p1', {
-                                    strong: (chunks) => <strong className="text-ink dark:text-white">{chunks}</strong>
+                                    strong: (chunks) => <strong className="text-ink dark:text-white">{chunks}</strong>,
+                                    highlight: (chunks) => (
+                                        <span className="bg-bubblegum/20 px-2 py-0.5 rounded text-bubblegum font-bold">
+                                            {chunks}
+                                        </span>
+                                    )
                                 })}
                             </p>
                             <p>
