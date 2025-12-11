@@ -104,7 +104,8 @@ export default function Hero() {
 
             <span className="relative inline-block font-bold mx-1 text-ink dark:text-white cursor-pointer">
               <a
-                  onClick={handlePodcastClick}
+                  href='https://www.twitch.tv/devopodcast'
+                  // onClick={handlePodcastClick}
                   className="inline-flex items-center gap-1 hover:text-bubblegum transition-colors"
               >
                 {t('bio.podcast_link')}
