@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { Sun, Moon, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import gsap from 'gsap';
 
 export default function Navbar() {
   const t = useTranslations('Navbar');
@@ -23,12 +24,61 @@ export default function Navbar() {
 
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
-  // const navLinks = ['duo', 'services', 'projects', 'blogs'];
   const navLinks = ['duo', 'services', 'projects'];
+  const linkRefs = useRef([]);
+  const underlineRefs = useRef([]);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    linkRefs.current.forEach((link, index) => {
+      if (!link || !underlineRefs.current[index]) return;
+      
+      const underline = underlineRefs.current[index];
+      
+      const handleMouseEnter = () => {
+        gsap.to(underline, {
+          scaleX: 1,
+          duration: 0.3,
+          ease: 'power2.out'
+        });
+      };
+      
+      const handleMouseLeave = () => {
+        gsap.to(underline, {
+          scaleX: 0,
+          duration: 0.3,
+          ease: 'power2.inOut',
+          transformOrigin: 'left center'
+        });
+      };
+      
+      link.addEventListener('mouseenter', handleMouseEnter);
+      link.addEventListener('mouseleave', handleMouseLeave);
+      
+      return () => {
+        link.removeEventListener('mouseenter', handleMouseEnter);
+        link.removeEventListener('mouseleave', handleMouseLeave);
+      };
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    
+    gsap.fromTo('.nav-item', 
+      { opacity: 0, y: -20 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 0.5, 
+        stagger: 0.1,
+        ease: 'power2.out' 
+      }
+    );
+  }, [mounted]);
 
   const currentTheme = mounted
       ? (theme === 'system' ? systemTheme : theme)
@@ -115,14 +165,18 @@ export default function Navbar() {
             </button>
 
             <div className="hidden md:flex items-center space-x-8 font-medium text-ink dark:text-smoke">
-              {navLinks.map((key) => (
+              {navLinks.map((key, index) => (
                   <button
                       key={key}
+                      ref={el => linkRefs.current[index] = el}
                       onClick={() => handleNavClick(key)}
-                      className="hover:text-forest dark:hover:text-bubblegum transition-colors relative group capitalize cursor-pointer"
+                      className="hover:text-forest dark:hover:text-bubblegum transition-colors relative group capitalize cursor-pointer nav-item"
                   >
                     {t(`links.${key}`)}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-bubblegum transition-all group-hover:w-full" />
+                    <span 
+                      ref={el => underlineRefs.current[index] = el}
+                      className="absolute -bottom-1 left-0 w-full h-0.5 bg-bubblegum scale-x-0 origin-left"
+                    />
                   </button>
               ))}
             </div>

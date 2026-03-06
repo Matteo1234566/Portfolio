@@ -1,12 +1,16 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import { Cpu, Code, Music, Search, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const container = {
   hidden: { opacity: 0 },
@@ -28,6 +32,10 @@ export default function Duo() {
   const t = useTranslations('Duo');
   const pathname = usePathname();
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const subtitleRef = useRef(null);
+  const cardsRef = useRef([]);
 
   const profiles = [
     {
@@ -54,10 +62,81 @@ export default function Duo() {
     }
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(titleRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+
+      gsap.fromTo(subtitleRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: subtitleRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+
+      cardsRef.current.forEach((card, index) => {
+        if (!card) return;
+        
+        gsap.fromTo(card,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: index * 0.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const handleCardHover = (cardRef, isEntering) => {
+    if (!cardRef.current) return;
+    
+    const icon = cardRef.current.querySelector('.profile-icon');
+    const iconBg = cardRef.current.querySelector('.icon-bg');
+    
+    if (isEntering) {
+      gsap.to(icon, { scale: 1.2, duration: 0.3, ease: 'power2.out' });
+      gsap.to(iconBg, { scale: 1.1, rotation: 10, duration: 0.3, ease: 'power2.out' });
+    } else {
+      gsap.to(icon, { scale: 1, duration: 0.3, ease: 'power2.out' });
+      gsap.to(iconBg, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    }
+  };
+
   return (
-      <div className="max-w-6xl mx-auto px-4">
+      <div ref={sectionRef} className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2
+              ref={titleRef}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, margin: "-100px" }}
@@ -67,6 +146,7 @@ export default function Duo() {
             {t('title_start')} <span className="text-forest dark:text-bubblegum">{t('title_highlight')}</span>
           </motion.h2>
             <motion.blockquote
+                ref={subtitleRef}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, margin: "-100px" }}
@@ -98,7 +178,12 @@ export default function Duo() {
                   key={index}
                   variants={item}
               >
-                <Card className="relative overflow-hidden group text-ink dark:text-smoke h-full border-ink dark:border-white/20 hover:border-bubblegum dark:hover:border-bubblegum transition-colors">
+                <Card 
+                  ref={el => cardsRef.current[index] = el}
+                  onMouseEnter={() => handleCardHover({ current: cardsRef.current[index] }, true)}
+                  onMouseLeave={() => handleCardHover({ current: cardsRef.current[index] }, false)}
+                  className="relative overflow-hidden group text-ink dark:text-smoke h-full border-ink dark:border-white/20 hover:border-bubblegum dark:hover:border-bubblegum transition-colors cursor-pointer"
+                >
                   <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-ink dark:text-white">
                     {profile.iconBig}
                   </div>
@@ -109,10 +194,12 @@ export default function Duo() {
                       </h3>
                       <span className="inline-block bg-forest text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mt-1">
                       {profile.role}
-                    </span>
+                      </span>
                     </div>
-                    <div className={`w-16 h-16 ${profile.smallIconColorClass} rounded-full border-2 border-ink dark:border-white flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                      {profile.iconSmall}
+                    <div className={`icon-bg w-16 h-16 ${profile.smallIconColorClass} rounded-full border-2 border-ink dark:border-white flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                      <div className="profile-icon">
+                        {profile.iconSmall}
+                      </div>
                     </div>
                   </div>
                   <p className="text-lg mb-6 leading-relaxed">{profile.description}</p>

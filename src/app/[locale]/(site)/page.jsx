@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Hero from "@/app/[locale]/(site)/sections/Hero";
 import Duo from "@/app/[locale]/(site)/sections/Duo";
 import Services from "@/app/[locale]/(site)/sections/Services";
@@ -11,16 +11,49 @@ import Image from 'next/image';
 import { useTheme } from "next-themes";
 import Footer from "@/app/[locale]/(site)/sections/Footer";
 import { useSearchParams } from 'next/navigation';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function PortfolioLanding() {
     const [isLoading, setIsLoading] = useState(true);
     const { theme, systemTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const searchParams = useSearchParams();
+    const mainRef = useRef(null);
+    const sectionRefs = useRef([]);
 
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    useEffect(() => {
+        if (isLoading || !mainRef.current) return;
+        
+        const ctx = gsap.context(() => {
+            sectionRefs.current.forEach((section, index) => {
+                if (!section) return;
+                
+                gsap.fromTo(section,
+                    { opacity: 0, y: 50 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 85%',
+                            toggleActions: 'play none none reverse'
+                        }
+                    }
+                );
+            });
+        }, mainRef);
+        
+        return () => ctx.revert();
+    }, [isLoading]);
 
     const currentTheme = mounted
         ? (theme === "system" ? systemTheme : theme)
@@ -63,6 +96,7 @@ export default function PortfolioLanding() {
 
             {!isLoading && (
                 <motion.div
+                    ref={mainRef}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5 }}
@@ -80,6 +114,7 @@ export default function PortfolioLanding() {
 
                             <section
                                 id="duo"
+                                ref={el => sectionRefs.current[0] = el}
                                 className="relative py-24 overflow-hidden transition-all duration-300"
                                 style={{
                                     backgroundImage: currentTheme === 'dark'
@@ -105,7 +140,11 @@ export default function PortfolioLanding() {
                                 <Duo/>
                             </section>
 
-                            <section id="services" className="py-24 bg-forest text-white relative">
+                            <section 
+                                id="services" 
+                                ref={el => sectionRefs.current[1] = el}
+                                className="py-24 bg-forest text-white relative"
+                            >
                                 <motion.div
                                     animate={{y: [0, 10, 0], rotate: [-12, -10, -12]}}
                                     transition={{duration: 6, repeat: Infinity, ease: "easeInOut"}}
@@ -122,6 +161,7 @@ export default function PortfolioLanding() {
 
                             <section
                                 id="projects"
+                                ref={el => sectionRefs.current[2] = el}
                                 className="py-24 bg-paper dark:bg-ink transition-colors duration-300"
                             >
                                 <Projects/>

@@ -1,11 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const container = {
   hidden: { opacity: 0 },
@@ -30,6 +34,9 @@ const item = {
 
 export default function Projects() {
   const t = useTranslations('Projects');
+  const sectionRef = useRef(null);
+  const headingRef = useRef(null);
+  const subtitleRef = useRef(null);
 
   const projects = [
     {
@@ -84,10 +91,46 @@ export default function Projects() {
     },
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(headingRef.current,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+
+      gsap.fromTo(subtitleRef.current,
+        { opacity: 0, x: 30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: subtitleRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-      <div className="max-w-6xl mx-auto px-4">
+      <div ref={sectionRef} className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
           <motion.div
+              ref={headingRef}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false }}
@@ -109,6 +152,7 @@ export default function Projects() {
             </h2>
           </motion.div>
           <motion.p
+              ref={subtitleRef}
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false }}
@@ -128,52 +172,175 @@ export default function Projects() {
             viewport={{ once: false, margin: '-100px' }}
             className="grid md:grid-cols-2 gap-8"
         >
-          {projects.map((project) => (
-              <motion.div key={project.id} variants={item} className="group h-full">
-                <Card
-                    className={`h-full flex flex-col ${
-                        project.highlight ? 'border-bubblegum border-4' : ''
-                    }`}
-                >
-                  <div className="flex justify-between items-start mb-4">
-                <span className="font-mono text-xs font-bold text-forest bg-green-100 px-2 py-1 rounded uppercase">
-                  {project.category}
-                </span>
-                    {project.link !== "" && (
-                        <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-ink/30 dark:text-white/30 group-hover:text-ink dark:group-hover:text-white transition-colors"
-                        >
-                          <ExternalLink size={20} />
-                        </a>
-                    )}
-
-                  </div>
-
-                  <h3 className="font-display text-4xl font-bold mb-4 text-ink dark:text-white group-hover:text-forest dark:group-hover:text-bubblegum transition-colors">
-                    {project.title}
-                  </h3>
-
-                  <p className="text-lg text-ink/80 dark:text-smoke/80 mb-8 flex-grow">
-                    {project.description}
-                  </p>
-
-                  <div className="pt-6 border-t-2 border-smoke dark:border-white/10 flex flex-wrap gap-2">
-                    {project.techStack.map((tech) => (
-                        <span
-                            key={tech}
-                            className="text-sm font-bold text-ink/50 dark:text-white/50"
-                        >
-                    #{tech}
-                  </span>
-                    ))}
-                  </div>
-                </Card>
-              </motion.div>
+          {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </motion.div>
       </div>
+  );
+}
+
+function ProjectCard({ project, index }) {
+  const cardRef = useRef(null);
+  const titleRef = useRef(null);
+  const borderRef = useRef(null);
+  const glowRef = useRef(null);
+
+  useEffect(() => {
+    if (!cardRef.current) return;
+
+    const card = cardRef.current;
+    
+    const handleMouseEnter = () => {
+      gsap.to(glowRef.current, {
+        opacity: 1,
+        scale: 1.5,
+        duration: 0.4,
+        ease: 'power2.out'
+      });
+      
+      gsap.to(titleRef.current, {
+        color: '#6366f1',
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+
+      gsap.to(borderRef.current, {
+        borderColor: '#6366f1',
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(glowRef.current, {
+        opacity: 0,
+        scale: 1,
+        duration: 0.4,
+        ease: 'power2.out'
+      });
+      
+      gsap.to(titleRef.current, {
+        color: '',
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+
+      gsap.to(borderRef.current, {
+        borderColor: '',
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    };
+
+    card.addEventListener('mouseenter', handleMouseEnter);
+    card.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      card.removeEventListener('mouseenter', handleMouseEnter);
+      card.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+
+  return (
+      <motion.div variants={item} className="group h-full" style={{ perspective: '1000px' }}>
+        <div 
+          ref={(el) => {
+            cardRef.current = el;
+            borderRef.current = el;
+          }}
+          className={`
+            relative h-full flex flex-col overflow-hidden
+            transition-all duration-300
+            bg-white dark:bg-ink/50
+            border-2 border-smoke/20 dark:border-white/10
+            rounded-2xl
+            hover:shadow-2xl
+            ${project.highlight ? 'border-bubblegum border-4' : ''}
+          `}
+        >
+          <div 
+            ref={glowRef}
+            className="absolute -top-20 -right-20 w-40 h-40 bg-bubblegum/30 rounded-full blur-3xl opacity-0 pointer-events-none"
+          />
+          
+          <div className="flex justify-between items-start mb-4 p-6 pb-0">
+                <span className="font-mono text-xs font-bold text-forest bg-green-100 dark:bg-forest/20 dark:text-green-300 px-2 py-1 rounded uppercase">
+                  {project.category}
+                </span>
+                {project.link !== "" && (
+                    <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-ink/30 dark:text-white/30 group-hover:text-ink dark:group-hover:text-white transition-colors"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                )}
+
+          </div>
+
+          <h3 
+            ref={titleRef}
+            className="font-display text-4xl font-bold mb-4 text-ink dark:text-white px-6 transition-colors"
+          >
+            {project.title}
+          </h3>
+
+          <p className="text-lg text-ink/80 dark:text-smoke/80 mb-8 flex-grow px-6">
+            {project.description}
+          </p>
+
+          <div className="pt-6 border-t-2 border-smoke dark:border-white/10 flex flex-wrap gap-2 px-6 pb-6">
+                {project.techStack.map((tech, i) => (
+                    <TechTag key={tech} tech={tech} delay={i * 0.1} />
+                ))}
+          </div>
+        </div>
+      </motion.div>
+  );
+}
+
+function TechTag({ tech, delay }) {
+  const tagRef = useRef(null);
+
+  useEffect(() => {
+    if (!tagRef.current) return;
+
+    const handleMouseEnter = () => {
+      gsap.to(tagRef.current, {
+        scale: 1.1,
+        color: '#6366f1',
+        duration: 0.2,
+        ease: 'power2.out'
+      });
+    };
+
+    const handleMouseLeave = () => {
+      gsap.to(tagRef.current, {
+        scale: 1,
+        color: '',
+        duration: 0.2,
+        ease: 'power2.out'
+      });
+    };
+
+    tagRef.current.addEventListener('mouseenter', handleMouseEnter);
+    tagRef.current.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      tagRef.current?.removeEventListener('mouseenter', handleMouseEnter);
+      tagRef.current?.removeEventListener('mouseleave', handleMouseLeave);
+    };
+  }, []);
+
+  return (
+      <span
+        ref={tagRef}
+        className="text-sm font-bold text-ink/50 dark:text-white/50 cursor-default"
+      >
+        #{tech}
+      </span>
   );
 }

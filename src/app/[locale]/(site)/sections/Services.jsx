@@ -1,13 +1,21 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import { Brain, Layers, Hammer, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Services() {
   const t = useTranslations('Services');
+  const sectionRef = useRef(null);
+  const labelRef = useRef(null);
+  const headingRef = useRef(null);
+  const cardsRef = useRef([]);
 
   const services = [
     {
@@ -40,10 +48,73 @@ export default function Services() {
     }
   ];
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(labelRef.current,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.6,
+          scrollTrigger: {
+            trigger: labelRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+
+      gsap.fromTo(headingRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none reverse'
+          }
+        }
+      );
+
+      cardsRef.current.forEach((card, index) => {
+        if (!card) return;
+        
+        const isEven = index % 2 === 0;
+        
+        gsap.fromTo(card,
+          { 
+            opacity: 0, 
+            y: 100, 
+            rotateX: -15,
+            rotationZ: isEven ? -3 : 3
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            rotationZ: 0,
+            duration: 0.8,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse'
+            }
+          }
+        );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
+      <div ref={sectionRef} className="max-w-6xl mx-auto px-4 relative z-10">
         <div className="mb-24 text-center md:text-left">
           <motion.span
+              ref={labelRef}
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false }}
@@ -52,6 +123,7 @@ export default function Services() {
             {t('label')}
           </motion.span>
           <motion.h2
+              ref={headingRef}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
@@ -70,6 +142,7 @@ export default function Services() {
             return (
                 <motion.div
                     key={service.id}
+                    ref={el => cardsRef.current[index] = el}
                     initial={{ opacity: 0, y: 100, rotateX: -15 }}
                     whileInView={{
                       opacity: 1,
