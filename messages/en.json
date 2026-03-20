@@ -165,6 +165,28 @@
           "1": "SQL",
           "2": "NLP"
         }
+      },
+      "pyquark": {
+        "title": "PyQuark",
+        "category": "Systems & USB",
+        "description": "Nintendo Switch remote file server with dual Goldleaf/DBI protocol support, virtualized XCI handling and direct archive installation.",
+        "techStack": {
+          "0": "Python",
+          "1": "PyUSB",
+          "2": "Virtual FS",
+          "3": "RAR Streaming"
+        }
+      },
+      "puse": {
+        "title": "PUSE",
+        "category": "Gaming Tool",
+        "description": "Web-based Pokemon Unbound save editor with frontend-first local mode, optional FastAPI backend mode, and checksum-safe save export.",
+        "techStack": {
+          "0": "React",
+          "1": "Vite",
+          "2": "FastAPI",
+          "3": "GitHub Pages"
+        }
       }
     }
   },
@@ -427,6 +449,81 @@
       "processing": "GENERATING TRANSCRIPT...",
       "success": "Done! (Demo)",
       "quality_warning": "Warning: Audio with heavy background noise may result in poor transcriptions. Please use clear recordings."
+    }
+  },
+  "PyQuark": {
+    "badge": "Nintendo Switch Utility",
+    "tagline": "Dual-protocol install server with virtualized archives",
+    "description": "PyQuark is a Python-based remote file server for Nintendo Switch installers. It auto-detects Goldleaf or DBI clients and adapts transport behavior so you can install NSP/XCI content directly, including from compressed archives.",
+    "cta_repo": "View Repository",
+    "protocols": {
+      "label": "Protocol Modes",
+      "goldleaf": "Quark-compatible workflow with on-the-fly XCI virtualization into installable NSP structures.",
+      "dbi": "Native DBI0 streaming path for robust high-speed installs, especially recommended for XCI dumps."
+    },
+    "highlights": {
+      "dual": {
+        "title": "Dual Client Support",
+        "desc": "Automatically switches between Goldleaf Quark protocol and DBI0 flow based on the connected homebrew client."
+      },
+      "xci": {
+        "title": "XCI Smart Handling",
+        "desc": "Supports virtual XCI-to-NSP mapping for Goldleaf and native XCI streaming for DBI without manual conversion."
+      },
+      "rar": {
+        "title": "Archive-Native Access",
+        "desc": "Reads single and multi-part RAR archives as browsable folders so installers can access files without extraction steps."
+      },
+      "state": {
+        "title": "Session Stability",
+        "desc": "Maintains path state, cache and staging lifecycle to handle fragmented reads and repeated requests reliably."
+      }
+    },
+    "footer": {
+      "title": "Built for practical install workflows",
+      "desc": "Designed to reduce manual prep, speed up transfer loops, and keep large archive sessions manageable on real hardware.",
+      "link": "Open on GitHub"
+    }
+  },
+  "Puse": {
+    "badge": "Pokemon Utility",
+    "tagline": "Frontend-first save editing for Pokemon Unbound",
+    "description": "PUSE is a web-based save editor focused on fast local workflows: edit party, PC, bag and money data in-browser, recalculate checksums and export clean save files. Backend mode is also available for API-driven development.",
+    "cta_repo": "View Repository",
+    "cta_live": "Open Live App",
+    "modes": {
+      "local": {
+        "title": "Local Browser Mode",
+        "desc": "Recommended runtime where parsing, editing, checksum and export happen entirely in the browser."
+      },
+      "backend": {
+        "title": "FastAPI Backend Mode",
+        "desc": "Optional local API mode for debugging, development and workflows that benefit from Python tooling."
+      }
+    },
+    "pillars": {
+      "editor": {
+        "title": "Complete Save Editing",
+        "desc": "Edit party stats, moves and abilities, manage PC boxes, adjust bag pockets and tune money values in one interface."
+      },
+      "runtime": {
+        "title": "Dual Runtime Strategy",
+        "desc": "Switch between frontend-only and backend-powered execution without changing the product experience."
+      },
+      "data": {
+        "title": "Rich Data Mapping",
+        "desc": "Uses curated lookup tables and icon manifests to keep move, item and Pokemon references fast and consistent."
+      },
+      "safety": {
+        "title": "Checksum-Safe Export",
+        "desc": "Recalculates save checksums before export to preserve compatibility and reduce corruption risk."
+      }
+    },
+    "footer": {
+      "title": "Built for practical ROM-hack utility",
+      "desc": "A focused fan tool made to keep save editing simple, reversible and deployable as a static web app.",
+      "link_repo": "Open repository",
+      "link_live": "Visit GitHub Pages"
     }
   },
   "CookingModal": {

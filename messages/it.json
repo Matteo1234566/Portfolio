@@ -165,6 +165,28 @@
           "1": "SQL",
           "2": "NLP"
         }
+      },
+      "pyquark": {
+        "title": "PyQuark",
+        "category": "Sistemi & USB",
+        "description": "File server remoto per Nintendo Switch con supporto duale Goldleaf/DBI, gestione virtualizzata degli XCI e installazione diretta da archivi compressi.",
+        "techStack": {
+          "0": "Python",
+          "1": "PyUSB",
+          "2": "Virtual FS",
+          "3": "RAR Streaming"
+        }
+      },
+      "puse": {
+        "title": "PUSE",
+        "category": "Tool Gaming",
+        "description": "Save editor web per Pokemon Unbound con modalita locale frontend-first, backend FastAPI opzionale ed export del salvataggio con checksum ricalcolato.",
+        "techStack": {
+          "0": "React",
+          "1": "Vite",
+          "2": "FastAPI",
+          "3": "GitHub Pages"
+        }
       }
     }
   },
@@ -427,6 +449,81 @@
       "processing": "GENERAZIONE TRASCRIZIONE...",
       "success": "Fatto! (Demo)",
       "quality_warning": "Attenzione: audio con forti rumori di fondo potrebbero generare trascrizioni incomplete. Usa registrazioni chiare."
+    }
+  },
+  "PyQuark": {
+    "badge": "Utility Nintendo Switch",
+    "tagline": "Server di installazione dual-protocol con archivi virtualizzati",
+    "description": "PyQuark e un file server remoto in Python per installer Nintendo Switch. Rileva automaticamente client Goldleaf o DBI e adatta il trasporto per installare contenuti NSP/XCI anche direttamente da archivi compressi.",
+    "cta_repo": "Apri repository",
+    "protocols": {
+      "label": "Modalita protocollo",
+      "goldleaf": "Workflow compatibile Quark con virtualizzazione XCI al volo in strutture NSP installabili.",
+      "dbi": "Percorso DBI0 nativo per installazioni robuste e veloci, consigliato soprattutto per i dump XCI."
+    },
+    "highlights": {
+      "dual": {
+        "title": "Supporto doppio client",
+        "desc": "Passa automaticamente tra protocollo Quark di Goldleaf e flusso DBI0 in base al client homebrew collegato."
+      },
+      "xci": {
+        "title": "Gestione XCI intelligente",
+        "desc": "Supporta mapping virtuale XCI-to-NSP per Goldleaf e streaming XCI nativo per DBI senza conversioni manuali."
+      },
+      "rar": {
+        "title": "Accesso nativo agli archivi",
+        "desc": "Legge archivi RAR singoli e multi-volume come cartelle navigabili, senza passaggi di estrazione manuale."
+      },
+      "state": {
+        "title": "Stabilita di sessione",
+        "desc": "Mantiene stato dei percorsi, cache e staging per gestire letture frammentate e richieste ripetute in modo affidabile."
+      }
+    },
+    "footer": {
+      "title": "Pensato per workflow di installazione reali",
+      "desc": "Riduce la preparazione manuale, accelera i trasferimenti e rende gestibili sessioni pesanti con archivi di grandi dimensioni.",
+      "link": "Apri su GitHub"
+    }
+  },
+  "Puse": {
+    "badge": "Utility Pokemon",
+    "tagline": "Save editing frontend-first per Pokemon Unbound",
+    "description": "PUSE e un save editor web pensato per workflow rapidi in locale: modifica party, PC, borsa e denaro nel browser, ricalcola checksum ed esporta salvataggi puliti. E disponibile anche la modalita backend per sviluppo API.",
+    "cta_repo": "Apri repository",
+    "cta_live": "Apri app live",
+    "modes": {
+      "local": {
+        "title": "Modalita browser locale",
+        "desc": "Modalita consigliata dove parsing, editing, checksum ed export avvengono completamente nel browser."
+      },
+      "backend": {
+        "title": "Modalita backend FastAPI",
+        "desc": "Modalita API locale opzionale utile per debugging, sviluppo e workflow guidati da tooling Python."
+      }
+    },
+    "pillars": {
+      "editor": {
+        "title": "Editing salvataggio completo",
+        "desc": "Modifica statistiche, mosse e abilita del party, gestisci box PC, tasche della borsa e valori economici in un'unica interfaccia."
+      },
+      "runtime": {
+        "title": "Strategia dual runtime",
+        "desc": "Passa da esecuzione frontend-only a backend senza cambiare esperienza utente o flusso operativo."
+      },
+      "data": {
+        "title": "Mappatura dati ricca",
+        "desc": "Usa tabelle curate e manifest delle icone per mantenere riferimenti a mosse, oggetti e Pokemon veloci e coerenti."
+      },
+      "safety": {
+        "title": "Export sicuro con checksum",
+        "desc": "Ricalcola i checksum del salvataggio prima dell'export per preservare compatibilita e ridurre il rischio di corruzione."
+      }
+    },
+    "footer": {
+      "title": "Creato per utility pratiche su ROM hack",
+      "desc": "Uno strumento fan-made focalizzato su editing semplice, reversibile e distribuibile come web app statica.",
+      "link_repo": "Apri repository",
+      "link_live": "Visita GitHub Pages"
     }
   },
   "CookingModal": {

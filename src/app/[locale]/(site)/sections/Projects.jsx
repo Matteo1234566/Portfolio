@@ -89,6 +89,32 @@ export default function Projects() {
       ],
       link: "https://4aitech.it/two-sequel"
     },
+    {
+      id: 'pyquark',
+      title: t('items.pyquark.title'),
+      category: t('items.pyquark.category'),
+      description: t('items.pyquark.description'),
+      techStack: [
+        t('items.pyquark.techStack.0'),
+        t('items.pyquark.techStack.1'),
+        t('items.pyquark.techStack.2'),
+        t('items.pyquark.techStack.3')
+      ],
+      link: '/pyquark'
+    },
+    {
+      id: 'puse',
+      title: t('items.puse.title'),
+      category: t('items.puse.category'),
+      description: t('items.puse.description'),
+      techStack: [
+        t('items.puse.techStack.0'),
+        t('items.puse.techStack.1'),
+        t('items.puse.techStack.2'),
+        t('items.puse.techStack.3')
+      ],
+      link: '/puse'
+    },
   ];
 
   useEffect(() => {
