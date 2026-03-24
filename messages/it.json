@@ -187,6 +187,17 @@
           "2": "FastAPI",
           "3": "GitHub Pages"
         }
+      },
+      "targage": {
+        "title": "Targage",
+        "category": "Plate Intelligence",
+        "description": "Motore automatico di ricerca targhe per garage che trasforma video di sorveglianza grezzi in evidenze ricercabili di entrata e uscita.",
+        "techStack": {
+          "0": "Computer Vision",
+          "1": "OCR",
+          "2": "Video Indexing",
+          "3": "JSON Search"
+        }
       }
     }
   },
@@ -524,6 +535,52 @@
       "desc": "Uno strumento fan-made focalizzato su editing semplice, reversibile e distribuibile come web app statica.",
       "link_repo": "Apri repository",
       "link_live": "Visita GitHub Pages"
+    }
+  },
+  "Targage": {
+    "badge": "Intelligence per Garage",
+    "tagline": "Dalla videosorveglianza alla ricerca targhe immediata",
+    "description": "Targage e un layer di intelligence per autorimesse e parcheggi. Analizza flussi DVR/NVR, rileva le targhe, estrae il testo e costruisce una timeline precisa per recuperare in pochi secondi i momenti di ingresso e uscita.",
+    "cta_demo": "Richiedi una demo",
+    "mock": {
+      "label": "Mock PlateSearch",
+      "search_label": "Cerca targa",
+      "entry": "Primo ingresso",
+      "exit": "Ultima uscita"
+    },
+    "pipeline_title": "Come funziona il motore",
+    "pipeline": {
+      "ingestion": {
+        "title": "Ingestione video",
+        "desc": "Processa stream live e registrazioni storiche direttamente dai sistemi video gia presenti su HDD/SSD."
+      },
+      "detection": {
+        "title": "Detection + OCR",
+        "desc": "Individua le zone targa con bounding box e trascrive i caratteri alfanumerici con OCR ad alta precisione."
+      },
+      "indexing": {
+        "title": "Indicizzazione temporale",
+        "desc": "Associa ogni targa riconosciuta a timestamp esatti e riferimenti video in un indice strutturato e ricercabile."
+      },
+      "retrieval": {
+        "title": "Recupero immediato",
+        "desc": "L'utente cerca una targa e ottiene subito i segmenti di entrata/uscita senza rivedere ore di filmati."
+      }
+    },
+    "value_title": "Valore per il business",
+    "value": {
+      "time": {
+        "title": "Enorme risparmio di tempo",
+        "desc": "Riduce gli audit video da ore di revisione manuale a pochi secondi per ogni caso."
+      },
+      "security": {
+        "title": "Sicurezza operativa",
+        "desc": "Crea un registro cronologico affidabile di tutti i movimenti veicolo all'interno della struttura."
+      },
+      "liability": {
+        "title": "Tutela da contestazioni",
+        "desc": "Fornisce prove visive con timestamp per gestire rapidamente e con trasparenza le dispute sui danni."
+      }
     }
   },
   "CookingModal": {

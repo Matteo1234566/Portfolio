@@ -115,6 +115,19 @@ export default function Projects() {
       ],
       link: '/puse'
     },
+    {
+      id: 'targage',
+      title: t('items.targage.title'),
+      category: t('items.targage.category'),
+      description: t('items.targage.description'),
+      techStack: [
+        t('items.targage.techStack.0'),
+        t('items.targage.techStack.1'),
+        t('items.targage.techStack.2'),
+        t('items.targage.techStack.3')
+      ],
+      link: '/targage'
+    },
   ];
 
   useEffect(() => {

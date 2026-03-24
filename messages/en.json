@@ -187,6 +187,17 @@
           "2": "FastAPI",
           "3": "GitHub Pages"
         }
+      },
+      "targage": {
+        "title": "Targage",
+        "category": "Plate Intelligence",
+        "description": "Automated plate-search engine for garages that turns raw surveillance video into searchable entry and exit evidence.",
+        "techStack": {
+          "0": "Computer Vision",
+          "1": "OCR",
+          "2": "Video Indexing",
+          "3": "JSON Search"
+        }
       }
     }
   },
@@ -524,6 +535,52 @@
       "desc": "A focused fan tool made to keep save editing simple, reversible and deployable as a static web app.",
       "link_repo": "Open repository",
       "link_live": "Visit GitHub Pages"
+    }
+  },
+  "Targage": {
+    "badge": "Garage Intelligence",
+    "tagline": "From surveillance footage to instant plate lookup",
+    "description": "Targage is an intelligence layer for parking garages and private lots. It analyzes DVR/NVR footage, detects plates, extracts text, and creates a precise timeline so operators can retrieve entry and exit moments in seconds.",
+    "cta_demo": "Request a Demo",
+    "mock": {
+      "label": "PlateSearch Mock",
+      "search_label": "Search plate",
+      "entry": "First entry",
+      "exit": "Last exit"
+    },
+    "pipeline_title": "How the engine works",
+    "pipeline": {
+      "ingestion": {
+        "title": "Video Ingestion",
+        "desc": "Processes live streams and historical recordings directly from existing HDD/SSD video storage."
+      },
+      "detection": {
+        "title": "Detection + OCR",
+        "desc": "Locates plate regions with bounding boxes and transcribes alphanumeric values using high-precision OCR."
+      },
+      "indexing": {
+        "title": "Temporal Indexing",
+        "desc": "Pairs each recognized plate with exact timestamps and video references in a structured searchable index."
+      },
+      "retrieval": {
+        "title": "Instant Retrieval",
+        "desc": "Users search by plate number and get the exact entry/exit segments instead of reviewing hours of footage."
+      }
+    },
+    "value_title": "Business value",
+    "value": {
+      "time": {
+        "title": "Massive Time Savings",
+        "desc": "Cuts video audit effort from hours of manual review to a few seconds per case."
+      },
+      "security": {
+        "title": "Operational Security",
+        "desc": "Creates a reliable chronological logbook of every vehicle movement inside the facility."
+      },
+      "liability": {
+        "title": "Liability Protection",
+        "desc": "Provides timestamped visual evidence to resolve damage disputes quickly and transparently."
+      }
     }
   },
   "CookingModal": {
