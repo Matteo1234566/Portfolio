@@ -105,7 +105,7 @@ The project follows the latest Next.js App Router conventions with dynamic local
 Whether it's a complex AI pipeline or a fresh MVP, we are ready to turn your chaos into code.
 
 * 🌐 **Website:** [4aitech.it](https://www.4aitech.it)
-* 📧 **Email:** [hello@simoneandmatteo.com](mailto:hello@simoneandmatteo.com)
+* 📧 **Email:** [magosimo99@gmail.com](mailto:magosimo99@gmail.com)
 
 ---
 

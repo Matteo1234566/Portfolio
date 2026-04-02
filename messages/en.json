@@ -198,6 +198,28 @@
           "2": "Video Indexing",
           "3": "JSON Search"
         }
+      },
+      "mirror": {
+        "title": "Mirror",
+        "category": "Open Data",
+        "description": "Platform to make ISTAT data transparent and accessible, featuring AI-powered natural language queries and data visualization.",
+        "techStack": {
+          "0": "API Documentation",
+          "1": "LLM + RAG",
+          "2": "Data Visualization",
+          "3": "Postman Collections"
+        }
+      },
+      "capture": {
+        "title": "Capture",
+        "category": "Focus App",
+        "description": "Local-first productivity app that captures thoughts instantly, structures later, and guides you through clear action steps.",
+        "techStack": {
+          "0": "SQLite",
+          "1": "Local-First",
+          "2": "Mobile (Android)",
+          "3": "Node Architecture"
+        }
       }
     }
   },
@@ -581,6 +603,138 @@
         "title": "Liability Protection",
         "desc": "Provides timestamped visual evidence to resolve damage disputes quickly and transparently."
       }
+    }
+  },
+  "Mirror": {
+    "badge": "Open Data",
+    "tagline": "Democratizing ISTAT data for everyone",
+    "description": "Making the entire ISTAT data ecosystem transparent and accessible. From complex statistical databases to actionable insights, Mirror bridges the gap between public data and everyday users.",
+    "cta_soon": "Coming Soon",
+    "cta_repo": "View Repository",
+    "phases_label": "Roadmap",
+    "phase1_title": "Phase 1: Foundation",
+    "phase1_desc": "Documentation repository with APIs, Postman collections, and guides",
+    "phase2_title": "Phase 2: Platform",
+    "phase2_desc": "Web app with visualization and AI-powered natural language queries",
+    "phases": {
+      "docs": {
+        "title": "API Documentation",
+        "desc": "Complete reference for all ISTAT web services and REST endpoints with examples."
+      },
+      "postman": {
+        "title": "Postman Collections",
+        "desc": "Ready-to-use API collections with pre-configured environments for quick testing."
+      },
+      "guides": {
+        "title": "Step-by-Step Guides",
+        "desc": "Tutorials covering data access, querying, and export workflows."
+      }
+    },
+    "features": {
+      "browse": {
+        "title": "Dataset Browser",
+        "desc": "Intuitive interface to explore thousands of public statistical datasets."
+      },
+      "visualize": {
+        "title": "Data Visualization",
+        "desc": "Charts, tables, and interactive dashboards to understand trends at a glance."
+      },
+      "ai": {
+        "title": "Natural Language Query",
+        "desc": "AI-powered system that interprets questions and retrieves relevant data automatically."
+      },
+      "explain": {
+        "title": "Contextual Explanations",
+        "desc": "Clear outputs with explanations to help users understand the meaning behind the numbers."
+      }
+    },
+    "footer": {
+      "title": "Transforming data into knowledge",
+      "desc": "Mirror aims to bridge the gap between complex statistical data and everyday users, making public information truly accessible to all."
+    }
+  },
+  "Capture": {
+    "badge": "Focus App",
+    "tagline": "Calm execution companion for fast minds",
+    "description": "A local-first focus application for those who lose momentum when friction is high. Capture thoughts instantly, structure when cognitive pressure is lower, and act with clear guidance.",
+    "cta_soon": "Coming Soon",
+    "cta_repo": "View Repository",
+    "cta_playstore": "Get on Play Store",
+    "workflow_label": "The Workflow",
+    "workflow": {
+      "capture": {
+        "title": "Capture First",
+        "desc": "Capture the thought before it disappears. No friction, no decisions."
+      },
+      "structure": {
+        "title": "Structure Later",
+        "desc": "Add context, type, and timing when cognitive pressure is lower."
+      },
+      "act": {
+        "title": "Act Now",
+        "desc": "Clear, low-noise guidance on what to do next."
+      }
+    },
+    "principles_title": "Core Principles",
+    "principles": {
+      "speed": {
+        "title": "Speed over Perfection",
+        "desc": "Capturing matters more than categorizing. Get it out, refine later."
+      },
+      "clarity": {
+        "title": "Clarity over Choice",
+        "desc": "One next step is better than ten options. Reduce decision fatigue."
+      },
+      "calm": {
+        "title": "Calm over Complexity",
+        "desc": "The UI should reduce anxiety, not add to it. Calm and grounded design."
+      },
+      "local": {
+        "title": "Local-First Reliability",
+        "desc": "Data should always be available and safe. No dependency on cloud connectivity."
+      },
+      "context": {
+        "title": "Contextual Guidance",
+        "desc": "Helpful, never intrusive. Suggestions appear at the right moment."
+      }
+    },
+    "features_title": "Key Features",
+    "features": {
+      "capture": {
+        "title": "Capture-First Entry",
+        "desc": "Instant thought capture before complexity. Focus overlay on launch."
+      },
+      "node": {
+        "title": "Node-Based Architecture",
+        "desc": "Unified model for notes, tasks, and events with relationships and timing."
+      },
+      "now": {
+        "title": "The Now System",
+        "desc": "Dynamic action loop showing what to do next, not just a static list."
+      },
+      "progressive": {
+        "title": "Progressive Disclosure",
+        "desc": "Complexity revealed gradually. Lightweight experience without sacrificing power."
+      }
+    },
+    "tech_title": "Technical Architecture",
+    "tech": {
+      "sqlite": {
+        "title": "SQLite Storage",
+        "desc": "Local-first data store with reliable derived views."
+      },
+      "local": {
+        "title": "Offline-First",
+        "desc": "Always available. No dependency on connectivity."
+      },
+      "mobile": {
+        "title": "Mobile Native",
+        "desc": "Available on Android via Play Store."
+      }
+    },
+    "footer": {
+      "title": "From chaos to focus",
+      "desc": "Capture transforms fleeting thoughts into structured action without forcing you through complex planning systems."
     }
   },
   "CookingModal": {
