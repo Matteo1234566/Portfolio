@@ -116,13 +116,12 @@ export default function MirrorPage() {
             </p>
 
             <div className="flex flex-wrap gap-4 mt-8">
-              {/* TODO: Add repository link when available */}
-              {/* <a href="https://github.com/your-org/mirror" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Matteo1234566/istat-data-explorer" target="_blank" rel="noopener noreferrer">
                 <Button variant="primary" className="px-7 py-4 text-base gap-2">
                   <Code2 size={18} />
                   {t('cta_repo')}
                 </Button>
-              </a> */}
+              </a>
               <Button variant="secondary" className="px-7 py-4 text-base gap-2">
                 {t('cta_soon')}
                 <ArrowRight size={17} />
