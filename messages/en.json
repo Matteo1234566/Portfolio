@@ -533,92 +533,92 @@
     }
   },
   "Capture": {
-    "badge": "Field Intelligence",
-    "tagline": "Capture once, decide faster",
-    "description": "Capture is a mobile-first data workflow app that helps teams collect structured evidence in real contexts and turn it into actionable operations without heavy manual reporting.",
+    "badge": "Local-First Focus App",
+    "tagline": "Capture now, organize when ready",
+    "description": "Capture is a mobile-first personal productivity app built for fast thought capture. Notes, tasks, events, and optional photo attachments stay on your device with no account required.",
     "cta_soon": "Release soon",
     "cta_privacy": "Privacy Policy",
     "workflow_label": "Workflow Overview",
     "workflow": {
       "capture": {
         "title": "Capture",
-        "desc": "Record observations, events and media directly in context with a fast, low-friction input flow."
+        "desc": "Write an idea in seconds or attach a photo when text is not enough."
       },
       "structure": {
         "title": "Structure",
-        "desc": "Normalize entries into coherent records so data can be filtered, compared and audited over time."
+        "desc": "Turn raw input into notes, tasks, or events with tags, links, and schedule details."
       },
       "act": {
         "title": "Act",
-        "desc": "Turn captured signals into clear operational actions with traceable history."
+        "desc": "Set one active task, review what is next in Now View, and move forward with less friction."
       }
     },
     "principles_title": "Design Principles",
     "principles": {
       "speed": {
         "title": "Speed First",
-        "desc": "Core interactions are optimized for rapid use in high-pressure environments."
+        "desc": "Capture should feel instant so thoughts are saved before they fade."
       },
       "clarity": {
         "title": "Clear by Default",
-        "desc": "Every data point is organized for easy reading, searching and follow-up."
+        "desc": "The app keeps structure lightweight so planning remains understandable and actionable."
       },
       "calm": {
         "title": "Cognitive Calm",
-        "desc": "Minimal visual noise and guided flows reduce user fatigue during long sessions."
+        "desc": "A focused interface helps reduce overload and keeps attention on one next step."
       },
       "local": {
         "title": "Offline Ready",
-        "desc": "Critical actions remain available even with poor or unstable connectivity."
+        "desc": "Core flows work without a cloud dependency because data lives on-device."
       },
       "context": {
         "title": "Context Rich",
-        "desc": "Entries preserve location, time and relevant metadata to support later analysis."
+        "desc": "Photos, timing, tags, and links keep each captured item meaningful later."
       }
     },
     "features_title": "Core Features",
     "features": {
       "capture": {
-        "title": "Fast Capture Layer",
-        "desc": "A streamlined UI to log events and metadata in seconds."
+        "title": "Fast Capture + Camera",
+        "desc": "Create text captures quickly and attach photos directly from the app when needed."
       },
       "node": {
-        "title": "Structured Node Model",
-        "desc": "Data is transformed into connected entities for robust querying and workflows."
+        "title": "Unified Node Model",
+        "desc": "Notes, tasks, and events share one flexible structure with tags and linked context."
       },
       "now": {
-        "title": "Real-Time Awareness",
-        "desc": "Operators can monitor recent entries and react quickly when priorities change."
+        "title": "Now View + Active Task",
+        "desc": "Keep a single active task in focus and surface what matters right now."
       },
       "progressive": {
-        "title": "Progressive Workflow",
-        "desc": "Start simple and enrich records over time without breaking process continuity."
+        "title": "Calendar + Local Reminders",
+        "desc": "Schedule events and task timings, with optional on-device reminders before start or deadline."
       }
     },
     "tech_title": "Technology Foundation",
     "tech": {
       "sqlite": {
-        "title": "Local-First Storage",
-        "desc": "Reliable local persistence supports performance and resilience in the field."
+        "title": "On-Device SQLite",
+        "desc": "Nodes and settings are persisted locally in a device database."
       },
       "local": {
-        "title": "Network Flexibility",
-        "desc": "Designed to work across unstable environments with synchronization-ready patterns."
+        "title": "Local Media Paths",
+        "desc": "Photo attachments are referenced as local file paths, not uploaded to a remote service."
       },
       "mobile": {
-        "title": "Mobile Native Thinking",
-        "desc": "Layouts and interactions are built for practical use on handheld devices."
+        "title": "Mobile-First UX",
+        "desc": "Capture and planning flows are designed for quick everyday use on handheld devices."
       }
     },
     "footer": {
-      "title": "Built for teams that move fast",
-      "desc": "Capture transforms fragmented field notes into a coherent operational memory you can trust."
+      "title": "Built for fast personal clarity",
+      "desc": "Capture turns scattered thoughts into a practical, structured flow you can trust day to day."
     }
   },
   "CapturePrivacy": {
     "badge": "Legal & Privacy",
     "title": "Capture Privacy Policy",
-    "subtitle": "This page explains how we handle user and device data for Capture and ensures transparent disclosure for app store requirements.",
+    "subtitle": "This page explains what data Capture uses and how it is handled. Capture is designed to work locally on your device without account-based cloud storage.",
     "effective_date": "Effective date: 16 April 2026",
     "back_to_capture": "Back to Capture",
     "sections": {
@@ -628,23 +628,23 @@
       },
       "data": {
         "title": "Data We Process",
-        "body": "Depending on usage, we may process account/contact details, user-provided content, operational metadata, and essential technical diagnostics required to run and secure the service."
+        "body": "Capture stores user-created content such as notes, tasks, events, tags, links, timing fields, language and reminder preferences, and optional photo attachments. This information is stored locally on your device."
       },
       "usage": {
         "title": "How We Use Data",
-        "body": "We use data to provide app functionality, improve reliability, support users, protect against abuse, and maintain service quality."
+        "body": "Data is used to power core app features such as capture, planning views, calendar scheduling, and local reminders."
       },
       "sharing": {
         "title": "Data Sharing",
-        "body": "We do not sell personal data. Data may be shared only with necessary infrastructure providers or when required by law."
+        "body": "Capture does not require user accounts and does not upload your notes, tasks, events, or photos to a backend service. We do not sell personal data."
       },
       "retention": {
         "title": "Retention and Deletion",
-        "body": "Data is retained only for the time needed to provide features, fulfill legal obligations, and resolve security or support cases. Users can request deletion where applicable."
+        "body": "Your data remains on your device until you delete it in the app, clear app storage, or uninstall the app."
       },
       "rights": {
         "title": "User Rights",
-        "body": "Users may request access, correction, or deletion of their data, and can contact us for privacy-related requests and clarifications."
+        "body": "You can modify or delete your content directly in the app. For privacy questions or clarifications, you can contact us at the address below."
       },
       "children": {
         "title": "Children's Privacy",

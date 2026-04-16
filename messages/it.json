@@ -533,92 +533,92 @@
     }
   },
   "Capture": {
-    "badge": "Field Intelligence",
-    "tagline": "Cattura una volta, decidi piu velocemente",
-    "description": "Capture e un'app mobile-first per workflow dati: aiuta i team a raccogliere evidenze strutturate sul campo e trasformarle in operazioni concrete senza reportistica pesante.",
+    "badge": "App Focus Local-First",
+    "tagline": "Cattura ora, organizza quando sei pronto",
+    "description": "Capture e un'app di produttivita personale mobile-first pensata per catturare idee al volo. Note, task, eventi e foto opzionali restano sul dispositivo senza bisogno di account.",
     "cta_soon": "In uscita",
     "cta_privacy": "Norme sulla privacy",
     "workflow_label": "Panoramica workflow",
     "workflow": {
       "capture": {
         "title": "Cattura",
-        "desc": "Registra osservazioni, eventi e media direttamente nel contesto con un flusso rapido e senza attrito."
+        "desc": "Scrivi un'idea in pochi secondi o allega una foto quando il testo non basta."
       },
       "structure": {
         "title": "Struttura",
-        "desc": "Normalizza ogni voce in record coerenti, cosi i dati restano filtrabili, confrontabili e verificabili nel tempo."
+        "desc": "Trasforma l'input grezzo in note, task o eventi con tag, link e pianificazione."
       },
       "act": {
         "title": "Azione",
-        "desc": "Trasforma i segnali raccolti in azioni operative chiare con cronologia tracciabile."
+        "desc": "Imposta una task attiva, guarda cosa conta nella vista Ora e procedi con meno attrito."
       }
     },
     "principles_title": "Principi di design",
     "principles": {
       "speed": {
         "title": "Velocita prima di tutto",
-        "desc": "Le interazioni principali sono ottimizzate per l'uso rapido in contesti ad alta pressione."
+        "desc": "La cattura deve essere istantanea, cosi i pensieri non si perdono."
       },
       "clarity": {
         "title": "Chiarezza di default",
-        "desc": "Ogni dato e organizzato per essere letto, cercato e gestito con immediatezza."
+        "desc": "La struttura resta leggera per mantenere pianificazione e priorita comprensibili."
       },
       "calm": {
         "title": "Calma cognitiva",
-        "desc": "Poco rumore visivo e flussi guidati riducono la fatica durante sessioni lunghe."
+        "desc": "Un'interfaccia focalizzata riduce il sovraccarico e aiuta a vedere il prossimo passo."
       },
       "local": {
         "title": "Pronto offline",
-        "desc": "Le azioni critiche restano disponibili anche con connettivita assente o instabile."
+        "desc": "Le funzioni principali non dipendono dal cloud, perche i dati restano sul dispositivo."
       },
       "context": {
         "title": "Contesto ricco",
-        "desc": "Le registrazioni conservano tempo, posizione e metadati utili alle analisi successive."
+        "desc": "Foto, orari, tag e link mantengono ogni elemento utile anche in seguito."
       }
     },
     "features_title": "Funzionalita core",
     "features": {
       "capture": {
-        "title": "Layer di cattura rapido",
-        "desc": "Interfaccia snella per registrare eventi e metadati in pochi secondi."
+        "title": "Cattura rapida + fotocamera",
+        "desc": "Crea contenuti testuali al volo e allega foto direttamente dall'app quando serve."
       },
       "node": {
-        "title": "Modello dati strutturato",
-        "desc": "I dati diventano entita collegate, pronte per query robuste e workflow affidabili."
+        "title": "Modello nodo unificato",
+        "desc": "Note, task ed eventi condividono una struttura flessibile con tag e contesto collegato."
       },
       "now": {
-        "title": "Consapevolezza in tempo reale",
-        "desc": "Gli operatori monitorano subito gli ultimi eventi e reagiscono ai cambi di priorita."
+        "title": "Vista Ora + task attiva",
+        "desc": "Mantieni una sola task in focus e porta in evidenza cio che conta adesso."
       },
       "progressive": {
-        "title": "Workflow progressivo",
-        "desc": "Si parte in modo semplice e si arricchiscono i record nel tempo senza interrompere il processo."
+        "title": "Calendario + promemoria locali",
+        "desc": "Pianifica eventi e task con promemoria opzionali sul dispositivo prima di inizio o scadenza."
       }
     },
     "tech_title": "Fondamenta tecnologiche",
     "tech": {
       "sqlite": {
-        "title": "Storage local-first",
-        "desc": "Persistenza locale affidabile per prestazioni stabili e resilienza sul campo."
+        "title": "SQLite on-device",
+        "desc": "Nodi e impostazioni vengono salvati localmente nel database del dispositivo."
       },
       "local": {
-        "title": "Flessibilita di rete",
-        "desc": "Progettato per ambienti instabili, con pattern pronti alla sincronizzazione."
+        "title": "Media su percorsi locali",
+        "desc": "Le foto allegate vengono referenziate come file locali, senza upload a servizi remoti."
       },
       "mobile": {
-        "title": "Pensiero mobile nativo",
-        "desc": "Layout e interazioni pensati per un uso pratico su dispositivi portatili."
+        "title": "UX mobile-first",
+        "desc": "Flussi di cattura e pianificazione pensati per uso quotidiano rapido su dispositivi mobili."
       }
     },
     "footer": {
-      "title": "Creato per team che si muovono veloci",
-      "desc": "Capture trasforma note frammentate in una memoria operativa coerente e affidabile."
+      "title": "Creato per chiarezza personale veloce",
+      "desc": "Capture trasforma pensieri sparsi in un flusso pratico e strutturato, affidabile ogni giorno."
     }
   },
   "CapturePrivacy": {
     "badge": "Legale & Privacy",
     "title": "Norme sulla privacy di Capture",
-    "subtitle": "Questa pagina descrive come trattiamo i dati utente e dispositivo per Capture, garantendo trasparenza anche ai fini della scheda Store.",
+    "subtitle": "Questa pagina spiega quali dati usa Capture e come vengono trattati. Capture e progettata per funzionare in locale sul dispositivo senza storage cloud basato su account.",
     "effective_date": "Data di efficacia: 16 aprile 2026",
     "back_to_capture": "Torna a Capture",
     "sections": {
@@ -628,23 +628,23 @@
       },
       "data": {
         "title": "Dati che trattiamo",
-        "body": "In base all'uso, possiamo trattare dati account/contatto, contenuti forniti dall'utente, metadati operativi e diagnostica tecnica essenziale per far funzionare e proteggere il servizio."
+        "body": "Capture salva contenuti creati dall'utente come note, task, eventi, tag, link, campi temporali, preferenze lingua/promemoria e foto opzionali. Queste informazioni sono conservate localmente sul dispositivo."
       },
       "usage": {
         "title": "Come usiamo i dati",
-        "body": "Usiamo i dati per offrire le funzionalita dell'app, migliorarne affidabilita, fornire supporto, prevenire abusi e mantenere la qualita del servizio."
+        "body": "I dati vengono usati per le funzioni principali dell'app: cattura, viste di pianificazione, calendario e promemoria locali."
       },
       "sharing": {
         "title": "Condivisione dei dati",
-        "body": "Non vendiamo dati personali. I dati possono essere condivisi solo con fornitori infrastrutturali necessari o quando richiesto dalla legge."
+        "body": "Capture non richiede account e non carica note, task, eventi o foto su un backend remoto. Non vendiamo dati personali."
       },
       "retention": {
         "title": "Conservazione e cancellazione",
-        "body": "Conserviamo i dati solo per il tempo necessario a erogare le funzionalita, rispettare obblighi legali e gestire casi di supporto o sicurezza. Dove applicabile, l'utente puo richiederne la cancellazione."
+        "body": "I dati restano sul dispositivo finche non li elimini nell'app, cancelli i dati applicazione o disinstalli l'app."
       },
       "rights": {
         "title": "Diritti dell'utente",
-        "body": "L'utente puo richiedere accesso, rettifica o cancellazione dei propri dati e contattarci per qualsiasi richiesta o chiarimento privacy."
+        "body": "Puoi modificare o eliminare i contenuti direttamente nell'app. Per domande o chiarimenti privacy puoi contattarci all'indirizzo indicato sotto."
       },
       "children": {
         "title": "Privacy dei minori",
