@@ -166,6 +166,28 @@
           "2": "NLP"
         }
       },
+      "mirror": {
+        "title": "Mirror",
+        "category": "Data Ops",
+        "description": "Data exploration and workflow layer that converts fragmented statistical sources into browsable, query-ready insights for analysts and teams.",
+        "techStack": {
+          "0": "Data Modeling",
+          "1": "API Workflows",
+          "2": "Analytics UI",
+          "3": "AI Assistant"
+        }
+      },
+      "capture": {
+        "title": "Capture",
+        "category": "Field Intelligence",
+        "description": "Mobile-first structured data capture app designed for fast operational logging, context preservation, and offline-resilient workflows.",
+        "techStack": {
+          "0": "Mobile UX",
+          "1": "Local-first",
+          "2": "Structured Data",
+          "3": "Sync-ready"
+        }
+      },
       "pyquark": {
         "title": "PyQuark",
         "category": "Systems & USB",
