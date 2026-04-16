@@ -484,6 +484,54 @@
       "quality_warning": "Attenzione: audio con forti rumori di fondo potrebbero generare trascrizioni incomplete. Usa registrazioni chiare."
     }
   },
+  "Mirror": {
+    "badge": "Open Data",
+    "tagline": "Democratizzare i dati ISTAT per tutti",
+    "description": "Rendere trasparente e accessibile l'intero ecosistema dati ISTAT. Dai database statistici complessi a insight azionabili, Mirror colma il divario tra dati pubblici e utenti quotidiani.",
+    "cta_soon": "Disponibile a Breve",
+    "cta_repo": "Apri Repository",
+    "phases_label": "Roadmap",
+    "phase1_title": "Fase 1: Fondamenta",
+    "phase1_desc": "Repository di documentazione con API, collezioni Postman e guide",
+    "phase2_title": "Fase 2: Piattaforma",
+    "phase2_desc": "Web app con visualizzazione e query in linguaggio naturale AI",
+    "phases": {
+      "docs": {
+        "title": "Documentazione API",
+        "desc": "Riferimento completo per tutti i servizi web REST di ISTAT con esempi."
+      },
+      "postman": {
+        "title": "Collezioni Postman",
+        "desc": "Collection API pronte all'uso con ambienti pre-configurati per test rapidi."
+      },
+      "guides": {
+        "title": "Guide Passo-Passo",
+        "desc": "Tutorial che coprono accesso ai dati, query e workflow di esportazione."
+      }
+    },
+    "features": {
+      "browse": {
+        "title": "Esplora Dataset",
+        "desc": "Interfaccia intuitiva per esplorare migliaia di dataset statistici pubblici."
+      },
+      "visualize": {
+        "title": "Visualizzazione Dati",
+        "desc": "Grafici, tabelle e dashboard interattive per comprendere i trend a colpo d'occhio."
+      },
+      "ai": {
+        "title": "Query in Linguaggio Naturale",
+        "desc": "Sistema AI che interpreta le domande e recupera automaticamente i dati rilevanti."
+      },
+      "explain": {
+        "title": "Spiegazioni Contestuali",
+        "desc": "Output chiari con spiegazioni per aiutare gli utenti a comprendere il significato dietro i numeri."
+      }
+    },
+    "footer": {
+      "title": "Trasformare dati in conoscenza",
+      "desc": "Mirror mira a colmare il divario tra dati statistici complessi e utenti quotidiani, rendendo le informazioni pubbliche veramente accessibili a tutti."
+    }
+  },
   "Capture": {
     "badge": "Field Intelligence",
     "tagline": "Cattura una volta, decidi piu velocemente",
