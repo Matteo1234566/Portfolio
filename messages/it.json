@@ -198,28 +198,6 @@
           "2": "Video Indexing",
           "3": "JSON Search"
         }
-      },
-      "mirror": {
-        "title": "Mirror",
-        "category": "Open Data",
-        "description": "Piattaforma per rendere trasparenti e accessibili i dati ISTAT, con query in linguaggio naturale AI e visualizzazione dati.",
-        "techStack": {
-          "0": "Documentazione API",
-          "1": "LLM + RAG",
-          "2": "Data Visualization",
-          "3": "Collezioni Postman"
-        }
-      },
-      "capture": {
-        "title": "Capture",
-        "category": "Focus App",
-        "description": "App di produttività local-first che cattura i pensieri istantaneamente, struttura dopo, e ti guida con chiari passaggi d'azione.",
-        "techStack": {
-          "0": "SQLite",
-          "1": "Local-First",
-          "2": "Mobile (Android)",
-          "3": "Node Architecture"
-        }
       }
     }
   },
@@ -484,6 +462,135 @@
       "quality_warning": "Attenzione: audio con forti rumori di fondo potrebbero generare trascrizioni incomplete. Usa registrazioni chiare."
     }
   },
+  "Capture": {
+    "badge": "Field Intelligence",
+    "tagline": "Cattura una volta, decidi piu velocemente",
+    "description": "Capture e un'app mobile-first per workflow dati: aiuta i team a raccogliere evidenze strutturate sul campo e trasformarle in operazioni concrete senza reportistica pesante.",
+    "cta_soon": "In uscita",
+    "cta_privacy": "Norme sulla privacy",
+    "workflow_label": "Panoramica workflow",
+    "workflow": {
+      "capture": {
+        "title": "Cattura",
+        "desc": "Registra osservazioni, eventi e media direttamente nel contesto con un flusso rapido e senza attrito."
+      },
+      "structure": {
+        "title": "Struttura",
+        "desc": "Normalizza ogni voce in record coerenti, cosi i dati restano filtrabili, confrontabili e verificabili nel tempo."
+      },
+      "act": {
+        "title": "Azione",
+        "desc": "Trasforma i segnali raccolti in azioni operative chiare con cronologia tracciabile."
+      }
+    },
+    "principles_title": "Principi di design",
+    "principles": {
+      "speed": {
+        "title": "Velocita prima di tutto",
+        "desc": "Le interazioni principali sono ottimizzate per l'uso rapido in contesti ad alta pressione."
+      },
+      "clarity": {
+        "title": "Chiarezza di default",
+        "desc": "Ogni dato e organizzato per essere letto, cercato e gestito con immediatezza."
+      },
+      "calm": {
+        "title": "Calma cognitiva",
+        "desc": "Poco rumore visivo e flussi guidati riducono la fatica durante sessioni lunghe."
+      },
+      "local": {
+        "title": "Pronto offline",
+        "desc": "Le azioni critiche restano disponibili anche con connettivita assente o instabile."
+      },
+      "context": {
+        "title": "Contesto ricco",
+        "desc": "Le registrazioni conservano tempo, posizione e metadati utili alle analisi successive."
+      }
+    },
+    "features_title": "Funzionalita core",
+    "features": {
+      "capture": {
+        "title": "Layer di cattura rapido",
+        "desc": "Interfaccia snella per registrare eventi e metadati in pochi secondi."
+      },
+      "node": {
+        "title": "Modello dati strutturato",
+        "desc": "I dati diventano entita collegate, pronte per query robuste e workflow affidabili."
+      },
+      "now": {
+        "title": "Consapevolezza in tempo reale",
+        "desc": "Gli operatori monitorano subito gli ultimi eventi e reagiscono ai cambi di priorita."
+      },
+      "progressive": {
+        "title": "Workflow progressivo",
+        "desc": "Si parte in modo semplice e si arricchiscono i record nel tempo senza interrompere il processo."
+      }
+    },
+    "tech_title": "Fondamenta tecnologiche",
+    "tech": {
+      "sqlite": {
+        "title": "Storage local-first",
+        "desc": "Persistenza locale affidabile per prestazioni stabili e resilienza sul campo."
+      },
+      "local": {
+        "title": "Flessibilita di rete",
+        "desc": "Progettato per ambienti instabili, con pattern pronti alla sincronizzazione."
+      },
+      "mobile": {
+        "title": "Pensiero mobile nativo",
+        "desc": "Layout e interazioni pensati per un uso pratico su dispositivi portatili."
+      }
+    },
+    "footer": {
+      "title": "Creato per team che si muovono veloci",
+      "desc": "Capture trasforma note frammentate in una memoria operativa coerente e affidabile."
+    }
+  },
+  "CapturePrivacy": {
+    "badge": "Legale & Privacy",
+    "title": "Norme sulla privacy di Capture",
+    "subtitle": "Questa pagina descrive come trattiamo i dati utente e dispositivo per Capture, garantendo trasparenza anche ai fini della scheda Store.",
+    "effective_date": "Data di efficacia: 16 aprile 2026",
+    "back_to_capture": "Torna a Capture",
+    "sections": {
+      "audience": {
+        "title": "Pubblico e ambito",
+        "body": "Capture e destinata a utenti dai 13 anni in su. L'app non e progettata per bambini di eta inferiore a 13 anni."
+      },
+      "data": {
+        "title": "Dati che trattiamo",
+        "body": "In base all'uso, possiamo trattare dati account/contatto, contenuti forniti dall'utente, metadati operativi e diagnostica tecnica essenziale per far funzionare e proteggere il servizio."
+      },
+      "usage": {
+        "title": "Come usiamo i dati",
+        "body": "Usiamo i dati per offrire le funzionalita dell'app, migliorarne affidabilita, fornire supporto, prevenire abusi e mantenere la qualita del servizio."
+      },
+      "sharing": {
+        "title": "Condivisione dei dati",
+        "body": "Non vendiamo dati personali. I dati possono essere condivisi solo con fornitori infrastrutturali necessari o quando richiesto dalla legge."
+      },
+      "retention": {
+        "title": "Conservazione e cancellazione",
+        "body": "Conserviamo i dati solo per il tempo necessario a erogare le funzionalita, rispettare obblighi legali e gestire casi di supporto o sicurezza. Dove applicabile, l'utente puo richiederne la cancellazione."
+      },
+      "rights": {
+        "title": "Diritti dell'utente",
+        "body": "L'utente puo richiedere accesso, rettifica o cancellazione dei propri dati e contattarci per qualsiasi richiesta o chiarimento privacy."
+      },
+      "children": {
+        "title": "Privacy dei minori",
+        "body": "Poiche Capture e rivolta a utenti 13+, non raccogliamo consapevolmente dati personali di bambini sotto i 13 anni. Se individuati, vengono rimossi tempestivamente."
+      },
+      "changes": {
+        "title": "Aggiornamenti della policy",
+        "body": "Possiamo aggiornare questa policy nel tempo. Le modifiche rilevanti verranno pubblicate su questa pagina con data di efficacia aggiornata."
+      }
+    },
+    "contact": {
+      "title": "Contatto per richieste privacy",
+      "body": "Per domande privacy, richieste sui dati o chiarimenti sulla policy, contattaci a:",
+      "email_label": "magosimo99@gmail.com"
+    }
+  },
   "PyQuark": {
     "badge": "Utility Nintendo Switch",
     "tagline": "Server di installazione dual-protocol con archivi virtualizzati",
@@ -603,138 +710,6 @@
         "title": "Tutela da contestazioni",
         "desc": "Fornisce prove visive con timestamp per gestire rapidamente e con trasparenza le dispute sui danni."
       }
-    }
-  },
-  "Mirror": {
-    "badge": "Open Data",
-    "tagline": "Democratizzare i dati ISTAT per tutti",
-    "description": "Rendere trasparente e accessibile l'intero ecosistema dati ISTAT. Dai database statistici complessi a insight azionabili, Mirror colma il divario tra dati pubblici e utenti quotidiani.",
-    "cta_soon": "Disponibile a Breve",
-    "cta_repo": "Apri Repository",
-    "phases_label": "Roadmap",
-    "phase1_title": "Fase 1: Fondamenta",
-    "phase1_desc": "Repository di documentazione con API, collezioni Postman e guide",
-    "phase2_title": "Fase 2: Piattaforma",
-    "phase2_desc": "Web app con visualizzazione e query in linguaggio naturale AI",
-    "phases": {
-      "docs": {
-        "title": "Documentazione API",
-        "desc": "Riferimento completo per tutti i servizi web REST di ISTAT con esempi."
-      },
-      "postman": {
-        "title": "Collezioni Postman",
-        "desc": "Collection API pronte all'uso con ambienti pre-configurati per test rapidi."
-      },
-      "guides": {
-        "title": "Guide Passo-Passo",
-        "desc": "Tutorial che coprono accesso ai dati, query e workflow di esportazione."
-      }
-    },
-    "features": {
-      "browse": {
-        "title": "Esplora Dataset",
-        "desc": "Interfaccia intuitiva per esplorare migliaia di dataset statistici pubblici."
-      },
-      "visualize": {
-        "title": "Visualizzazione Dati",
-        "desc": "Grafici, tabelle e dashboard interattive per comprendere i trend a colpo d'occhio."
-      },
-      "ai": {
-        "title": "Query in Linguaggio Naturale",
-        "desc": "Sistema AI che interpreta le domande e recupera automaticamente i dati rilevanti."
-      },
-      "explain": {
-        "title": "Spiegazioni Contestuali",
-        "desc": "Output chiari con spiegazioni per aiutare gli utenti a comprendere il significato dietro i numeri."
-      }
-    },
-    "footer": {
-      "title": "Trasformare dati in conoscenza",
-      "desc": "Mirror mira a colmare il divario tra dati statistici complessi e utenti quotidiani, rendendo le informazioni pubbliche veramente accessibili a tutti."
-    }
-  },
-  "Capture": {
-    "badge": "Focus App",
-    "tagline": "Compagno di esecuzione calmo per menti veloci",
-    "description": "App di produttività local-first per chi perde slancio quando la distrazione è alta. Cattura i pensieri istantaneamente, struttura quando la pressione cognitiva è minore, e agisci con guida chiara.",
-    "cta_soon": "Disponibile a Breve",
-    "cta_repo": "Apri Repository",
-    "cta_playstore": "Scarica su Play Store",
-    "workflow_label": "Il Workflow",
-    "workflow": {
-      "capture": {
-        "title": "Cattura Prima",
-        "desc": "Cattura il pensiero prima che scompaia. Nessuna distrazione, nessuna decisione."
-      },
-      "structure": {
-        "title": "Struttura Dopo",
-        "desc": "Aggiungi contesto, tipo e tempistiche quando la pressione cognitiva è minore."
-      },
-      "act": {
-        "title": "Agisci Ora",
-        "desc": "Guida chiara e a basso rumore su cosa fare dopo."
-      }
-    },
-    "principles_title": "Principi Fondamentali",
-    "principles": {
-      "speed": {
-        "title": "Velocità sulla Perfezione",
-        "desc": "Catturare conta più che categorizzare. Scaricalo, raffina dopo."
-      },
-      "clarity": {
-        "title": "Chiarezza sulla Scelta",
-        "desc": "Un prossimo passo è meglio di dieci opzioni. Riduci la fatica decisionale."
-      },
-      "calm": {
-        "title": "Calma sulla Complessità",
-        "desc": "L'interfaccia dovrebbe ridurre l'ansia, non aggiungerla. Design calmo e ancorato."
-      },
-      "local": {
-        "title": "Affidabilità Local-First",
-        "desc": "I dati devono essere sempre disponibili e al sicuro. Nessuna dipendenza dalla connettività cloud."
-      },
-      "context": {
-        "title": "Guida Contestuale",
-        "desc": "Utile, mai intrusiva. I suggerimenti appaiono al momento giusto."
-      }
-    },
-    "features_title": "Funzionalità Chiave",
-    "features": {
-      "capture": {
-        "title": "Entry Capture-First",
-        "desc": "Cattura istantanea del pensiero prima della complessità. Overlay focus all'avvio."
-      },
-      "node": {
-        "title": "Architettura Node-Based",
-        "desc": "Modello unificato per note, task e eventi con relazioni e tempistiche."
-      },
-      "now": {
-        "title": "Il Sistema Now",
-        "desc": "Loop di azione dinamico che mostra cosa fare dopo, non una lista statica."
-      },
-      "progressive": {
-        "title": "Disclosure Progressiva",
-        "desc": "Complessità rivelata gradualmente. Esperienza leggera senza sacrificare potenza."
-      }
-    },
-    "tech_title": "Architettura Tecnica",
-    "tech": {
-      "sqlite": {
-        "title": "Archiviazione SQLite",
-        "desc": " datastore local-first con viste derivate affidabili."
-      },
-      "local": {
-        "title": "Offline-First",
-        "desc": "Sempre disponibile. Nessuna dipendenza dalla connettività."
-      },
-      "mobile": {
-        "title": "Mobile Native",
-        "desc": "Disponibile su Android tramite Play Store."
-      }
-    },
-    "footer": {
-      "title": "Dal caos alla focalizzazione",
-      "desc": "Capture trasforma pensieri fugaci in azione strutturata senza costringerti a sistemi di pianificazione complessi."
     }
   },
   "CookingModal": {

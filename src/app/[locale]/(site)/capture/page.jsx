@@ -1,8 +1,9 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import {
   Zap,
   Brain,
@@ -14,6 +15,7 @@ import {
   WifiOff,
   Sparkles,
   ArrowRight,
+  ShieldCheck,
 } from 'lucide-react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
@@ -40,6 +42,7 @@ const item = {
 
 export default function CapturePage() {
   const t = useTranslations('Capture');
+  const locale = useLocale();
 
   const principles = [
     {
@@ -166,6 +169,12 @@ export default function CapturePage() {
                 {t('cta_soon')}
                 <ArrowRight size={17} />
               </Button>
+              <Link href={`/${locale}/capture/privacy`}>
+                <Button variant="secondary" className="px-7 py-4 text-base gap-2">
+                  <ShieldCheck size={17} />
+                  {t('cta_privacy')}
+                </Button>
+              </Link>
             </div>
           </motion.div>
 

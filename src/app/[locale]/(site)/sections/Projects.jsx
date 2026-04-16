@@ -116,32 +116,6 @@ export default function Projects() {
       link: '/puse'
     },
     {
-      id: 'mirror',
-      title: t('items.mirror.title'),
-      category: t('items.mirror.category'),
-      description: t('items.mirror.description'),
-      techStack: [
-        t('items.mirror.techStack.0'),
-        t('items.mirror.techStack.1'),
-        t('items.mirror.techStack.2'),
-        t('items.mirror.techStack.3')
-      ],
-      link: '/mirror'
-    },
-    {
-      id: 'capture',
-      title: t('items.capture.title'),
-      category: t('items.capture.category'),
-      description: t('items.capture.description'),
-      techStack: [
-        t('items.capture.techStack.0'),
-        t('items.capture.techStack.1'),
-        t('items.capture.techStack.2'),
-        t('items.capture.techStack.3')
-      ],
-      link: '/capture'
-    },
-    {
       id: 'targage',
       title: t('items.targage.title'),
       category: t('items.targage.category'),
