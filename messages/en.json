@@ -610,6 +610,103 @@
         "desc": "Capture and planning flows are designed for quick everyday use on handheld devices."
       }
     },
+    "meta": {
+      "title": "Capture – Quick Notes & Tasks, Offline | Local-First App",
+      "description": "Capture is a mobile-first app for fast note and task capture. Offline, private, no account needed. Your data stays on your device — forever yours."
+    },
+    "hero": {
+      "headline_1": "Fast notes and tasks.",
+      "headline_2": "Always on your device.",
+      "badge_offline": "Works offline",
+      "badge_private": "No account needed",
+      "badge_local": "Data on your device"
+    },
+    "node_types": {
+      "note": "Note",
+      "task": "Task",
+      "event": "Event"
+    },
+    "mock": {
+      "note": "Draft launch copy for Capture landing",
+      "task": "Finalize app store screenshots",
+      "event": "Ship candidate review",
+      "event_meta": "Tomorrow, 09:30",
+      "active_label": "Active task"
+    },
+    "instant": {
+      "label": "Quick Capture",
+      "title": "Capture before the thought fades",
+      "subtitle": "The best capture system is the one you actually use. Capture opens fast, saves instantly, and gets out of your way.",
+      "item_1_title": "Open and capture",
+      "item_1_desc": "Notes and tasks in seconds. No setup, no friction, no wait.",
+      "item_2_title": "Everything in one inbox",
+      "item_2_desc": "One place for every idea, task and event. Decide what it is after you have saved it.",
+      "item_3_title": "Photos when words are not enough",
+      "item_3_desc": "Attach a photo directly from the app. Context stays with the capture, not in a separate folder."
+    },
+    "focus": {
+      "label": "Daily Focus",
+      "title": "Focus on today, not on everything",
+      "subtitle": "Seeing your full backlog all at once creates noise. Capture shows what matters now and hides what can wait.",
+      "item_1_title": "Now View",
+      "item_1_desc": "One focused view for the current moment. What is active, what is next, nothing else.",
+      "item_2_title": "Single active task",
+      "item_2_desc": "Set one task as active at a time. One clear next step reduces decision fatigue.",
+      "item_3_title": "Calendar and reminders",
+      "item_3_desc": "Schedule what needs a time, get reminded on-device. No cloud required."
+    },
+    "data_yours": {
+      "label": "Privacy First",
+      "title": "Your data stays yours",
+      "subtitle": "Local-first means your notes and tasks live on your device, not on a server you do not control.",
+      "item_1_title": "Offline always",
+      "item_1_desc": "Core features work without a network connection. Capture on a plane, in the metro, anywhere.",
+      "item_2_title": "On-device storage",
+      "item_2_desc": "Notes, tasks and photos stored in a local SQLite database. Not uploaded, not indexed, not shared.",
+      "item_3_title": "No account needed",
+      "item_3_desc": "No email, no password, no sign-up. Open the app and start capturing.",
+      "item_4_title": "No lock-in",
+      "item_4_desc": "Your data can be exported. You stay in control even if you decide to move on."
+    },
+    "comparison": {
+      "label": "Why Capture",
+      "title": "The right tool for personal capture",
+      "subtitle": "Most apps do too much. Capture does one thing right: get things out of your head, fast.",
+      "notion": {
+        "name": "vs Notion",
+        "pro": "Faster for daily capture",
+        "desc": "Notion is a great workspace for teams and documents. For quick personal notes it adds overhead. Capture is single-player, local-first, no database setup required."
+      },
+      "obsidian": {
+        "name": "vs Obsidian",
+        "pro": "Capture without the setup cost",
+        "desc": "Obsidian is powerful for linked notes and knowledge graphs. The mobile experience adds friction for on-the-go capture. Capture gives you privacy and local-first without the plugin overhead."
+      },
+      "todoist": {
+        "name": "vs Todoist",
+        "pro": "Your data stays on your device",
+        "desc": "Todoist excels at task management and collaboration. Capture is for personal capture with full data ownership. No cloud sync, no subscription, no account."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": "Does Capture work without internet?",
+      "a1": "Yes. All core features — notes, tasks, events, reminders — work fully offline. Your data lives on your device.",
+      "q2": "Do I need to create an account?",
+      "a2": "No account, no email, no password. Open the app and start capturing immediately.",
+      "q3": "What is local-first?",
+      "a3": "Local-first means your data is stored on your device and works without a server. You own it, you control it, and it is available even when offline.",
+      "q4": "Is my data synced to the cloud?",
+      "a4": "Core capture and planning flows are fully on-device. Optional sync is on the roadmap but never required.",
+      "q5": "Can I export my notes and tasks?",
+      "a5": "Yes. Your data is not locked in. Export options are available so you are never stuck.",
+      "q6": "Who is Capture for?",
+      "a6": "Anyone who wants a fast, private, distraction-free way to capture notes and tasks without the overhead of complex productivity suites.",
+      "q7": "How is Capture different from team workspace apps?",
+      "a7": "Capture is built for personal quick capture and daily focus. It avoids shared-workspace complexity, permissions setup, and heavy project structure.",
+      "q8": "Can I use Capture as a minimalist to-do app?",
+      "a8": "Yes. Capture includes tasks, scheduling, and reminders, but keeps the workflow lightweight so you can focus on one clear next action."
+    },
     "footer": {
       "title": "Built for fast personal clarity",
       "desc": "Capture turns scattered thoughts into a practical, structured flow you can trust day to day."

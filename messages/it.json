@@ -610,6 +610,103 @@
         "desc": "Flussi di cattura e pianificazione pensati per uso quotidiano rapido su dispositivi mobili."
       }
     },
+    "meta": {
+      "title": "Capture – Appunti Veloci e Task, Offline | App Local-First",
+      "description": "Capture è un'app mobile-first per catturare note e task rapidamente. Offline, privata, senza account. I tuoi dati restano sul tuo dispositivo — sempre tuoi."
+    },
+    "hero": {
+      "headline_1": "Appunti veloci e task.",
+      "headline_2": "Sempre sul tuo dispositivo.",
+      "badge_offline": "Funziona offline",
+      "badge_private": "Senza account",
+      "badge_local": "Dati sul dispositivo"
+    },
+    "node_types": {
+      "note": "Nota",
+      "task": "Task",
+      "event": "Evento"
+    },
+    "mock": {
+      "note": "Bozza copy lancio landing Capture",
+      "task": "Finalizza screenshot app store",
+      "event": "Review release candidate",
+      "event_meta": "Domani, 09:30",
+      "active_label": "Task attiva"
+    },
+    "instant": {
+      "label": "Cattura Rapida",
+      "title": "Cattura prima che il pensiero svanisca",
+      "subtitle": "Il miglior sistema di cattura è quello che usi davvero. Capture si apre veloce, salva subito e si fa da parte.",
+      "item_1_title": "Apri e cattura",
+      "item_1_desc": "Note e task in pochi secondi. Niente setup, niente attrito, niente attese.",
+      "item_2_title": "Tutto in una inbox",
+      "item_2_desc": "Un posto per ogni idea, task ed evento. Decidi cos'è dopo averlo salvato.",
+      "item_3_title": "Foto quando le parole non bastano",
+      "item_3_desc": "Allega una foto direttamente dall'app. Il contesto resta con la cattura, non in una cartella separata."
+    },
+    "focus": {
+      "label": "Focus Quotidiano",
+      "title": "Concentrati su oggi, non su tutto",
+      "subtitle": "Vedere tutto il backlog insieme crea rumore. Capture mostra ciò che conta adesso e nasconde ciò che può aspettare.",
+      "item_1_title": "Vista Ora",
+      "item_1_desc": "Una vista focalizzata sul momento presente. Cosa è attivo, cosa è successivo, nient'altro.",
+      "item_2_title": "Task attivo singolo",
+      "item_2_desc": "Un solo task attivo alla volta. Un passo successivo chiaro riduce il costo decisionale.",
+      "item_3_title": "Calendario e promemoria",
+      "item_3_desc": "Pianifica ciò che ha un orario, ricevilo sul dispositivo. Senza cloud richiesto."
+    },
+    "data_yours": {
+      "label": "Privacy Prima di Tutto",
+      "title": "I tuoi dati restano tuoi",
+      "subtitle": "Local-first significa che le tue note e i tuoi task vivono sul tuo dispositivo, non su un server che non controlli.",
+      "item_1_title": "Offline sempre",
+      "item_1_desc": "Le funzioni principali funzionano senza connessione. Cattura sull'aereo, in metro, ovunque.",
+      "item_2_title": "Archiviazione on-device",
+      "item_2_desc": "Note, task e foto salvati in un database SQLite locale. Non caricati, non indicizzati, non condivisi.",
+      "item_3_title": "Senza account",
+      "item_3_desc": "Niente email, niente password, niente registrazione. Apri l'app e inizia a catturare.",
+      "item_4_title": "Senza lock-in",
+      "item_4_desc": "I tuoi dati si possono esportare. Sei sempre in controllo anche se decidi di cambiare."
+    },
+    "comparison": {
+      "label": "Perché Capture",
+      "title": "Lo strumento giusto per la cattura personale",
+      "subtitle": "La maggior parte delle app fa troppo. Capture fa una cosa bene: tirare le cose fuori dalla testa, velocemente.",
+      "notion": {
+        "name": "vs Notion",
+        "pro": "Più veloce per la cattura quotidiana",
+        "desc": "Notion è ottimo come workspace per team e documenti. Per note personali veloci aggiunge overhead. Capture è single-player, local-first, senza setup database."
+      },
+      "obsidian": {
+        "name": "vs Obsidian",
+        "pro": "Capture senza il costo del setup",
+        "desc": "Obsidian è potente per note collegate e knowledge graph. L'esperienza mobile aggiunge attrito per la cattura on-the-go. Capture dà privacy e local-first senza il peso dei plugin."
+      },
+      "todoist": {
+        "name": "vs Todoist",
+        "pro": "I tuoi dati restano sul tuo dispositivo",
+        "desc": "Todoist eccelle nella gestione task e collaborazione. Capture è per la cattura personale con piena ownership dei dati. Senza sync cloud, senza abbonamento, senza account."
+      }
+    },
+    "faq": {
+      "title": "Domande Frequenti",
+      "q1": "Capture funziona senza internet?",
+      "a1": "Sì. Tutte le funzioni principali — note, task, eventi, promemoria — funzionano completamente offline. I tuoi dati vivono sul dispositivo.",
+      "q2": "Devo creare un account?",
+      "a2": "Niente account, niente email, niente password. Apri l'app e inizia subito a catturare.",
+      "q3": "Cosa significa local-first?",
+      "a3": "Local-first significa che i tuoi dati sono salvati sul dispositivo e funzionano senza un server. Li possiedi, li controlli e sono disponibili anche offline.",
+      "q4": "I miei dati vengono sincronizzati nel cloud?",
+      "a4": "I flussi principali di cattura e pianificazione sono completamente on-device. La sync opzionale è nella roadmap ma non sarà mai obbligatoria.",
+      "q5": "Posso esportare le mie note e task?",
+      "a5": "Sì. I tuoi dati non sono chiusi nell'app. Le opzioni di esportazione sono disponibili così non sei mai bloccato.",
+      "q6": "A chi è destinata Capture?",
+      "a6": "A chiunque voglia catturare note e task velocemente, in modo privato, senza la complessità delle suite di produttività.",
+      "q7": "In cosa si differenzia Capture dalle app workspace per team?",
+      "a7": "Capture è pensata per quick capture personale e focus quotidiano. Evita complessità da workspace condivisi, permessi e strutture di progetto pesanti.",
+      "q8": "Posso usare Capture come to-do app minimalista?",
+      "a8": "Sì. Capture include task, pianificazione e promemoria, mantenendo il flusso leggero per concentrarti su un prossimo passo chiaro."
+    },
     "footer": {
       "title": "Creato per chiarezza personale veloce",
       "desc": "Capture trasforma pensieri sparsi in un flusso pratico e strutturato, affidabile ogni giorno."
