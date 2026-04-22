@@ -4,7 +4,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { ArrowDoodle } from '@/app/[locale]/(site)/sections/Doodles';
 import { motion } from 'framer-motion';
-import { ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -19,6 +19,8 @@ export default function Hero() {
   const pathname = usePathname();
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
   const [isCooking, setIsCooking] = useState(false);
+
+  const proofItems = [0, 1, 2, 3].map((index) => t(`proof.${index}`));
 
   const heroRef = useRef(null);
   const badgeRef = useRef(null);
@@ -80,12 +82,6 @@ export default function Hero() {
     setIsCooking(true);
   };
 
-  const splitText = (text) => {
-    return text.split('').map((char, i) => (
-      <span key={i} className="inline-block">{char === ' ' ? '\u00A0' : char}</span>
-    ));
-  };
-
   return (
       <section id="hero" ref={heroRef} className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#1e1b4b_1px,transparent_1px)] dark:bg-[radial-gradient(#f8fafc_1px,transparent_1px)] [background-size:16px_16px] transition-all duration-300"></div>
@@ -97,18 +93,18 @@ export default function Hero() {
           >
             <span className="w-2 h-2 bg-bubblegum rounded-full animate-pulse"></span>
             <span className="text-sm font-bold tracking-wide text-ink/70 dark:text-white/70 uppercase">
-            {t('badge')}
+            {t('eyebrow')}
           </span>
           </motion.div>
 
           <motion.h1
               ref={titleRef}
-              className="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.9] mb-8 text-ink dark:text-white transition-colors duration-300"
+              className="font-display text-5xl md:text-7xl lg:text-8xl font-bold leading-[0.92] mb-8 text-ink dark:text-white transition-colors duration-300"
           >
-            {t('headline.start')}
+            {t('title.start')}
             <br />
-            {t('headline.middle')}{" "}
-            <span className="relative inline-block ml-2 md:ml-4">
+            {t('title.middle')}{" "}
+            <span className="relative inline-block mx-2 md:mx-3">
             <motion.span
                 className="absolute inset-0 bg-bubblegum transform -skew-x-3"
                 initial={{ scaleX: 0 }}
@@ -116,75 +112,66 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.8, ease: "circOut" }}
                 style={{ originX: 0 }}
             ></motion.span>
-            <span ref={titleCharsRef} className="relative z-10 px-2 text-white">{t('headline.highlight')}</span>
+            <span ref={titleCharsRef} className="relative z-10 px-2 text-white">{t('title.highlight')}</span>
           </span>
+            {t('title.end')}
           </motion.h1>
 
           <motion.p
               ref={bioRef}
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+               className="text-lg md:text-xl max-w-3xl mx-auto text-ink/80 dark:text-smoke/80 mb-6 leading-relaxed transition-colors duration-300"
+           >
+            {t('description')}
+          </motion.p>
+
+          <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="text-lg md:text-xl max-w-2xl mx-auto text-ink/80 dark:text-smoke/80 mb-10 leading-relaxed transition-colors duration-300"
+              transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
+              className="text-base md:text-lg max-w-3xl mx-auto text-ink/65 dark:text-smoke/70 mb-8 leading-relaxed"
           >
-            {t('bio.intro')} <span className="font-bold text-bubblegum">{t('bio.names')}</span>
-            {" "}{t('bio.role_start')}{" "}
-
-            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
-            {t('bio.human')}
-              <motion.span
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                  style={{ originX: 0 }}
-              />
-            </span>
-            {t('bio.role_end')}{" "}
-
-            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white">
-              <a
-                  href="https://4aitech.it"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 hover:text-bubblegum transition-colors"
-              >
-                {t('bio.startup_name')}
-                <ExternalLink size={16} />
-              </a>
-              <motion.span
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                  style={{ originX: 0 }}
-              />
-            </span>
-            {t('bio.startup_desc')}
-            {" "}{t('bio.podcast_start')}
-
-            <span className="relative inline-block font-bold mx-1 text-ink dark:text-white cursor-pointer">
-              <a
-                  href='https://www.twitch.tv/devopodcast'
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handlePodcastClick}
-                  className="inline-flex items-center gap-1 hover:text-bubblegum transition-colors"
-              >
-                {t('bio.podcast_link')}
-                <ExternalLink size={16} />
-              </a>
-
-              <motion.span
-                  className="absolute bottom-0 left-0 w-full h-[2px] bg-bubblegum"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                  style={{ originX: 0 }}
-              />
-            </span>.
-
+            {t('support.start')}{' '}
+            <a
+                href="https://4aitech.it"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 font-bold text-ink dark:text-white hover:text-bubblegum transition-colors"
+            >
+              {t('support.link')}
+              <ExternalLink size={16} />
+            </a>
+            {' '}{t('support.end')}{' '}
+            <a
+                href='https://www.twitch.tv/devopodcast'
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handlePodcastClick}
+                className="inline-flex items-center gap-1 font-bold text-ink dark:text-white hover:text-bubblegum transition-colors"
+            >
+              {t('support.secondaryLink')}
+              <ExternalLink size={16} />
+            </a>
+            .
           </motion.p>
+
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.55, ease: 'easeOut' }}
+              className="flex flex-wrap items-center justify-center gap-3 mb-10"
+          >
+            {proofItems.map((item) => (
+                <span
+                    key={item}
+                    className="rounded-full border border-ink/10 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-2 text-sm font-bold text-ink/70 dark:text-smoke/80 shadow-soft"
+                >
+                  {item}
+                </span>
+            ))}
+          </motion.div>
 
           <motion.div
               ref={ctaRef}
@@ -197,9 +184,16 @@ export default function Hero() {
               <Link
                   href={`/${currentLocale}#projects`}
               >
-                {t('buttons.work')}
+                {t('buttons.projects')}
               </Link>
             </Button>
+            <Link
+                href={`/${currentLocale}#technologies`}
+                className="group flex items-center gap-2 font-display font-bold text-lg hover:underline decoration-wavy decoration-bubblegum underline-offset-4 text-ink dark:text-white"
+            >
+              {t('buttons.technologies')}
+              <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
+            </Link>
             <Link
                 href={`/${currentLocale}#duo`}
                 className="group flex items-center gap-2 font-display font-bold text-lg hover:underline decoration-wavy decoration-bubblegum underline-offset-4 text-ink dark:text-white"
