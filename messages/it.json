@@ -24,25 +24,29 @@
     "logo_alt": "Logo"
   },
   "Hero": {
-    "badge": "DISPONIBILI PER NUOVI PROGETTI",
-    "headline": {
-      "start": "TECNOLOGIA COMPLESSA",
-      "middle": "RESA",
-      "highlight": "SEMPLICE"
+    "eyebrow": "consulenza AI • computer vision • software custom",
+    "title": {
+      "start": "DEVOP COSTRUISCE",
+      "middle": "SISTEMI AI E",
+      "highlight": "SOFTWARE",
+      "end": "CHE SCALANO"
     },
-    "bio": {
-      "intro": "Siamo",
-      "names": "Simone & Matteo,",
-      "role_start": "una coppia di amici sviluppatori full-stack, esperti di Computer Vision e Deep Learning. Sviluppiamo soluzioni",
-      "human": "innovative",
-      "role_end": "e forniamo consulenza tecnica. Abbiamo co-fondato",
-      "startup_name": "4AI",
-      "startup_desc": ", una startup nata in Sapienza.",
-      "podcast_start": "Se non siamo alle prese in qualche nostro progetto, probabilmente ci trovi a chiacchierare sul nostro",
-      "podcast_link": "podcast"
+    "description": "DevOP è lo studio di ingegneria di Simone Zannini e Matteo Cese: due software engineer formati in Sapienza che trasformano profondità accademica, velocità da startup e disciplina produttiva in prodotti AI, piattaforme di computer vision real-time e sistemi full-stack su misura.",
+    "support": {
+      "start": "Dai progetti lanciati con",
+      "link": "4AI",
+      "end": "alla ricerca su Wi-Fi sensing, NLP, forecasting su serie temporali e sport analytics, lavoriamo lungo tutto il percorso dal prototipo al deployment. Quando non stiamo consegnando, di solito ne parliamo nel nostro",
+      "secondaryLink": "podcast"
+    },
+    "proof": {
+      "0": "110/110 e lode x2",
+      "1": "Ricerca + startup execution",
+      "2": "Base a Roma, mindset di prodotto",
+      "3": "AI, CV, dati e full-stack delivery"
     },
     "buttons": {
-      "work": "Vedi i Lavori",
+      "projects": "Esplora i Progetti",
+      "technologies": "Vedi le Tecnologie",
       "duo": "Leggi del duo"
     }
   },
@@ -82,38 +86,177 @@
     "items": {
       "ai": {
         "title": "Ingegneria AI & ML",
-        "description": "Costruiamo modelli personalizzati, pipeline NLP e sistemi di computer vision che risolvono problemi reali.",
+        "description": "Progettiamo sistemi di machine learning end-to-end per previsione, automazione e supporto decisionale, unendo modellazione avanzata e vincoli produttivi.",
         "tags": {
           "0": "Modelli Predittivi",
-          "1": "Computer Vision",
-          "2": "Data Pipelines"
+          "1": "Workflow Prompt",
+          "2": "Inference API"
         }
       },
       "fullstack": {
-        "title": "Sistemi Full-Stack",
-        "description": "Backend robusti e scalabili, frontend reattivi. Ci assicuriamo che la tua infrastruttura cresca con te.",
+        "title": "Piattaforme Full-Stack",
+        "description": "Costruiamo interfacce solide, servizi backend e workflow connessi ai dati con la stessa attenzione che riserviamo a infrastruttura e manutenibilità.",
         "tags": {
           "0": "React / Next.js",
-          "1": "Django / Python",
+          "1": "Django / Spring",
           "2": "API Scalabili"
         }
       },
       "consulting": {
-        "title": "Consulenza IT",
-        "description": "Hai un problema o dubbio in ambito IT? Contattaci per ricevere un consiglio e inizia con noi a progettare la soluzione adatta a te.",
+        "title": "Consulenza Tecnica",
+        "description": "Aiutiamo founder e team a definire architettura, validare la fattibilità AI e scegliere roadmap pratiche invece di innovazione vaga.",
         "tags": {
-          "0": "Esperienza",
+          "0": "Architettura",
           "1": "Strategia Tech",
-          "2": "Velocità"
+          "2": "Scope MVP"
         }
       },
       "product": {
-        "title": "Mani in pasta",
-        "description": "Smontiamo, ripariamo, personalizziamo ogni tipo di device elettronico. Affidaci il tuo dispositivo e senza resi o garanzie te lo restituiamo peggio di prima.",
+        "title": "Computer Vision & Automation",
+        "description": "Trasformiamo video, voce e dati operativi in segnali ricercabili, automazioni e interfacce usabili ogni giorno dai team.",
         "tags": {
-          "0": "Passione",
-          "1": "Perfezionismo",
-          "2": "Pratica"
+          "0": "YOLO / OpenCV",
+          "1": "Speech-to-Text",
+          "2": "Analytics Real-time"
+        }
+      }
+    }
+  },
+  "Authority": {
+    "label": "Perché DevOP",
+    "title": {
+      "start": "UN TEAM PICCOLO CON",
+      "highlight": "PROVE CONCRETE"
+    },
+    "story": {
+      "0": "Il posizionamento più forte per DevOP non è quello di una generica agenzia. Siamo una partnership ingegneristica compatta che lavora all'incrocio tra intelligenza artificiale, computer vision, data engineering e sviluppo software custom.",
+      "1": "Simone porta esperienza su deep learning, dati ed execution di prodotto. Matteo porta profondità su computer vision, architetture full-stack e delivery enterprise. Insieme copriamo strategia, implementazione, infrastruttura e iterazione senza passaggi a vuoto.",
+      "2": "Questo conta perché i clienti non hanno bisogno di livelli di account management. Hanno bisogno che chi comprende il modello, la pipeline, l'API e il deployment progetti anche il prodotto e lo rilasci davvero."
+    },
+    "marketsLabel": "Dove generiamo impatto",
+    "proof": {
+      "0": {
+        "value": "2x 110/110",
+        "label": "Lauree Sapienza",
+        "description": "Entrambi i founder hanno completato triennale e magistrale in Informatica con lode alla Sapienza Università di Roma."
+      },
+      "1": {
+        "value": "4AI",
+        "label": "Costruttori di startup",
+        "description": "Abbiamo già costruito prodotti in sport analytics, trading intelligence e speech processing dentro vincoli reali da startup."
+      },
+      "2": {
+        "value": "Wi-Fi sensing",
+        "label": "Ricerca applicata",
+        "description": "Il nostro lavoro include pipeline di ricerca per percezione ambientale, motion detection, preprocessing e inferenza real-time."
+      },
+      "3": {
+        "value": "End-to-end",
+        "label": "Raggio di esecuzione",
+        "description": "Frontend, backend, ML, orchestrazione, networking e deployment vengono gestiti come un unico sistema ingegneristico."
+      }
+    },
+    "markets": {
+      "0": {
+        "title": "Prodotti AI per startup",
+        "description": "MVP, tool interni e primi rilasci produttivi per team che hanno bisogno di velocità senza debito architetturale."
+      },
+      "1": {
+        "title": "Sport analytics e video intelligence",
+        "description": "Tracking in tempo reale, cattura eventi, statistiche di gara e automazione dei workflow per contesti sportivi ancora poco serviti."
+      },
+      "2": {
+        "title": "Software operativo per team in crescita",
+        "description": "Piattaforme custom, dashboard e flussi dati che sostituiscono fogli sparsi e routine manuali."
+      }
+    }
+  },
+  "TechnologyTracks": {
+    "label": "Sezioni per tecnologia",
+    "title": {
+      "start": "PROFONDITÀ PER",
+      "highlight": "TECNOLOGIA"
+    },
+    "intro": "Problemi di business diversi richiedono nuclei tecnici diversi. Queste sono le aree in cui progettiamo più spesso sistemi, definiamo tradeoff e consegniamo soluzioni pronte per la produzione.",
+    "items": {
+      "ai": {
+        "title": "AI, Deep Learning e Workflow con LLM",
+        "description": "Costruiamo modelli e sistemi assistiti da AI per forecasting, classificazione, retrieval, automazione e supporto decisionale specialistico.",
+        "focus": "Per prodotti predittivi, copiloti interni e workflow AI-enabled.",
+        "stack": {
+          "0": "PyTorch",
+          "1": "TensorFlow",
+          "2": "Scikit-learn",
+          "3": "OpenAI API"
+        },
+        "outcomes": {
+          "0": "Pipeline di forecasting su serie temporali per dati di mercato e operativi.",
+          "1": "Workflow guidati da prompt con regole di business e cicli di valutazione.",
+          "2": "Servizi di inferenza che passano dal notebook al vero endpoint produttivo."
+        }
+      },
+      "vision": {
+        "title": "Computer Vision e Video Analytics Real-Time",
+        "description": "Convertiamo flussi video in eventi tracciabili, evidenze ricercabili e interfacce analitiche live per sport e contesti operativi.",
+        "focus": "Per tracking, OCR, event detection e video intelligence di tipo edge.",
+        "stack": {
+          "0": "YOLO",
+          "1": "OpenCV",
+          "2": "Roboflow",
+          "3": "ffmpeg"
+        },
+        "outcomes": {
+          "0": "Pipeline di tracking giocatori e palla per statistiche sportive automatiche.",
+          "1": "Indicizzazione video, object detection ed estrazione di evidenze da filmati registrati.",
+          "2": "Sistemi compatibili con lo streaming che uniscono inferenza, capture e dashboard."
+        }
+      },
+      "data": {
+        "title": "Data Engineering e Logica Backend",
+        "description": "Diamo struttura a input disordinati trasformandoli in dataset affidabili, API e workflow su cui analytics e prodotto possano contare.",
+        "focus": "Per ETL, orchestrazione, qualità del dato e servizi pronti per l'analisi.",
+        "stack": {
+          "0": "Python",
+          "1": "Django",
+          "2": "PostgreSQL",
+          "3": "Redis"
+        },
+        "outcomes": {
+          "0": "Layer di preprocessing per dati multimodali come testo, video e segnali.",
+          "1": "Prodotti dati strutturati e backend interrogabili per analisti e operatori.",
+          "2": "Cache, task queue e punti di integrazione per sistemi interni scalabili."
+        }
+      },
+      "architecture": {
+        "title": "Architettura Full-Stack e DevOps",
+        "description": "Progettiamo il software come sistema completo, dall'interfaccia e le API fino ai container, al routing e alla manutenzione in produzione.",
+        "focus": "Per piattaforme che hanno bisogno di delivery pulita, resilienza e spazio per evolvere.",
+        "stack": {
+          "0": "Next.js",
+          "1": "React",
+          "2": "Docker",
+          "3": "Caddy / Nginx"
+        },
+        "outcomes": {
+          "0": "Applicazioni web custom con architettura informativa chiara e basi UX solide.",
+          "1": "Deployment containerizzati multi-servizio per flussi di sviluppo e rilascio ripetibili.",
+          "2": "Architetture tecniche dimensionate per la velocità MVP oggi e la manutenibilità domani."
+        }
+      },
+      "speech": {
+        "title": "Speech, NLP e Content Processing",
+        "description": "Costruiamo pipeline di trascrizione e trattamento del linguaggio che trasformano audio e testo grezzi in asset di conoscenza utilizzabili.",
+        "focus": "Per accessibilità, indicizzazione, sintesi ed estrazione di conoscenza.",
+        "stack": {
+          "0": "Whisper",
+          "1": "Pipeline NLP",
+          "2": "Django",
+          "3": "Docker"
+        },
+        "outcomes": {
+          "0": "Prodotti speech-to-text progettati attorno a contenuti rumorosi, multi-speaker e reali.",
+          "1": "Layer di post-processing per segmentazione, cleanup e archivi ricercabili.",
+          "2": "Interfacce che rendono le trascrizioni davvero utili ai team, non solo generate tecnicamente."
         }
       }
     }
@@ -237,6 +380,54 @@
     },
     "copyright": "Simone & Matteo. Tutti i diritti riservati.",
     "buyCoffee": "Offrici un caffè ☕"
+  },
+  "ProcessFaq": {
+    "label": "Come lavoriamo",
+    "title": {
+      "start": "PRIMA LA RISPOSTA,",
+      "highlight": "POI IL BUILD"
+    },
+    "intro": "La homepage deve rendere chiaro il nostro metodo: capire il problema operativo, scegliere il livello corretto di tecnologia e consegnare sistemi che le persone possano adottare davvero.",
+    "process": {
+      "0": {
+        "step": "Step 01",
+        "title": "Chiarire il vero vincolo di business",
+        "description": "Partiamo dal collo di bottiglia operativo, non dallo strumento di moda. La prima domanda è sempre cosa debba diventare più veloce, più accurato, più scalabile o più facile da usare."
+      },
+      "1": {
+        "step": "Step 02",
+        "title": "Scegliere l'architettura minima corretta",
+        "description": "A volte basta una app Next.js leggera. Altre volte servono pipeline di computer vision, worker in background, container e servizi di inferenza. Scegliamo il sistema più piccolo che sia davvero corretto."
+      },
+      "2": {
+        "step": "Step 03",
+        "title": "Connettere modelli, interfacce e flussi dati",
+        "description": "Trattiamo modello, API, storage e superficie di prodotto come un unico problema ingegneristico, così il risultato resta utile nelle mani dei team reali."
+      },
+      "3": {
+        "step": "Step 04",
+        "title": "Iterare verso la produzione",
+        "description": "Quando la prima versione funziona, miglioriamo osservabilità, affidabilità, ripetibilità del deployment e usabilità in modo che il progetto sopravviva oltre la demo."
+      }
+    },
+    "faq": {
+      "0": {
+        "question": "Che tipo di software AI può costruire DevOP?",
+        "answer": "Costruiamo prodotti AI e tool interni che includono previsione, computer vision, speech processing, analisi di serie temporali e workflow assistiti da AI. Il tratto comune è che sono integrati in software usabile, non esperimenti isolati."
+      },
+      "1": {
+        "question": "Potete aiutare anche se il progetto è ancora in fase MVP?",
+        "answer": "Sì. Il lavoro startup è particolarmente adatto a noi perché possiamo definire architettura, scope prodotto e implementazione direttamente con founder o team piccoli, riducendo il solito overhead dei passaggi intermedi."
+      },
+      "2": {
+        "question": "Lavorate solo su sport analytics?",
+        "answer": "No. Lo sport analytics è una delle nostre aree di prova più forti perché unisce video real-time, data engineering e design di prodotto, ma le stesse capacità si applicano a workflow enterprise, dashboard operative e tool AI verticali."
+      },
+      "3": {
+        "question": "Quale stack usate di solito per prodotti AI scalabili?",
+        "answer": "Dipende dal problema, ma il nostro stack tipico unisce Next.js o React sul frontend, Python o Django per backend e workflow AI, PostgreSQL e Redis per i layer dati e deployment basati su Docker per ripetibilità e scala."
+      }
+    }
   },
   "MatteoProfile": {
     "header": {

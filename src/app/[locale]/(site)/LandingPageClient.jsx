@@ -2,9 +2,12 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Hero from "@/app/[locale]/(site)/sections/Hero";
+import Authority from '@/app/[locale]/(site)/sections/Authority';
 import Duo from "@/app/[locale]/(site)/sections/Duo";
 import Services from "@/app/[locale]/(site)/sections/Services";
+import TechnologyTracks from '@/app/[locale]/(site)/sections/TechnologyTracks';
 import Projects from "@/app/[locale]/(site)/sections/Projects";
+import ProcessFaq from '@/app/[locale]/(site)/sections/ProcessFaq';
 import { motion, AnimatePresence } from 'framer-motion';
 import {LoadingScreen} from "@/app/[locale]/(site)/sections/LoadingScreen";
 import Image from 'next/image';
@@ -13,6 +16,7 @@ import Footer from "@/app/[locale]/(site)/sections/Footer";
 import { useSearchParams } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import HomeSchema from '@/app/[locale]/(site)/sections/HomeSchema';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,11 +114,20 @@ export default function PortfolioLanding() {
                             exit={{opacity: 0}}
                             transition={{duration: 0.3}}
                         >
+                            <HomeSchema />
                             <Hero/>
 
                             <section
-                                id="duo"
+                                id="authority"
                                 ref={el => sectionRefs.current[0] = el}
+                                className="py-24 bg-paper dark:bg-ink transition-colors duration-300"
+                            >
+                                <Authority />
+                            </section>
+
+                            <section
+                                id="duo"
+                                ref={el => sectionRefs.current[1] = el}
                                 className="relative py-24 overflow-hidden transition-all duration-300"
                                 style={{
                                     backgroundImage: currentTheme === 'dark'
@@ -142,7 +155,7 @@ export default function PortfolioLanding() {
 
                             <section
                                 id="services"
-                                ref={el => sectionRefs.current[1] = el}
+                                ref={el => sectionRefs.current[2] = el}
                                 className="py-24 bg-forest text-white relative"
                             >
                                 <motion.div
@@ -160,11 +173,27 @@ export default function PortfolioLanding() {
                             </section>
 
                             <section
+                                id="technologies"
+                                ref={el => sectionRefs.current[3] = el}
+                                className="py-24 bg-forest text-white relative border-t border-white/10"
+                            >
+                                <TechnologyTracks />
+                            </section>
+
+                            <section
                                 id="projects"
-                                ref={el => sectionRefs.current[2] = el}
+                                ref={el => sectionRefs.current[4] = el}
                                 className="py-24 bg-paper dark:bg-ink transition-colors duration-300"
                             >
                                 <Projects/>
+                            </section>
+
+                            <section
+                                id="faq"
+                                ref={el => sectionRefs.current[5] = el}
+                                className="py-24 bg-smoke/40 dark:bg-white/5 transition-colors duration-300"
+                            >
+                                <ProcessFaq />
                             </section>
                         </motion.main>
                     </AnimatePresence>
