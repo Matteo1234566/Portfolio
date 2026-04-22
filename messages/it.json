@@ -1028,30 +1028,84 @@
     "badge": "Intelligence per Garage",
     "tagline": "Dalla videosorveglianza alla ricerca targhe immediata",
     "description": "Targage e un layer di intelligence per autorimesse e parcheggi. Analizza flussi DVR/NVR, rileva le targhe, estrae il testo e costruisce una timeline precisa per recuperare in pochi secondi i momenti di ingresso e uscita.",
+    "supporting": "Invece di costringere gli operatori a sostituire l'intero stack di telecamere, Targage agisce come cervello sopra i sistemi video esistenti: trasformando registrazioni passive in evidenze ricercabili, storico operativo e tutela nelle contestazioni.",
     "cta_demo": "Richiedi una demo",
-    "mock": {
-      "label": "Mock PlateSearch",
-      "search_label": "Cerca targa",
-      "entry": "Primo ingresso",
-      "exit": "Ultima uscita"
+    "chips": {
+      "0": "Hardware-agnostic",
+      "1": "Pronto per ONVIF / RTSP",
+      "2": "Indicizzazione timeline",
+      "3": "Processing orientato al GDPR"
+    },
+    "heroCard": {
+      "eyebrow": "Posizionamento",
+      "brainTitle": "Il cervello per le telecamere esistenti",
+      "brainDescription": "Targage potenzia riprese DVR e NVR con detection targhe, OCR e riferimenti timeline ricercabili senza sostituire l'infrastruttura di videosorveglianza già installata.",
+      "securityTitle": "Sicurezza senza lock-in",
+      "securityDescription": "Distribuibile come layer software sicuro su infrastruttura locale o ambienti controllati, con accessi chiari ai dati e recupero delle evidenze tracciabile.",
+      "outcomeLabel": "Risultato operativo",
+      "outcomeTitle": "Dal caos al recupero immediato",
+      "outcomeDescription": "Ore di revisione manuale diventano secondi di ricerca targa, con riferimenti ai clip pronti per operatori, manager e gestione delle contestazioni."
+    },
+    "pillars": {
+      "efficiency": {
+        "title": "Efficienza operativa",
+        "desc": "Targage nasce dal problema reale: team che perdono ore a scorrere registrazioni per rispondere a semplici domande sui movimenti dei veicoli. Il prodotto comprime questo lavoro in una ricerca rapida."
+      },
+      "legal": {
+        "title": "Tutela legale",
+        "desc": "Quando la videosorveglianza esiste, agli operatori puo essere richiesto di ricostruire i fatti. Targage aiuta a trasformare il filmato in prova con timestamp, invece di lasciare la responsabilita nascosta in archivi video grezzi."
+      },
+      "integration": {
+        "title": "Upgrade logico",
+        "desc": "Il prodotto non e un altro ecosistema hardware chiuso. E un layer software di intelligence pensato per stare sopra gli impianti esistenti e aggiungere valore senza imporre un rifacimento completo."
+      }
+    },
+    "demo": {
+      "eyebrow": "Simulazione interattiva",
+      "title": "Simula come un operatore recupera la timeline di una targa",
+      "description": "Questo mock mostra l'esperienza che Targage vuole offrire: cercare una targa, leggere la timeline degli avvistamenti e saltare direttamente ai clip rilevanti invece di scorrere ore di filmati.",
+      "preset": {
+        "0": "AB123CD",
+        "1": "ZX901TY",
+        "2": "LM456NO"
+      },
+      "searchLabel": "Cerca targa",
+      "searchPlaceholder": "Inserisci una targa",
+      "stats": {
+        "total": "Avvistamenti totali",
+        "first": "Primo rilevamento",
+        "last": "Ultimo rilevamento"
+      },
+      "complianceNote": "Ogni risultato e pensato per restare collegato ai riferimenti del filmato originale, aiutando i team a rispondere agli incidenti con provenienza chiara e accesso tracciabile.",
+      "resultsLabel": "Risultati indicizzati",
+      "videoIndex": "Indice timeline",
+      "eventType": {
+        "entry": "Ingresso",
+        "exit": "Uscita",
+        "passage": "Passaggio interno"
+      },
+      "clipReady": "Clip pronto al recupero",
+      "sourceLinked": "Sorgente video collegata",
+      "emptyTitle": "Nessuna targa indicizzata trovata",
+      "emptyDescription": "Prova una delle targhe suggerite per vedere come Targage trasforma piu avvistamenti in una timeline strutturata di recupero."
     },
     "pipeline_title": "Come funziona il motore",
     "pipeline": {
       "ingestion": {
         "title": "Ingestione video",
-        "desc": "Processa stream live e registrazioni storiche direttamente dai sistemi video gia presenti su HDD/SSD."
+        "desc": "Processa stream live e registrazioni storiche direttamente da storage DVR/NVR e feed di videosorveglianza, mantenendo l'hardware installato come layer visivo di input."
       },
       "detection": {
         "title": "Detection + OCR",
-        "desc": "Individua le zone targa con bounding box e trascrive i caratteri alfanumerici con OCR ad alta precisione."
+        "desc": "Individua le targhe in condizioni reali di parcheggio come riflessi, distanza e luce irregolare, poi trascrive i caratteri con OCR e logiche di normalizzazione."
       },
       "indexing": {
         "title": "Indicizzazione temporale",
-        "desc": "Associa ogni targa riconosciuta a timestamp esatti e riferimenti video in un indice strutturato e ricercabile."
+        "desc": "Associa ogni evento di riconoscimento a timestamp, identita della camera e riferimenti al filmato in una timeline strutturata e interrogabile all'istante."
       },
       "retrieval": {
         "title": "Recupero immediato",
-        "desc": "L'utente cerca una targa e ottiene subito i segmenti di entrata/uscita senza rivedere ore di filmati."
+        "desc": "L'utente cerca una targa e recupera subito le evidenze di ingresso, uscita e movimento senza revisionare manualmente lunghe sessioni di videosorveglianza."
       }
     },
     "value_title": "Valore per il business",
@@ -1067,6 +1121,48 @@
       "liability": {
         "title": "Tutela da contestazioni",
         "desc": "Fornisce prove visive con timestamp per gestire rapidamente e con trasparenza le dispute sui danni."
+      }
+    },
+    "compatibility": {
+      "eyebrow": "Integrazione",
+      "title": "Pensato come layer di intelligence universale",
+      "description": "L'angolo strategico piu forte per Targage e la disintermediazione dell'hardware: tenere le telecamere, aggiornare la logica. Questo rende il prodotto piu adottabile per operatori, integratori e strutture che hanno gia investito in videosorveglianza.",
+      "items": {
+        "0": "Feed compatibili ONVIF",
+        "1": "Sorgenti video RTSP",
+        "2": "Archivi DVR / NVR esistenti",
+        "3": "Percorsi di deployment on-premise"
+      }
+    },
+    "compliance": {
+      "eyebrow": "Cybersecurity & GDPR",
+      "title": "Privacy e sovranita sono feature di prodotto",
+      "description": "Targage non va raccontato come software di sorveglianza aggressivo. Il suo valore cresce quando viene posizionato come layer controllato, verificabile e consapevole della privacy, capace di aiutare le organizzazioni a gestire le evidenze video in modo piu responsabile.",
+      "items": {
+        "0": "Deploy su infrastruttura locale o controllata quando la sovranita del dato e prioritaria.",
+        "1": "Supporto a regole di accesso chiare, recupero selettivo e workflow orientati alla minimizzazione dei dati.",
+        "2": "Aiuta gli operatori a rispondere agli incidenti piu velocemente, riducendo l'esposizione non necessaria a filmati grezzi."
+      }
+    },
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Le domande che operatori e integratori fanno davvero",
+    "faqDescription": "La pagina deve rispondere in modo diretto ai dubbi pratici: compatibilita, recupero delle evidenze, compliance e vantaggio operativo reale rispetto alla revisione manuale.",
+    "faq": {
+      "0": {
+        "question": "Targage richiede la sostituzione dell'hardware di videosorveglianza?",
+        "answer": "No. Il suo valore principale e agire come layer software di intelligence sopra sistemi camera, DVR e NVR esistenti, riducendo la necessita di sostituire hardware costoso."
+      },
+      "1": {
+        "question": "Quale problema risolve meglio rispetto alla revisione manuale del CCTV?",
+        "answer": "Trasforma un processo lento e soggetto a errore in un workflow di ricerca per targa, permettendo al personale di recuperare evidenze rilevanti di ingresso e uscita in pochi secondi invece che in ore."
+      },
+      "2": {
+        "question": "Perche qui il posizionamento legale e di compliance e importante?",
+        "answer": "Perche gli operatori dei parcheggi devono spesso ricostruire eventi durante le contestazioni. Una timeline ricercabile con riferimenti ai filmati e piu difendibile e piu utile operativamente rispetto ai soli archivi grezzi."
+      },
+      "3": {
+        "question": "Per chi e pensato Targage?",
+        "answer": "Per operatori di parcheggi, garage privati, property manager e system integrator che possiedono gia infrastruttura video ma hanno bisogno di recupero piu rapido, migliore tracciabilita e un layer ANPR pratico."
       }
     }
   },

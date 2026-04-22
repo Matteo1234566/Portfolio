@@ -1028,30 +1028,84 @@
     "badge": "Garage Intelligence",
     "tagline": "From surveillance footage to instant plate lookup",
     "description": "Targage is an intelligence layer for parking garages and private lots. It analyzes DVR/NVR footage, detects plates, extracts text, and creates a precise timeline so operators can retrieve entry and exit moments in seconds.",
+    "supporting": "Instead of forcing operators to replace their camera stack, Targage acts as the brain layered on top of existing video systems: turning passive recordings into searchable evidence, operational history, and legal protection.",
     "cta_demo": "Request a Demo",
-    "mock": {
-      "label": "PlateSearch Mock",
-      "search_label": "Search plate",
-      "entry": "First entry",
-      "exit": "Last exit"
+    "chips": {
+      "0": "Hardware-agnostic",
+      "1": "ONVIF / RTSP ready",
+      "2": "Timeline indexing",
+      "3": "GDPR-minded processing"
+    },
+    "heroCard": {
+      "eyebrow": "Positioning",
+      "brainTitle": "Brain for existing cameras",
+      "brainDescription": "Targage upgrades DVR and NVR footage with AI plate detection, OCR, and searchable timeline references without replacing the installed surveillance stack.",
+      "securityTitle": "Security without lock-in",
+      "securityDescription": "Deployable as a secure software layer on local infrastructure or controlled environments, with clear data access boundaries and auditable retrieval.",
+      "outcomeLabel": "Operational outcome",
+      "outcomeTitle": "From chaos to instant retrieval",
+      "outcomeDescription": "Hours of manual review become seconds of plate lookup, with clip references ready for operators, managers, and dispute handling."
+    },
+    "pillars": {
+      "efficiency": {
+        "title": "Operational efficiency",
+        "desc": "Targage is built for the real pain point: teams wasting hours reviewing recordings to answer simple vehicle-access questions. It compresses that effort into a fast search workflow."
+      },
+      "legal": {
+        "title": "Legal protection",
+        "desc": "When surveillance exists, operators can be expected to reconstruct what happened. Targage helps turn footage into timestamped evidence instead of a liability trapped inside raw video archives."
+      },
+      "integration": {
+        "title": "Logical upgrade",
+        "desc": "The product is not another closed hardware ecosystem. It is a software intelligence layer designed to sit on top of existing installations and add value without forcing an overhaul."
+      }
+    },
+    "demo": {
+      "eyebrow": "Interactive simulation",
+      "title": "Simulate how an operator retrieves a plate timeline",
+      "description": "This mock shows the user experience Targage aims for: search a plate, inspect the sightings timeline, and jump directly to the relevant clips instead of scrubbing through footage.",
+      "preset": {
+        "0": "AB123CD",
+        "1": "ZX901TY",
+        "2": "LM456NO"
+      },
+      "searchLabel": "Search plate",
+      "searchPlaceholder": "Type a plate number",
+      "stats": {
+        "total": "Total sightings",
+        "first": "First seen",
+        "last": "Last seen"
+      },
+      "complianceNote": "Every result is designed to remain linked to original footage references, helping teams answer incidents with clear provenance and auditable access.",
+      "resultsLabel": "Indexed results",
+      "videoIndex": "Timeline index",
+      "eventType": {
+        "entry": "Entry",
+        "exit": "Exit",
+        "passage": "Internal passage"
+      },
+      "clipReady": "Clip retrieval ready",
+      "sourceLinked": "Source footage linked",
+      "emptyTitle": "No indexed plate found",
+      "emptyDescription": "Try one of the suggested plates to see how Targage turns multiple sightings into a structured retrieval timeline."
     },
     "pipeline_title": "How the engine works",
     "pipeline": {
       "ingestion": {
         "title": "Video Ingestion",
-        "desc": "Processes live streams and historical recordings directly from existing HDD/SSD video storage."
+        "desc": "Processes live streams and historical recordings directly from existing DVR/NVR storage and surveillance feeds, preserving the installed hardware as the visual input layer."
       },
       "detection": {
         "title": "Detection + OCR",
-        "desc": "Locates plate regions with bounding boxes and transcribes alphanumeric values using high-precision OCR."
+        "desc": "Locates license plates under real parking conditions such as glare, distance, and uneven lighting, then transcribes alphanumeric values through OCR and normalization logic."
       },
       "indexing": {
         "title": "Temporal Indexing",
-        "desc": "Pairs each recognized plate with exact timestamps and video references in a structured searchable index."
+        "desc": "Pairs each recognition event with timestamps, camera identity, and footage references in a structured searchable timeline that operators can query instantly."
       },
       "retrieval": {
         "title": "Instant Retrieval",
-        "desc": "Users search by plate number and get the exact entry/exit segments instead of reviewing hours of footage."
+        "desc": "Users search by plate number and retrieve the relevant entry, exit, and movement evidence immediately instead of manually reviewing long surveillance sessions."
       }
     },
     "value_title": "Business value",
@@ -1067,6 +1121,48 @@
       "liability": {
         "title": "Liability Protection",
         "desc": "Provides timestamped visual evidence to resolve damage disputes quickly and transparently."
+      }
+    },
+    "compatibility": {
+      "eyebrow": "Integration",
+      "title": "Designed as a universal intelligence layer",
+      "description": "The strongest strategic angle for Targage is hardware disintermediation: keep the cameras, upgrade the logic. That makes the product easier to adopt for operators, integrators, and parking facilities already invested in surveillance infrastructure.",
+      "items": {
+        "0": "ONVIF-compatible feeds",
+        "1": "RTSP video sources",
+        "2": "Existing DVR / NVR archives",
+        "3": "On-premise deployment paths"
+      }
+    },
+    "compliance": {
+      "eyebrow": "Cybersecurity & GDPR",
+      "title": "Privacy and sovereignty are product features",
+      "description": "Targage should not be framed as reckless surveillance software. Its value increases when positioned as a controlled, auditable, privacy-aware layer that helps organizations handle video evidence more responsibly.",
+      "items": {
+        "0": "Deploy on local or controlled infrastructure when data sovereignty is a priority.",
+        "1": "Support clear access rules, selective retrieval, and data-minimization-oriented workflows.",
+        "2": "Help operators answer incidents with evidence faster, reducing unnecessary exposure to raw footage."
+      }
+    },
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Questions operators and integrators actually ask",
+    "faqDescription": "The page should answer practical concerns directly: compatibility, evidence retrieval, compliance, and the real operational advantage over manual review.",
+    "faq": {
+      "0": {
+        "question": "Does Targage require replacing the surveillance hardware?",
+        "answer": "No. Its main value is acting as a software intelligence layer over existing camera systems, DVRs, and NVRs, reducing the need for expensive hardware replacement."
+      },
+      "1": {
+        "question": "What problem does it solve better than manual CCTV review?",
+        "answer": "It turns a time-heavy, error-prone review process into a plate-based search workflow, allowing staff to retrieve relevant entry and exit evidence in seconds instead of hours."
+      },
+      "2": {
+        "question": "Why is legal and compliance positioning important here?",
+        "answer": "Because parking operators often need to reconstruct events during disputes. A searchable timeline with footage references is more defensible and operationally useful than raw archives alone."
+      },
+      "3": {
+        "question": "Who is Targage for?",
+        "answer": "Parking operators, private garages, property managers, and system integrators who already have video infrastructure but need faster retrieval, better traceability, and a practical ANPR intelligence layer."
       }
     }
   },
