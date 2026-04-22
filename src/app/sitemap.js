@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devop.sbs';
   const locales = ['en', 'it'];
 
   const routes = [
@@ -16,13 +16,33 @@ export default function sitemap() {
     { path: '/targage', priority: 0.7, changeFrequency: 'monthly' },
   ];
 
+  const now = new Date().toISOString();
+
   const entries = [];
 
+  // ✅ homepage root (IMPORTANTE)
+  entries.push({
+    url: baseUrl,
+    lastModified: now,
+    changeFrequency: 'weekly',
+    priority: 1.0,
+  });
+
   for (const locale of locales) {
+    // locale root (es. /en, /it)
+    entries.push({
+      url: `${baseUrl}/${locale}`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 1.0,
+    });
+
     for (const route of routes) {
+      if (route.path === '') continue;
+
       entries.push({
         url: `${baseUrl}/${locale}${route.path}`,
-        lastModified: new Date(),
+        lastModified: now,
         changeFrequency: route.changeFrequency,
         priority: route.priority,
       });
