@@ -1,176 +1,44 @@
-'use client';
+import LandingPageClient from './LandingPageClient';
 
-import React, { useState, useEffect, useRef } from 'react';
-import Hero from "@/app/[locale]/(site)/sections/Hero";
-import Duo from "@/app/[locale]/(site)/sections/Duo";
-import Services from "@/app/[locale]/(site)/sections/Services";
-import Projects from "@/app/[locale]/(site)/sections/Projects";
-import { motion, AnimatePresence } from 'framer-motion';
-import {LoadingScreen} from "@/app/[locale]/(site)/sections/LoadingScreen";
-import Image from 'next/image';
-import { useTheme } from "next-themes";
-import Footer from "@/app/[locale]/(site)/sections/Footer";
-import { useSearchParams } from 'next/navigation';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+const titles = {
+  it: 'DevOP – Duo Freelance AI & Full-Stack',
+  en: 'DevOP – AI & Full-Stack Freelance Duo',
+};
 
-gsap.registerPlugin(ScrollTrigger);
+const descriptions = {
+  it: 'Simone & Matteo — ingegneri AI e sviluppatori full-stack specializzati in computer vision, deep learning e sistemi web scalabili. Co-fondatori di DevOP.',
+  en: 'Simone & Matteo — AI engineers and full-stack developers specializing in computer vision, deep learning, and scalable web systems. Co-founders of DevOP.',
+};
 
-export default function PortfolioLanding() {
-    const [isLoading, setIsLoading] = useState(true);
-    const { theme, systemTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-    const searchParams = useSearchParams();
-    const mainRef = useRef(null);
-    const sectionRefs = useRef([]);
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const isItalian = locale === 'it';
+  const title = titles[locale] || titles.en;
+  const description = descriptions[locale] || descriptions.en;
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: { en: '/en', it: '/it' },
+    },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: isItalian ? 'it_IT' : 'en_US',
+      siteName: 'DevOP',
+      url: `/${locale}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+    },
+  };
+}
 
-    useEffect(() => {
-        if (isLoading || !mainRef.current) return;
-        
-        const ctx = gsap.context(() => {
-            sectionRefs.current.forEach((section, index) => {
-                if (!section) return;
-                
-                gsap.fromTo(section,
-                    { opacity: 0, y: 50 },
-                    {
-                        opacity: 1,
-                        y: 0,
-                        duration: 0.8,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: 'top 85%',
-                            toggleActions: 'play none none reverse'
-                        }
-                    }
-                );
-            });
-        }, mainRef);
-        
-        return () => ctx.revert();
-    }, [isLoading]);
-
-    const currentTheme = mounted
-        ? (theme === "system" ? systemTheme : theme)
-        : "light";
-
-
-    useEffect(() => {
-        const hasLoaded = sessionStorage.getItem("hasLoadedLanding");
-
-        if (hasLoaded) {
-            setIsLoading(false);
-            return;
-        }
-
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-            sessionStorage.setItem("hasLoadedLanding", "true");
-        }, 2200);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
-        if (isLoading) return;
-        const section = searchParams.get('scrollTo');
-        if (!section) return;
-
-        const el = document.getElementById(section);
-        if (el) {
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }, [isLoading, searchParams]);
-
-
-    return (
-        <>
-            <AnimatePresence mode="wait">
-                {isLoading && <LoadingScreen key="loader" />}
-            </AnimatePresence>
-
-            {!isLoading && (
-                <motion.div
-                    ref={mainRef}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="min-h-screen bg-paper dark:bg-ink font-body text-ink dark:text-smoke selection:bg-bubblegum selection:text-ink overflow-x-hidden transition-colors duration-300"
-                >
-                    <AnimatePresence mode="wait">
-                        <motion.main
-                            key="home"
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            exit={{opacity: 0}}
-                            transition={{duration: 0.3}}
-                        >
-                            <Hero/>
-
-                            <section
-                                id="duo"
-                                ref={el => sectionRefs.current[0] = el}
-                                className="relative py-24 overflow-hidden transition-all duration-300"
-                                style={{
-                                    backgroundImage: currentTheme === 'dark'
-                                        ? `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/moon_bg.webp')`
-                                        : `linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/sun_bg.webp')`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    backgroundRepeat: 'no-repeat'
-                                }}
-                            >
-                                <motion.div
-                                    animate={{y: [0, -15, 0], rotate: [12, 15, 12]}}
-                                    transition={{duration: 5, repeat: Infinity, ease: "easeInOut"}}
-                                    className="absolute top-10 right-[-50px] md:right-10 w-32 md:w-48 aspect-square opacity-20 md:opacity-100 pointer-events-none"
-                                >
-                                    <Image
-                                        src={currentTheme === 'dark' ? '/pittogramma_moon.webp' : '/pittogramma_sun.webp'}
-                                        alt="Decorative Element"
-                                        fill
-                                        className="object-contain drop-shadow-lg"
-                                    />
-                                </motion.div>
-                                <Duo/>
-                            </section>
-
-                            <section 
-                                id="services" 
-                                ref={el => sectionRefs.current[1] = el}
-                                className="py-24 bg-forest text-white relative"
-                            >
-                                <motion.div
-                                    animate={{y: [0, 10, 0], rotate: [-12, -10, -12]}}
-                                    transition={{duration: 6, repeat: Infinity, ease: "easeInOut"}}
-                                    className="absolute bottom-10 left-10 w-24 md:w-32 opacity-10 pointer-events-none"
-                                >
-                                    <img
-                                        src={currentTheme === 'dark' ? '/moon.svg' : '/sun.svg'}
-                                        alt="Decorative Element"
-                                        className="w-full h-full object-contain drop-shadow-lg"
-                                    />
-                                </motion.div>
-                                <Services/>
-                            </section>
-
-                            <section
-                                id="projects"
-                                ref={el => sectionRefs.current[2] = el}
-                                className="py-24 bg-paper dark:bg-ink transition-colors duration-300"
-                            >
-                                <Projects/>
-                            </section>
-                        </motion.main>
-                    </AnimatePresence>
-                    <Footer />
-                </motion.div>
-            )}
-        </>
-    );
+export default function LandingPage() {
+  return <LandingPageClient />;
 }

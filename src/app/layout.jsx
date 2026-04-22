@@ -15,13 +15,24 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-    title: "DevOP",
-    appleWebApp: {
-        title: "DevOP",
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL),
+    title: {
+        default: 'DevOP – AI & Full-Stack Freelance Duo',
+        template: '%s | DevOP',
     },
     description:
-        "A soft-brutalist, bubblegum-tech portfolio for an AI/Full-Stack freelance duo.",
-    manifest: "/manifest.json"
+        'Simone & Matteo — AI engineers and full-stack developers specializing in computer vision, deep learning, and scalable web systems.',
+    appleWebApp: {
+        title: 'DevOP',
+    },
+    manifest: '/manifest.json',
+    openGraph: {
+        type: 'website',
+        siteName: 'DevOP',
+    },
+    twitter: {
+        card: 'summary_large_image',
+    },
 };
 
 export default function RootLayout({ children }) {

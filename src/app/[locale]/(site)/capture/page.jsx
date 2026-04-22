@@ -43,7 +43,7 @@ export async function generateMetadata({ params }) {
       description: t('meta.description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
-      siteName: '4AI',
+      siteName: 'DevOP',
       url: `/${locale}/capture`,
     },
     twitter: {
@@ -82,7 +82,7 @@ export default async function CapturePage({ params }) {
     ],
     author: {
       '@type': 'Organization',
-      name: '4AI',
+      name: 'DevOP',
     },
   };
 
