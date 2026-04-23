@@ -5,16 +5,19 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'PyQuark' });
   const isItalian = locale === 'it';
+  const title = isItalian
+    ? 'PyQuark | Server Python dual-protocol per Goldleaf e DBI'
+    : 'PyQuark | Python dual-protocol remote server for Goldleaf and DBI';
 
   return {
-    title: `PyQuark – ${t('tagline')}`,
+    title,
     description: t('description'),
     alternates: {
       canonical: `/${locale}/pyquark`,
       languages: { en: '/en/pyquark', it: '/it/pyquark' },
     },
     openGraph: {
-      title: `PyQuark – ${t('tagline')}`,
+      title,
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
@@ -23,7 +26,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `PyQuark – ${t('tagline')}`,
+      title,
       description: t('description'),
     },
   };
