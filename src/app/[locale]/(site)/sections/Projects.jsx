@@ -87,7 +87,7 @@ export default function Projects() {
         t('items.ai2sql.techStack.1'),
         t('items.ai2sql.techStack.2')
       ],
-      link: "https://4aitech.it/two-sequel"
+      link: "/twosequel"
     },
     {
       id: 'mirror',

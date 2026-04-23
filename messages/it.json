@@ -301,8 +301,8 @@
       },
       "ai2sql": {
         "title": "2Sequel",
-        "category": "Text-to-sql",
-          "description": "Sistema di traduzione automatica da linguaggio naturale a SQL. Rende possibile l'interazione con i DB anche a chi non conosce questo linguaggio.",
+        "category": "Text-to-SQL",
+        "description": "Piattaforma enterprise natural language to SQL. Interroga Postgres, MySQL e SQL Server in linguaggio naturale con data masking, controlli di sicurezza a livello di campo e output audit-ready.",
         "techStack": {
           "0": "LLM",
           "1": "SQL",
@@ -1257,6 +1257,119 @@
       "3": {
         "question": "Per chi e pensato Targage?",
         "answer": "Per operatori di parcheggi, garage privati, property manager e system integrator che possiedono gia infrastruttura video ma hanno bisogno di recupero piu rapido, migliore tracciabilita e un layer ANPR pratico."
+      }
+    }
+  },
+  "TwoSequel": {
+    "badge": "Text-to-SQL Enterprise",
+    "tagline": "Dal linguaggio naturale all'SQL, istantaneamente",
+    "description": "2Sequel è una piattaforma enterprise che traduce il linguaggio naturale in query SQL precise per Postgres, MySQL e SQL Server, dando a ogni membro del team accesso diretto e sicuro ai dati aziendali senza scrivere una riga di codice.",
+    "supporting": "Radicando le query nei metadati aziendali e applicando controlli di sicurezza a livello di campo, 2Sequel garantisce l'accuratezza, l'auditabilità e la governance che i data team enterprise richiedono.",
+    "cta_demo": "Richiedi una Demo",
+    "chips": {
+      "0": "Linguaggio Naturale → SQL",
+      "1": "Postgres · MySQL · SQL Server",
+      "2": "Data Masking",
+      "3": "Audit-ready"
+    },
+    "heroCard": {
+      "eyebrow": "Traduzione live",
+      "queryLabel": "Input in linguaggio naturale",
+      "query": "Mostrami il fatturato totale per regione nell'ultimo trimestre",
+      "sqlLabel": "SQL generato",
+      "sql": "SELECT regione, SUM(fatturato) AS totale\nFROM vendite\nWHERE trimestre = TRIMESTRE_CORRENTE - 1\nGROUP BY regione\nORDER BY totale DESC;",
+      "outputLabel": "Output adattivo",
+      "output": "Regione top: Nord Europa — €2,4M (+18% vs trimestre precedente)",
+      "accuracyLabel": "Context-aware · Audit-ready"
+    },
+    "pillars": {
+      "access": {
+        "title": "Democratizzazione dei Dati",
+        "desc": "Utenti non tecnici — da CEO a product manager — interrogano qualsiasi database connesso in linguaggio naturale, eliminando la dipendenza dai team di engineering per le richieste di dati routinarie."
+      },
+      "security": {
+        "title": "Sicurezza & Compliance",
+        "desc": "Controlli di accesso a livello di campo, data masking nativo e boundary di autorizzazione rigorosi prevengono il prompt injection e garantiscono che ogni query rimanga entro i limiti di governance approvati."
+      },
+      "accuracy": {
+        "title": "Accuratezza RAG-Powered",
+        "desc": "Radicato nei metadati aziendali, nei glossari business e nei layer semantici, 2Sequel raggiunge l'accuratezza che il decision-making enterprise richiede — ben oltre la generazione SQL generica degli LLM."
+      }
+    },
+    "pipeline_title": "Come funziona 2Sequel",
+    "pipeline": {
+      "intent": {
+        "title": "Interpretazione dell'Intento",
+        "desc": "L'utente pone una domanda conversazionale. Il modello estrae la semantica latente, isolando metriche business, geografie, filtri temporali e raggruppamenti dall'input in linguaggio naturale."
+      },
+      "sql": {
+        "title": "Generazione SQL Dialect-Specific",
+        "desc": "2Sequel sintetizza una query nativa ottimizzata per il database target — Postgres, MySQL o SQL Server — rispettando la struttura dello schema e le regole di autorizzazione a livello di campo."
+      },
+      "execution": {
+        "title": "Esecuzione Autonoma",
+        "desc": "Il sistema interagisce direttamente con l'infrastruttura dati entro boundary di sicurezza rigorosi, eliminando completamente gli intermediari umani dal loop di retrieval."
+      },
+      "output": {
+        "title": "Sintesi dell'Output Adattivo",
+        "desc": "A differenza dei sistemi legacy che restituiscono tabelle grezze, 2Sequel adatta la risposta: contatori, medie, classifiche, liste ordinate o sommari pronti all'uso — contestualizzati alla domanda originale."
+      }
+    },
+    "audiences_title": "Pensato per ogni stakeholder",
+    "audiences": {
+      "business": {
+        "title": "Team Business",
+        "roles": "CEO · CMO · Product Manager · Analista Finanziario",
+        "desc": "Fai qualsiasi domanda sui dati in linguaggio naturale. Nessuna conoscenza SQL richiesta, nessuna attesa per un analista, nessun limite dei dashboard statici. Risposte dirette alle domande ad hoc, istantaneamente."
+      },
+      "technical": {
+        "title": "Team Tecnici & Security",
+        "roles": "CTO · Data Engineer · CISO",
+        "desc": "Riduci il volume di richieste di query routinarie. Mantieni la piena governance attraverso controlli a livello di campo, data masking e audit trail. Sostituisci i colli di bottiglia SQL manuali senza sacrificare la postura di sicurezza."
+      }
+    },
+    "compat_title": "Compatibilità Database",
+    "compat_description": "2Sequel si connette nativamente ai motori di database relazionali più diffusi in ambiente enterprise, senza richiedere modifiche allo schema o pipeline dati aggiuntive.",
+    "compat_items": {
+      "0": "PostgreSQL",
+      "1": "MySQL",
+      "2": "SQL Server",
+      "3": "Cloud Data Warehouses"
+    },
+    "value_title": "Perché 2Sequel",
+    "value": {
+      "speed": {
+        "title": "Ore → Secondi",
+        "desc": "Ciò che prima richiedeva una richiesta dati, assegnazione a un analista, scrittura SQL e report formattato ora avviene in un singolo turno conversazionale."
+      },
+      "governance": {
+        "title": "Governance by Design",
+        "desc": "La sicurezza non è un add-on. Il masking a livello di campo, i boundary di accesso e il tracing delle query spiegabile sono caratteristiche architetturali, non opzioni di configurazione."
+      },
+      "autonomy": {
+        "title": "Autonomia del Team",
+        "desc": "Ogni utente business diventa autosufficiente nel retrieval dei dati, liberando i team di engineering dal collo di bottiglia human API che rallenta la maggior parte dei workflow analytics."
+      }
+    },
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Domande dei team enterprise",
+    "faqDescription": "Risposte pratiche su accuratezza, sicurezza, compatibilità e cosa distingue 2Sequel da altri strumenti Text-to-SQL e BI.",
+    "faq": {
+      "0": {
+        "question": "Quanto è accurata la generazione SQL?",
+        "answer": "2Sequel raggiunge un'accuratezza enterprise radicando l'LLM nei metadati aziendali, nei glossari business e nei layer semantici. A differenza dei modelli generici che si basano sull'analisi grezza dello schema, questo approccio riduce drasticamente l'ambiguità e le query malformate."
+      },
+      "1": {
+        "question": "Come 2Sequel previene SQL injection e attacchi di prompt?",
+        "answer": "Ogni query opera entro boundary di autorizzazione rigorosi. I controlli di accesso a livello di campo determinano quali tabelle e colonne sono accessibili per ruolo utente. I tentativi di prompt injection sono isolati architetturalmente e il sistema non genera mai operazioni distruttive o non autorizzate."
+      },
+      "2": {
+        "question": "Quali database supporta 2Sequel?",
+        "answer": "2Sequel supporta nativamente PostgreSQL, MySQL e SQL Server — i tre principali motori di database relazionali in ambiente enterprise. La connessione non richiede modifiche allo schema né pipeline dati aggiuntive."
+      },
+      "3": {
+        "question": "Come si distingue 2Sequel da Vanna o altri tool open-source?",
+        "answer": "I tool Text-to-SQL open-source spesso espongono le credenziali tramite protocolli locali, mancano di governance a livello di campo e producono risultati inconsistenti su schemi complessi. 2Sequel è costruito per l'accountability enterprise: data masking nativo, tracing auditabile delle query e un'architettura RAG radicata nei metadati aziendali."
       }
     }
   },
