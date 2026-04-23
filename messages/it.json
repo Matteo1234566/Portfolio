@@ -312,12 +312,12 @@
       "mirror": {
         "title": "Mirror",
         "category": "Data Ops",
-        "description": "Layer di esplorazione dati e workflow che trasforma fonti statistiche frammentate in insight navigabili e interrogabili per team e analisti.",
+        "description": "Piattaforma Data Ops per l'ecosistema open data ISTAT italiano. Documentazione REST API, collezioni Postman, Dataset Browser e query in linguaggio naturale AI su migliaia di dataset statistici pubblici.",
         "techStack": {
-          "0": "Data Modeling",
-          "1": "Workflow API",
-          "2": "Analytics UI",
-          "3": "AI Assistant"
+          "0": "SDMX / REST API",
+          "1": "Python / Pandas",
+          "2": "NLP Query",
+          "3": "Dataset Browser"
         }
       },
       "capture": {
@@ -842,51 +842,86 @@
     }
   },
   "Mirror": {
-    "badge": "Open Data",
-    "tagline": "Democratizzare i dati ISTAT per tutti",
-    "description": "Rendere trasparente e accessibile l'intero ecosistema dati ISTAT. Dai database statistici complessi a insight azionabili, Mirror colma il divario tra dati pubblici e utenti quotidiani.",
+    "badge": "ISTAT · Data Ops",
+    "tagline": "Open data ISTAT, accessibile e interrogabile per tutti",
+    "description": "Mirror è una piattaforma Data Ops e di esplorazione costruita sull'ecosistema open data ISTAT italiano. Colma il divario tra la complessa infrastruttura statistica pubblica e gli analisti, sviluppatori, giornalisti e cittadini che ne hanno bisogno.",
+    "meta_description": "Mirror trasforma i frammentati database statistici ISTAT in una piattaforma navigabile e interrogabile via API. Documentazione REST, collezioni Postman, Dataset Browser e query in linguaggio naturale su migliaia di dataset pubblici.",
+    "supporting": "La vera opportunità non è un altro portale statistico. Mirror deve diventare il punto di riferimento per l'accesso ai dati ISTAT — per sviluppatori che cercano API REST documentate, analisti che vogliono un Dataset Browser, e cittadini che cercano risposte immediate.",
     "cta_soon": "Disponibile a Breve",
     "cta_repo": "Apri Repository",
     "phases_label": "Roadmap",
     "phase1_title": "Fase 1: Fondamenta",
-    "phase1_desc": "Repository di documentazione con API, collezioni Postman e guide",
+    "phase1_desc": "Hub documentazione per sviluppatori: riferimenti REST API, collezioni Postman e guide di integrazione",
     "phase2_title": "Fase 2: Piattaforma",
-    "phase2_desc": "Web app con visualizzazione e query in linguaggio naturale AI",
+    "phase2_desc": "Web app per utenti finali con Dataset Browser, visualizzazioni interattive e query AI in linguaggio naturale",
+    "problem_label": "Il Problema",
+    "problem_title": "I dati ISTAT sono pubblici. Usarli non lo è.",
+    "problem_desc": "L'Istituto Nazionale di Statistica pubblica enormi volumi di dati aperti sotto licenza Creative Commons. Ma i portali ufficiali — IstatData, I.Stat, LOD-Istat — sono progettati per esperti statistici. Sistemi pivot complessi, formati SDMX e interfacce di estrazione multidimensionale creano una barriera sostanziale per chiunque non abbia competenze tecniche avanzate.",
+    "problem_items": {
+      "0": "Interfacce di selezione complesse che richiedono configurazione manuale prima di visualizzare qualsiasi dato",
+      "1": "URL ricchi di parametri difficili da navigare, condividere o salvare per uso ripetuto",
+      "2": "Nessuna risposta diretta a domande specifiche — l'utente deve costruire la propria logica di estrazione",
+      "3": "UX mobile scarsa e alto tasso di abbandono tra gli utenti non specializzati che cercano risposte immediate"
+    },
+    "gap_label": "La Soluzione",
+    "gap_title": "Mirror inserisce un layer Data Ops",
+    "gap_desc": "Posizionandosi tra l'infrastruttura ISTAT e gli utenti finali, Mirror trasforma la frammentazione statistica in conoscenza accessibile — offrendo agli sviluppatori API REST documentate e collezioni Postman, agli analisti un Dataset Browser intuitivo, e a tutti gli altri un'interfaccia AI in linguaggio naturale.",
     "phases": {
       "docs": {
         "title": "Documentazione API",
-        "desc": "Riferimento completo per tutti i servizi web REST di ISTAT con esempi."
+        "desc": "Riferimento completo per tutti gli endpoint REST e i web service ISTAT, con esempi di payload multilingua e guide architetturali."
       },
       "postman": {
         "title": "Collezioni Postman",
-        "desc": "Collection API pronte all'uso con ambienti pre-configurati per test rapidi."
+        "desc": "Collection API pronte all'uso con ambienti preconfigurati per test rapidi degli endpoint ISTAT — scaricabili e pubblicate sulla rete pubblica Postman."
       },
       "guides": {
         "title": "Guide Passo-Passo",
-        "desc": "Tutorial che coprono accesso ai dati, query e workflow di esportazione."
+        "desc": "Tutorial di integrazione per flussi comuni: estrazione massiva di dati, parsing SDMX e pipeline automatizzate in Python, R e JavaScript."
       }
     },
     "features": {
       "browse": {
         "title": "Esplora Dataset",
-        "desc": "Interfaccia intuitiva per esplorare migliaia di dataset statistici pubblici."
+        "desc": "Interfaccia intuitiva per esplorare migliaia di dataset statistici ISTAT pubblici con URL leggibili e viste preconfigurate."
       },
       "visualize": {
         "title": "Visualizzazione Dati",
-        "desc": "Grafici, tabelle e dashboard interattive per comprendere i trend a colpo d'occhio."
+        "desc": "Grafici, tabelle e dashboard interattive che trasformano tabelle statistiche grezze in viste di tendenza comprensibili a colpo d'occhio."
       },
       "ai": {
         "title": "Query in Linguaggio Naturale",
-        "desc": "Sistema AI che interpreta le domande e recupera automaticamente i dati rilevanti."
+        "desc": "Sistema AI che interpreta domande in linguaggio comune — come 'disoccupazione nel nord Italia 2024' — e recupera automaticamente i dati ISTAT pertinenti."
       },
       "explain": {
         "title": "Spiegazioni Contestuali",
-        "desc": "Output chiari con spiegazioni per aiutare gli utenti a comprendere il significato dietro i numeri."
+        "desc": "Testo esplicativo generato dall'AI accanto a ogni dataset, trasformando i numeri grezzi in pagine semanticamente ricche con valore informativo immediato."
+      }
+    },
+    "faq_label": "FAQ",
+    "faq_title": "Domande frequenti su Mirror",
+    "faq_subtitle": "Risposte per sviluppatori, analisti, giornalisti e chiunque navighi i dati statistici pubblici italiani.",
+    "faq": {
+      "0": {
+        "question": "Cosa sono i dati ISTAT e perché sono difficili da usare?",
+        "answer": "ISTAT (Istituto Nazionale di Statistica) è la principale fonte di dati statistici pubblici in Italia — che coprono demografia, lavoro, commercio, agricoltura e altro — pubblicati sotto licenze aperte. La difficoltà sta nelle interfacce ufficiali, progettate per specialisti: tabelle pivot multidimensionali, formati di estrazione SDMX e URL ricchi di parametri che richiedono competenze avanzate per essere navigati, producendo un alto tasso di abbandono tra gli utenti non esperti."
+      },
+      "1": {
+        "question": "Cosa include la documentazione per sviluppatori della Fase 1?",
+        "answer": "La Fase 1 costruisce un hub documentazione completo: riferimenti agli endpoint REST dei web service ISTAT, collezioni Postman scaricabili con ambienti preconfigurati per test rapidi, e guide di integrazione passo-passo per flussi comuni come estrazione massiva e parsing SDMX in Python, R e JavaScript."
+      },
+      "2": {
+        "question": "Come funziona il sistema di query in linguaggio naturale?",
+        "answer": "L'AI di Mirror interpreta domande in linguaggio comune — come 'Qual è il tasso di disoccupazione nel nord Italia nel 2024?' — le trasforma in query strutturate sul catalogo ISTAT e restituisce sia i dati pertinenti sia spiegazioni contestuali che aiutano l'utente a comprendere il significato dietro i numeri."
+      },
+      "3": {
+        "question": "Per chi è pensato Mirror?",
+        "answer": "Mirror serve due pubblici principali: sviluppatori e data engineer che hanno bisogno di API REST ben documentate, ambienti di test e guide di integrazione per i dati ISTAT; e analisti, giornalisti, ricercatori e utenti comuni che vogliono esplorare i dati statistici pubblici senza competenze specialistiche o configurazioni tecniche complesse."
       }
     },
     "footer": {
-      "title": "Trasformare dati in conoscenza",
-      "desc": "Mirror mira a colmare il divario tra dati statistici complessi e utenti quotidiani, rendendo le informazioni pubbliche veramente accessibili a tutti."
+      "title": "Trasformare la frammentazione statistica in conoscenza fruibile",
+      "desc": "La promessa fondante di Mirror — rendere la complessa infrastruttura dati ISTAT accessibile a tutti — realizzata per sviluppatori, analisti e chiunque nel mezzo."
     }
   },
   "Capture": {
