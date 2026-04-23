@@ -739,34 +739,106 @@
     "funding_note": "Progetto sostenuto nell'ambito dell'Avviso PR FESR Lazio 2021-2027"
   },
   "Screeba": {
-    "tagline": "Stop sbobinare, inizia a studiare.",
-    "description": "Siete stanchi di passare intere giornate a trascrivere ore di lezione? Carica il tuo audio e lascia che la nostra AI faccia il lavoro sporco per te. Appunti pronti in formato Word in pochi minuti.",
+    "eyebrow": "Trascrizione lezioni per lo studio",
+    "hero_title": "Trascrivi lezioni audio in testo e scarica appunti Word pronti da studiare",
+    "tagline": "Stop sbobinare, inizia a studiare",
+    "description": "Screeba è pensato per il contesto universitario e formativo: carichi una lezione registrata, elabori con AI transcription e scarichi un documento Word strutturato, pronto da stampare, evidenziare e ripassare.",
+    "supporting": "Il valore reale non è la trascrizione AI generica. È il percorso completo da lezione registrata a appunti pronti per lo studio, usando il linguaggio che le persone cercano davvero: trascrivere audio in testo, sbobinare lezioni, export Word.",
+    "cta_demo": "Richiedi una Demo",
     "how_it_works": "Come funziona",
+    "flow_subtitle": "Screeba è costruito come flusso pratico: carica audio lezione, aggiungi contesto, elabora trascrizione e ricevi output DOCX ordinato.",
     "steps": {
       "upload": {
-        "title": "Carica la lezione",
-        "desc": "Supportiamo file audio o video. Puoi inserire una descrizione per aiutare l'AI col contesto (es. 'Lezione di Diritto')."
+        "title": "Carica audio lezione",
+        "desc": "Importa registrazioni in formati comuni e aggiungi il contesto del corso o materia per migliorare la coerenza terminologica del risultato."
       },
       "process": {
-        "title": "AI Processing",
-        "desc": "Il nostro modello analizza l'audio. Importante: la qualità della trascrizione dipende dalla pulizia dell'audio originale."
+        "title": "AI transcription + pulizia testo",
+        "desc": "Screeba elabora la registrazione con modelli di trascrizione e logiche di formattazione, così il testo risulta leggibile per studiare e non solo trascritto in modo grezzo."
       },
       "download": {
-        "title": "Scarica Word",
-        "desc": "Ricevi un documento formattato pronto per essere stampato, sottolineato e studiato."
+        "title": "Esporta appunti Word",
+        "desc": "Scarica un file DOCX pronto per stampa, evidenziazione e ripasso senza dover rifare l'impaginazione da zero."
       }
     },
-    "cta_demo": "Contattaci",
+    "users_label": "Per chi è pensato",
+    "users_title": "Costruito per esigenze di trascrizione orientate allo studio",
+    "users_subtitle": "Screeba parla il linguaggio degli intenti italiani legati a sbobinare lezioni, non solo i classici use case da meeting transcription.",
+    "users": {
+      "students": {
+        "title": "Studenti universitari",
+        "desc": "Trasforma lezioni registrate in appunti strutturati più velocemente, riducendo il tempo perso a digitare e aumentando il tempo dedicato a comprensione e memorizzazione."
+      },
+      "university": {
+        "title": "Supporto accademico",
+        "desc": "Utile per tutorati, servizi di supporto e contesti formativi in cui le lezioni devono diventare rapidamente documenti consultabili."
+      },
+      "professionals": {
+        "title": "Formazione professionale",
+        "desc": "Valido anche per sessioni formative e briefing tecnici quando un audio deve diventare testo e documentazione Word in modo ripetibile."
+      }
+    },
+    "formats": {
+      "0": "Trascrizione MP3",
+      "1": "Trascrizione WAV",
+      "2": "Supporto M4A",
+      "3": "Export DOCX"
+    },
+    "quality_label": "La qualità audio conta",
+    "quality_title": "L'accuratezza dipende dalle condizioni di registrazione",
+    "quality_description": "Come tutti i sistemi di trascrizione, Screeba rende al meglio su audio pulito. Gestire bene le aspettative migliora fiducia, risultato e qualità della conversione.",
+    "quality": {
+      "items": {
+        "0": "Usa registrazioni con poco rumore di fondo e distanza speaker stabile.",
+        "1": "Aggiungi contesto di materia o lezione per migliorare il riconoscimento dei termini.",
+        "2": "Rivedi i passaggi a bassa confidenza prima dell'export finale di studio."
+      }
+    },
+    "output_label": "Focus output",
+    "output_title": "Dalla trascrizione a veri appunti Word usabili",
+    "output_description": "Screeba va posizionato sul risultato finale: un documento pulito che supporta ripasso, annotazione e studio, non solo la conversione audio-testo grezza.",
+    "output": {
+      "preview_label": "Anteprima output Word",
+      "preview_title": "Appunti Lezione – Diritto Costituzionale",
+      "preview_items": {
+        "0": "Sezioni organizzate per argomento",
+        "1": "Blocchi cronologici allineati al flusso della lezione",
+        "2": "Pronto per evidenziazione e stampa"
+      }
+    },
+    "faq_label": "FAQ",
+    "faq_title": "Le domande che arrivano prima dell'upload",
+    "faq_subtitle": "Questa sezione serve per chiarezza semantica e supporto conversione: formati, export Word, aderenza al caso lezioni e aspettative sulla qualità.",
+    "faq": {
+      "0": {
+        "question": "Screeba può trascrivere lezioni universitarie?",
+        "answer": "Sì. Il prodotto è pensato proprio per registrazioni in stile lezione e workflow di studio in cui il testo deve essere davvero consultabile e riutilizzabile."
+      },
+      "1": {
+        "question": "Posso esportare il risultato in formato Word?",
+        "answer": "Sì. Screeba produce documenti DOCX così gli appunti possono essere stampati, evidenziati e integrati nel normale flusso accademico."
+      },
+      "2": {
+        "question": "Quali formati audio sono supportati?",
+        "answer": "Nel flusso di upload sono supportati formati comuni adatti alle lezioni come MP3, WAV e M4A."
+      },
+      "3": {
+        "question": "Perché il rumore di fondo influisce sul risultato?",
+        "answer": "L'accuratezza dipende dalla pulizia della sorgente. Voci sovrapposte, riverbero e qualità di registrazione bassa possono ridurre la precisione, quindi una buona cattura migliora sensibilmente l'output."
+      }
+    },
+    "privacy_note": "Screeba va comunicato con trasparenza esplicita sulla gestione dei dati: l'utente deve capire cosa succede ai file caricati, per quanto restano eventuali artefatti di elaborazione e come viene controllato l'accesso ai risultati.",
     "demo": {
-      "label_name": "Nome della lezione / Contesto",
-      "placeholder_name": "Es. Storia Medievale del 12/10...",
+      "mock_label": "Demo Screeba",
+      "label_name": "Nome lezione / contesto",
+      "placeholder_name": "es. Procedura Civile - settimana 4",
       "drop_text": "Trascina qui il tuo file audio",
-      "drop_sub": "o clicca per sfogliare (MP3, WAV)",
-      "btn_action": "Sbobina ora",
+      "drop_sub": "oppure clicca per sfogliare (MP3, WAV, M4A)",
+      "btn_action": "Trascrivi ora",
       "btn_loading": "Analisi in corso...",
       "processing": "GENERAZIONE TRASCRIZIONE...",
       "success": "Fatto! (Demo)",
-      "quality_warning": "Attenzione: audio con forti rumori di fondo potrebbero generare trascrizioni incomplete. Usa registrazioni chiare."
+      "quality_warning": "La qualità audio influisce direttamente sul risultato. File con rumore elevato o voci sovrapposte possono richiedere revisione manuale."
     }
   },
   "Mirror": {

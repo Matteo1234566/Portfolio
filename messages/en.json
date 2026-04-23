@@ -739,34 +739,106 @@
     "funding_note": "Project supported under the PR FESR Lazio 2021-2027 Notice"
   },
   "Screeba": {
-    "tagline": "Stop typing, start studying.",
-    "description": "Tired of spending days transcribing hours of lectures? Upload your audio and let our AI do the heavy lifting. Get formatted Word notes in minutes.",
+    "eyebrow": "Lecture transcription for study",
+    "hero_title": "Transcribe lecture audio to text and download Word notes ready to study",
+    "tagline": "Stop typing, start studying",
+    "description": "Screeba is designed for students and academic workflows: upload a recorded lecture, process it with AI transcription, and export a structured Word document you can print, highlight, and revise.",
+    "supporting": "The real value is not generic AI transcription. It is the full path from recorded lesson to study-ready notes, using language and output formats people actually search for: transcribe audio to text, lecture transcription, and Word export.",
+    "cta_demo": "Request a Demo",
     "how_it_works": "How it works",
+    "flow_subtitle": "Screeba is built as a practical flow: upload class audio, enrich context, process transcription, and receive an organized DOCX output.",
     "steps": {
       "upload": {
-        "title": "Upload Lecture",
-        "desc": "We support audio or video files. You can add a description to help the AI with context (e.g., 'Law Class')."
+        "title": "Upload lesson audio",
+        "desc": "Import lecture recordings in common formats and add context such as subject or course to improve lexical coherence in the output."
       },
       "process": {
-        "title": "AI Processing",
-        "desc": "Our model analyzes the audio. Important: the quality of the transcription depends on the clarity of the original audio."
+        "title": "AI transcription + cleanup",
+        "desc": "Screeba processes the recording with transcription models and formatting logic so text is readable for studying, not just raw speech capture."
       },
       "download": {
-        "title": "Download Word",
-        "desc": "Receive a formatted document ready to be printed, highlighted, and studied."
+        "title": "Export Word notes",
+        "desc": "Download a DOCX file that is ready for printing, annotation, and revision workflows without post-editing from scratch."
       }
     },
-    "cta_demo": "Contact Us",
+    "users_label": "Who this is for",
+    "users_title": "Built for study-driven transcription needs",
+    "users_subtitle": "Screeba speaks the language of real Italian search intent around sbobinare and lecture transcription, not only generic meeting transcription use cases.",
+    "users": {
+      "students": {
+        "title": "University students",
+        "desc": "Turn recorded classes into structured notes quickly, reduce manual typing effort, and spend more time on understanding and memorization."
+      },
+      "university": {
+        "title": "Academic support workflows",
+        "desc": "Useful for tutoring programs, support teams, and educational contexts where lecture material needs to become readable documents fast."
+      },
+      "professionals": {
+        "title": "Professional learning",
+        "desc": "Also useful for training sessions and technical briefings when audio must become text and Word documentation in a repeatable process."
+      }
+    },
+    "formats": {
+      "0": "MP3 transcription",
+      "1": "WAV transcription",
+      "2": "M4A support",
+      "3": "DOCX export"
+    },
+    "quality_label": "Audio quality matters",
+    "quality_title": "Accuracy depends on recording conditions",
+    "quality_description": "Like all transcription systems, Screeba performs best on clean source audio. Setting expectations clearly improves trust, outcomes, and conversion quality.",
+    "quality": {
+      "items": {
+        "0": "Use recordings with limited background noise and stable speaker distance.",
+        "1": "Add lesson context or subject hints to improve term recognition.",
+        "2": "Review low-confidence passages before final study export."
+      }
+    },
+    "output_label": "Output focus",
+    "output_title": "From transcript to usable Word notes",
+    "output_description": "Screeba should be positioned around final utility: a clean document that supports revision, annotation, and study sessions, not only raw text conversion.",
+    "output": {
+      "preview_label": "Word output preview",
+      "preview_title": "Lecture Notes – Constitutional Law",
+      "preview_items": {
+        "0": "Section headers organized by topic",
+        "1": "Chronological blocks aligned to lecture flow",
+        "2": "Ready for highlighting and print review"
+      }
+    },
+    "faq_label": "FAQ",
+    "faq_title": "Questions users ask before uploading",
+    "faq_subtitle": "This section exists for semantic clarity and conversion support: format support, Word export, lecture fit, and quality expectations.",
+    "faq": {
+      "0": {
+        "question": "Can Screeba transcribe university lectures?",
+        "answer": "Yes. The product is designed specifically for lecture-style recordings and study workflows where users need text they can actually review and reuse."
+      },
+      "1": {
+        "question": "Can I export the result in Word format?",
+        "answer": "Yes. Screeba outputs DOCX documents so notes can be printed, highlighted, and integrated into common academic workflows."
+      },
+      "2": {
+        "question": "Which audio formats are supported?",
+        "answer": "Common lecture-friendly formats such as MP3, WAV, and M4A are supported in the upload flow."
+      },
+      "3": {
+        "question": "Why does background noise affect the result?",
+        "answer": "Transcription accuracy depends on source clarity. Overlapping voices, reverberation, and low-quality capture can reduce precision, so clean recording practices improve output quality."
+      }
+    },
+    "privacy_note": "Screeba should be communicated with explicit data-handling transparency: users need to understand what happens to uploaded files, how long processing artifacts remain, and how retrieval access is controlled.",
     "demo": {
-      "label_name": "Lecture Name / Context",
-      "placeholder_name": "E.g. Medieval History 12/10...",
-      "drop_text": "Drag & drop your audio file",
-      "drop_sub": "or click to browse (MP3, WAV)",
-      "btn_action": "Transcribe Now",
+      "mock_label": "Screeba Demo",
+      "label_name": "Lecture name / context",
+      "placeholder_name": "e.g. Civil Procedure – Week 4",
+      "drop_text": "Drag and drop your audio file",
+      "drop_sub": "or click to browse (MP3, WAV, M4A)",
+      "btn_action": "Transcribe now",
       "btn_loading": "Analyzing...",
       "processing": "GENERATING TRANSCRIPT...",
       "success": "Done! (Demo)",
-      "quality_warning": "Warning: Audio with heavy background noise may result in poor transcriptions. Please use clear recordings."
+      "quality_warning": "Audio quality directly impacts output quality. Files with heavy noise or overlapping speakers may require manual revision."
     }
   },
   "Mirror": {

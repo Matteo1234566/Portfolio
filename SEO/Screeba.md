@@ -1,0 +1,97 @@
+# Strategia SEO per Screeba
+
+La premessa più importante è questa: arrivare “primi per tutte le keyword” non è qualcosa che si possa garantire in modo serio. La documentazione ufficiale di entity["company","Google","search company"] dice esplicitamente che nessuno può promettere il ranking n. 1 e che i sistemi di ranking valutano molti segnali, sia a livello di singola pagina sia a livello più ampio di sito. La strategia giusta, quindi, non è inseguire tutto, ma diventare il risultato più rilevante e più cliccabile per un cluster stretto di query ad altissima aderenza al prodotto: trascrizione di lezioni, sbobinatura per studenti e output in Word. citeturn18view4turn18view2turn18view3
+
+Dal mockup e dal copy che hai condiviso, il posizionamento di base è già corretto: il problema non è “avere una trascrizione” in astratto, ma smettere di perdere tempo a sbobinare e iniziare a studiare. SEO-wise, però, quella promessa va tradotta in un lessico che coincide con le query reali degli utenti italiani: “trascrivere audio in testo”, “sbobinare audio”, “sbobinare lezioni universitarie”, “trascrivere audio in Word”, “appunti da audio”.
+
+## Quadro reale della competizione
+
+Nelle SERP italiane attuali per query ampie come *trascrivere audio in testo* e *sbobinare audio online* compaiono stabilmente pagine tool-first di SaaS che parlano in modo molto esplicito di upload file, formati supportati, lingue, velocità ed export: tra questi ci sono entity["company","HappyScribe","transcription software"], entity["company","Evernote","note-taking software"], entity["company","Notta","ai note taker"], entity["company","TurboScribe","transcription software"] e entity["company","UniScribe","transcription service"]. Questo significa che la tua pagina principale dovrà avere una struttura fortemente transazionale, non sembrare solo una homepage di brand. citeturn6view0turn6view1turn6view3turn6view4turn6view6
+
+Sulle query studentesche e “da studio” la SERP cambia: entrano pagine verticali per studenti, guide blog e contenuti comparativi. Il caso più interessante è entity["company","Algor Education","edtech platform"], che lega la trascrizione alla produzione di materiali di studio; accanto a quel modello compaiono anche pagine dedicate agli studenti e alle lezioni, oltre a guide editoriali sulle “sbobine” o sull’uso di Word e Google Docs. Questo è un segnale molto forte: per vincere in questo spazio non basta una landing commerciale; serve anche un cluster editoriale di supporto che intercetti i dubbi prima della conversione. citeturn13view0turn13view1turn19view0turn19view1turn6view5turn10view1turn10view2turn10view3
+
+Il sotto-cluster “Word / DOCX” è ancora più interessante perché mostra un bisogno specifico e molto vicino alla tua proposta. Oltre alle guide ufficiali di entity["company","Microsoft","software company"] su Word, si posizionano landing dedicate come *audio to word* o *convert audio to Microsoft Word*. In pratica, l’output Word non è un dettaglio tecnico: è già un linguaggio di ricerca. Per Screeba questo è un vantaggio competitivo reale, perché ti consente di presidiare una query più concreta e meno dispersiva rispetto al genericissimo *AI transcription*. citeturn15view0turn14search1turn14search3
+
+C’è poi un dato tattico importante: le SERP con “gratis” sono molto affollate da converter generalisti e tool con free tier molto evidente. Questo suggerisce una scelta netta: se Screeba ha davvero una prova gratuita forte, puoi attaccare anche quel cluster; se invece non ce l’ha, non conviene trasformare la pagina principale in una promessa “gratis” che poi genera click poco qualificati e basse conversioni. citeturn21search0turn21search1turn21search2turn21search4turn21search6
+
+## Parole chiave da presidiare
+
+La keyword strategy migliore non è una lista piatta, ma una mappa per intento. La documentazione di Search Central raccomanda di usare le parole che le persone usano davvero e di collocarle nei punti più visibili della pagina, come title, H1, alt text e link text. Nel vostro caso, le famiglie lessicali da unire sono due: **trascrivere audio in testo** per copertura ampia e **sbobinare** per aderenza al linguaggio studentesco italiano. citeturn11view4turn18view3
+
+La pagina commerciale principale dovrebbe presidiare soprattutto queste query: **trascrivere audio in testo**, **sbobinare audio online**, **trascrizione audio online**, **trascrivere audio in Word**, **convertire audio in Word**. Sono keyword con intento transazionale chiaro, con competitor tool-first e con un prodotto che risponde in modo diretto alla richiesta. citeturn6view0turn6view3turn6view6turn14search1turn14search3
+
+Il secondo cluster, che considero il più realistico da dominare in tempi ragionevoli, è quello **student-specific**: **sbobinare lezioni universitarie**, **trascrivere lezioni universitarie**, **appunti da audio**, **sbobine lezioni**, **trascrivere una lezione registrata**. Qui la concorrenza è più frammentata tra blog, tutorial, pagine universitarie e pochi tool davvero focalizzati sullo studio. È il cluster in cui Screeba può diventare il risultato più pertinente se la promessa di valore viene formulata come “da registrazione a appunti Word pronti da studiare”. citeturn13view0turn6view5turn10view1turn10view3turn19view1
+
+Il terzo cluster va trattato con contenuti di supporto, non con la landing principale: **come sbobinare un audio**, **come trascrivere audio in testo**, **migliori app per sbobinare**, **trascrivere audio in testo gratis**, **come migliorare audio per trascrizione**, **Word trascrivi registrazioni**. Queste query servono per portare traffico top-of-funnel e per alimentare la pagina commerciale con internal link descrittivi. citeturn10view0turn10view2turn13view1turn21search3turn15view0turn22view0
+
+La mia raccomandazione pratica è questa: **una pagina money principale**, **due landing secondarie molto mirate** e **un piccolo cluster editoriale**. Il set minimo sensato sarebbe:
+- `/trascrivere-audio-in-testo` come pagina principale
+- `/trascrivere-audio-in-word` come landing specifica DOCX
+- `/sbobinare-lezioni-universitarie` come verticale studenti
+- 4–6 articoli di supporto collegati internamente con anchor text naturali e descrittive citeturn14search1turn14search3turn13view0turn22view0
+
+## Posizionamento che può vincere
+
+Il punto debole del testo attuale, dal punto di vista SEO, è il top label **“AI Transcription”**. Come claim di brand può restare, ma non deve essere il cuore semantico della pagina. Le SERP italiane sono fortemente localizzate sul lessico italiano, e la documentazione di Google spiega anche che i title link possono essere riscritti quando il titolo è vago, inaccurato o non allineato alla lingua principale della pagina. In altre parole: l’H1 e il title devono parlare italiano da keyword, non italiano da startup. citeturn11view0turn12search0turn12search11turn14search1
+
+Il posizionamento più forte per Screeba non è “facciamo trascrizione AI” — quello lo dicono tutti — ma **“trasformiamo una lezione registrata in appunti Word pronti da studiare”**. Questa promessa è più concreta, più utile, più distintiva e soprattutto più vicina al linguaggio delle query studentesche. Inoltre intercetta un vuoto competitivo: molti tool parlano di trascrizione, riassunto, meeting notes o collaboration; molto meno brand parlano in modo netto di *lezione → appunti Word → studio*. citeturn13view0turn19view1turn6view1turn6view6
+
+Per questo io terrei **“Sbobina ora”** come CTA, perché “sbobinare” è una parola viva nel mercato italiano dello studio, ma la farei convivere subito sopra e subito sotto con il lessico più ampio di ricerca. La formula giusta è: **keyword larga + keyword studentesca + output Word**. È questo il triangolo semantico da possedere. citeturn10view0turn10view1turn11view4
+
+C’è anche un altro vantaggio da sfruttare: diversi competitor stanno già provando a spostarsi dal semplice transcript all’“output utile” per lo studio, con quiz, riassunti, flashcard o note automatiche. Questo conferma che l’utente non cerca soltanto la conversione audio-testo; cerca *tempo risparmiato e frizione rimossa*. Se Screeba oggi consegna soprattutto un DOCX, allora il copy deve ribadire il beneficio finale: **documento pulito, leggibile, stampabile, evidenziabile, pronto per il ripasso**. citeturn13view0turn19view1turn6view1
+
+## Struttura consigliata della pagina
+
+Per il title tag, la documentazione ufficiale raccomanda testo descrittivo e conciso; per la meta description, un riassunto breve che funzioni come pitch del risultato. Partendo da questo, la versione che ti consiglierei è: **“Trascrivi audio in testo per le lezioni | Appunti Word con AI”**. È larga abbastanza da prendere domanda, ma già qualificata per il pubblico giusto. citeturn11view0turn11view1
+
+L’H1 che userei è: **“Trascrivi lezioni audio in testo e scarica appunti Word pronti da studiare”**. Sotto, una subheadline molto concreta: *“Carica MP3, WAV o M4A, aggiungi il contesto della lezione e ottieni una sbobina ordinata in formato Word in pochi minuti.”* Qui stai mettendo in chiaro keyword, formati, contesto d’uso e outcome finale. Questa è la parte che oggi manca maggiormente al mockup. citeturn11view4turn14search1turn14search3
+
+La hero non dovrebbe essere solo il widget di upload. Poiché Google insiste sul fatto che il contenuto importante sia disponibile in forma testuale, facilmente renderizzabile e accessibile al crawler, sopra o accanto all’uploader servono almeno 80–120 parole HTML reali che spieghino per chi è lo strumento, cosa fa, quali file supporta e quale risultato genera. Se il valore resta “chiuso” dentro un’app shell o in elementi troppo visuali, la pagina perde comprensibilità semantica. citeturn18view0turn18view3
+
+Subito sotto la hero inserirei queste sezioni, in quest’ordine: **Come funziona**, **Per chi è utile**, **Formati supportati**, **Perché la qualità audio conta**, **Esempio di output Word**, **Recensioni**, **Privacy e gestione dei file**, **Domande frequenti**. La sezione sulla qualità audio è particolarmente importante, perché sia i competitor sia le guide ufficiali spiegano che l’accuratezza dipende molto dalla nitidezza della registrazione, dal rumore di fondo e dagli speaker sovrapposti. citeturn6view5turn10view2turn13view0
+
+La FAQ deve esserci, ma con un’aspettativa corretta: oggi i rich result FAQ sono limitati ai siti governativi e sanitari autorevoli. Quindi la FAQ ti serve soprattutto per completezza semantica, per People Also Ask e per conversione, non perché tu debba aspettarti automaticamente il box espanso in SERP. citeturn7view0
+
+Le domande giuste sono quelle che eliminano i dubbi prima del click o prima della prova: *Quali file supporta Screeba?*, *Posso trascrivere una lezione universitaria?*, *Posso scaricare il risultato in Word?*, *Quanto influisce il rumore di fondo?*, *Serve aggiungere il contesto del corso?*, *Quanto tempo impiega l’elaborazione?* Questo assetto è coerente sia con l’intento di ricerca sia con i pattern delle pagine che oggi performano meglio. citeturn6view0turn14search1turn14search3turn19view0
+
+## Fondamenta tecniche e markup
+
+Dal punto di vista tecnico, la priorità è semplice: **pagina indicizzabile, veloce, mobile-first, con testo renderizzato e markup coerente**. Google usa la versione mobile per indicizzazione e ranking; raccomanda Core Web Vitals buoni e indica valori-obiettivo molto chiari: LCP entro 2,5 secondi, INP sotto 200 ms e CLS sotto 0,1. Detta in modo pratico: l’uploader deve essere leggero, lo screenshot/mockup non deve spingere fuori dal first viewport il testo importante, e non ci devono essere shift quando compare l’area di caricamento o il risultato. citeturn11view7turn11view3turn16search13
+
+Serve poi un set minimo di segnali di crawling e struttura: internal link veri in `<a href>`, sitemap XML, canonical pulito e nessun blocco accidentale. Google chiarisce che i link interni aiutano utenti e motore a capire il sito, che ogni pagina importante dovrebbe avere almeno un link da un’altra pagina, che la sitemap migliora la scoperta e che il canonical serve a consolidare URL simili o duplicati. citeturn22view0turn11view5turn11view6
+
+Su staging e pagine non definitive, attenzione a non fare l’errore classico del `robots.txt`: la documentazione spiega che non è uno strumento per tenere una pagina fuori da Google; per quello servono `noindex` o protezione tramite login/password. Se state lavorando con ambienti temporanei, anteprime o varianti test, questo dettaglio diventa critico. citeturn26view0
+
+Per il markup strutturato, il pacchetto giusto per la pagina tool è: **SoftwareApplication** sulla landing principale, **BreadcrumbList** per chiarire la gerarchia, e **Review/AggregateRating** solo se raccogli recensioni autentiche sulla pagina o nel sito e non riusi voti presi da altri portali. Google supporta esplicitamente il markup per software app e i review snippet per software app, ma ricorda anche che i rich result non sono mai garantiti e che il markup deve corrispondere al contenuto visibile. citeturn9view0turn9view1turn25view0turn8search3
+
+Per i contenuti blog, invece, userei **Article/BlogPosting** con autore reale, data pubblicata, data aggiornata e immagini rappresentative. Google dice che date e autori ben esposti aiutano a capire meglio il contenuto e possono influenzare come la pagina appare nei risultati. Questo è importante perché il cluster editoriale sarà parte integrante della tua acquisizione organica. citeturn24view0turn23view0
+
+Se il sito sarà multilingua, non duplicare semplicemente la stessa pagina adattando l’interfaccia: usa URL distinti per lingua, segnali `hreflang` completi e, se necessario, `x-default`. Google dice che è meglio esplicitare le versioni localizzate e che le annotazioni devono essere bidirezionali e complete. citeturn11view8
+
+## Cluster editoriale e acquisizione link
+
+La vera differenza tra una pagina che “esiste” e una pagina che scala è il supporto del cluster. Google ricorda che i link sono un segnale usato sia per la scoperta sia per la rilevanza, e che il motore trova molte pagine proprio tramite link di altri siti. Per Screeba questo significa che la landing va alimentata con contenuti che meritino link e citazioni, non solo con pagine prodotto. citeturn22view0turn18view3
+
+I contenuti di supporto che hanno più senso, guardando la SERP attuale, sono quattro. Primo: guide “come fare” orientate alla lezione, come **come sbobinare una lezione universitaria** o **come trascrivere una registrazione per studiare meglio**. Secondo: pagine comparative, per esempio **Screeba vs Word per trascrivere lezioni** o **le migliori alternative per sbobinare audio**. Terzo: contenuti ultra-pratici legati alla qualità del file, come **come registrare una lezione senza rumore** o **quali formati funzionano meglio per la trascrizione**. Quarto: landing specifiche legate all’output, come **MP3 in Word** o **trascrivere M4A in DOCX**, ma solo se sono davvero utili e non semplici cloni template. citeturn10view0turn10view1turn10view2turn14search1turn14search3turn21search10turn17search2
+
+Quest’ultimo punto è cruciale: la guida di Google sull’uso della generative AI ricorda che produrre molte pagine in scala senza valore reale può rientrare nello *scaled content abuse*. Quindi i long-tail format-specifici hanno senso solo se ognuno aggiunge qualcosa di concreto: esempi, limiti file, consigli sul formato, output atteso, differenze reali. Se diventano pagine quasi identiche con keyword sostituite, il rischio supera il beneficio. citeturn17search2
+
+Sul fronte link earning, la strada più sensata non è la link building “SEO-only”, ma la distribuzione su ambienti che hanno già autorevolezza per lo studio: blog universitari, magazine per studenti, portali sul metodo di studio, community e tool roundup. La SERP ti sta dicendo che questi media hanno già un ruolo nella scoperta del topic. Se Screeba pubblica contenuti realmente utili e magari benchmark originali su qualità audio, tempi di revisione o casi d’uso accademici, è molto più facile ottenere link naturali e citazioni contestuali. citeturn10view1turn10view3turn13view0turn22view0
+
+## Roadmap di esecuzione e KPI
+
+Nelle prime settimane io concentrerei tutto su una sola cosa: mettere online la pagina principale con title, H1, copy HTML, markup `SoftwareApplication`, breadcrumb, canonical, sitemap, Search Console e un blocco FAQ/recensioni robusto. In parallelo, va definito il lessico di brand in modo coerente: **Screeba** come marchio, ma **trascrivere audio in testo**, **sbobinare lezioni** e **Word** come linguaggio SEO dominante. citeturn11view0turn11view1turn9view0turn25view0
+
+Subito dopo, aprirei le due landing secondarie e almeno quattro contenuti di supporto. Qui la regola è evitare cannibalizzazione: la pagina principale deve rimanere la più forte sul cluster largo; le landing secondarie devono attaccare query ad intenti più specifici; gli articoli devono educare e linkare in modo contestuale con anchor descrittive, non con formule generiche tipo “clicca qui” o anchor sovra-ottimizzate. citeturn22view0turn11view6
+
+I KPI da monitorare sono molto chiari: impressions, click, CTR e posizione media per le tre pagine principali; query attivate per cluster; percentuale di pagine indicizzate; pagine con CWV buoni; conversioni organiche a trial o upload completato. Search Console è il punto di partenza naturale, e la documentazione Google ricorda anche che i dati delle AI features confluiscono nel search type “Web”, quindi non serve alcun tracking SEO “speciale” per apparire come supporting link in AI Overviews o AI Mode. citeturn18view0turn25view0
+
+Sulle aspettative di tempo, conviene essere lucidi: lo starter guide di Google spiega che alcune modifiche possono riflettersi rapidamente, mentre altre richiedono settimane o anche mesi, e che non tutti i cambiamenti producono un impatto visibile. Per questo la roadmap migliore non è “pubblico e speriamo”, ma “pubblico, misuro, itero”. citeturn18view3
+
+## Limiti dell’analisi
+
+Questa ricerca è stata fatta senza un audit diretto del dominio live di Screeba. Quindi le raccomandazioni tecniche sono ad alta confidenza sul piano delle best practice, ma non sostituiscono una verifica reale di indicizzazione, CWV, struttura di linking, rendering JavaScript, sitemap, markup già presente e profilo backlink.
+
+Non ho incluso volumi numerici di keyword o difficulty score esportati da strumenti proprietari, perché in questa analisi il criterio più affidabile e verificabile era la composizione reale della SERP, l’intento di ricerca e la coerenza tra query e valore del prodotto.
+
+La conclusione, però, è solida: **Screeba non deve provare a essere “un altro tool di AI transcription”**. Deve diventare **la pagina italiana più chiara e più utile per chi vuole trasformare una lezione registrata in appunti Word pronti da studiare**. Se title, H1, contenuto, landing secondarie, markup, internal linking e cluster editoriale vengono costruiti tutti attorno a questa promessa, avete una possibilità concreta di diventare il riferimento organico del segmento più coerente e più monetizzabile. citeturn11view2turn11view4turn18view0turn18view2
