@@ -13,8 +13,9 @@ import {
   Sparkles,
   ArrowRight,
   Search,
-  Download,
   Code2,
+  AlertCircle,
+  CheckCircle2,
 } from 'lucide-react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
@@ -90,8 +91,14 @@ export default function MirrorPage() {
     },
   ];
 
+  const faq = [0, 1, 2, 3].map((index) => ({
+    question: t(`faq.${index}.question`),
+    answer: t(`faq.${index}.answer`),
+  }));
+
   return (
     <div className="min-h-screen pt-32 pb-20 bg-paper dark:bg-ink text-ink dark:text-smoke transition-colors duration-300">
+      {/* Hero */}
       <div className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <motion.div
@@ -113,6 +120,10 @@ export default function MirrorPage() {
 
             <p className="text-xl text-ink/70 dark:text-smoke/70 leading-relaxed max-w-2xl">
               {t('description')}
+            </p>
+
+            <p className="text-base text-ink/55 dark:text-smoke/55 leading-relaxed max-w-2xl mt-4">
+              {t('supporting')}
             </p>
 
             <div className="flex flex-wrap gap-4 mt-8">
@@ -163,6 +174,49 @@ export default function MirrorPage() {
         </div>
       </div>
 
+      {/* Problem / Gap section */}
+      <div className="max-w-6xl mx-auto px-4 mt-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-paper dark:bg-ink p-8 md:p-10"
+        >
+          <div className="grid md:grid-cols-2 gap-10 items-start mb-8">
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] font-bold text-red-400 mb-3">{t('problem_label')}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-ink dark:text-white mb-4">
+                {t('problem_title')}
+              </h2>
+              <p className="text-ink/70 dark:text-smoke/70 leading-relaxed">{t('problem_desc')}</p>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('gap_label')}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-ink dark:text-white mb-4">
+                {t('gap_title')}
+              </h2>
+              <p className="text-ink/70 dark:text-smoke/70 leading-relaxed">{t('gap_desc')}</p>
+            </div>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[0, 1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 p-4 rounded-2xl bg-red-50/60 dark:bg-red-900/10 border border-red-100 dark:border-red-900/20"
+              >
+                <AlertCircle size={16} className="text-red-400 mt-0.5 shrink-0" />
+                <p className="text-ink/75 dark:text-smoke/75 text-sm leading-relaxed">
+                  {t(`problem_items.${i}`)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Phase 1 */}
       <div className="max-w-6xl mx-auto px-4 mt-24">
         <div className="text-center mb-10">
           <motion.h2
@@ -198,6 +252,7 @@ export default function MirrorPage() {
         </motion.div>
       </div>
 
+      {/* Phase 2 */}
       <div className="max-w-6xl mx-auto px-4 mt-16">
         <div className="text-center mb-10">
           <motion.h2
@@ -233,7 +288,34 @@ export default function MirrorPage() {
         </motion.div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 mt-16">
+      {/* FAQ */}
+      <div className="max-w-6xl mx-auto px-4 mt-16 pb-4">
+        <div className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-paper dark:bg-ink p-8 md:p-10">
+          <div className="max-w-3xl mb-8">
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('faq_label')}</p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
+              {t('faq_title')}
+            </h2>
+            <p className="text-lg text-ink/70 dark:text-smoke/75 leading-relaxed">{t('faq_subtitle')}</p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {faq.map((entry) => (
+              <div
+                key={entry.question}
+                className="rounded-2xl border border-ink/10 dark:border-white/10 bg-white/80 dark:bg-white/5 p-5"
+              >
+                <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-3">
+                  {entry.question}
+                </h3>
+                <p className="text-ink/70 dark:text-smoke/75 leading-relaxed">{entry.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Footer CTA */}
+      <div className="max-w-6xl mx-auto px-4 mt-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
