@@ -1152,30 +1152,88 @@
   },
   "PyQuark": {
     "badge": "Utility Nintendo Switch",
-    "tagline": "Server di installazione dual-protocol con archivi virtualizzati",
-    "description": "PyQuark e un file server remoto in Python per installer Nintendo Switch. Rileva automaticamente client Goldleaf o DBI e adatta il trasporto per installare contenuti NSP/XCI anche direttamente da archivi compressi.",
-    "cta_repo": "Apri repository",
-    "protocols": {
-      "label": "Modalita protocollo",
-      "goldleaf": "Workflow compatibile Quark con virtualizzazione XCI al volo in strutture NSP installabili.",
-      "dbi": "Percorso DBI0 nativo per installazioni robuste e veloci, consigliato soprattutto per i dump XCI."
+    "tagline": "Server Python dual-protocol per workflow Goldleaf e DBI",
+    "description": "PyQuark e un file server remoto per workflow homebrew Nintendo Switch. Rileva client Goldleaf e DBI, instrada il comportamento di protocollo e supporta pipeline con XCI e archivi per sessioni di trasferimento reali.",
+    "supporting": "Il valore SEO di PyQuark non sta nel traffico installer generico. Sta nel posizionamento tecnico su dual protocol dispatch, virtualizzazione XCI, streaming DBI0 nativo e accesso virtuale a RAR multi-volume.",
+    "chips": {
+      "0": "Supporto duale Goldleaf + DBI",
+      "1": "Virtualizzazione XCI",
+      "2": "Streaming DBI0 nativo",
+      "3": "RAR multi-volume VFS"
     },
-    "highlights": {
+    "cta_repo": "Apri repository",
+    "modes": {
+      "label": "Layer di decisione protocollo",
+      "goldleaf": "Modalita compatibile Quark con virtualizzazione XCI on-the-fly mappata in strutture NSP installabili per sessioni Goldleaf.",
+      "goldleafWhen": "Usa quando il client connesso segue il flusso Goldleaf/Quark",
+      "dbi": "Percorso di trasferimento DBI0 nativo orientato a gestione diretta ad alto throughput, particolarmente efficace nei workflow XCI.",
+      "dbiWhen": "Usa quando il client connesso segue il flusso DBI backend"
+    },
+    "capabilitiesLabel": "Capacita chiave",
+    "capabilitiesTitle": "Perche PyQuark non e solo un wrapper installer",
+    "capabilitiesSubtitle": "PyQuark si differenzia nei punti di frizione reali: compatibilita cross-client, accesso archive-native e stabilita nelle sessioni lunghe con letture/scritture frammentate.",
+    "capabilities": {
       "dual": {
-        "title": "Supporto doppio client",
-        "desc": "Passa automaticamente tra protocollo Quark di Goldleaf e flusso DBI0 in base al client homebrew collegato."
+        "title": "Dispatch dual protocol",
+        "desc": "Passa automaticamente tra protocollo Quark di Goldleaf e flussi backend DBI0 in base al client connesso, riducendo frizione nella toolchain."
       },
       "xci": {
-        "title": "Gestione XCI intelligente",
-        "desc": "Supporta mapping virtuale XCI-to-NSP per Goldleaf e streaming XCI nativo per DBI senza conversioni manuali."
+        "title": "Logica trasporto XCI-aware",
+        "desc": "Supporta virtualizzazione per scenari Goldleaf e gestione XCI in stile nativo per flussi DBI, riducendo in molti casi i passaggi di conversione manuale."
       },
       "rar": {
-        "title": "Accesso nativo agli archivi",
-        "desc": "Legge archivi RAR singoli e multi-volume come cartelle navigabili, senza passaggi di estrazione manuale."
+        "title": "Virtual filesystem archive-native",
+        "desc": "Legge archivi RAR singoli e multi-volume come strutture navigabili, consentendo pattern di accesso diretto senza pre-estrarre set voluminosi."
       },
       "state": {
-        "title": "Stabilita di sessione",
-        "desc": "Mantiene stato dei percorsi, cache e staging per gestire letture frammentate e richieste ripetute in modo affidabile."
+        "title": "Resilienza sessione e staging",
+        "desc": "Mantiene cache, stato dei percorsi e ciclo di staging per gestire meglio operazioni interrotte, ripetute o frammentate durante sessioni lunghe."
+      }
+    },
+    "setupLabel": "Setup e compatibilita",
+    "setupTitle": "Documentato per ambienti reali",
+    "setupSubtitle": "Una landing PyQuark forte deve mappare direttamente la frizione di setup nota nell'ecosistema Goldleaf e DBI, soprattutto su driver USB e tooling di piattaforma.",
+    "setup": {
+      "windows": {
+        "title": "Setup Windows",
+        "desc": "Allinea la configurazione driver USB al comportamento backend atteso (ad esempio contesti Zadig/libusbK) prima di testare sessioni complete di trasferimento."
+      },
+      "linux": {
+        "title": "Setup Linux",
+        "desc": "Usa gestione esplicita di udev e permessi USB per mantenere accesso dispositivo stabile durante trasferimenti prolungati e cicli di riconnessione."
+      },
+      "dependencies": {
+        "title": "Verifica dipendenze",
+        "desc": "Valida ambiente Python, prerequisiti PyUSB e tooling archivi (come unrar in PATH) prima di valutare affidabilita e performance dei trasferimenti."
+      }
+    },
+    "positioningLabel": "Posizionamento SEO",
+    "positioningTitle": "Rilevanza tecnica prima del traffico rumoroso",
+    "positioningDescription": "PyQuark deve puntare query legittime capability-driven e intenti comparativi di setup, evitando target broad rischiosi che abbassano qualita e segnali di fiducia.",
+    "positioningPoints": {
+      "0": "Presidia termini branded e capability: PyQuark, dual protocol, DBI0, virtualizzazione XCI, RAR VFS.",
+      "1": "Pubblica contenuti comparativi e guide setup che spieghino dove PyQuark si inserisce tra workflow Quark e DBIbackend.",
+      "2": "Mantieni la pagina esplicitamente tecnica, trasparente e orientata a uso homebrew legittimo."
+    },
+    "faqLabel": "FAQ",
+    "faqTitle": "Le domande che arrivano prima di adottare PyQuark",
+    "faqSubtitle": "La pagina deve rispondere in modo chiaro ai dubbi pratici di setup e workflow, supportando sia discoverability sia intento conversionale.",
+    "faq": {
+      "0": {
+        "question": "PyQuark funziona sia con Goldleaf che con DBI?",
+        "answer": "Sì. PyQuark è progettato come server dual-protocol che rileva il contesto client e instrada il comportamento tra flussi compatibili Quark e backend DBI0."
+      },
+      "1": {
+        "question": "Come vengono gestiti i workflow XCI?",
+        "answer": "PyQuark supporta percorsi di virtualizzazione XCI per scenari Goldleaf e gestione in stile nativo XCI per i flussi DBI, riducendo in molti casi l'overhead di conversione manuale."
+      },
+      "2": {
+        "question": "Legge direttamente archivi RAR multi-volume?",
+        "answer": "Sì. Uno dei punti forti è l'accesso virtuale archive-native, inclusa la gestione RAR multi-volume senza pipeline obbligatorie di pre-estrazione."
+      },
+      "3": {
+        "question": "Quali controlli setup fare per primi?",
+        "answer": "Di solito configurazione driver USB su Windows, regole udev e permessi su Linux, e prerequisiti runtime come PyUSB e disponibilita degli strumenti archive."
       }
     },
     "footer": {
