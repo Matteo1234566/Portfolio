@@ -281,7 +281,7 @@
       "traid": {
         "title": "Traid",
         "category": "FinTech AI",
-        "description": "AI-driven trading platform utilizing neural time-series models to predict market trends and visualize data in a real-time dashboard.",
+        "description": "AI trading platform with neural time-series models, real-time market signals, and a 0.1% model selection rate enforced through 10+ years of training data and a 1-year holdout test.",
         "techStack": {
           "0": "TensorFlow",
           "1": "Next.js",
@@ -1163,6 +1163,136 @@
       "3": {
         "question": "Who is Targage for?",
         "answer": "Parking operators, private garages, property managers, and system integrators who already have video infrastructure but need faster retrieval, better traceability, and a practical ANPR intelligence layer."
+      }
+    }
+  },
+  "Traid": {
+    "badge": "AI Trading Platform",
+    "tagline": "AI Trading Platform with Time-Series Neural Models",
+    "description": "Traid is a powerful web application where AI meets operational trading, leveraging neural networks applied to time-series data to predict market trends and deliver real-time trading signals.",
+    "supporting": "By selecting only the top 0.1% of trained models through rigorous backtesting and a mandatory 1-year holdout test, Traid sets a scientific standard for algorithmic trading reliability.",
+    "cta_live": "Visit Live Platform",
+    "chips": {
+      "0": "Neural Time-Series",
+      "1": "Real-Time Signals",
+      "2": "10+ Years Training Data",
+      "3": "0.1% Model Selection"
+    },
+    "heroCard": {
+      "eyebrow": "Scientific Rigor",
+      "validationTitle": "Model Validation",
+      "validationDescription": "10+ years of training data, 2+ years of backtesting, and a 1-year holdout test ensure only the top 0.1% of models reach production.",
+      "signalsTitle": "Real-Time Intelligence",
+      "signalsDescription": "Neural networks process time-series market data continuously, delivering live trading signals and trend predictions directly to your dashboard.",
+      "outcomeLabel": "Competitive Edge",
+      "outcomeTitle": "Scientific standards, market results",
+      "outcomeDescription": "Traid's strict model selection directly addresses the overfitting problem that plagues most algorithmic trading platforms."
+    },
+    "pillars": {
+      "models": {
+        "title": "Neural AI Models",
+        "desc": "Traid applies advanced neural network architectures—including LSTM and ARIMA—to time-series financial data, extracting statistical patterns that traditional algorithmic approaches miss."
+      },
+      "signals": {
+        "title": "Real-Time Signals",
+        "desc": "Market predictions and trading signals are generated continuously, giving traders a live edge with AI-powered trend detection and data visualization."
+      },
+      "validation": {
+        "title": "Scientific Validation",
+        "desc": "A rigorous multi-stage validation pipeline with a 1-year holdout test ensures models generalize beyond training data, directly tackling overfitting in quantitative finance."
+      }
+    },
+    "metrics_title": "The 0.1% Standard",
+    "metrics": {
+      "training": {
+        "value": "10+",
+        "label": "Years of Training Data",
+        "desc": "Deep historical coverage ensures models learn across full market cycles, not just recent trends."
+      },
+      "backtesting": {
+        "value": "2+",
+        "label": "Years of Backtesting",
+        "desc": "Extended out-of-sample validation that goes well beyond standard industry practice."
+      },
+      "holdout": {
+        "value": "1 yr",
+        "label": "Holdout Test Period",
+        "desc": "A full year of unseen data used as a final blind validation gate before production."
+      },
+      "selection": {
+        "value": "0.1%",
+        "label": "Model Selection Rate",
+        "desc": "Only the highest-performing models across all validation stages reach the live platform."
+      }
+    },
+    "pipeline_title": "How Traid works",
+    "pipeline": {
+      "collection": {
+        "title": "Data Collection",
+        "desc": "Multi-market financial data is ingested and normalized across US equities, ETFs, and Forex pairs, building deep time-series datasets covering 10+ years of market history."
+      },
+      "training": {
+        "title": "Neural Model Training",
+        "desc": "LSTM networks, ARIMA models, and advanced architectures are trained on historical data, learning statistical patterns across full market cycles while avoiding data leakage and survivorship bias."
+      },
+      "validation": {
+        "title": "Rigorous Validation",
+        "desc": "Each model passes extended backtesting and a mandatory 1-year holdout test. Only models in the top 0.1% advance, filtering out overfit patterns before they reach traders."
+      },
+      "signals": {
+        "title": "Live Signal Delivery",
+        "desc": "Validated models generate real-time trading signals and market predictions, visualized on a live dashboard with trend indicators and confidence metrics."
+      }
+    },
+    "markets_title": "Market Coverage",
+    "markets": {
+      "us": {
+        "title": "US Equities",
+        "desc": "AI models trained on decades of US market data, covering indices, sector ETFs, and individual equities with deep time-series analysis."
+      },
+      "etf": {
+        "title": "ETF Strategies",
+        "desc": "Diversified exposure through AI-guided ETF selection and trend prediction across multiple asset classes."
+      },
+      "forex": {
+        "title": "Forex",
+        "desc": "Neural models applied to major and minor currency pairs for short-term signal generation and trend identification."
+      }
+    },
+    "value_title": "Why Traid",
+    "value": {
+      "rigor": {
+        "title": "Scientific Rigor",
+        "desc": "The 1-year holdout test is a production gate—setting a new standard for model reliability in algorithmic trading that few platforms match."
+      },
+      "transparency": {
+        "title": "Transparent Methodology",
+        "desc": "Every validation metric is documented and verifiable, building trust through data rather than marketing claims."
+      },
+      "realtime": {
+        "title": "Real-Time Intelligence",
+        "desc": "Neural networks process markets continuously, delivering live signals and trend predictions when it matters most."
+      }
+    },
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Questions traders and investors ask",
+    "faqDescription": "Honest answers about how Traid's AI models work, how they are validated, and what makes them different from conventional algorithmic trading platforms.",
+    "faq": {
+      "0": {
+        "question": "How does Traid prevent overfitting?",
+        "answer": "Through a three-stage validation pipeline: extended backtesting, rigorous out-of-sample testing, and a mandatory 1-year holdout test that acts as a final blind gate. Models that fail any stage are discarded—only the top 0.1% proceed to production."
+      },
+      "1": {
+        "question": "What markets does Traid cover?",
+        "answer": "Traid currently covers US equities, ETFs, and Forex pairs. Neural models are trained on 10+ years of historical data per instrument, ensuring statistical significance across full market cycles."
+      },
+      "2": {
+        "question": "How are trading signals generated?",
+        "answer": "Validated neural models analyze real-time time-series market data and output directional predictions with confidence metrics, surfaced on the Traid dashboard as actionable trading signals."
+      },
+      "3": {
+        "question": "How is Traid different from other AI trading platforms?",
+        "answer": "Most algorithmic trading platforms optimize for in-sample performance and lack rigorous holdout validation. Traid's 0.1% model selection rate and mandatory 1-year holdout test make it one of the most scientifically rigorous platforms available."
       }
     }
   },

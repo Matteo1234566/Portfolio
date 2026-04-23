@@ -14,6 +14,7 @@ export default function sitemap() {
     { path: '/pyquark', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/puse', priority: 0.7, changeFrequency: 'monthly' },
     { path: '/targage', priority: 0.7, changeFrequency: 'monthly' },
+    { path: '/traid', priority: 0.8, changeFrequency: 'monthly' },
   ];
 
   const now = new Date().toISOString();

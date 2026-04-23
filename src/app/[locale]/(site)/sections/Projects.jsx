@@ -63,7 +63,7 @@ export default function Projects() {
         t('items.traid.techStack.2'),
         t('items.traid.techStack.3')
       ],
-      link: "https://traid.it/it/"
+      link: "/traid"
     },
     {
       id: 'screeba',
