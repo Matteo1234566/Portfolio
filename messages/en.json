@@ -1243,42 +1243,122 @@
     }
   },
   "Puse": {
-    "badge": "Pokemon Utility",
-    "tagline": "Frontend-first save editing for Pokemon Unbound",
-    "description": "PUSE is a web-based save editor focused on fast local workflows: edit party, PC, bag and money data in-browser, recalculate checksums and export clean save files. Backend mode is also available for API-driven development.",
+    "badge": "Pokemon Unbound Tool",
+    "heroTitle": "PUSE",
+    "heroSubtitle": "Pokémon Unbound Save Editor edit saves locally, export safely",
+    "description": "PUSE is a Pokemon Unbound save editor that runs frontend-first in your browser. You can edit party, PC boxes, bag data and money values, then export clean .sav or .srm files with checksum recalculation.",
+    "supporting": "The page is built to match high-intent search needs: users looking for a practical Pokemon Unbound save editor, not generic cheat pages. Local mode is the default for privacy and speed, while backend mode remains available for development and debugging workflows.",
     "cta_repo": "View Repository",
     "cta_live": "Open Live App",
-    "modes": {
-      "local": {
-        "title": "Local Browser Mode",
-        "desc": "Recommended runtime where parsing, editing, checksum and export happen entirely in the browser."
-      },
-      "backend": {
-        "title": "FastAPI Backend Mode",
-        "desc": "Optional local API mode for debugging, development and workflows that benefit from Python tooling."
+    "chips": {
+      "0": "Pokemon Unbound save editor",
+      "1": "Online browser workflow",
+      "2": "Checksum-safe export",
+      "3": "Party, PC, bag, money"
+    },
+    "heroCard": {
+      "label": "Runtime strategy",
+      "localTitle": "Local Browser Mode",
+      "localDesc": "Recommended mode: parsing, editing and export happen directly in your browser for a fast no-upload workflow.",
+      "backendTitle": "Optional FastAPI Mode",
+      "backendDesc": "Backend mode exists for API-driven tests and development loops when Python tooling is useful.",
+      "trust": {
+        "0": "Runs frontend-first for privacy-conscious save handling.",
+        "1": "Recalculates checksums before export to reduce corruption risk.",
+        "2": "Built around Pokemon Unbound save-editing intent, not broad cheat traffic."
       }
     },
-    "pillars": {
-      "editor": {
-        "title": "Complete Save Editing",
-        "desc": "Edit party stats, moves and abilities, manage PC boxes, adjust bag pockets and tune money values in one interface."
+    "capabilitiesLabel": "Core capabilities",
+    "capabilitiesTitle": "What PUSE edits reliably",
+    "capabilitiesSubtitle": "The product scope is explicit so users can quickly understand if the tool matches their exact save-editing task.",
+    "capabilities": {
+      "party": {
+        "title": "Party editing",
+        "desc": "Adjust party stats, moves, abilities and related fields with a direct interface designed for quick corrective edits."
       },
-      "runtime": {
-        "title": "Dual Runtime Strategy",
-        "desc": "Switch between frontend-only and backend-powered execution without changing the product experience."
+      "pc": {
+        "title": "PC box management",
+        "desc": "Inspect and modify stored Pokemon data across PC boxes without manual binary manipulation."
       },
-      "data": {
-        "title": "Rich Data Mapping",
-        "desc": "Uses curated lookup tables and icon manifests to keep move, item and Pokemon references fast and consistent."
+      "bag": {
+        "title": "Bag and money controls",
+        "desc": "Update inventory pockets and currency values in one pass to prepare a clean progression state."
       },
-      "safety": {
-        "title": "Checksum-Safe Export",
-        "desc": "Recalculates save checksums before export to preserve compatibility and reduce corruption risk."
+      "checksum": {
+        "title": "Checksum-safe export",
+        "desc": "Before download, PUSE recalculates checksum metadata so exported saves remain compatible with expected runtime validation."
+      }
+    },
+    "flowLabel": "How it works",
+    "flowTitle": "From save upload to clean export",
+    "flowSubtitle": "A concise workflow helps users and search engines understand the complete utility path.",
+    "flow": {
+      "upload": {
+        "title": "Upload .sav or .srm",
+        "desc": "Start from your existing Pokemon Unbound save file and open it inside the editor context."
+      },
+      "edit": {
+        "title": "Edit gameplay data",
+        "desc": "Apply targeted changes to party, PC, bag, and money data without touching unrelated values."
+      },
+      "validate": {
+        "title": "Recalculate checksum",
+        "desc": "PUSE updates checksum fields as part of the export pipeline to preserve save integrity."
+      },
+      "export": {
+        "title": "Download clean file",
+        "desc": "Export a corrected save ready for your emulator workflow or supported usage environment."
+      }
+    },
+    "compatLabel": "Compatibility",
+    "compatTitle": "Operational fit and file scope",
+    "compatDescription": "The page should clearly set expectations: PUSE is optimized for Pokemon Unbound save-editing tasks and frontend-first usage.",
+    "compatItems": {
+      "0": "Supports Pokemon Unbound save-editing workflows.",
+      "1": "Targets .sav and .srm file handling pipelines.",
+      "2": "Designed as a browser-first experience with optional backend mode.",
+      "3": "Deployable as static web app for easy access and distribution."
+    },
+    "limitationsLabel": "Practical notes",
+    "limitationsTitle": "Limitations users should know first",
+    "limitationsDescription": "Transparent constraints improve trust and reduce failed expectations from overly broad gaming queries.",
+    "limitationsItems": {
+      "0": "PUSE is focused on save editing, not a cheat engine or game patcher.",
+      "1": "It targets Pokemon Unbound intent rather than generic all-game save support.",
+      "2": "Users should always keep backup saves before applying edits."
+    },
+    "positioningLabel": "Search positioning",
+    "positioningTitle": "Target high-intent save-editor queries",
+    "positioningDescription": "The strongest SEO direction is to dominate niche intent like 'Pokemon Unbound save editor' and related editing tasks, instead of competing on broad Pokemon keywords.",
+    "positioningPoints": {
+      "0": "Prioritize exact-intent phrases: Pokemon Unbound save editor, edit Pokemon Unbound save file, online save editor.",
+      "1": "Keep brand naming explicit as 'PUSE Pokemon Unbound Save Editor' to avoid acronym ambiguity.",
+      "2": "Use FAQ and capability sections to answer concrete user tasks before they bounce to forums or Reddit threads."
+    },
+    "faqLabel": "FAQ",
+    "faqTitle": "Questions players ask before editing saves",
+    "faqSubtitle": "Direct answers for compatibility, safety, workflow and scope.",
+    "faq": {
+      "0": {
+        "question": "Does PUSE run locally in the browser?",
+        "answer": "Yes. The primary mode is frontend-first, so key parsing and editing actions run directly in your browser session."
+      },
+      "1": {
+        "question": "Can I edit party, PC, bag and money from one tool?",
+        "answer": "Yes. PUSE is designed to cover these core Pokemon Unbound save areas in a single editor workflow."
+      },
+      "2": {
+        "question": "Why does checksum recalculation matter?",
+        "answer": "Checksum fields are part of save integrity checks. Recalculating them before export helps reduce corruption and compatibility issues."
+      },
+      "3": {
+        "question": "Is backend mode required to use PUSE?",
+        "answer": "No. Backend mode is optional and mainly useful for development or API-oriented local workflows."
       }
     },
     "footer": {
-      "title": "Built for practical ROM-hack utility",
-      "desc": "A focused fan tool made to keep save editing simple, reversible and deployable as a static web app.",
+      "title": "Built to be the canonical Pokemon Unbound save editor page",
+      "desc": "Clear intent, explicit capabilities, and transparent workflow make PUSE easier to discover and easier to trust.",
       "link_repo": "Open repository",
       "link_live": "Visit GitHub Pages"
     }

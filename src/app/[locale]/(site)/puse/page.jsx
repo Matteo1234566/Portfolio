@@ -5,16 +5,19 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Puse' });
   const isItalian = locale === 'it';
+  const title = isItalian
+    ? 'PUSE | Party, PC, Borsa e Checksum | Pokémon Unbound Save Editor'
+    : 'PUSE | Party, PC, Bag and Checksum | Pokémon Unbound Save Editor';
 
   return {
-    title: `PUSE – ${t('tagline')}`,
+    title,
     description: t('description'),
     alternates: {
       canonical: `/${locale}/puse`,
       languages: { en: '/en/puse', it: '/it/puse' },
     },
     openGraph: {
-      title: `PUSE – ${t('tagline')}`,
+      title,
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
@@ -23,7 +26,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `PUSE – ${t('tagline')}`,
+      title,
       description: t('description'),
     },
   };

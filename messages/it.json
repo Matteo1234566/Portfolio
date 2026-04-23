@@ -1243,42 +1243,122 @@
     }
   },
   "Puse": {
-    "badge": "Utility Pokemon",
-    "tagline": "Save editing frontend-first per Pokemon Unbound",
-    "description": "PUSE e un save editor web pensato per workflow rapidi in locale: modifica party, PC, borsa e denaro nel browser, ricalcola checksum ed esporta salvataggi puliti. E disponibile anche la modalita backend per sviluppo API.",
+    "badge": "Tool Pokemon Unbound",
+    "heroTitle": "PUSE",
+    "heroSubtitle": "Pokémon Unbound Save Editor modifica salvataggi in locale, export sicuro",
+    "description": "PUSE e un save editor per Pokemon Unbound che gira frontend-first nel browser. Puoi modificare party, box PC, dati della borsa e denaro, poi esportare file .sav o .srm puliti con checksum ricalcolato.",
+    "supporting": "La pagina e costruita per intercettare intenti di ricerca ad alta conversione: utenti che cercano un editor pratico per Pokemon Unbound, non pagine cheat generiche. La modalita locale resta la scelta principale per privacy e velocita, mentre la modalita backend e disponibile per sviluppo e debugging.",
     "cta_repo": "Apri repository",
     "cta_live": "Apri app live",
-    "modes": {
-      "local": {
-        "title": "Modalita browser locale",
-        "desc": "Modalita consigliata dove parsing, editing, checksum ed export avvengono completamente nel browser."
-      },
-      "backend": {
-        "title": "Modalita backend FastAPI",
-        "desc": "Modalita API locale opzionale utile per debugging, sviluppo e workflow guidati da tooling Python."
+    "chips": {
+      "0": "Pokemon Unbound save editor",
+      "1": "Workflow online nel browser",
+      "2": "Export con checksum sicuro",
+      "3": "Party, PC, borsa, denaro"
+    },
+    "heroCard": {
+      "label": "Strategia runtime",
+      "localTitle": "Modalita browser locale",
+      "localDesc": "Modalita consigliata: parsing, editing ed export avvengono direttamente nel browser per un flusso rapido senza upload esterni.",
+      "backendTitle": "Modalita FastAPI opzionale",
+      "backendDesc": "La modalita backend resta disponibile per test API e cicli di sviluppo dove il tooling Python e utile.",
+      "trust": {
+        "0": "Esecuzione frontend-first per gestione salvataggi orientata alla privacy.",
+        "1": "Ricalcolo checksum prima dell'export per ridurre il rischio di corruzione.",
+        "2": "Posizionamento centrato su intenti Pokemon Unbound, non su traffico cheat generico."
       }
     },
-    "pillars": {
-      "editor": {
-        "title": "Editing salvataggio completo",
-        "desc": "Modifica statistiche, mosse e abilita del party, gestisci box PC, tasche della borsa e valori economici in un'unica interfaccia."
+    "capabilitiesLabel": "Capacita principali",
+    "capabilitiesTitle": "Cosa modifica PUSE in modo affidabile",
+    "capabilitiesSubtitle": "Lo scope del prodotto e dichiarato in modo esplicito, cosi l'utente capisce subito se il tool copre il suo caso d'uso.",
+    "capabilities": {
+      "party": {
+        "title": "Editing party",
+        "desc": "Modifica statistiche, mosse, abilita e campi correlati del party con un'interfaccia pensata per correzioni rapide."
       },
-      "runtime": {
-        "title": "Strategia dual runtime",
-        "desc": "Passa da esecuzione frontend-only a backend senza cambiare esperienza utente o flusso operativo."
+      "pc": {
+        "title": "Gestione box PC",
+        "desc": "Ispeziona e modifica dati dei Pokemon nei box PC senza manipolazione binaria manuale."
       },
-      "data": {
-        "title": "Mappatura dati ricca",
-        "desc": "Usa tabelle curate e manifest delle icone per mantenere riferimenti a mosse, oggetti e Pokemon veloci e coerenti."
+      "bag": {
+        "title": "Controllo borsa e denaro",
+        "desc": "Aggiorna tasche inventario e valori economici in un singolo passaggio per preparare uno stato di gioco pulito."
       },
-      "safety": {
-        "title": "Export sicuro con checksum",
-        "desc": "Ricalcola i checksum del salvataggio prima dell'export per preservare compatibilita e ridurre il rischio di corruzione."
+      "checksum": {
+        "title": "Export con checksum sicuro",
+        "desc": "Prima del download, PUSE ricalcola i metadati checksum per mantenere compatibilita con i controlli attesi dal runtime."
+      }
+    },
+    "flowLabel": "Come funziona",
+    "flowTitle": "Dal caricamento al file pulito",
+    "flowSubtitle": "Un flusso chiaro aiuta utenti e motori di ricerca a capire subito il valore operativo del tool.",
+    "flow": {
+      "upload": {
+        "title": "Carica .sav o .srm",
+        "desc": "Parti dal tuo salvataggio Pokemon Unbound esistente e aprilo nel contesto dell'editor."
+      },
+      "edit": {
+        "title": "Modifica i dati di gioco",
+        "desc": "Applica modifiche mirate su party, PC, borsa e denaro senza toccare valori non necessari."
+      },
+      "validate": {
+        "title": "Ricalcolo checksum",
+        "desc": "PUSE aggiorna i campi checksum durante la pipeline di export per preservare l'integrita del salvataggio."
+      },
+      "export": {
+        "title": "Scarica il file corretto",
+        "desc": "Esporta un salvataggio pronto per il tuo workflow su emulatori o ambienti supportati."
+      }
+    },
+    "compatLabel": "Compatibilita",
+    "compatTitle": "Fit operativo e scope file",
+    "compatDescription": "La pagina deve impostare aspettative corrette: PUSE e ottimizzato per task di save editing Pokemon Unbound e uso frontend-first.",
+    "compatItems": {
+      "0": "Supporta workflow di editing salvataggi Pokemon Unbound.",
+      "1": "Target su pipeline file .sav e .srm.",
+      "2": "Esperienza browser-first con backend opzionale.",
+      "3": "Distribuibile come web app statica per accesso e condivisione semplici."
+    },
+    "limitationsLabel": "Note pratiche",
+    "limitationsTitle": "Limiti da conoscere subito",
+    "limitationsDescription": "Vincoli trasparenti aumentano fiducia e riducono aspettative sbagliate da query gaming troppo ampie.",
+    "limitationsItems": {
+      "0": "PUSE e focalizzato sul save editing, non e un cheat engine o patcher di gioco.",
+      "1": "E pensato per intento Pokemon Unbound, non per supporto generico a tutti i giochi.",
+      "2": "E sempre consigliato mantenere backup dei salvataggi prima di applicare modifiche."
+    },
+    "positioningLabel": "Posizionamento search",
+    "positioningTitle": "Puntare query ad alta intenzione",
+    "positioningDescription": "La direzione SEO piu forte e dominare query di nicchia come 'Pokemon Unbound save editor' e task correlati, invece di competere su keyword Pokemon troppo broad.",
+    "positioningPoints": {
+      "0": "Priorita a frasi di intento esplicito: Pokemon Unbound save editor, edit Pokemon Unbound save file, online save editor.",
+      "1": "Naming brand esplicito come 'PUSE Pokemon Unbound Save Editor' per ridurre l'ambiguita dell'acronimo.",
+      "2": "Usare FAQ e sezioni capability per rispondere ai task reali prima che l'utente rimbalzi su forum o thread Reddit."
+    },
+    "faqLabel": "FAQ",
+    "faqTitle": "Domande prima di modificare un salvataggio",
+    "faqSubtitle": "Risposte dirette su compatibilita, sicurezza, workflow e perimetro del tool.",
+    "faq": {
+      "0": {
+        "question": "PUSE gira davvero in locale nel browser?",
+        "answer": "Sì. La modalita principale e frontend-first, quindi parsing ed editing principali avvengono direttamente nella sessione browser."
+      },
+      "1": {
+        "question": "Posso modificare party, PC, borsa e denaro nello stesso tool?",
+        "answer": "Sì. PUSE e progettato per coprire queste aree core di editing salvataggi Pokemon Unbound in un unico flusso."
+      },
+      "2": {
+        "question": "Perche il ricalcolo checksum e importante?",
+        "answer": "I campi checksum fanno parte dei controlli di integrita del salvataggio. Ricalcolarli prima dell'export aiuta a ridurre errori e incompatibilita."
+      },
+      "3": {
+        "question": "La modalita backend e obbligatoria per usare PUSE?",
+        "answer": "No. La modalita backend e opzionale ed e pensata soprattutto per sviluppo locale e workflow orientati alle API."
       }
     },
     "footer": {
-      "title": "Creato per utility pratiche su ROM hack",
-      "desc": "Uno strumento fan-made focalizzato su editing semplice, reversibile e distribuibile come web app statica.",
+      "title": "Costruito per essere la pagina canonica su Pokemon Unbound save editor",
+      "desc": "Intento chiaro, capacita esplicite e workflow trasparente rendono PUSE piu facile da trovare e piu credibile da adottare.",
       "link_repo": "Apri repository",
       "link_live": "Visita GitHub Pages"
     }
