@@ -1,112 +1,141 @@
-# 🚀 Simone & Matteo | 4AI Portfolio
-
-![Project Banner](https://via.placeholder.com/1200x600/1e1b4b/E56399?text=Complex+Tech+Made+Simple)
+# DevOP Portfolio — Simone & Matteo
 
 > **"Complex Tech Made Simple."**
-> A Soft-Brutalist, Bubblegum-Tech portfolio for an AI + Full-Stack freelance duo.
+> Portfolio freelance per il duo AI + Full-Stack.
 
-[![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
-[![Framer Motion](https://img.shields.io/badge/Motion-Framer-purple?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-purple?style=for-the-badge&logo=framer)](https://www.framer.com/motion/)
 [![Next-Intl](https://img.shields.io/badge/i18n-Next--Intl-blue?style=for-the-badge)](https://next-intl-docs.vercel.app/)
 
-## 🧠 The Duo
+---
 
-We are **Simone Zannini** & **Matteo Cese**, co-founders of **4AI**. We bridge the gap between academic research and production-ready software.
+## Il Duo
 
-* **Matteo (The Builder):** Full-Stack Engineer & DevOps. He translates chaos into scalable architecture.
-* **Simone (The Architect):** Deep Learning & Computer Vision Specialist. He gives sight and intelligence to machines.
+**Simone Zannini** & **Matteo Cese** — co-fondatori di **4AI**.
+
+- **Matteo** — Full-Stack Engineer & DevOps. Architetture scalabili, infrastruttura, backend.
+- **Simone** — Deep Learning & Computer Vision. AI applicata, modelli, ricerca.
 
 ---
 
-## ✨ Key Features
+## Stack tecnico
 
-This project is built with a focus on performance, aesthetics, and scalability.
-
-* **🌍 Internationalization (i18n):** Fully localized in **English** and **Italian** using `next-intl` with middleware routing.
-* **🎨 Soft-Brutalist Design:** A unique UI blending "Forest" greens, "Bubblegum" pinks, and stark borders.
-* **🌗 Dark/Light Mode:** Seamless theme switching with system preference detection via `next-themes`.
-* **⚡ Smooth Animations:** Orchestrated entry animations and micro-interactions using `framer-motion`.
-* **📱 Responsive:** Mobile-first approach with custom animated navigation.
-
----
-
-## 🛠️ Tech Stack
-
-* **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
-* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-* **Animation:** [Framer Motion](https://www.framer.com/motion/)
-* **Internationalization:** [next-intl](https://next-intl-docs.vercel.app/)
-* **Icons:** [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/)
-* **Theming:** [next-themes](https://github.com/pacocoursey/next-themes)
+| Layer | Tecnologia |
+|---|---|
+| Framework | [Next.js 15](https://nextjs.org/) — App Router, React 19, Turbopack |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
+| Animazioni scroll | [GSAP](https://gsap.com/) + ScrollTrigger, helper in `src/lib/gsap-utils.js` |
+| Animazioni UI | [Framer Motion 12](https://www.framer.com/motion/) |
+| i18n | [next-intl](https://next-intl-docs.vercel.app/) — `en` / `it`, default `it` |
+| Tema | [next-themes](https://github.com/pacocoursey/next-themes) — dark/light, default light |
+| Componenti | [Radix UI](https://www.radix-ui.com/) + `class-variance-authority` |
+| Icone | [Lucide React](https://lucide.dev/) + [React Icons](https://react-icons.github.io/) |
+| 3D | [Three.js](https://threejs.org/) |
+| Linguaggio | JSX (no TypeScript) |
 
 ---
 
-## 📂 Project Structure
+## Struttura progetto
 
-The project follows the latest Next.js App Router conventions with dynamic locale routing.
-
-```bash
-├── messages/              # JSON Translation files
-│   ├── en.json            # English translations
-│   └── it.json            # Italian translations
-├── public/                # Static assets (images, fonts)
-├── src/
-│   ├── app/
-│   │   └── [locale]/      # ⚡ Dynamic Locale Route
-│   │       ├── matteo/    # Matteo's Profile Page
-│   │       ├── simone/    # Simone's Profile Page
-│   │       ├── layout.jsx # Root layout with i18n provider
-│   │       └── page.jsx   # Homepage
-│   ├── components/        # Reusable UI components
-│   ├── middleware.js      # Middleware for locale detection/redirect
-│   └── i18n.js            # i18n request configuration
-├── next.config.mjs        # Next.js config with i18n plugin
-└── tailwind.config.js     # Custom theme colors (Bubblegum, Forest, Ink)
+```
+messages/
+  en.json              # Traduzioni inglese
+  it.json              # Traduzioni italiano
+src/
+  middleware.js        # Locale detection & redirect
+  lib/
+    gsap-utils.js      # Helper GSAP (fadeInUp, staggerFadeIn, imageReveal, ...)
+    utils.js           # cn() — clsx + tailwind-merge
+  app/
+    layout.jsx         # Root: font DM Sans + Oswald, providers
+    [locale]/
+      layout.jsx       # NextIntlClientProvider
+      (site)/
+        layout.jsx     # Navbar
+        page.jsx       # Landing page
+        matteo/        # Profilo Matteo
+        simone/        # Profilo Simone
+        ailights/      # Progetto AI Lights
+        capture/       # Progetto Capture
+        mirror/        # Progetto Mirror
+        puse/          # Progetto Puse
+        pyquark/       # Progetto PyQuark
+        screeba/       # Progetto Screeba
+        targage/       # Progetto Targage
+        traid/         # Progetto Traid
+        twosequel/     # Progetto 2Sequel
+        _blogs/
+          page.jsx     # Lista blog
+          [id]/page.jsx
+        capture/privacy/
+        [...rest]/     # Catch-all → 404
 ```
 
-## 🚀 Getting Started
+### Pattern pagine progetto
 
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/portfolio-4ai.git](https://github.com/your-username/portfolio-4ai.git)
-    cd portfolio-4ai
-    ```
+Ogni pagina progetto si divide in due file:
+- `page.jsx` — Server Component: `generateMetadata` + JSON-LD schema
+- `*PageClient.jsx` — Client Component: interattività, animazioni
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+Il server component passa le stringhe tradotte come props al client.
 
-3.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
+### Blog
 
-4.  **Open your browser:**
-    Navigate to `http://localhost:3000`. The middleware will automatically redirect you to `/it` or `/en` based on your browser settings.
+Post hardcodati in `_blogs/page.jsx` e `_blogs/[id]/page.jsx`. Campi bilingue `en`/`it` per entry. Nessun CMS.
+
+### Landing page
+
+- Loading screen one-time gated da `sessionStorage.getItem("hasLoadedLanding")` — dura 2.2 s solo al primo accesso.
+- `?scrollTo=<id>` triggera smooth scroll. Section IDs: `duo`, `services`, `projects`.
 
 ---
 
-## 🎨 Color Palette
+## Design System
 
-| Color Name | Hex Code | Usage |
-| :--- | :--- | :--- |
-| **Bubblegum** | `#E56399` | Accents, Highlights, Hover states |
-| **Forest** | `#2D4739` | Primary Background (Footer), Accents |
-| **Ink** | `#1e1b4b` | Text (Light Mode), Background (Dark Mode) |
-| **Paper** | `#f8fafc` | Background (Light Mode) |
+### Colori custom (Tailwind)
+
+| Nome | Hex | Uso |
+|---|---|---|
+| `bubblegum` | `#6366f1` | Accent, highlight |
+| `forest` | `#1e1b4b` | Background sezione Services |
+| `ink` | `#0f172a` | Testo scuro / background dark |
+| `paper` | `#f8fafc` | Background light |
+| `smoke` | `#cbd5e1` | Testo muted |
+
+### Font
+
+- `font-display` — Oswald (headings)
+- `font-body` — DM Sans (body)
+
+### Shadow utility
+
+`shadow-soft`, `shadow-hard`, `shadow-hard-white`
+
+### Dark mode
+
+Componenti theme-aware usano `useTheme()` con mount guard:
+```js
+const [mounted, setMounted] = useState(false)
+```
 
 ---
 
-## 📬 Contact
+## Avvio
 
-**Ready to build?**
-Whether it's a complex AI pipeline or a fresh MVP, we are ready to turn your chaos into code.
+```bash
+npm install
+npm run dev      # Dev server con Turbopack → http://localhost:3000
+npm run build    # Build produzione
+npm run start    # Avvia produzione
+npm run lint     # ESLint
+```
 
-* 🌐 **Website:** [4aitech.it](https://www.4aitech.it)
-* 📧 **Email:** [magosimo99@gmail.com](mailto:magosimo99@gmail.com)
+Il middleware reindirizza automaticamente a `/it` o `/en` in base al browser.
 
 ---
 
-Made with ❤️ and a lot of ☕ in Rome.
+## Contatti
+
+- Sito: [devop.sbs](https://www.devop.sbs/en)
+- Email: [magosimo99@gmail.com](mailto:magosimo99@gmail.com)
