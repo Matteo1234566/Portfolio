@@ -167,12 +167,16 @@ export default function PyquarkPageClient() {
             </div>
 
             <div className="flex items-center gap-4 mb-5">
-              <div className="relative h-14 w-14 rounded-2xl overflow-hidden border" style={{ borderColor: `${C.seed}66`, backgroundColor: C.active }}>
+              <div
+                className="relative h-[3.375rem] w-[3.375rem] md:h-[5.4rem] md:w-[5.4rem] rounded-2xl overflow-hidden border"
+                style={{ borderColor: `${C.seed}66`, backgroundColor: C.active }}
+              >
                 <Image
                   src={isDark ? '/pyquark/logo_white.png' : '/pyquark/logo_black.png'}
                   alt="PyQuark logo"
                   fill
-                  sizes="56px"
+                  sizes="(min-width: 768px) 86px, 54px"
+                  quality={100}
                   className="object-contain p-1"
                   priority
                 />
