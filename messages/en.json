@@ -618,29 +618,123 @@
   },
   "AiLights": {
     "badge": "Sport Technology",
-    "tagline": "Amateur sport like you've never seen before",
-    "description": "Bringing major stadium technology to local fields. Smart cameras, automated AI direction, and advanced statistics for athletes and coaches.",
-    "cta_demo": "Contact us",
-    "features": {
-      "camera": {
-        "title": "4K Quality",
-        "desc": "Ideal in all weather and lighting conditions. Maximum quality at the best price."
+    "tagline": "AI sports cameras for football, futsal, tennis and padel",
+    "description": "AiLights brings automated sports capture, live streaming, highlights, and performance analytics to amateur and semi-professional facilities. It is designed to bring big-venue video intelligence to local pitches and courts.",
+    "supporting": "The real opportunity is not just selling another smart camera. AiLights should position itself as the canonical platform for automated sports filming and analytics in clubs, neighborhood facilities, futsal venues, tennis courts, and padel centers.",
+    "cta_demo": "Request a Demo",
+    "chips": {
+      "0": "Automated sports capture",
+      "1": "Live streaming",
+      "2": "Auto highlights",
+      "3": "Sport-specific analytics"
+    },
+    "heroCard": {
+      "label": "Core positioning",
+      "title": "Stadium-style technology for local sport",
+      "description": "AiLights is strongest when framed as a platform that gives amateur clubs and sports centers automated direction, broadcast-ready video, and usable analytics without requiring a full media team."
+    },
+    "pillars": {
+      "category": {
+        "title": "A category page, not a project card",
+        "desc": "AiLights needs to own the semantic space around AI sports cameras, automated match filming, live streaming, highlights, and sports analytics instead of behaving like a simple portfolio mention."
       },
-      "lens": {
-        "title": "180° Lenses",
-        "desc": "Thanks to dual lenses, every corner of the field is under control. You won't miss a single action."
+      "automation": {
+        "title": "Automation with real operational value",
+        "desc": "The product story should focus on removing the cameraman bottleneck, making matches easier to capture, easier to share, and easier to analyze across amateur and club environments."
       },
-      "ai": {
-        "title": "AI Direction",
-        "desc": "Our AI models follow the match automatically, just like a professional cameraman."
+      "buyers": {
+        "title": "Built for actual buyers",
+        "desc": "Players and coaches matter, but clubs and sports-center managers are often the real decision-makers. The page must explain value in terms of service quality, visibility, retention, and monetizable content."
       }
     },
-    "sports_title": "Clear Data,",
-    "sports_subtitle": "AI for everyone: unlimited access for amateurs, enthusiasts, and coaches.",
+    "engine_label": "How it works",
+    "engine_title": "From field capture to usable sports intelligence",
+    "engine_subtitle": "The page should explain AiLights as a full flow: capture the match, follow the game automatically, structure events, and distribute output as both content and analytics.",
+    "engine": {
+      "capture": {
+        "title": "Wide-angle field capture",
+        "desc": "AiLights captures the entire playing area so local clubs can record football, futsal, tennis, and padel matches without depending on a manual operator for every session."
+      },
+      "direction": {
+        "title": "AI-driven direction",
+        "desc": "Instead of static recording, the system follows the live action automatically, generating a viewing experience closer to broadcast logic than to passive surveillance footage."
+      },
+      "analytics": {
+        "title": "Sport-specific analytics",
+        "desc": "Different sports require different outputs: futsal wants match events and clips, tennis wants bounce zones and serve patterns, padel wants trajectories and tactical maps."
+      },
+      "distribution": {
+        "title": "Streaming, highlights, and archives",
+        "desc": "The value is not limited to recording. AiLights turns matches into live experiences, short-form highlights, archived content, and reusable media assets for clubs and facilities."
+      }
+    },
+    "sports_title": "Vertical by sport,",
+    "sports_subtitle": "The SERP is already segmented by use case. AiLights should reflect that directly: football and futsal pages for capture and streaming, tennis and padel pages for analytics-heavy intent.",
     "sports": {
-      "futsal": ["Auto Highlights", "Match Stats", "Live Streaming"],
-      "tennis": ["Bounce Zones", "First Serve Analysis", "Court Heatmap"],
-      "padel": ["Trajectory Analysis", "Shot Efficiency", "Tactical Heatmaps"]
+      "futsal": {
+        "title": "Futsal, calcio a 5, and calcio a 8",
+        "description": "This is the most immediate semantic opportunity: a less saturated cluster where automated filming, streaming, and match recaps align tightly with how local venues actually operate.",
+        "0": "Auto highlights",
+        "1": "Match statistics",
+        "2": "Live streaming for amateur clubs"
+      },
+      "tennis": {
+        "title": "Tennis",
+        "description": "Tennis intent is more analytics-driven. AiLights needs to speak the language of bounce zones, serve analysis, replay logic, and performance review rather than generic camera features.",
+        "0": "Bounce zones",
+        "1": "Serve analysis",
+        "2": "Court heatmaps"
+      },
+      "padel": {
+        "title": "Padel",
+        "description": "Padel discovery is heavily shaped by trajectory and tactical-analysis language. AiLights should present itself as a platform able to turn local-court footage into understandable tactical output.",
+        "0": "Trajectory analysis",
+        "1": "Shot efficiency",
+        "2": "Tactical heatmaps"
+      }
+    },
+    "buyers_label": "Who it is for",
+    "buyers_title": "A platform for clubs, centers, coaches, and players",
+    "buyers_subtitle": "The strongest commercial narrative is multi-layered: AiLights helps facilities improve service, gives clubs stronger media output, and gives coaches and athletes better visibility into performance.",
+    "buyers": {
+      "clubs": {
+        "title": "Clubs and amateur teams",
+        "desc": "Record matches consistently, publish highlights faster, and create a professional media layer even when the organization cannot sustain dedicated video staff."
+      },
+      "centers": {
+        "title": "Sports centers and facility managers",
+        "desc": "Offer streaming, archives, social-ready content, and premium visibility to players while turning video into an actual service differentiator for the venue."
+      },
+      "coaches": {
+        "title": "Coaches and athletes",
+        "desc": "Review matches with structured footage and sport-specific analytics instead of relying only on memory, informal clips, or fragmented recordings."
+      }
+    },
+    "advantage": {
+      "label": "Strategic angle",
+      "title": "AiLights wins when it is more specific than generic camera brands",
+      "description": "Competing only on 4K, weather resistance, or AI tracking is not enough. Those are market baselines. The sharper differentiator is editorial and semantic: AiLights should stand for automated filming and analytics built for amateur football, futsal, tennis, and padel, especially where local clubs need professional outcomes without elite budgets."
+    },
+    "faq_label": "FAQ",
+    "faq_title": "Questions the page should answer clearly",
+    "faq_subtitle": "Strong category pages reduce ambiguity. AiLights should answer both buyer questions and search-intent questions directly in visible page copy.",
+    "faq": {
+      "0": {
+        "question": "What is AiLights exactly?",
+        "answer": "AiLights is a sports video and analytics platform that combines automated match capture, AI-driven direction, streaming, highlights, and sport-specific data outputs for football, futsal, tennis, and padel."
+      },
+      "1": {
+        "question": "Who is AiLights for?",
+        "answer": "It is designed for amateur clubs, sports centers, coaches, and players who want better match recording, easier distribution, and more useful performance visibility without enterprise-level video operations."
+      },
+      "2": {
+        "question": "Why not position it as just another smart sports camera?",
+        "answer": "Because the real value is broader than hardware. AiLights is stronger as a semantic hub around automated filming, highlights, live streaming, and analytics rather than as a single-feature device page."
+      },
+      "3": {
+        "question": "Why split the story by sport?",
+        "answer": "Because user intent already differs by sport. Football and futsal users search for automatic filming and streaming, while tennis and padel users often search for analytics concepts such as heatmaps, bounce zones, trajectories, and tactical analysis."
+      }
     },
     "funding_note": "Project supported under the PR FESR Lazio 2021-2027 Notice"
   },
