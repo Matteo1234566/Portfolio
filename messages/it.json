@@ -24,25 +24,25 @@
     "logo_alt": "Logo"
   },
   "Hero": {
-    "eyebrow": "consulenza AI • computer vision • software custom",
+    "eyebrow": "consulenza AI • computer vision • software su misura",
     "title": {
       "start": "DEVOP COSTRUISCE",
       "middle": "SISTEMI AI E",
       "highlight": "SOFTWARE",
       "end": "CHE SCALANO"
     },
-    "description": "DevOP è lo studio di ingegneria di Simone Zannini e Matteo Cese: due software engineer formati in Sapienza che trasformano profondità accademica, velocità da startup e disciplina produttiva in prodotti AI, piattaforme di computer vision real-time e sistemi full-stack su misura.",
+    "description": "DevOP è il brand di Simone Zannini e Matteo Cese: due sviluppatori formati in Sapienza che trasformano conoscenza accademica, velocità da startup e disciplina in prodotti AI, piattaforme di computer vision real-time e sistemi full-stack su misura.",
     "support": {
       "start": "Dai progetti lanciati con",
       "link": "4AI",
-      "end": "alla ricerca su Wi-Fi sensing, NLP, forecasting su serie temporali e sport analytics, lavoriamo lungo tutto il percorso dal prototipo al deployment. Quando non stiamo consegnando, di solito ne parliamo nel nostro",
+      "end": "alla ricerca su Wi-Fi sensing, NLP, forecasting su serie temporali e sport analytics, lavoriamo lungo tutto il percorso dal prototipo al deployment. Quando non stiamo sviluppando, ci trovi a fare due chiacchiere nel nostro",
       "secondaryLink": "podcast"
     },
     "proof": {
       "0": "110/110 e lode x2",
-      "1": "Ricerca + startup execution",
-      "2": "Base a Roma, mindset di prodotto",
-      "3": "AI, CV, dati e full-stack delivery"
+      "1": "Ricerca + startup",
+      "2": "Base a Roma",
+      "3": "AI, CV, data analysis e full-stack development"
     },
     "buttons": {
       "projects": "Esplora i Progetti",
@@ -104,7 +104,7 @@
       },
       "consulting": {
         "title": "Consulenza Tecnica",
-        "description": "Aiutiamo founder e team a definire architettura, validare la fattibilità AI e scegliere roadmap pratiche invece di innovazione vaga.",
+        "description": "Aiutiamo founder e team a definire architettura, validare la fattibilità e scegliere roadmap realistiche invece di brancolare nel buio.",
         "tags": {
           "0": "Architettura",
           "1": "Strategia Tech",
@@ -129,11 +129,11 @@
       "highlight": "PROVE CONCRETE"
     },
     "story": {
-      "0": "Il posizionamento più forte per DevOP non è quello di una generica agenzia. Siamo una partnership ingegneristica compatta che lavora all'incrocio tra intelligenza artificiale, computer vision, data engineering e sviluppo software custom.",
-      "1": "Simone porta esperienza su deep learning, dati ed execution di prodotto. Matteo porta profondità su computer vision, architetture full-stack e delivery enterprise. Insieme copriamo strategia, implementazione, infrastruttura e iterazione senza passaggi a vuoto.",
-      "2": "Questo conta perché i clienti non hanno bisogno di livelli di account management. Hanno bisogno che chi comprende il modello, la pipeline, l'API e il deployment progetti anche il prodotto e lo rilasci davvero."
+      "0": "Il posizionamento più forte per DevOP non è quello di una generica agenzia. Siamo una partnership ingegneristica compatta che lavora all'incrocio tra intelligenza artificiale, computer vision, data engineering e sviluppo software personalizzato",
+      "1": "Simone porta esperienza su deep learning, scripting e data analysis. Matteo porta profondità su computer vision, architetture full-stack e consegna da produzione. Insieme copriamo strategia, implementazione, infrastruttura e iterazione senza passaggi a vuoto.",
+      "2": "Questo conta perché i clienti non hanno bisogno di chiacchiere. Hanno bisogno che chi comprende il modello, la pipeline, l'API e il deployment progetti anche il prodotto e lo rilasci davvero."
     },
-    "marketsLabel": "Dove generiamo impatto",
+    "marketsLabel": "Come generiamo impatto",
     "proof": {
       "0": {
         "value": "2x 110/110",
@@ -143,7 +143,7 @@
       "1": {
         "value": "4AI",
         "label": "Costruttori di startup",
-        "description": "Abbiamo già costruito prodotti in sport analytics, trading intelligence e speech processing dentro vincoli reali da startup."
+        "description": "Abbiamo già costruito prodotti in sport analytics, trading intelligence e speech processing dentro il mondo frenetico delle startup."
       },
       "2": {
         "value": "Wi-Fi sensing",
@@ -159,7 +159,7 @@
     "markets": {
       "0": {
         "title": "Prodotti AI per startup",
-        "description": "MVP, tool interni e primi rilasci produttivi per team che hanno bisogno di velocità senza debito architetturale."
+        "description": "MVP, tool interni e primi rilasci produttivi per team che hanno bisogno di velocità senza pecche architetturali."
       },
       "1": {
         "title": "Sport analytics e video intelligence",
@@ -208,7 +208,7 @@
         "outcomes": {
           "0": "Pipeline di tracking giocatori e palla per statistiche sportive automatiche.",
           "1": "Indicizzazione video, object detection ed estrazione di evidenze da filmati registrati.",
-          "2": "Sistemi compatibili con lo streaming che uniscono inferenza, capture e dashboard."
+          "2": "Sistemi compatibili con lo streaming che uniscono inferenza, catture e dashboard."
         }
       },
       "data": {
@@ -302,7 +302,7 @@
       "ai2sql": {
         "title": "2Sequel",
         "category": "Text-to-SQL",
-        "description": "Piattaforma enterprise natural language to SQL. Interroga Postgres, MySQL e SQL Server in linguaggio naturale con data masking, controlli di sicurezza a livello di campo e output audit-ready.",
+        "description": "Piattaforma enterprise da linguaggio naturale a SQL. Interroga Postgres, MySQL e SQL Server in linguaggio naturale con data masking, controlli di sicurezza a livello di campo e output audit-ready.",
         "techStack": {
           "0": "LLM",
           "1": "SQL",
@@ -345,7 +345,7 @@
       "puse": {
         "title": "PUSE",
         "category": "Tool Gaming",
-        "description": "Save editor web per Pokemon Unbound con modalita locale frontend-first, backend FastAPI opzionale ed export del salvataggio con checksum ricalcolato.",
+        "description": "Save editor web per Pokémon Unbound con modalita locale frontend-first, backend FastAPI opzionale ed export del salvataggio con checksum ricalcolato.",
         "techStack": {
           "0": "React",
           "1": "Vite",
@@ -385,9 +385,9 @@
     "label": "Come lavoriamo",
     "title": {
       "start": "PRIMA LA RISPOSTA,",
-      "highlight": "POI IL BUILD"
+      "highlight": "POI LA BUILD"
     },
-    "intro": "La homepage deve rendere chiaro il nostro metodo: capire il problema operativo, scegliere il livello corretto di tecnologia e consegnare sistemi che le persone possano adottare davvero.",
+    "intro": "Rendiamo chiaro il nostro metodo: capire il problema operativo, scegliere il livello corretto di tecnologia e consegnare sistemi che le persone possano adottare davvero.",
     "process": {
       "0": {
         "step": "Step 01",
@@ -417,7 +417,7 @@
       },
       "1": {
         "question": "Potete aiutare anche se il progetto è ancora in fase MVP?",
-        "answer": "Sì. Il lavoro startup è particolarmente adatto a noi perché possiamo definire architettura, scope prodotto e implementazione direttamente con founder o team piccoli, riducendo il solito overhead dei passaggi intermedi."
+        "answer": "Sì. Il lavoro startup è particolarmente adatto a noi perché possiamo definire architettura, obiettivo del prodotto e implementazione direttamente con founder o team piccoli, riducendo il solito overhead dei passaggi intermedi."
       },
       "2": {
         "question": "Lavorate solo su sport analytics?",
@@ -631,25 +631,25 @@
     "heroCard": {
       "label": "Posizionamento chiave",
       "title": "Tecnologia da stadio per lo sport locale",
-      "description": "AiLights è più forte quando viene raccontato come piattaforma che offre a club dilettantistici e centri sportivi regia automatica, video quasi broadcast e analytics usabili, senza bisogno di una vera troupe media."
+      "description": "AiLights è una piattaforma che offre a club dilettantistici e centri sportivi regia automatica, streaming multi piattaforma e analitiche usabili, senza bisogno di una vera troupe media."
     },
     "pillars": {
       "category": {
-        "title": "Una pagina di categoria, non una scheda progetto",
-        "desc": "AiLights deve presidiare lo spazio semantico di telecamere sportive AI, ripresa automatica partite, live streaming, highlights e analytics sportivi, invece di comportarsi come una semplice citazione portfolio."
+        "title": "Telecamere Sportive AI e Ripresa Automatica Partite",
+        "desc": "AiLights trasforma l'esperienza sportiva grazie a telecamere AI all'avanguardia. Offriamo soluzioni complete per la ripresa automatica delle partite, il live streaming professionale e la generazione di highlights e analytics sportivi in tempo reale."
       },
       "automation": {
-        "title": "Automazione con valore operativo reale",
-        "desc": "La storia del prodotto deve concentrarsi sull'eliminazione del collo di bottiglia del cameraman, rendendo le partite più facili da riprendere, condividere e analizzare in ambienti dilettantistici e di club."
+        "title": "Automazione Intelligente: Riprese Professionali senza Operatore",
+        "desc": "Elimina la necessità di un cameraman dedicato. AiLights automatizza l'intera produzione, rendendo semplice e immediato riprendere, trasmettere e analizzare ogni match, anche nei campionati dilettantistici."
       },
       "buyers": {
-        "title": "Pensato per i veri buyer",
-        "desc": "Giocatori e coach contano, ma club e responsabili dei centri sportivi sono spesso i veri decision-maker. La pagina deve spiegare il valore in termini di servizio, visibilità, retention e contenuti monetizzabili."
+        "title": "La Soluzione Strategica per Club e Centri Sportivi",
+        "desc": "Aumenta il valore del tuo centro con servizi esclusivi per atleti e coach. AiLights non è solo tecnologia, è uno strumento per generare nuovi ricavi, migliorare la visibilità degli sponsor e aumentare la retention dei tesserati."
       }
     },
-    "engine_label": "Come funziona",
-    "engine_title": "Dalla ripresa del campo a una vera intelligence sportiva",
-    "engine_subtitle": "La pagina deve spiegare AiLights come flusso completo: catturare la partita, seguire il gioco automaticamente, strutturare gli eventi e distribuire l'output come contenuto e analytics.",
+    "engine_label": "Il Nostro Metodo",
+    "engine_title": "Dalla Ripresa sul Campo alla Sport Intelligence",
+    "engine_subtitle": "Un flusso integrato che trasforma ogni azione in valore: cattura automatica del gioco, analisi intelligente degli eventi e distribuzione immediata di contenuti multimediali e analytics avanzati.",
     "engine": {
       "capture": {
         "title": "Ripresa wide-angle del campo",
@@ -668,26 +668,26 @@
         "desc": "Il valore non si ferma alla registrazione. AiLights trasforma le partite in esperienze live, highlights brevi, archivi consultabili e asset media riutilizzabili per club e strutture."
       }
     },
-    "sports_title": "Verticale per sport,",
-    "sports_subtitle": "La SERP è già segmentata per use case. AiLights deve rifletterlo direttamente: calcio e futsal per capture e streaming, tennis e padel per intenti più analytics-centrici.",
+    "sports_title": "Soluzioni Verticali per ogni Sport",
+    "sports_subtitle": "Tecnologia AI su misura per le esigenze specifiche di ogni disciplina: dallo streaming live per il calcio all'analisi tecnica avanzata per il tennis e il padel.",
     "sports": {
       "futsal": {
-        "title": "Futsal, calcio a 5 e calcio a 8",
-        "description": "Questa è l'opportunità semantica più immediata: un cluster meno saturo in cui ripresa automatica, streaming e recap partita coincidono con il modo in cui operano davvero le strutture locali.",
+        "title": "Futsal, Calcio a 5 e Calcio a 8",
+        "description": "La soluzione definitiva per le strutture locali: ripresa automatica e streaming professionale per dare visibilità ai club dilettantistici e offrire ai giocatori il recap completo del match.",
         "0": "Highlights automatici",
         "1": "Statistiche partita",
         "2": "Live streaming per club dilettantistici"
       },
       "tennis": {
         "title": "Tennis",
-        "description": "L'intento sul tennis è più guidato dagli analytics. AiLights deve parlare il linguaggio di zone di rimbalzo, analisi del servizio, replay e performance review, non solo di feature hardware generiche."
-        ,"0": "Zone di rimbalzo",
+        "description": "Porta il coaching a un nuovo livello. AiLights analizza ogni colpo, fornendo zone di rimbalzo precise e performance review dettagliate per trasformare ogni match in un'occasione di crescita tecnica.",
+        "0": "Zone di rimbalzo",
         "1": "Analisi del servizio",
         "2": "Heatmap del campo"
       },
       "padel": {
         "title": "Padel",
-        "description": "La scoperta nel padel è fortemente influenzata dal lessico di traiettorie e analisi tattica. AiLights deve presentarsi come piattaforma capace di trasformare i video dei campi locali in output tattici comprensibili.",
+        "description": "Analisi tattica e traiettorie avanzate per i campi da padel. Una piattaforma capace di elaborare ogni set per restituire output tattici immediati, efficacia dei colpi e dinamiche di gioco.",
         "0": "Analisi traiettorie",
         "1": "Efficacia colpi",
         "2": "Heatmap tattiche"
@@ -695,7 +695,7 @@
     },
     "buyers_label": "Per chi è pensato",
     "buyers_title": "Una piattaforma per club, centri, coach e giocatori",
-    "buyers_subtitle": "La narrativa commerciale più forte è multilivello: AiLights aiuta le strutture a migliorare il servizio, dà ai club una presenza media più forte e offre a coach e atleti maggiore visibilità sulla performance.",
+    "buyers_subtitle": "Un valore aggiunto per l'intero ecosistema sportivo: potenzia i servizi della tua struttura, rafforza la presenza media del tuo club e offri a coach e atleti strumenti d'élite per l'analisi della performance.",
     "buyers": {
       "clubs": {
         "title": "Club e squadre dilettantistiche",
@@ -716,24 +716,24 @@
       "description": "Competere solo su 4K, resistenza meteo o AI tracking non basta. Quelli sono baseline di mercato. Il differenziatore più forte è editoriale e semantico: AiLights deve rappresentare la ripresa automatica e gli analytics costruiti per calcio, futsal, tennis e padel dilettantistici, soprattutto dove i club locali vogliono risultati professionali senza budget da élite."
     },
     "faq_label": "FAQ",
-    "faq_title": "Le domande a cui la pagina deve rispondere con chiarezza",
-    "faq_subtitle": "Le category page forti riducono l'ambiguità. AiLights deve rispondere in modo diretto sia ai dubbi dei buyer sia agli intenti di ricerca, dentro il copy visibile della pagina.",
+    "faq_title": "Domande Frequenti",
+    "faq_subtitle": "Tutto quello che devi sapere su AiLights: la tecnologia, i vantaggi per il tuo sport e come integrare le nostre soluzioni nella tua struttura.",
     "faq": {
       "0": {
         "question": "Che cos'è esattamente AiLights?",
-        "answer": "AiLights è una piattaforma video e analytics per lo sport che unisce ripresa automatica delle partite, regia AI, streaming, highlights e output dati specifici per calcio, futsal, tennis e padel."
+        "answer": "AiLights è una piattaforma integrata di video e analytics sportivi. Grazie all'intelligenza artificiale, unisce ripresa automatica delle partite, regia intelligente, live streaming e generazione istantanea di highlights e dati tecnici per calcio, futsal, tennis e padel."
       },
       "1": {
-        "question": "Per chi è pensato AiLights?",
-        "answer": "È pensato per club dilettantistici, centri sportivi, coach e giocatori che vogliono registrazioni migliori, distribuzione più semplice e visibilità più utile sulla performance senza operazioni video da enterprise."
+        "question": "A chi si rivolge AiLights?",
+        "answer": "La nostra soluzione è dedicata a club, centri sportivi, coach e atleti che desiderano produzioni video di alta qualità e analisi della performance avanzate, eliminando la complessità e i costi delle riprese professionali tradizionali."
       },
       "2": {
-        "question": "Perché non posizionarlo come semplice smart sports camera?",
-        "answer": "Perché il valore reale è più ampio dell'hardware. AiLights è più forte come hub semantico su ripresa automatica, highlights, live streaming e analytics, non come pagina di una singola feature."
+        "question": "AiLights è solo una telecamera intelligente?",
+        "answer": "No, AiLights è un ecosistema completo. Oltre all'hardware di ripresa, offriamo un potente hub software che gestisce automaticamente lo streaming, la creazione di contenuti per i social e la reportistica dati, offrendo un valore che va ben oltre la semplice registrazione."
       },
       "3": {
-        "question": "Perché dividere la storia per sport?",
-        "answer": "Perché l'intento di ricerca cambia già in base allo sport. Calcio e futsal cercano ripresa automatica e streaming, mentre tennis e padel cercano spesso concetti analytics come heatmap, zone di rimbalzo, traiettorie e analisi tattica."
+        "question": "Il servizio è personalizzato in base allo sport?",
+        "answer": "Assolutamente sì. AiLights adatta i suoi output alle diverse discipline: per il calcio e il futsal si concentra su regia automatica e streaming, mentre per tennis e padel offre strumenti specifici come heatmap, zone di rimbalzo e analisi tattica delle traiettorie."
       }
     },
     "funding_note": "Progetto sostenuto nell'ambito dell'Avviso PR FESR Lazio 2021-2027"
@@ -743,8 +743,7 @@
     "hero_title": "Trascrivi lezioni audio in testo e scarica appunti Word pronti da studiare",
     "tagline": "Stop sbobinare, inizia a studiare",
     "description": "Screeba è pensato per il contesto universitario e formativo: carichi una lezione registrata, elabori con AI transcription e scarichi un documento Word strutturato, pronto da stampare, evidenziare e ripassare.",
-    "supporting": "Il valore reale non è la trascrizione AI generica. È il percorso completo da lezione registrata a appunti pronti per lo studio, usando il linguaggio che le persone cercano davvero: trascrivere audio in testo, sbobinare lezioni, export Word.",
-    "cta_demo": "Richiedi una Demo",
+    "supporting": "Trasforma ogni registrazione in un metodo di studio efficace. Non una semplice trascrizione, ma un percorso fluido che converte l'audio delle tue lezioni in appunti pronti all'uso, permettendoti di sbobinare automaticamente i contenuti ed esportarli subito in formato Word.",    "cta_demo": "Richiedi una Demo",
     "how_it_works": "Come funziona",
     "flow_subtitle": "Screeba è costruito come flusso pratico: carica audio lezione, aggiungi contesto, elabora trascrizione e ricevi output DOCX ordinato.",
     "steps": {
@@ -796,8 +795,7 @@
     },
     "output_label": "Focus output",
     "output_title": "Dalla trascrizione a veri appunti Word usabili",
-    "output_description": "Screeba va posizionato sul risultato finale: un documento pulito che supporta ripasso, annotazione e studio, non solo la conversione audio-testo grezza.",
-    "output": {
+    "output_description": "Ottieni molto più di una semplice conversione audio-testo: Screeba ti consegna un documento pulito, già strutturato per il ripasso e l'annotazione, trasformando le tue registrazioni in una base perfetta per lo studio profondo.",    "output": {
       "preview_label": "Anteprima output Word",
       "preview_title": "Appunti Lezione – Diritto Costituzionale",
       "preview_items": {
@@ -808,8 +806,7 @@
     },
     "faq_label": "FAQ",
     "faq_title": "Le domande che arrivano prima dell'upload",
-    "faq_subtitle": "Questa sezione serve per chiarezza semantica e supporto conversione: formati, export Word, aderenza al caso lezioni e aspettative sulla qualità.",
-    "faq": {
+    "faq_subtitle": "Tutto quello che devi sapere sulla qualità delle tue sbobine: dai formati di file supportati alle opzioni di export in Word, fino a come ottimizzare la trascrizione delle tue lezioni.",    "faq": {
       "0": {
         "question": "Screeba può trascrivere lezioni universitarie?",
         "answer": "Sì. Il prodotto è pensato proprio per registrazioni in stile lezione e workflow di studio in cui il testo deve essere davvero consultabile e riutilizzabile."
@@ -827,8 +824,7 @@
         "answer": "L'accuratezza dipende dalla pulizia della sorgente. Voci sovrapposte, riverbero e qualità di registrazione bassa possono ridurre la precisione, quindi una buona cattura migliora sensibilmente l'output."
       }
     },
-    "privacy_note": "Screeba va comunicato con trasparenza esplicita sulla gestione dei dati: l'utente deve capire cosa succede ai file caricati, per quanto restano eventuali artefatti di elaborazione e come viene controllato l'accesso ai risultati.",
-    "demo": {
+    "privacy_note": "La tua sicurezza è la nostra priorità. Gestiamo i tuoi file con trasparenza assoluta: ogni caricamento è protetto, i dati di elaborazione vengono conservati solo per il tempo strettamente necessario e l'accesso ai risultati è garantito esclusivamente a te tramite sistemi di controllo avanzati.",    "demo": {
       "mock_label": "Demo Screeba",
       "label_name": "Nome lezione / contesto",
       "placeholder_name": "es. Procedura Civile - settimana 4",
@@ -925,9 +921,9 @@
     }
   },
   "Capture": {
-    "badge": "App Focus Local-First",
+    "badge": "App di produttività Local-First",
     "tagline": "Cattura ora, organizza quando sei pronto",
-    "description": "Capture e un'app di produttivita personale mobile-first pensata per catturare idee al volo. Note, task, eventi e foto opzionali restano sul dispositivo senza bisogno di account.",
+    "description": "Capture è un'app di produttivita personale mobile-first pensata per catturare idee al volo. Note, task, eventi e foto opzionali restano sul dispositivo senza bisogno di account.",
     "cta_soon": "In uscita",
     "cta_privacy": "Norme sulla privacy",
     "workflow_label": "Panoramica workflow",
@@ -948,7 +944,7 @@
     "principles_title": "Principi di design",
     "principles": {
       "speed": {
-        "title": "Velocita prima di tutto",
+        "title": "Velocità prima di tutto",
         "desc": "La cattura deve essere istantanea, cosi i pensieri non si perdono."
       },
       "clarity": {
@@ -961,14 +957,14 @@
       },
       "local": {
         "title": "Pronto offline",
-        "desc": "Le funzioni principali non dipendono dal cloud, perche i dati restano sul dispositivo."
+        "desc": "Le funzioni principali non dipendono dal cloud, perché i dati restano sul dispositivo."
       },
       "context": {
         "title": "Contesto ricco",
         "desc": "Foto, orari, tag e link mantengono ogni elemento utile anche in seguito."
       }
     },
-    "features_title": "Funzionalita core",
+    "features_title": "Funzionalità core",
     "features": {
       "capture": {
         "title": "Cattura rapida + fotocamera",
@@ -1057,8 +1053,8 @@
       "item_2_desc": "Note, task e foto salvati in un database SQLite locale. Non caricati, non indicizzati, non condivisi.",
       "item_3_title": "Senza account",
       "item_3_desc": "Niente email, niente password, niente registrazione. Apri l'app e inizia a catturare.",
-      "item_4_title": "Senza lock-in",
-      "item_4_desc": "I tuoi dati si possono esportare. Sei sempre in controllo anche se decidi di cambiare."
+      "item_4_title": "Senza pagamento",
+      "item_4_desc": "Tutte le funzionalità principali dell'applicazione sono e rimarranno gratuite."
     },
     "comparison": {
       "label": "Perché Capture",
@@ -1091,7 +1087,7 @@
       "q4": "I miei dati vengono sincronizzati nel cloud?",
       "a4": "I flussi principali di cattura e pianificazione sono completamente on-device. La sync opzionale è nella roadmap ma non sarà mai obbligatoria.",
       "q5": "Posso esportare le mie note e task?",
-      "a5": "Sì. I tuoi dati non sono chiusi nell'app. Le opzioni di esportazione sono disponibili così non sei mai bloccato.",
+      "a5": "Non ancora. Ma pianifichiamo di farlo il prima possibile!",
       "q6": "A chi è destinata Capture?",
       "a6": "A chiunque voglia catturare note e task velocemente, in modo privato, senza la complessità delle suite di produttività.",
       "q7": "In cosa si differenzia Capture dalle app workspace per team?",
@@ -1153,9 +1149,8 @@
   "PyQuark": {
     "badge": "Utility Nintendo Switch",
     "tagline": "Server Python dual-protocol per workflow Goldleaf e DBI",
-    "description": "PyQuark e un file server remoto per workflow homebrew Nintendo Switch. Rileva client Goldleaf e DBI, instrada il comportamento di protocollo e supporta pipeline con XCI e archivi per sessioni di trasferimento reali.",
-    "supporting": "Il valore SEO di PyQuark non sta nel traffico installer generico. Sta nel posizionamento tecnico su dual protocol dispatch, virtualizzazione XCI, streaming DBI0 nativo e accesso virtuale a RAR multi-volume.",
-    "chips": {
+    "description": "PyQuark è un file server remoto per workflow homebrew Nintendo Switch. Rileva client Goldleaf e DBI, instrada il comportamento di protocollo e supporta pipeline con XCI e archivi per sessioni di trasferimento reali.",
+    "supporting": "PyQuark ridefinisce l'efficienza tecnica grazie al supporto nativo per dual protocol dispatch e virtualizzazione XCI. Ottimizza le tue operazioni con lo streaming DBI0 e l'accesso virtuale diretto ai file RAR multi-volume, garantendo prestazioni d'élite dove gli installer generici si fermano.",    "chips": {
       "0": "Supporto duale Goldleaf + DBI",
       "1": "Virtualizzazione XCI",
       "2": "Streaming DBI0 nativo",
@@ -1164,14 +1159,14 @@
     "cta_repo": "Apri repository",
     "modes": {
       "label": "Layer di decisione protocollo",
-      "goldleaf": "Modalita compatibile Quark con virtualizzazione XCI on-the-fly mappata in strutture NSP installabili per sessioni Goldleaf.",
+      "goldleaf": "Modalità compatibile Quark con virtualizzazione XCI on-the-fly mappata in strutture NSP installabili per sessioni Goldleaf.",
       "goldleafWhen": "Usa quando il client connesso segue il flusso Goldleaf/Quark",
       "dbi": "Percorso di trasferimento DBI0 nativo orientato a gestione diretta ad alto throughput, particolarmente efficace nei workflow XCI.",
       "dbiWhen": "Usa quando il client connesso segue il flusso DBI backend"
     },
-    "capabilitiesLabel": "Capacita chiave",
-    "capabilitiesTitle": "Perche PyQuark non e solo un wrapper installer",
-    "capabilitiesSubtitle": "PyQuark si differenzia nei punti di frizione reali: compatibilita cross-client, accesso archive-native e stabilita nelle sessioni lunghe con letture/scritture frammentate.",
+    "capabilitiesLabel": "Capacità chiave",
+    "capabilitiesTitle": "Perché PyQuark non è solo un wrapper installer",
+    "capabilitiesSubtitle": "PyQuark si differenzia per compatibilità cross-client, accesso archive-native e stabilità nelle sessioni lunghe con letture/scritture frammentate.",
     "capabilities": {
       "dual": {
         "title": "Dispatch dual protocol",
@@ -1192,7 +1187,7 @@
     },
     "setupLabel": "Setup e compatibilita",
     "setupTitle": "Documentato per ambienti reali",
-    "setupSubtitle": "Una landing PyQuark forte deve mappare direttamente la frizione di setup nota nell'ecosistema Goldleaf e DBI, soprattutto su driver USB e tooling di piattaforma.",
+    "setupSubtitle": "Supera le difficoltà di configurazione dei sistemi tradizionali: PyQuark semplifica l'integrazione con l'ecosistema Goldleaf e DBI, eliminando i problemi comuni relativi ai driver USB e al tooling di piattaforma.",
     "setup": {
       "windows": {
         "title": "Setup Windows",
@@ -1207,17 +1202,17 @@
         "desc": "Valida ambiente Python, prerequisiti PyUSB e tooling archivi (come unrar in PATH) prima di valutare affidabilita e performance dei trasferimenti."
       }
     },
-    "positioningLabel": "Posizionamento SEO",
-    "positioningTitle": "Rilevanza tecnica prima del traffico rumoroso",
-    "positioningDescription": "PyQuark deve puntare query legittime capability-driven e intenti comparativi di setup, evitando target broad rischiosi che abbassano qualita e segnali di fiducia.",
+    "positioningLabel": "Perché scegliere PyQuark",
+    "positioningTitle": "Prestazioni d'élite e Affidabilità Tecnica",
+    "positioningDescription": "PyQuark è progettato per chi cerca precisione e stabilità. Ci concentriamo su funzionalità avanzate e workflow ottimizzati, garantendo uno strumento sicuro e altamente performante per utenti esperti.",
     "positioningPoints": {
-      "0": "Presidia termini branded e capability: PyQuark, dual protocol, DBI0, virtualizzazione XCI, RAR VFS.",
-      "1": "Pubblica contenuti comparativi e guide setup che spieghino dove PyQuark si inserisce tra workflow Quark e DBIbackend.",
-      "2": "Mantieni la pagina esplicitamente tecnica, trasparente e orientata a uso homebrew legittimo."
+      "0": "Supporto completo ai protocolli d'avanguardia: gestione dual protocol, DBI0, virtualizzazione XCI e RAR VFS nativo.",
+      "1": "Integrazione perfetta nei tuoi workflow: scopri come PyQuark potenzia e semplifica l'uso di Quark e DBIbackend.",
+      "2": "Approccio trasparente e professionale: una soluzione esplicitamente tecnica dedicata all'uso legittimo in ambito homebrew."
     },
     "faqLabel": "FAQ",
-    "faqTitle": "Le domande che arrivano prima di adottare PyQuark",
-    "faqSubtitle": "La pagina deve rispondere in modo chiaro ai dubbi pratici di setup e workflow, supportando sia discoverability sia intento conversionale.",
+    "faqTitle": "Domande Frequenti su PyQuark",
+    "faqSubtitle": "Risposte chiare ai tuoi dubbi tecnici: tutto quello che devi sapere sulla configurazione, il workflow e le potenzialità della piattaforma.",
     "faq": {
       "0": {
         "question": "PyQuark funziona sia con Goldleaf che con DBI?",
@@ -1243,38 +1238,38 @@
     }
   },
   "Puse": {
-    "badge": "Tool Pokemon Unbound",
+    "badge": "Tool Pokémon Unbound",
     "heroTitle": "PUSE",
     "heroSubtitle": "Pokémon Unbound Save Editor modifica salvataggi in locale, export sicuro",
-    "description": "PUSE e un save editor per Pokemon Unbound che gira frontend-first nel browser. Puoi modificare party, box PC, dati della borsa e denaro, poi esportare file .sav o .srm puliti con checksum ricalcolato.",
-    "supporting": "La pagina e costruita per intercettare intenti di ricerca ad alta conversione: utenti che cercano un editor pratico per Pokemon Unbound, non pagine cheat generiche. La modalita locale resta la scelta principale per privacy e velocita, mentre la modalita backend e disponibile per sviluppo e debugging.",
+    "description": "PUSE è un save editor per Pokemon Unbound che gira frontend-first nel browser. Puoi modificare party, box PC, dati della borsa e denaro, poi esportare file .sav o .srm puliti con checksum ricalcolato.",
+    "supporting": "PyQuark è l'editor dedicato per chi cerca precisione e controllo su Pokémon Unbound, superando i limiti dei tool generici. La modalità locale garantisce massima privacy e velocità di esecuzione, mentre la modalità backend offre un ambiente stabile per le operazioni di sviluppo e debugging.",
     "cta_repo": "Apri repository",
     "cta_live": "Apri app live",
     "chips": {
-      "0": "Pokemon Unbound save editor",
+      "0": "Pokémon Unbound save editor",
       "1": "Workflow online nel browser",
       "2": "Export con checksum sicuro",
       "3": "Party, PC, borsa, denaro"
     },
     "heroCard": {
       "label": "Strategia runtime",
-      "localTitle": "Modalita browser locale",
-      "localDesc": "Modalita consigliata: parsing, editing ed export avvengono direttamente nel browser per un flusso rapido senza upload esterni.",
-      "backendTitle": "Modalita FastAPI opzionale",
-      "backendDesc": "La modalita backend resta disponibile per test API e cicli di sviluppo dove il tooling Python e utile.",
+      "localTitle": "Modalità browser locale",
+      "localDesc": "Modalità consigliata: parsing, editing ed export avvengono direttamente nel browser per un flusso rapido senza upload esterni.",
+      "backendTitle": "Modalità FastAPI opzionale",
+      "backendDesc": "La modalità backend resta disponibile per test API e cicli di sviluppo dove il tooling Python è utile.",
       "trust": {
         "0": "Esecuzione frontend-first per gestione salvataggi orientata alla privacy.",
         "1": "Ricalcolo checksum prima dell'export per ridurre il rischio di corruzione.",
-        "2": "Posizionamento centrato su intenti Pokemon Unbound, non su traffico cheat generico."
+        "2": "Strumenti dedicati esclusivamente a Pokémon Unbound per una gestione avanzata e precisa, lontana dalle soluzioni generiche."
       }
     },
-    "capabilitiesLabel": "Capacita principali",
+    "capabilitiesLabel": "Capacità principali",
     "capabilitiesTitle": "Cosa modifica PUSE in modo affidabile",
-    "capabilitiesSubtitle": "Lo scope del prodotto e dichiarato in modo esplicito, cosi l'utente capisce subito se il tool copre il suo caso d'uso.",
+    "capabilitiesSubtitle": "Scopri subito le potenzialità di PyQuark: una panoramica completa e dettagliata delle funzionalità per verificare istantaneamente la compatibilità con le tue esigenze tecniche.",
     "capabilities": {
       "party": {
         "title": "Editing party",
-        "desc": "Modifica statistiche, mosse, abilita e campi correlati del party con un'interfaccia pensata per correzioni rapide."
+        "desc": "Modifica statistiche, mosse, abilità e campi correlati del party con un'interfaccia pensata per correzioni rapide."
       },
       "pc": {
         "title": "Gestione box PC",
@@ -1286,16 +1281,16 @@
       },
       "checksum": {
         "title": "Export con checksum sicuro",
-        "desc": "Prima del download, PUSE ricalcola i metadati checksum per mantenere compatibilita con i controlli attesi dal runtime."
+        "desc": "Prima del download, PUSE ricalcola i metadati checksum per mantenere compatibilità con i controlli attesi dal runtime."
       }
     },
     "flowLabel": "Come funziona",
     "flowTitle": "Dal caricamento al file pulito",
-    "flowSubtitle": "Un flusso chiaro aiuta utenti e motori di ricerca a capire subito il valore operativo del tool.",
+    "flowSubtitle": "Massima efficienza operativa: un percorso guidato e intuitivo per gestire ogni fase del tuo lavoro con PyQuark, riducendo i tempi di configurazione e massimizzando i risultati.",
     "flow": {
       "upload": {
         "title": "Carica .sav o .srm",
-        "desc": "Parti dal tuo salvataggio Pokemon Unbound esistente e aprilo nel contesto dell'editor."
+        "desc": "Parti dal tuo salvataggio Pokémon Unbound esistente e aprilo nel contesto dell'editor."
       },
       "edit": {
         "title": "Modifica i dati di gioco",
@@ -1303,16 +1298,16 @@
       },
       "validate": {
         "title": "Ricalcolo checksum",
-        "desc": "PUSE aggiorna i campi checksum durante la pipeline di export per preservare l'integrita del salvataggio."
+        "desc": "PUSE aggiorna i campi checksum durante la pipeline di export per preservare l'integrità del salvataggio."
       },
       "export": {
         "title": "Scarica il file corretto",
         "desc": "Esporta un salvataggio pronto per il tuo workflow su emulatori o ambienti supportati."
       }
     },
-    "compatLabel": "Compatibilita",
-    "compatTitle": "Fit operativo e scope file",
-    "compatDescription": "La pagina deve impostare aspettative corrette: PUSE e ottimizzato per task di save editing Pokemon Unbound e uso frontend-first.",
+    "compatLabel": "Compatibilità",
+    "compatTitle": "Compatibilità e Obiettivo",
+    "compatDescription": "PUSE è progettato e ottimizzato specificamente per operazioni avanzate di save editing su Pokémon Unbound. L'architettura frontend-first garantisce una gestione dei file rapida e sicura direttamente nel tuo browser.",
     "compatItems": {
       "0": "Supporta workflow di editing salvataggi Pokemon Unbound.",
       "1": "Target su pipeline file .sav e .srm.",
@@ -1321,19 +1316,19 @@
     },
     "limitationsLabel": "Note pratiche",
     "limitationsTitle": "Limiti da conoscere subito",
-    "limitationsDescription": "Vincoli trasparenti aumentano fiducia e riducono aspettative sbagliate da query gaming troppo ampie.",
+    "limitationsDescription": "La nostra trasparenza è la tua garanzia: definiamo chiaramente l'ambito operativo di PUSE per assicurarti prestazioni ottimali e una compatibilità perfetta con i tuoi file di salvataggio.",
     "limitationsItems": {
-      "0": "PUSE e focalizzato sul save editing, non e un cheat engine o patcher di gioco.",
-      "1": "E pensato per intento Pokemon Unbound, non per supporto generico a tutti i giochi.",
-      "2": "E sempre consigliato mantenere backup dei salvataggi prima di applicare modifiche."
+      "0": "PUSE e focalizzato sul save editing, non è un cheat engine o patcher di gioco.",
+      "1": "È pensato per intento Pokémon Unbound, non per supporto generico a tutti i giochi.",
+      "2": "È sempre consigliato mantenere backup dei salvataggi prima di applicare modifiche."
     },
-    "positioningLabel": "Posizionamento search",
-    "positioningTitle": "Puntare query ad alta intenzione",
-    "positioningDescription": "La direzione SEO piu forte e dominare query di nicchia come 'Pokemon Unbound save editor' e task correlati, invece di competere su keyword Pokemon troppo broad.",
+    "positioningLabel": "Perché scegliere PUSE",
+    "positioningTitle": "Lo standard per l'editing di Pokémon Unbound",
+    "positioningDescription": "PUSE è stato sviluppato con un unico obiettivo: offrire lo strumento più preciso e affidabile per la gestione dei salvataggi di Pokémon Unbound, risolvendo le limitazioni dei software generici.",
     "positioningPoints": {
-      "0": "Priorita a frasi di intento esplicito: Pokemon Unbound save editor, edit Pokemon Unbound save file, online save editor.",
-      "1": "Naming brand esplicito come 'PUSE Pokemon Unbound Save Editor' per ridurre l'ambiguita dell'acronimo.",
-      "2": "Usare FAQ e sezioni capability per rispondere ai task reali prima che l'utente rimbalzi su forum o thread Reddit."
+      "0": "Specializzazione verticale: un set di strumenti ottimizzato esclusivamente per i file di salvataggio di Pokémon Unbound.",
+      "1": "Identità chiara: PUSE (Pokémon Unbound Save Editor) è il punto di riferimento per chi cerca una soluzione online sicura e dedicata.",
+      "2": "Risposte immediate: funzionalità progettate per risolvere i task reali degli utenti, eliminando la necessità di cercare soluzioni frammentarie su forum o thread esterni."
     },
     "faqLabel": "FAQ",
     "faqTitle": "Domande prima di modificare un salvataggio",
@@ -1341,24 +1336,24 @@
     "faq": {
       "0": {
         "question": "PUSE gira davvero in locale nel browser?",
-        "answer": "Sì. La modalita principale e frontend-first, quindi parsing ed editing principali avvengono direttamente nella sessione browser."
+        "answer": "Sì. La modalità principale à frontend-first, quindi parsing ed editing principali avvengono direttamente nella sessione browser."
       },
       "1": {
         "question": "Posso modificare party, PC, borsa e denaro nello stesso tool?",
-        "answer": "Sì. PUSE e progettato per coprire queste aree core di editing salvataggi Pokemon Unbound in un unico flusso."
+        "answer": "Sì. PUSE è progettato per coprire queste aree core di editing salvataggi Pokémon Unbound in un unico flusso."
       },
       "2": {
-        "question": "Perche il ricalcolo checksum e importante?",
-        "answer": "I campi checksum fanno parte dei controlli di integrita del salvataggio. Ricalcolarli prima dell'export aiuta a ridurre errori e incompatibilita."
+        "question": "Perché il ricalcolo checksum è importante?",
+        "answer": "I campi checksum fanno parte dei controlli di integrità del salvataggio. Ricalcolarli prima dell'export aiuta a ridurre errori e incompatibilità."
       },
       "3": {
-        "question": "La modalita backend e obbligatoria per usare PUSE?",
-        "answer": "No. La modalita backend e opzionale ed e pensata soprattutto per sviluppo locale e workflow orientati alle API."
+        "question": "La modalità backend è obbligatoria per usare PUSE?",
+        "answer": "No. La modalità backend è opzionale ed è pensata soprattutto per sviluppo locale e workflow orientati alle API."
       }
     },
     "footer": {
-      "title": "Costruito per essere la pagina canonica su Pokemon Unbound save editor",
-      "desc": "Intento chiaro, capacita esplicite e workflow trasparente rendono PUSE piu facile da trovare e piu credibile da adottare.",
+      "title": "Il Punto di Riferimento per l'Editing di Pokémon Unbound",
+      "desc": "Grazie a un'interfaccia intuitiva, funzionalità specifiche e un workflow sicuro, PUSE è la soluzione più affidabile e immediata per gestire i tuoi salvataggi con precisione professionale.",
       "link_repo": "Apri repository",
       "link_live": "Visita GitHub Pages"
     }
@@ -1366,8 +1361,8 @@
   "Targage": {
     "badge": "Intelligence per Garage",
     "tagline": "Dalla videosorveglianza alla ricerca targhe immediata",
-    "description": "Targage e un layer di intelligence per autorimesse e parcheggi. Analizza flussi DVR/NVR, rileva le targhe, estrae il testo e costruisce una timeline precisa per recuperare in pochi secondi i momenti di ingresso e uscita.",
-    "supporting": "Invece di costringere gli operatori a sostituire l'intero stack di telecamere, Targage agisce come cervello sopra i sistemi video esistenti: trasformando registrazioni passive in evidenze ricercabili, storico operativo e tutela nelle contestazioni.",
+    "description": "Targage è un layer di intelligence per autorimesse e parcheggi. Analizza flussi DVR/NVR, rileva le targhe, estrae il testo e costruisce una timeline precisa per recuperare in pochi secondi i momenti di ingresso e uscita.",
+    "supporting": "Invece di costringere gli operatori a sostituire l'intero insieme di telecamere, Targage agisce come cervello sopra i sistemi video esistenti: trasformando registrazioni passive in evidenze ricercabili, storico operativo e tutela nelle contestazioni.",
     "cta_demo": "Richiedi una demo",
     "chips": {
       "0": "Hardware-agnostic",
@@ -1388,15 +1383,15 @@
     "pillars": {
       "efficiency": {
         "title": "Efficienza operativa",
-        "desc": "Targage nasce dal problema reale: team che perdono ore a scorrere registrazioni per rispondere a semplici domande sui movimenti dei veicoli. Il prodotto comprime questo lavoro in una ricerca rapida."
+        "desc": "Targage nasce dal problema reale: persone che perdono ore a scorrere registrazioni per rispondere a semplici domande sui movimenti dei veicoli. Il prodotto comprime questo lavoro in una ricerca rapida."
       },
       "legal": {
         "title": "Tutela legale",
-        "desc": "Quando la videosorveglianza esiste, agli operatori puo essere richiesto di ricostruire i fatti. Targage aiuta a trasformare il filmato in prova con timestamp, invece di lasciare la responsabilita nascosta in archivi video grezzi."
+        "desc": "Quando la videosorveglianza esiste, agli operatori può essere richiesto di ricostruire i fatti. Targage aiuta a trasformare il filmato in prova con timestamp, invece di lasciare la responsabilità nascosta in archivi video grezzi."
       },
       "integration": {
         "title": "Upgrade logico",
-        "desc": "Il prodotto non e un altro ecosistema hardware chiuso. E un layer software di intelligence pensato per stare sopra gli impianti esistenti e aggiungere valore senza imporre un rifacimento completo."
+        "desc": "Il prodotto non è un altro ecosistema hardware chiuso. È un layer software di intelligence pensato per stare sopra gli impianti esistenti e aggiungere valore senza imporre un rifacimento completo."
       }
     },
     "demo": {
@@ -1415,7 +1410,7 @@
         "first": "Primo rilevamento",
         "last": "Ultimo rilevamento"
       },
-      "complianceNote": "Ogni risultato e pensato per restare collegato ai riferimenti del filmato originale, aiutando i team a rispondere agli incidenti con provenienza chiara e accesso tracciabile.",
+      "complianceNote": "Ogni risultato è pensato per restare collegato ai riferimenti del filmato originale, aiutando i team a rispondere agli incidenti con provenienza chiara e accesso tracciabile.",
       "resultsLabel": "Risultati indicizzati",
       "videoIndex": "Indice timeline",
       "eventType": {
@@ -1426,7 +1421,7 @@
       "clipReady": "Clip pronto al recupero",
       "sourceLinked": "Sorgente video collegata",
       "emptyTitle": "Nessuna targa indicizzata trovata",
-      "emptyDescription": "Prova una delle targhe suggerite per vedere come Targage trasforma piu avvistamenti in una timeline strutturata di recupero."
+      "emptyDescription": "Prova una delle targhe suggerite per vedere come Targage trasforma più avvistamenti in una timeline strutturata di recupero."
     },
     "pipeline_title": "Come funziona il motore",
     "pipeline": {
@@ -1440,7 +1435,7 @@
       },
       "indexing": {
         "title": "Indicizzazione temporale",
-        "desc": "Associa ogni evento di riconoscimento a timestamp, identita della camera e riferimenti al filmato in una timeline strutturata e interrogabile all'istante."
+        "desc": "Associa ogni evento di riconoscimento a timestamp, identità della camera e riferimenti al filmato in una timeline strutturata e interrogabile all'istante."
       },
       "retrieval": {
         "title": "Recupero immediato",
@@ -1465,7 +1460,7 @@
     "compatibility": {
       "eyebrow": "Integrazione",
       "title": "Pensato come layer di intelligence universale",
-      "description": "L'angolo strategico piu forte per Targage e la disintermediazione dell'hardware: tenere le telecamere, aggiornare la logica. Questo rende il prodotto piu adottabile per operatori, integratori e strutture che hanno gia investito in videosorveglianza.",
+      "description": "L'angolo strategico più forte per Targage è la disintermediazione dell'hardware: tenere le telecamere, aggiornare la logica. Questo rende il prodotto più adottabile per operatori, integratori e strutture che hanno già investito in videosorveglianza.",
       "items": {
         "0": "Feed compatibili ONVIF",
         "1": "Sorgenti video RTSP",
@@ -1475,33 +1470,33 @@
     },
     "compliance": {
       "eyebrow": "Cybersecurity & GDPR",
-      "title": "Privacy e sovranita sono feature di prodotto",
-      "description": "Targage non va raccontato come software di sorveglianza aggressivo. Il suo valore cresce quando viene posizionato come layer controllato, verificabile e consapevole della privacy, capace di aiutare le organizzazioni a gestire le evidenze video in modo piu responsabile.",
+      "title": "Privacy e sovranità sono feature di prodotto",
+      "description": "Targage rappresenta un nuovo standard nella gestione intelligente delle immagini. Non un semplice strumento di sorveglianza, ma un layer tecnologico controllato e verificabile, progettato per aiutare le organizzazioni a gestire le evidenze video con la massima responsabilità e nel pieno rispetto della privacy.",
       "items": {
-        "0": "Deploy su infrastruttura locale o controllata quando la sovranita del dato e prioritaria.",
+        "0": "Deploy su infrastruttura locale o controllata quando la sovranità del dato e prioritaria.",
         "1": "Supporto a regole di accesso chiare, recupero selettivo e workflow orientati alla minimizzazione dei dati.",
-        "2": "Aiuta gli operatori a rispondere agli incidenti piu velocemente, riducendo l'esposizione non necessaria a filmati grezzi."
+        "2": "Aiuta gli operatori a rispondere agli incidenti più velocemente, riducendo l'esposizione non necessaria a filmati grezzi."
       }
     },
     "faqEyebrow": "FAQ",
     "faqTitle": "Le domande che operatori e integratori fanno davvero",
-    "faqDescription": "La pagina deve rispondere in modo diretto ai dubbi pratici: compatibilita, recupero delle evidenze, compliance e vantaggio operativo reale rispetto alla revisione manuale.",
+    "faqDescription": "Trova le risposte ai quesiti tecnici e operativi su Targage: dalla piena conformità normativa alla compatibilità con i tuoi sistemi, fino ai vantaggi concreti in termini di efficienza rispetto alla revisione video manuale.",
     "faq": {
       "0": {
         "question": "Targage richiede la sostituzione dell'hardware di videosorveglianza?",
-        "answer": "No. Il suo valore principale e agire come layer software di intelligence sopra sistemi camera, DVR e NVR esistenti, riducendo la necessita di sostituire hardware costoso."
+        "answer": "No. Il suo valore principale e agire come layer software di intelligence sopra sistemi camera, DVR e NVR esistenti, riducendo la necessità di sostituire hardware costoso."
       },
       "1": {
         "question": "Quale problema risolve meglio rispetto alla revisione manuale del CCTV?",
         "answer": "Trasforma un processo lento e soggetto a errore in un workflow di ricerca per targa, permettendo al personale di recuperare evidenze rilevanti di ingresso e uscita in pochi secondi invece che in ore."
       },
       "2": {
-        "question": "Perche qui il posizionamento legale e di compliance e importante?",
-        "answer": "Perche gli operatori dei parcheggi devono spesso ricostruire eventi durante le contestazioni. Una timeline ricercabile con riferimenti ai filmati e piu difendibile e piu utile operativamente rispetto ai soli archivi grezzi."
+        "question": "Perché qui il posizionamento legale e di compliance è importante?",
+        "answer": "Perché gli operatori dei parcheggi devono spesso ricostruire eventi durante le contestazioni. Una timeline ricercabile con riferimenti ai filmati è piu difendibile è più utile operativamente rispetto ai soli archivi grezzi."
       },
       "3": {
-        "question": "Per chi e pensato Targage?",
-        "answer": "Per operatori di parcheggi, garage privati, property manager e system integrator che possiedono gia infrastruttura video ma hanno bisogno di recupero piu rapido, migliore tracciabilita e un layer ANPR pratico."
+        "question": "Per chi è pensato Targage?",
+        "answer": "Per operatori di parcheggi, garage privati, property manager e system integrator che possiedono già infrastruttura video ma hanno bisogno di recupero più rapido, migliore tracciabilita e un layer ANPR pratico."
       }
     }
   },
@@ -1643,7 +1638,7 @@
     "pillars": {
       "models": {
         "title": "Modelli Neurali AI",
-        "desc": "Traid applica architetture neurali avanzate — tra cui LSTM e ARIMA — ai dati finanziari time-series, estraendo pattern statistici che gli approcci algoritmici tradizionali non colgono."
+        "desc": "Traid applica architetture neurali avanzate — tra cui LSTM e Transformer — ai dati finanziari time-series, estraendo pattern statistici che gli approcci algoritmici tradizionali non colgono."
       },
       "signals": {
         "title": "Segnali in Tempo Reale",
@@ -1685,7 +1680,7 @@
       },
       "training": {
         "title": "Addestramento Modelli Neurali",
-        "desc": "Reti LSTM, modelli ARIMA e architetture avanzate vengono addestrate su dati storici, apprendendo pattern statistici attraverso cicli di mercato completi evitando data leakage e survivorship bias."
+        "desc": "Reti LSTM, modelli Tranformer e architetture avanzate vengono addestrate su dati storici, apprendendo pattern statistici attraverso cicli di mercato completi evitando data leakage e survivorship bias."
       },
       "validation": {
         "title": "Validazione Rigorosa",
