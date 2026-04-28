@@ -32,6 +32,7 @@ export async function generateMetadata({ params }) {
       languages: {
         en: '/en/capture',
         it: '/it/capture',
+        'x-default': '/en/capture',
       },
     },
     robots: {

@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     description: t('description'),
     alternates: {
       canonical: `/${locale}/targage`,
-      languages: { en: '/en/targage', it: '/it/targage' },
+      languages: { en: '/en/targage', it: '/it/targage', 'x-default': '/en/targage' },
     },
     openGraph: {
       title: `Targage – ${t('tagline')}`,

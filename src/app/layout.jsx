@@ -2,7 +2,7 @@ import { DM_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import {Providers} from "@/app/providers";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://devop.sbs';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devop.sbs';
 
 const dmSans = DM_Sans({
     subsets: ["latin"],

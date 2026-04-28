@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
       languages: {
         en: '/en/capture/privacy',
         it: '/it/capture/privacy',
+        'x-default': '/en/capture/privacy',
       },
     },
     robots: { index: true, follow: true },

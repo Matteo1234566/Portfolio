@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     description: t('about.p1'),
     alternates: {
       canonical: `/${locale}/simone`,
-      languages: { en: '/en/simone', it: '/it/simone' },
+      languages: { en: '/en/simone', it: '/it/simone', 'x-default': '/en/simone' },
     },
     openGraph: {
       title: `Simone Zannini – ${t('header.role_badge')}`,
