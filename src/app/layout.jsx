@@ -1,6 +1,7 @@
 import { DM_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import {Providers} from "@/app/providers";
+import { getLocale } from 'next-intl/server';
 
 const SITE_URL = 'https://www.devop.sbs';
 
@@ -37,11 +38,11 @@ export const metadata = {
     },
 };
 
-export default function RootLayout({ children }) {
-
+export default async function RootLayout({ children }) {
+    const locale = await getLocale();
 
     return (
-        <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+        <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
             <body
                 className={`
                   ${dmSans.variable}
