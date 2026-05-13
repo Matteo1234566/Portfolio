@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
     description: t('description'),
     alternates: {
       canonical: `/${locale}/puse`,
-      languages: { en: '/en/puse', it: '/it/puse', 'x-default': '/en/puse' },
+      languages: { en: '/en/puse', it: '/it/puse', 'x-default': '/it/puse' },
     },
     openGraph: {
       title,

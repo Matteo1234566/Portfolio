@@ -2,7 +2,7 @@ import { DM_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import {Providers} from "@/app/providers";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devop.sbs';
+const SITE_URL = 'https://www.devop.sbs';
 
 const dmSans = DM_Sans({
     subsets: ["latin"],
@@ -17,7 +17,7 @@ const oswald = Oswald({
 });
 
 export const metadata = {
-    metadataBase: new URL(siteUrl),
+    metadataBase: new URL(SITE_URL),
     title: {
         default: 'DevOP – AI & Full-Stack Freelance Duo',
         template: '%s | DevOP',

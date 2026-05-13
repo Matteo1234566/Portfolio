@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'https://www.devop.sbs';
+  const SITE_URL = 'https://www.devop.sbs';
   const locales = ['en', 'it'];
 
   const routes = [
@@ -25,7 +25,7 @@ export default function sitemap() {
   for (const locale of locales) {
     // locale root (es. /en, /it)
     entries.push({
-      url: `${baseUrl}/${locale}`,
+      url: `${SITE_URL}/${locale}`,
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 1.0,
@@ -35,7 +35,7 @@ export default function sitemap() {
       if (route.path === '') continue;
 
       entries.push({
-        url: `${baseUrl}/${locale}${route.path}`,
+        url: `${SITE_URL}/${locale}${route.path}`,
         lastModified: now,
         changeFrequency: route.changeFrequency,
         priority: route.priority,

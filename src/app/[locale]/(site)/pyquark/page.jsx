@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
     description: t('description'),
     alternates: {
       canonical: `/${locale}/pyquark`,
-      languages: { en: '/en/pyquark', it: '/it/pyquark', 'x-default': '/en/pyquark' },
+      languages: { en: '/en/pyquark', it: '/it/pyquark', 'x-default': '/it/pyquark' },
     },
     openGraph: {
       title,

@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     description: t('description'),
     alternates: {
       canonical: `/${locale}/traid`,
-      languages: { en: '/en/traid', it: '/it/traid', 'x-default': '/en/traid' },
+      languages: { en: '/en/traid', it: '/it/traid', 'x-default': '/it/traid' },
     },
     openGraph: {
       title: `Traid – ${t('tagline')}`,

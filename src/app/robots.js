@@ -1,11 +1,11 @@
 export default function robots() {
-  const baseUrl = 'https://www.devop.sbs';
+  const SITE_URL = 'https://www.devop.sbs';
 
   return {
     rules: {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

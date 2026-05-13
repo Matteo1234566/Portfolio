@@ -39,7 +39,7 @@ export async function generateMetadata({ params }) {
         ],
     alternates: {
       canonical: `/${locale}/mirror`,
-      languages: { en: '/en/mirror', it: '/it/mirror', 'x-default': '/en/mirror' },
+      languages: { en: '/en/mirror', it: '/it/mirror', 'x-default': '/it/mirror' },
     },
     robots: {
       index: true,

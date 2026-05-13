@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     description: t('about.p1'),
     alternates: {
       canonical: `/${locale}/matteo`,
-      languages: { en: '/en/matteo', it: '/it/matteo', 'x-default': '/en/matteo' },
+      languages: { en: '/en/matteo', it: '/it/matteo', 'x-default': '/it/matteo' },
     },
     openGraph: {
       title: `Matteo Cese – ${t('header.role_badge')}`,
