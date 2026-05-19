@@ -32,6 +32,8 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const ctaChildren = ctaRef.current ? Array.from(ctaRef.current.children) : [];
+
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       tl.fromTo(badgeRef.current,
@@ -43,19 +45,9 @@ export default function Hero() {
         { opacity: 1, y: 0, duration: 1 },
         '-=0.3'
       )
-      .fromTo(titleCharsRef.current?.children || [],
-        { opacity: 0, y: 40, rotateX: -40 },
-        { opacity: 1, y: 0, rotateX: 0, duration: 0.8, stagger: 0.03 },
-        '-=0.6'
-      )
       .fromTo(bioRef.current,
         { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.8 },
-        '-=0.4'
-      )
-      .fromTo(ctaRef.current?.children || [],
-        { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 },
         '-=0.4'
       )
       .fromTo(bgRef.current,
@@ -63,6 +55,14 @@ export default function Hero() {
         { opacity: 1, scale: 1, duration: 1.2 },
         '-=1'
       );
+
+      if (ctaChildren.length) {
+        tl.fromTo(ctaChildren,
+          { opacity: 0, y: 20 },
+          { opacity: 1, y: 0, duration: 0.6, stagger: 0.1 },
+          '-=0.4'
+        );
+      }
 
       gsap.to('.hero-glow', {
         scale: 1.2,

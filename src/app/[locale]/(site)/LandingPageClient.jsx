@@ -147,6 +147,7 @@ export default function PortfolioLanding() {
                                         src={currentTheme === 'dark' ? '/pittogramma_moon.webp' : '/pittogramma_sun.webp'}
                                         alt="Decorative Element"
                                         fill
+                                        sizes="(max-width: 768px) 128px, 192px"
                                         className="object-contain drop-shadow-lg"
                                     />
                                 </motion.div>

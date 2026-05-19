@@ -55,8 +55,8 @@ export default function Footer() {
                                     : '/pittogramma_flat_sun.webp'
                             }
                             alt={t('alt_illustration')}
-                            width={96}
-                            height={96}
+                            fill
+                            sizes="96px"
                             className="object-contain"
                         />
                     </div>
