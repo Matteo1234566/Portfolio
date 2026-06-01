@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { ArrowDoodle } from '@/app/[locale]/(site)/sections/Doodles';
 import { motion } from 'framer-motion';
@@ -8,7 +8,7 @@ import { ArrowRight, ExternalLink } from "lucide-react";
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import CookingModal from "@/app/[locale]/(site)/sections/ui/Modal";
+import SocialPopover from "@/app/[locale]/(site)/sections/ui/SocialPopover";
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -18,8 +18,6 @@ export default function Hero() {
   const t = useTranslations('Hero');
   const pathname = usePathname();
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
-  const [isCooking, setIsCooking] = useState(false);
-
   const proofItems = [0, 1, 2, 3].map((index) => t(`proof.${index}`));
 
   const heroRef = useRef(null);
@@ -77,11 +75,6 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  const handlePodcastClick = (e) => {
-    e.preventDefault();
-    setIsCooking(true);
-  };
-
   return (
       <section id="hero" ref={heroRef} className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-5 dark:opacity-10 bg-[radial-gradient(#1e1b4b_1px,transparent_1px)] dark:bg-[radial-gradient(#f8fafc_1px,transparent_1px)] [background-size:16px_16px] transition-all duration-300"></div>
@@ -127,7 +120,7 @@ export default function Hero() {
             {t('description')}
           </motion.p>
 
-          <motion.p
+          <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
@@ -144,18 +137,9 @@ export default function Hero() {
               <ExternalLink size={16} />
             </a>
             {' '}{t('support.end')}{' '}
-            <a
-                href='https://www.twitch.tv/devopodcast'
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={handlePodcastClick}
-                className="inline-flex items-center gap-1 font-bold text-ink dark:text-white hover:text-bubblegum transition-colors"
-            >
-              {t('support.secondaryLink')}
-              <ExternalLink size={16} />
-            </a>
+            <SocialPopover triggerLabel={t('support.secondaryLink')} />
             .
-          </motion.p>
+          </motion.div>
 
           <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -217,7 +201,6 @@ export default function Hero() {
             transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
             className="absolute top-1/4 -right-24 w-80 h-80 bg-forest/10 dark:bg-white/5 rounded-full blur-3xl pointer-events-none hero-glow"
         ></motion.div>
-        <CookingModal isOpen={isCooking} onClose={() => setIsCooking(false)} />
       </section>
   );
 }
