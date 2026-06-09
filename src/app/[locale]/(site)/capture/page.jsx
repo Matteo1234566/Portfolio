@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import CapturePageClient from './CapturePageClient';
 
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.magosimo.capture';
+
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Capture' });
@@ -64,9 +66,10 @@ export default async function CapturePage({ params }) {
     '@type': 'SoftwareApplication',
     name: 'Capture',
     url: `/${locale}/capture`,
+    downloadUrl: PLAY_STORE_URL,
     applicationCategory: 'ProductivityApplication',
     applicationSubCategory: 'Note Taking',
-    operatingSystem: 'Android, iOS',
+    operatingSystem: 'Android',
     inLanguage: locale,
     isAccessibleForFree: true,
     offers: {

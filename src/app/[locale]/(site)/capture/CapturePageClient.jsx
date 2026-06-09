@@ -14,7 +14,6 @@ import {
   Smartphone,
   WifiOff,
   Sparkles,
-  ArrowRight,
   ShieldCheck,
   ChevronDown,
   Lock,
@@ -63,6 +62,19 @@ const item = {
   hidden: { opacity: 0, y: 24 },
   show:   { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 55, damping: 18 } },
 };
+
+const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.magosimo.capture';
+
+function GooglePlayIcon({ className = '' }) {
+  return (
+    <svg viewBox="0 0 512 512" aria-hidden="true" className={className}>
+      <path fill="#00F076" d="M77.6 31.7c-9.4 5.1-15.6 15.4-15.6 29v390.6c0 13.6 6.2 23.9 15.6 29L286.1 256 77.6 31.7Z" />
+      <path fill="#00D6FF" d="m334.8 203.7-257.2-172L286.1 256l48.7-52.3Z" />
+      <path fill="#FFCE00" d="m334.8 308.3-48.7-52.3L77.6 480.3l257.2-172Z" />
+      <path fill="#FF3A44" d="M431.8 227.8 334.8 203.7 286.1 256l48.7 52.3 97-24.1c24.3-13.5 24.3-42.9 0-56.4Z" />
+    </svg>
+  );
+}
 
 function CCard({ children, className = '', style = {} }) {
   return (
@@ -208,12 +220,22 @@ export default function CapturePageClient() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <button
-                className="inline-flex items-center gap-2 px-7 py-4 rounded-xl font-bold text-base transition-opacity hover:opacity-80"
-                style={{ backgroundColor: C.seed, color: C.ink }}
+              <a
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t('cta_play_store')}
+                className="group inline-flex items-center gap-3 rounded-2xl bg-[#111] px-6 py-3.5 text-white shadow-[0_12px_30px_rgba(0,0,0,0.22)] ring-1 ring-white/10 transition duration-200 hover:-translate-y-0.5 hover:bg-black hover:shadow-[0_16px_36px_rgba(0,0,0,0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                style={{ '--tw-ring-offset-color': C.surface }}
               >
-                {t('cta_soon')} <ArrowRight size={17} />
-              </button>
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 transition group-hover:bg-white/15">
+                  <GooglePlayIcon className="h-6 w-6" />
+                </span>
+                <span className="flex flex-col leading-none">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-white/65">Google Play</span>
+                  <span className="mt-1 text-base font-black tracking-tight">{t('cta_play_store')}</span>
+                </span>
+              </a>
               <Link
                 href={`/${locale}/capture/privacy`}
                 className="inline-flex items-center gap-2 px-7 py-4 rounded-xl border font-bold text-base transition-opacity hover:opacity-70"
