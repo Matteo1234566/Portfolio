@@ -52,19 +52,19 @@ export default function Projects() {
       ],
       link: "/ailights"
     },
-    {
-      id: 'traid',
-      title: t('items.traid.title'),
-      category: t('items.traid.category'),
-      description: t('items.traid.description'),
-      techStack: [
-        t('items.traid.techStack.0'),
-        t('items.traid.techStack.1'),
-        t('items.traid.techStack.2'),
-        t('items.traid.techStack.3')
-      ],
-      link: "/traid"
-    },
+    // {
+    //   id: 'traid',
+    //   title: t('items.traid.title'),
+    //   category: t('items.traid.category'),
+    //   description: t('items.traid.description'),
+    //   techStack: [
+    //     t('items.traid.techStack.0'),
+    //     t('items.traid.techStack.1'),
+    //     t('items.traid.techStack.2'),
+    //     t('items.traid.techStack.3')
+    //   ],
+    //   link: "/traid"
+    // },
     {
       id: 'screeba',
       title: t('items.screeba.title'),
