@@ -143,7 +143,7 @@ export default function ScreebaPageClient() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:magosimo99@gmail.com">
+              <a href="mailto:hello@4aitech.it">
                 <Button variant="primary" className="px-8 py-4 text-lg gap-2">
                   {t('cta_demo')}
                   <ArrowRight size={17} />
