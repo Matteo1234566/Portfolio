@@ -263,7 +263,7 @@ export default function AiLights() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:magosimo99@gmail.com">
+              <a href="mailto:hello@4aitech.it">
                 <Button variant="primary" className="px-8 py-4 text-lg gap-2" style={{ backgroundColor: C.seed, color: '#151515', borderColor: '#151515' }}>
                   {t('cta_demo')}
                   <ArrowRight size={18} />

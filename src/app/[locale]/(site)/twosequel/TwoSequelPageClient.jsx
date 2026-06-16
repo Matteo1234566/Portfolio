@@ -144,7 +144,7 @@ export default function TwoSequelPageClient() {
             </div>
 
             <div className="flex flex-wrap gap-4 mt-8">
-              <a href="mailto:magosimo99@gmail.com">
+              <a href="mailto:hello@4aitech.it">
                 <Button variant="primary" className="px-7 py-4 text-base gap-2">
                   {t('cta_demo')}
                   <ArrowRight size={17} />
