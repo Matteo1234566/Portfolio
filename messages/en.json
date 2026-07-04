@@ -77,49 +77,122 @@
     }
   },
   "Services": {
-    "label": "What we do",
+    "label": "Services",
     "heading": {
-      "top": "FROM RESEARCH",
-      "bottom": "TO",
-      "highlight": "PRODUCTION"
+      "top": "BUILD YOUR",
+      "highlight": "PRIVATE CLOUD"
     },
+    "intro": "Focused service tracks, packaged as configurable systems instead of vague retainers. First up: a premium HomeLab built around your home, data, and automation needs.",
+    "cta": "Configure service",
     "items": {
-      "ai": {
-        "title": "AI & ML Engineering",
-        "description": "We design end-to-end machine learning systems for prediction, automation, and decision support, combining research-grade modeling with production constraints.",
+      "homelab": {
+        "eyebrow": "Configurator-style service",
+        "title": "HomeLab Creation",
+        "description": "Design and deployment of a private home infrastructure: compute, network, UPS, NAS, storage, VPN, backups, monitoring, and automation shaped into one maintainable system.",
         "tags": {
-          "0": "Prediction Models",
-          "1": "Prompt Workflows",
-          "2": "Inference APIs"
-        }
-      },
-      "fullstack": {
-        "title": "Full-Stack Platforms",
-        "description": "We build robust interfaces, backend services, and data-connected workflows with the same care we reserve for infrastructure and maintainability.",
-        "tags": {
-          "0": "React / Next.js",
-          "1": "Django / Spring",
-          "2": "Scalable APIs"
-        }
-      },
-      "consulting": {
-        "title": "Technical Consulting",
-        "description": "We help founders and teams shape architecture, validate feasibility, and choose realistic roadmaps instead of wandering in the dark.",
-        "tags": {
-          "0": "Architecture",
-          "1": "Tech Strategy",
-          "2": "MVP Scope"
-        }
-      },
-      "product": {
-        "title": "Computer Vision & Automation",
-        "description": "We turn video, speech, and operational data into searchable signals, automations, and interfaces that teams can use daily.",
-        "tags": {
-          "0": "YOLO / OpenCV",
-          "1": "Speech-to-Text",
-          "2": "Real-time Analytics"
+          "0": "Private NAS",
+          "1": "Secure remote access",
+          "2": "Automation stack"
         }
       }
+    }
+  },
+  "HomeLabCreation": {
+    "meta_description": "Configure a premium HomeLab service with hardware tiers, software add-ons, live quote breakdown, secure remote access, backups, media, monitoring, and automation.",
+    "badge": "Flagship service",
+    "hero": {
+      "description": "A private infrastructure designed like a product configurator: choose the compute, network, backup power, NAS, storage, and software layers you want. The quote updates instantly as the system takes shape.",
+      "chips": {
+        "0": "Generic hardware tiers",
+        "1": "Editable example pricing",
+        "2": "Deployment-first architecture"
+      },
+      "cta": "Start configuring",
+      "secondaryCta": "See quote"
+    },
+    "visual": {
+      "label": "Live system sketch"
+    },
+    "hardware": {
+      "eyebrow": "Part A",
+      "title": "Hardware tiers",
+      "description": "Select generic tiers for each physical layer. Prices are placeholders for planning and can be replaced with real supplier quotes later.",
+      "categories": {
+        "miniPc": {
+          "title": "Mini PC",
+          "description": "Compute unit for services, containers, and orchestration.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Compact low-power node for a small set of always-on services." },
+            "standard": { "name": "Standard", "spec": "Balanced compute tier for media, backups, monitoring, and automation." },
+            "pro": { "name": "Pro", "spec": "Higher-core compute tier for heavier containers and room to grow." }
+          }
+        },
+        "switch": {
+          "title": "Network switch",
+          "description": "Wired backbone for the lab and the rooms that matter.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Simple managed switching for a compact wired setup." },
+            "standard": { "name": "Standard", "spec": "More ports, VLAN-ready segmentation, and cleaner expansion." },
+            "pro": { "name": "Pro", "spec": "High-throughput tier for multi-room cabling and advanced segmentation." }
+          }
+        },
+        "ups": {
+          "title": "UPS",
+          "description": "Backup power for safe shutdowns and short outages.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Entry backup power for the core compute and storage units." },
+            "standard": { "name": "Standard", "spec": "Longer runtime with monitoring hooks for graceful shutdown." },
+            "pro": { "name": "Pro", "spec": "Higher-capacity protection for the full lab rack or cabinet." }
+          }
+        },
+        "nas": {
+          "title": "NAS unit",
+          "description": "Central storage appliance for files, backups, and media.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Small multi-bay NAS tier for essential private storage." },
+            "standard": { "name": "Standard", "spec": "Balanced NAS tier for family data, media, and snapshots." },
+            "pro": { "name": "Pro", "spec": "Expansion-ready NAS tier with stronger performance headroom." }
+          }
+        },
+        "storage": {
+          "title": "Storage / hard disks",
+          "description": "Capacity pool sized around the data you actually keep.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Starter redundant capacity for documents and light media." },
+            "standard": { "name": "Standard", "spec": "Larger redundant pool for backups, photos, and media libraries." },
+            "pro": { "name": "Pro", "spec": "High-capacity pool for long retention and heavier archives." }
+          }
+        }
+      }
+    },
+    "addons": {
+      "eyebrow": "Part B",
+      "title": "Software add-ons",
+      "description": "Toggle independent service modules. Core add-ons cover VPN, media, and RobinHood; suggested extras add hardening, backups, monitoring, and automation.",
+      "suggested": "Suggested extra",
+      "items": {
+        "wireguard": { "title": "WireGuard VPN setup", "description": "Secure remote access to your home services without exposing dashboards to the public internet." },
+        "media": { "title": "Media package", "description": "Jellyfin, Navidrome, and content organization automation configured as a coherent private media stack." },
+        "robinhood": { "title": "RobinHood", "description": "Automated web content scraper that saves selected content directly to your NAS or storage pool." },
+        "adblock": { "title": "Network-wide blocking", "description": "Pi-hole-style DNS filtering for ads, trackers, and noisy domains across the home network." },
+        "backup": { "title": "Automated backup & versioning", "description": "Scheduled backups, snapshots, retention rules, and restore checks for important devices and folders." },
+        "automation": { "title": "Home automation hub", "description": "Integration layer for home automation devices, routines, and local-first control flows." },
+        "monitoring": { "title": "Monitoring dashboard", "description": "Uptime, disk health, container status, and alerting views for day-to-day maintenance." },
+        "cloudSync": { "title": "Off-site backup sync", "description": "Encrypted sync to a cloud or remote target for the data that should survive local incidents." },
+        "hardening": { "title": "Hardening & firewall setup", "description": "Network segmentation, firewall rules, access policy, and safer defaults for exposed surfaces." }
+      }
+    },
+    "summary": {
+      "eyebrow": "Live quote",
+      "title": "Preventivo",
+      "note": "Example pricing for a first planning conversation.",
+      "hardware": "Hardware",
+      "addons": "Add-ons",
+      "noAddons": "No add-ons selected.",
+      "total": "Total",
+      "disclaimer": "Placeholder prices exclude delivery, taxes where applicable, and any supplier changes. Final quote is confirmed after hardware availability and site constraints are reviewed.",
+      "mobileLabel": "Current total",
+      "viewBreakdown": "Breakdown"
     }
   },
   "Authority": {

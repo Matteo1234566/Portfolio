@@ -77,49 +77,122 @@
     }
   },
   "Services": {
-    "label": "Cosa facciamo",
+    "label": "Servizi",
     "heading": {
-      "top": "DALLA RICERCA",
-      "bottom": "ALLA",
-      "highlight": "PRODUZIONE"
+      "top": "COSTRUISCI IL TUO",
+      "highlight": "CLOUD PRIVATO"
     },
+    "intro": "Servizi mirati, confezionati come sistemi configurabili invece di consulenze indefinite. Si parte da HomeLab Creation: un'infrastruttura premium costruita attorno a casa, dati e automazioni.",
+    "cta": "Configura il servizio",
     "items": {
-      "ai": {
-        "title": "Ingegneria AI & ML",
-        "description": "Progettiamo sistemi di machine learning end-to-end per previsione, automazione e supporto decisionale, unendo modellazione avanzata e vincoli produttivi.",
+      "homelab": {
+        "eyebrow": "Servizio in stile configuratore",
+        "title": "HomeLab Creation",
+        "description": "Progettazione e messa in opera di un'infrastruttura domestica privata: compute, rete, UPS, NAS, storage, VPN, backup, monitoraggio e automazioni in un unico sistema manutenibile.",
         "tags": {
-          "0": "Modelli Predittivi",
-          "1": "Workflow Prompt",
-          "2": "Inference API"
-        }
-      },
-      "fullstack": {
-        "title": "Piattaforme Full-Stack",
-        "description": "Costruiamo interfacce solide, servizi backend e workflow connessi ai dati con la stessa attenzione che riserviamo a infrastruttura e manutenibilità.",
-        "tags": {
-          "0": "React / Next.js",
-          "1": "Django / Spring",
-          "2": "API Scalabili"
-        }
-      },
-      "consulting": {
-        "title": "Consulenza Tecnica",
-        "description": "Aiutiamo founder e team a definire architettura, validare la fattibilità e scegliere roadmap realistiche invece di brancolare nel buio.",
-        "tags": {
-          "0": "Architettura",
-          "1": "Strategia Tech",
-          "2": "Scope MVP"
-        }
-      },
-      "product": {
-        "title": "Computer Vision & Automation",
-        "description": "Trasformiamo video, voce e dati operativi in segnali ricercabili, automazioni e interfacce usabili ogni giorno dai team.",
-        "tags": {
-          "0": "YOLO / OpenCV",
-          "1": "Speech-to-Text",
-          "2": "Analytics Real-time"
+          "0": "NAS privato",
+          "1": "Accesso remoto sicuro",
+          "2": "Stack automazioni"
         }
       }
+    }
+  },
+  "HomeLabCreation": {
+    "meta_description": "Configura un servizio HomeLab premium con tier hardware, add-on software, preventivo live, accesso remoto sicuro, backup, media, monitoraggio e automazioni.",
+    "badge": "Servizio flagship",
+    "hero": {
+      "description": "Un'infrastruttura privata progettata come un configuratore di prodotto: scegli compute, rete, gruppo di continuità, NAS, storage e layer software. Il preventivo si aggiorna in tempo reale mentre il sistema prende forma.",
+      "chips": {
+        "0": "Tier hardware generici",
+        "1": "Prezzi esempio modificabili",
+        "2": "Architettura pronta al deployment"
+      },
+      "cta": "Inizia configurazione",
+      "secondaryCta": "Vedi preventivo"
+    },
+    "visual": {
+      "label": "Schema live del sistema"
+    },
+    "hardware": {
+      "eyebrow": "Parte A",
+      "title": "Tier hardware",
+      "description": "Seleziona tier generici per ogni livello fisico. I prezzi sono placeholder per la pianificazione e possono essere sostituiti con preventivi reali dei fornitori.",
+      "categories": {
+        "miniPc": {
+          "title": "Mini PC",
+          "description": "Unità di calcolo per servizi, container e orchestrazione.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Nodo compatto a basso consumo per pochi servizi always-on." },
+            "standard": { "name": "Standard", "spec": "Tier bilanciato per media, backup, monitoraggio e automazioni." },
+            "pro": { "name": "Pro", "spec": "Tier con più core per container più pesanti e spazio di crescita." }
+          }
+        },
+        "switch": {
+          "title": "Switch di rete",
+          "description": "Backbone cablato per il lab e le stanze più importanti.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Switching gestito semplice per un setup cablato compatto." },
+            "standard": { "name": "Standard", "spec": "Più porte, segmentazione VLAN-ready ed espansione più pulita." },
+            "pro": { "name": "Pro", "spec": "Tier ad alto throughput per cablaggio multi-stanza e segmentazione avanzata." }
+          }
+        },
+        "ups": {
+          "title": "UPS",
+          "description": "Gruppo di continuità per spegnimenti sicuri e blackout brevi.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Backup power d'ingresso per compute e storage principali." },
+            "standard": { "name": "Standard", "spec": "Autonomia superiore con hook di monitoraggio per shutdown ordinato." },
+            "pro": { "name": "Pro", "spec": "Protezione a capacità maggiore per l'intero lab in rack o mobile tecnico." }
+          }
+        },
+        "nas": {
+          "title": "Unità NAS",
+          "description": "Appliance centrale per file, backup e media.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Piccolo NAS multi-bay per storage privato essenziale." },
+            "standard": { "name": "Standard", "spec": "Tier bilanciato per dati familiari, media e snapshot." },
+            "pro": { "name": "Pro", "spec": "NAS espandibile con maggiore margine prestazionale." }
+          }
+        },
+        "storage": {
+          "title": "Storage / hard disk",
+          "description": "Pool di capacità dimensionato sui dati che vuoi davvero conservare.",
+          "tiers": {
+            "basic": { "name": "Basic", "spec": "Capacità ridondante iniziale per documenti e media leggeri." },
+            "standard": { "name": "Standard", "spec": "Pool ridondante più ampio per backup, foto e librerie media." },
+            "pro": { "name": "Pro", "spec": "Pool ad alta capacità per retention lunga e archivi più pesanti." }
+          }
+        }
+      }
+    },
+    "addons": {
+      "eyebrow": "Parte B",
+      "title": "Add-on software",
+      "description": "Attiva moduli indipendenti. Gli add-on core coprono VPN, media e RobinHood; gli extra suggeriti aggiungono hardening, backup, monitoraggio e automazioni.",
+      "suggested": "Extra suggerito",
+      "items": {
+        "wireguard": { "title": "Setup VPN WireGuard", "description": "Accesso remoto sicuro ai servizi di casa senza esporre dashboard su internet pubblico." },
+        "media": { "title": "Pacchetto media", "description": "Jellyfin, Navidrome e automazioni di organizzazione contenuti configurati come stack media privato coerente." },
+        "robinhood": { "title": "RobinHood", "description": "Scraper automatico di contenuti web che salva gli elementi selezionati direttamente su NAS o storage pool." },
+        "adblock": { "title": "Blocco a livello rete", "description": "Filtro DNS in stile Pi-hole per ads, tracker e domini rumorosi su tutta la rete domestica." },
+        "backup": { "title": "Backup automatici e versioning", "description": "Backup schedulati, snapshot, regole di retention e controlli di restore per dispositivi e cartelle importanti." },
+        "automation": { "title": "Hub domotica", "description": "Layer di integrazione per dispositivi smart home, routine e flussi di controllo local-first." },
+        "monitoring": { "title": "Dashboard monitoraggio", "description": "Viste per uptime, salute dischi, stato container e alerting per la manutenzione quotidiana." },
+        "cloudSync": { "title": "Sync backup off-site", "description": "Sincronizzazione cifrata verso cloud o target remoto per i dati che devono sopravvivere agli incidenti locali." },
+        "hardening": { "title": "Hardening e firewall", "description": "Segmentazione rete, regole firewall, policy di accesso e default più sicuri per le superfici esposte." }
+      }
+    },
+    "summary": {
+      "eyebrow": "Preventivo live",
+      "title": "Preventivo",
+      "note": "Prezzi esempio per una prima conversazione di pianificazione.",
+      "hardware": "Hardware",
+      "addons": "Add-on",
+      "noAddons": "Nessun add-on selezionato.",
+      "total": "Totale",
+      "disclaimer": "I prezzi placeholder escludono consegna, tasse dove applicabili e variazioni dei fornitori. Il preventivo finale viene confermato dopo disponibilità hardware e vincoli del luogo di installazione.",
+      "mobileLabel": "Totale corrente",
+      "viewBreakdown": "Dettaglio"
     }
   },
   "Authority": {

@@ -11,6 +11,8 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import gsap from 'gsap';
 
+const SHOW_BLOG_NAV_LINK = false;
+
 export default function Navbar() {
   const t = useTranslations('Navbar');
 
@@ -24,7 +26,7 @@ export default function Navbar() {
 
   const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
-  const navLinks = ['duo', 'services', 'projects'];
+  const navLinks = ['duo', 'services', 'projects', ...(SHOW_BLOG_NAV_LINK ? ['blogs'] : [])];
   const linkRefs = useRef([]);
   const underlineRefs = useRef([]);
 
