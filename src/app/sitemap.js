@@ -1,5 +1,3 @@
-import { BLOG_POSTS } from '@/app/[locale]/(site)/_blogs/blogData';
-
 export default function sitemap() {
   const SITE_URL = 'https://www.devop.sbs';
   const locales = ['en', 'it'];
@@ -19,7 +17,6 @@ export default function sitemap() {
     { path: '/targage', priority: 0.7, changeFrequency: 'monthly' },
     // { path: '/traid', priority: 0.8, changeFrequency: 'monthly' },
     { path: '/twosequel', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/blogs', priority: 0.6, changeFrequency: 'weekly' },
   ];
 
   const now = new Date().toISOString();
@@ -43,15 +40,6 @@ export default function sitemap() {
         lastModified: now,
         changeFrequency: route.changeFrequency,
         priority: route.priority,
-      });
-    }
-
-    for (const post of BLOG_POSTS) {
-      entries.push({
-        url: `${SITE_URL}/${locale}/blogs/${post.id}`,
-        lastModified: new Date(post.date).toISOString(),
-        changeFrequency: 'monthly',
-        priority: 0.5,
       });
     }
   }
