@@ -2,8 +2,10 @@ import { notFound } from 'next/navigation';
 import { getRepository, repositories } from '@/app/[locale]/(site)/trending-repo/repoData';
 import RepositoryPageClient from '@/app/[locale]/(site)/trending-repo/[slug]/RepositoryPageClient';
 
+const LOCALES = ['it', 'en'];
+
 export function generateStaticParams() {
-  return repositories.map(({ slug }) => ({ slug }));
+  return LOCALES.flatMap((locale) => repositories.map(({ slug }) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }) {
