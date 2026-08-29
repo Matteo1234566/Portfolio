@@ -6,6 +6,7 @@ import Authority from '@/app/[locale]/(site)/sections/Authority';
 import Duo from "@/app/[locale]/(site)/sections/Duo";
 import Services from "@/app/[locale]/(site)/sections/Services";
 import TechnologyTracks from '@/app/[locale]/(site)/sections/TechnologyTracks';
+import TrendingRepo from '@/app/[locale]/(site)/sections/TrendingRepo';
 import Projects from "@/app/[locale]/(site)/sections/Projects";
 import ProcessFaq from '@/app/[locale]/(site)/sections/ProcessFaq';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -182,8 +183,16 @@ export default function PortfolioLanding() {
                             </section>
 
                             <section
-                                id="projects"
+                                id="trending-repo"
                                 ref={el => sectionRefs.current[4] = el}
+                                className="py-24 bg-paper dark:bg-ink transition-colors duration-300"
+                            >
+                                <TrendingRepo />
+                            </section>
+
+                            <section
+                                id="projects"
+                                ref={el => sectionRefs.current[5] = el}
                                 className="py-24 bg-paper dark:bg-ink transition-colors duration-300"
                             >
                                 <Projects/>
@@ -191,7 +200,7 @@ export default function PortfolioLanding() {
 
                             <section
                                 id="faq"
-                                ref={el => sectionRefs.current[5] = el}
+                                ref={el => sectionRefs.current[6] = el}
                                 className="py-24 bg-smoke/40 dark:bg-white/5 transition-colors duration-300"
                             >
                                 <ProcessFaq />
