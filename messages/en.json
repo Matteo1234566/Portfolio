@@ -415,6 +415,17 @@
           "3": "RAR Streaming"
         }
       },
+      "fishertiger": {
+        "title": "fishertiger",
+        "category": "Fantasy Sports",
+        "description": "Local-first Classic Fantacalcio auction advisor with weighted player projections, live draft advice, and Monte Carlo season simulation.",
+        "techStack": {
+          "0": "Python",
+          "1": "React",
+          "2": "Vite",
+          "3": "Monte Carlo"
+        }
+      },
       "puse": {
         "title": "PUSE",
         "category": "Gaming Tool",
@@ -1693,6 +1704,102 @@
     "footer": {
       "title": "Built for practical install workflows",
       "desc": "Designed to reduce manual prep, speed up transfer loops, and keep large archive sessions manageable on real hardware.",
+      "link": "Open on GitHub"
+    }
+  },
+  "Fishertiger": {
+    "badge": "Fantacalcio Auction Tool",
+    "tagline": "Local-first advisor for Classic Fantacalcio Serie A auctions",
+    "description": "fishertiger builds player projections from historical Serie A data, prices the auction market, and supports a live draft with real-time advice. Everything runs locally against your own league rules — no account, no cloud dataset.",
+    "chips": {
+      "0": "Python + React",
+      "1": "Player projections",
+      "2": "Live auction advisor",
+      "3": "Monte Carlo simulation"
+    },
+    "cta_repo": "Open Repository",
+    "secondaryCta": "See how it works",
+    "visual": {
+      "label": "How a session flows",
+      "pipeline": {
+        "title": "Generate",
+        "desc": "The pipeline turns raw Serie A sources and FVM listings into weighted player projections for the configured league."
+      },
+      "auction": {
+        "title": "Draft",
+        "desc": "The live auction screen tracks rosters and budgets as they're picked, and surfaces role-aware advice pick by pick."
+      },
+      "simulation": {
+        "title": "Simulate",
+        "desc": "A 1,000-iteration Monte Carlo run projects the season for the drafted rosters using the league's own matchday rules."
+      }
+    },
+    "capabilitiesLabel": "Core capabilities",
+    "capabilitiesTitle": "Everything a Classic Fantacalcio auction needs, before and during the draft",
+    "capabilitiesSubtitle": "fishertiger combines projection modeling, market pricing, and live guidance so decisions during the auction are backed by data instead of gut feeling.",
+    "capabilities": {
+      "projections": {
+        "title": "Weighted player projections",
+        "desc": "Historical appearances are weighted 60/30/10 from newest to oldest season, normalized to a 75-minute rated appearance and adjusted for penalty duty and European rotation."
+      },
+      "auction": {
+        "title": "Live auction advice",
+        "desc": "During the draft, advice values the best fixture-aware lineup and missing-vote coverage rather than simply summing every rostered player's projection."
+      },
+      "goalkeepers": {
+        "title": "Goalkeeper hierarchy modeling",
+        "desc": "Same-club goalkeepers form one capped coverage unit driven by explicit starter/backup hierarchy, while goalkeepers from different clubs add fallback and rotation value."
+      },
+      "simulation": {
+        "title": "Season Monte Carlo simulation",
+        "desc": "A reproducible 1,000-iteration simulation projects full-season outcomes for drafted rosters using the configured bench, substitution rules, and league calendar."
+      }
+    },
+    "model": {
+      "label": "Model",
+      "title": "Built on documented assumptions, not black-box scores",
+      "description": "Every projection and valuation choice fishertiger makes is written down, so advice can be checked against the rule that produced it.",
+      "points": {
+        "0": "Role budgets default to P 7% / D 18% / C 25% / A 50% of the FVM-weighted pool, editable per profile.",
+        "1": "Availability priors of 85%, 55%, and 15% for TITOLARE, BALLOTTAGGIO, and RISERVA blend with historical data once it exists.",
+        "2": "Only an explicit confirmed-inactive signal excludes a player; low probability or missing tiers reduce value instead of hard-excluding.",
+        "3": "Fixture projections vary by opponent strength and home/away status while preserving each player's seasonal mean."
+      }
+    },
+    "privacy": {
+      "label": "Local-first",
+      "title": "Your league data never leaves your machine",
+      "description": "fishertiger runs a local API and a local web client; there is no hosted backend or account system.",
+      "points": {
+        "0": "The private league calendar (calendario_lega.xlsx) is the only excluded input and is never committed to the repository.",
+        "1": "Generated datasets and simulations are written to a data/processed folder scoped by profile and season on disk.",
+        "2": "config/default_profile.json is the only public profile — anything league-specific stays local."
+      }
+    },
+    "faqLabel": "FAQ",
+    "faqTitle": "Frequently asked questions about fishertiger",
+    "faqSubtitle": "What the tool models, and what it deliberately leaves to the league itself.",
+    "faq": {
+      "0": {
+        "question": "What kind of Fantacalcio does it support?",
+        "answer": "Classic Fantacalcio Serie A auctions. The source calendar is always validated as 20 teams and 380 matches; the fantasy league can use a shorter configured interval within that season."
+      },
+      "1": {
+        "question": "Do I need my real league's calendar to use it?",
+        "answer": "No — the included sources are enough to generate the dashboard, projections, and auction tools. A private calendario_lega.xlsx upload is only required for the season-level simulation."
+      },
+      "2": {
+        "question": "Does it just sum player projections to rank rosters?",
+        "answer": "No. Advice values the best fixture-aware lineup and missing-vote coverage, including capped goalkeeper coverage units, rather than adding up every rostered player's projection."
+      },
+      "3": {
+        "question": "Is it open source?",
+        "answer": "Yes, the software is MIT licensed and the structured base data in data/raw/ is CC BY 4.0."
+      }
+    },
+    "footer": {
+      "title": "Draft with a model, not a hunch",
+      "desc": "Clone it, generate the dataset from the included sources, and run a live auction or a full season simulation on your own machine.",
       "link": "Open on GitHub"
     }
   },

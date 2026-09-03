@@ -129,6 +129,19 @@ export default function Projects() {
       link: '/pyquark'
     },
     {
+      id: 'fishertiger',
+      title: t('items.fishertiger.title'),
+      category: t('items.fishertiger.category'),
+      description: t('items.fishertiger.description'),
+      techStack: [
+        t('items.fishertiger.techStack.0'),
+        t('items.fishertiger.techStack.1'),
+        t('items.fishertiger.techStack.2'),
+        t('items.fishertiger.techStack.3')
+      ],
+      link: '/fishertiger'
+    },
+    {
       id: 'puse',
       title: t('items.puse.title'),
       category: t('items.puse.category'),

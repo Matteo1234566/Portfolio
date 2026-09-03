@@ -415,6 +415,17 @@
           "3": "RAR Streaming"
         }
       },
+      "fishertiger": {
+        "title": "fishertiger",
+        "category": "Fantasy Sports",
+        "description": "Advisor locale per aste Fantacalcio Classic con proiezioni pesate dei giocatori, consigli d'asta live e simulazione di stagione Monte Carlo.",
+        "techStack": {
+          "0": "Python",
+          "1": "React",
+          "2": "Vite",
+          "3": "Monte Carlo"
+        }
+      },
       "puse": {
         "title": "PUSE",
         "category": "Tool Gaming",
@@ -1688,6 +1699,102 @@
     "footer": {
       "title": "Pensato per workflow di installazione reali",
       "desc": "Riduce la preparazione manuale, accelera i trasferimenti e rende gestibili sessioni pesanti con archivi di grandi dimensioni.",
+      "link": "Apri su GitHub"
+    }
+  },
+  "Fishertiger": {
+    "badge": "Strumento asta Fantacalcio",
+    "tagline": "Advisor locale per aste Fantacalcio Classic di Serie A",
+    "description": "fishertiger costruisce le proiezioni dei giocatori a partire dai dati storici di Serie A, quota il mercato dell'asta e supporta un draft live con consigli in tempo reale. Tutto gira in locale secondo le regole della tua lega — nessun account, nessun dataset in cloud.",
+    "chips": {
+      "0": "Python + React",
+      "1": "Proiezioni giocatori",
+      "2": "Advisor asta live",
+      "3": "Simulazione Monte Carlo"
+    },
+    "cta_repo": "Apri il repository",
+    "secondaryCta": "Scopri come funziona",
+    "visual": {
+      "label": "Come funziona una sessione",
+      "pipeline": {
+        "title": "Genera",
+        "desc": "La pipeline trasforma le fonti Serie A grezze e le quotazioni FVM in proiezioni pesate per la lega configurata."
+      },
+      "auction": {
+        "title": "Draft",
+        "desc": "La schermata dell'asta live traccia rose e budget mano a mano che i giocatori vengono acquistati, e propone consigli per ruolo scelta dopo scelta."
+      },
+      "simulation": {
+        "title": "Simula",
+        "desc": "Una simulazione Monte Carlo a 1.000 iterazioni proietta la stagione per le rose draftate usando il calendario e le regole della lega."
+      }
+    },
+    "capabilitiesLabel": "Capacità principali",
+    "capabilitiesTitle": "Tutto ciò che serve per un'asta Fantacalcio Classic, prima e durante il draft",
+    "capabilitiesSubtitle": "fishertiger unisce modellazione delle proiezioni, prezzatura di mercato e guida live, così le decisioni durante l'asta si basano sui dati e non sull'istinto.",
+    "capabilities": {
+      "projections": {
+        "title": "Proiezioni giocatori pesate",
+        "desc": "Le presenze storiche sono pesate 60/30/10 dalla stagione più recente alla più vecchia, normalizzate su una presenza da 75 minuti e corrette per rigori e rotazioni europee."
+      },
+      "auction": {
+        "title": "Consigli d'asta live",
+        "desc": "Durante il draft, il consiglio valuta la miglior formazione considerando il calendario e la copertura dei voti mancanti, invece di sommare semplicemente le proiezioni di ogni giocatore in rosa."
+      },
+      "goalkeepers": {
+        "title": "Modellazione della gerarchia portieri",
+        "desc": "I portieri dello stesso club formano un'unica unità di copertura con tetto massimo, basata su una gerarchia esplicita titolare/riserva, mentre i portieri di club diversi aggiungono copertura di riserva e valore di rotazione."
+      },
+      "simulation": {
+        "title": "Simulazione Monte Carlo di stagione",
+        "desc": "Una simulazione riproducibile a 1.000 iterazioni proietta l'intera stagione per le rose draftate usando panchina, regole di sostituzione e calendario configurati."
+      }
+    },
+    "model": {
+      "label": "Modello",
+      "title": "Basato su assunzioni documentate, non su punteggi a scatola chiusa",
+      "description": "Ogni scelta di proiezione e valutazione di fishertiger è documentata, così i consigli si possono verificare rispetto alla regola che li ha generati.",
+      "points": {
+        "0": "I budget per ruolo di default sono P 7% / D 18% / C 25% / A 50% del monte FVM pesato, modificabili per profilo.",
+        "1": "Le probabilità di disponibilità di base sono 85%, 55% e 15% per TITOLARE, BALLOTTAGGIO e RISERVA, combinate con lo storico quando disponibile.",
+        "2": "Solo un segnale esplicito di indisponibilità confermata esclude un giocatore; probabilità basse o tier mancanti riducono il valore invece di escludere.",
+        "3": "Le proiezioni per turno variano in base alla forza dell'avversario e al fattore casa/trasferta, mantenendo la media stagionale del giocatore."
+      }
+    },
+    "privacy": {
+      "label": "Local-first",
+      "title": "I dati della tua lega non lasciano mai il tuo computer",
+      "description": "fishertiger esegue un'API locale e un client web locale; non esiste un backend ospitato né un sistema di account.",
+      "points": {
+        "0": "Il calendario privato della lega (calendario_lega.xlsx) è l'unico input escluso e non viene mai versionato nel repository.",
+        "1": "Dataset generati e simulazioni vengono scritti in una cartella data/processed isolata per profilo e stagione.",
+        "2": "config/default_profile.json è l'unico profilo pubblico — tutto ciò che riguarda la lega specifica resta locale."
+      }
+    },
+    "faqLabel": "FAQ",
+    "faqTitle": "Domande frequenti su fishertiger",
+    "faqSubtitle": "Cosa modella lo strumento, e cosa lascia volutamente alla lega stessa.",
+    "faq": {
+      "0": {
+        "question": "Che tipo di Fantacalcio supporta?",
+        "answer": "Aste Fantacalcio Classic di Serie A. Il calendario sorgente è sempre validato come 20 squadre e 380 partite; la lega fantasy può usare un intervallo configurato più corto all'interno di quella stagione."
+      },
+      "1": {
+        "question": "Serve il calendario della mia vera lega per usarlo?",
+        "answer": "No — le fonti incluse bastano per generare dashboard, proiezioni e strumenti d'asta. Il caricamento del calendario_lega.xlsx privato serve solo per la simulazione a livello di stagione."
+      },
+      "2": {
+        "question": "Si limita a sommare le proiezioni per classificare le rose?",
+        "answer": "No. Il consiglio valuta la miglior formazione considerando il calendario e la copertura dei voti mancanti, incluse unità di copertura portieri con tetto massimo, invece di sommare le proiezioni di ogni giocatore in rosa."
+      },
+      "3": {
+        "question": "È open source?",
+        "answer": "Sì, il software è sotto licenza MIT e i dati strutturati di base in data/raw/ sono sotto licenza CC BY 4.0."
+      }
+    },
+    "footer": {
+      "title": "Fai l'asta con un modello, non con l'istinto",
+      "desc": "Clonalo, genera il dataset dalle fonti incluse ed esegui un'asta live o una simulazione di stagione completa sul tuo computer.",
       "link": "Apri su GitHub"
     }
   },
