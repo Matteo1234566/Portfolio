@@ -114,7 +114,7 @@ export default function TrendingRepoIndex() {
                     <span>{repository.language}</span>
                   </div>
                   <h2 className="mb-3 font-display text-4xl font-bold md:text-5xl">{repository.name}</h2>
-                  <p className="mb-6 text-lg leading-relaxed text-ink/70 dark:text-smoke/70">{t(`repositories.${repository.slug}.description`)}</p>
+                  <p className="mb-6 text-lg leading-relaxed text-ink/70 dark:text-smoke/70">{repository.content?.[locale]?.description ?? t(`repositories.${repository.slug}.description`)}</p>
                   <div className="flex flex-wrap gap-2">
                     {repository.tags.map((tag) => <span key={tag} className="rounded-full bg-forest/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-forest dark:bg-white/10 dark:text-bubblegum">{t(`tags.${tag}`)}</span>)}
                   </div>

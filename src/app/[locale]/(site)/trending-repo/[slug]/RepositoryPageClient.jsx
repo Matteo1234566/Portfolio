@@ -9,6 +9,13 @@ export default function RepositoryPageClient({ repository }) {
   const locale = useLocale();
   const t = useTranslations('TrendingRepoDetail');
   const shouldReduceMotion = useReducedMotion();
+  const content = repository.content?.[locale];
+  const description = content?.description ?? t(`repositories.${repository.slug}.description`);
+  const whyTitle = content?.whyTitle ?? t(`repositories.${repository.slug}.whyTitle`);
+  const whyDescription = content?.whyDescription ?? t(`repositories.${repository.slug}.whyDescription`);
+  const highlights = content?.highlights ?? repository.highlights.map((highlight, index) => (
+    t.has(`repositories.${repository.slug}.highlights.${index}`) ? t(`repositories.${repository.slug}.highlights.${index}`) : highlight
+  ));
 
   return (
     <main className="min-h-screen bg-paper font-body text-ink transition-colors duration-300 dark:bg-ink dark:text-smoke">
@@ -30,7 +37,7 @@ export default function RepositoryPageClient({ repository }) {
             <span className="text-white/75">{repository.name}</span>
           </div>
           <h1 className="max-w-4xl font-display text-6xl font-bold leading-[0.9] md:text-8xl">{t('title', { name: repository.name })}</h1>
-          <p className="mt-7 max-w-3xl text-xl leading-relaxed text-white/75 md:text-2xl">{t(`repositories.${repository.slug}.description`)}</p>
+          <p className="mt-7 max-w-3xl text-xl leading-relaxed text-white/75 md:text-2xl">{description}</p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a href={repository.githubUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-3 rounded-full border-2 border-ink bg-bubblegum px-6 py-3 font-display font-bold uppercase tracking-wide text-ink shadow-hard-white transition-all duration-200 hover:-translate-y-1 hover:bg-white focus:outline-none focus:ring-2 focus:ring-bubblegum focus:ring-offset-2 focus:ring-offset-forest">
               <Github size={20} aria-hidden="true" />
@@ -56,15 +63,15 @@ export default function RepositoryPageClient({ repository }) {
           className="rounded-[2rem] border-2 border-ink bg-white p-6 shadow-hard dark:border-white/20 dark:bg-white/5 md:p-10"
         >
           <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-bubblegum">{t('whyLabel')}</p>
-          <h2 className="mb-5 font-display text-4xl font-bold md:text-5xl">{t(`repositories.${repository.slug}.whyTitle`)}</h2>
-          <p className="text-lg leading-relaxed text-ink/70 dark:text-smoke/70">{t(`repositories.${repository.slug}.whyDescription`)}</p>
+          <h2 className="mb-5 font-display text-4xl font-bold md:text-5xl">{whyTitle}</h2>
+          <p className="text-lg leading-relaxed text-ink/70 dark:text-smoke/70">{whyDescription}</p>
 
           <h3 className="mb-5 mt-10 font-display text-3xl font-bold">{t('highlightsTitle')}</h3>
           <ul className="space-y-4">
-            {repository.highlights.map((_, index) => (
+            {highlights.map((highlight, index) => (
               <li key={index} className="flex items-start gap-3 text-lg leading-relaxed text-ink/75 dark:text-smoke/75">
                 <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-bubblegum" />
-                {t(`repositories.${repository.slug}.highlights.${index}`)}
+                {highlight}
               </li>
             ))}
           </ul>
