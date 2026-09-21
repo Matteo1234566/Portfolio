@@ -1,4 +1,5 @@
 import TrendingRepoIndex from '@/app/[locale]/(site)/trending-repo/TrendingRepoIndex';
+import { Suspense } from 'react';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -34,5 +35,5 @@ export async function generateMetadata({ params }) {
 }
 
 export default function TrendingRepoPage() {
-  return <TrendingRepoIndex />;
+  return <Suspense fallback={<main className="min-h-screen bg-paper dark:bg-ink" />}><TrendingRepoIndex /></Suspense>;
 }

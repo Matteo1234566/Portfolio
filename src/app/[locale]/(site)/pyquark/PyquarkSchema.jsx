@@ -37,7 +37,7 @@ export default function PyquarkSchema() {
           '@type': 'ListItem',
           position: 1,
           name: 'DevOP',
-          item: `${baseUrl}/${locale}`,
+          item: localizedUrl(locale),
         },
         {
           '@type': 'ListItem',

@@ -22,6 +22,10 @@ export async function generateMetadata({ params }) {
   return {
     title,
     description,
+    robots: {
+      index: false,
+      follow: true,
+    },
     alternates: {
       canonical: `/${locale}/trending-repo/${repository.slug}`,
       languages: {

@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import LandingPageClient from './LandingPageClient';
 import HomeSchema from './sections/HomeSchema';
+import { Suspense } from 'react';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -43,7 +44,7 @@ export default async function LandingPage({ params }) {
   return (
     <>
       <HomeSchema locale={locale} />
-      <LandingPageClient />
+      <Suspense fallback={<main className="min-h-screen bg-paper dark:bg-ink" />}><LandingPageClient /></Suspense>
     </>
   );
 }

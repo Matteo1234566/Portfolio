@@ -32,7 +32,7 @@ export default function AiLightsSchema() {
           '@type': 'ListItem',
           position: 1,
           name: 'DevOP',
-          item: `${baseUrl}/${locale}`,
+          item: localizedUrl(locale),
         },
         {
           '@type': 'ListItem',
