@@ -7,9 +7,13 @@ import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import { useTranslations } from 'next-intl';
 import { BUSINESS } from '@/lib/site';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
     const t = useTranslations('Footer');
+    const pathname = usePathname();
+    const locale = pathname.startsWith('/en') ? 'en' : 'it';
 
     const { theme, systemTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
@@ -72,11 +76,11 @@ export default function Footer() {
                         {t('description2')}
                     </p>
                     <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                        <a href={`mailto:${BUSINESS.email}`} className="no-underline">
+                        <Link href={`/${locale}/contact`} className="no-underline">
                             <Button variant="primary" className="text-lg px-10 py-4 cursor-pointer">
                                 {t('cta.email')}
                             </Button>
-                        </a>
+                        </Link>
                         <a
                             href={`mailto:${BUSINESS.email}?subject=${encodeURIComponent('DevOP discovery call')}`}
                             className="no-underline"
@@ -86,18 +90,7 @@ export default function Footer() {
                             </Button>
                         </a>
                     </div>
-                    <div className="mt-6 flex justify-center">
-                        <a
-                            href="https://liberapay.com/MagoSimo/donate"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="no-underline"
-                        >
-                            <Button variant="outline" className="text-lg px-10 py-4">
-                                {t('buyCoffee')}
-                            </Button>
-                        </a>
-                    </div>
+                    <p className="mt-6 text-sm text-white/60">DevOP · Roma · Italia ed Europa · {BUSINESS.email}</p>
                 </motion.div>
 
                 <motion.div

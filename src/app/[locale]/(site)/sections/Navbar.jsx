@@ -147,10 +147,10 @@ export default function Navbar() {
             ${scrolled ? 'scale-95' : 'scale-100'}
           `}
           >
-            <button
-                onClick={() => handleNavClick("hero")}
+            <Link
+                href={`/${currentLocale}`}
                 className="relative z-50 hover:opacity-80 transition-opacity flex items-center"
-                aria-label="Scroll to top"
+                aria-label="DevOP homepage"
             >
               <Image
                   src={
@@ -164,7 +164,7 @@ export default function Navbar() {
                   className="object-contain h-10 w-auto cursor-pointer"
                   priority
               />
-            </button>
+            </Link>
 
             <div className="hidden md:flex items-center space-x-8 font-medium text-ink dark:text-smoke">
               {navLinks.map((key, index) => (
@@ -206,7 +206,7 @@ export default function Navbar() {
                 )}
               </button>
 
-              <Button className="text-sm px-5 py-2 cursor-pointer" onClick={() => handleNavClick("footer")}>
+              <Button className="text-sm px-5 py-2 cursor-pointer" onClick={() => router.push(`/${currentLocale}/contact`)}>
                 {t('cta')}
               </Button>
             </div>
@@ -269,7 +269,7 @@ export default function Navbar() {
                     </span>
                   </button>
 
-                  <Button className="w-full text-lg py-4 mt-4" onClick={() => handleNavClick("footer")}>
+                  <Button className="w-full text-lg py-4 mt-4" onClick={() => { setIsOpen(false); router.push(`/${currentLocale}/contact`); }}>
                       {t('cta')}
                   </Button>
                 </div>
