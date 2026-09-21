@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Hero from "@/app/[locale]/(site)/sections/Hero";
 import Authority from '@/app/[locale]/(site)/sections/Authority';
 import Duo from "@/app/[locale]/(site)/sections/Duo";
@@ -9,20 +9,17 @@ import TechnologyTracks from '@/app/[locale]/(site)/sections/TechnologyTracks';
 import TrendingRepo from '@/app/[locale]/(site)/sections/TrendingRepo';
 import Projects from "@/app/[locale]/(site)/sections/Projects";
 import ProcessFaq from '@/app/[locale]/(site)/sections/ProcessFaq';
-import { motion, AnimatePresence } from 'framer-motion';
-import {LoadingScreen} from "@/app/[locale]/(site)/sections/LoadingScreen";
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useTheme } from "next-themes";
 import Footer from "@/app/[locale]/(site)/sections/Footer";
 import { useSearchParams } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import HomeSchema from '@/app/[locale]/(site)/sections/HomeSchema';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function PortfolioLanding() {
-    const [isLoading, setIsLoading] = useState(true);
     const { theme, systemTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const searchParams = useSearchParams();
@@ -34,7 +31,7 @@ export default function PortfolioLanding() {
     }, []);
 
     useEffect(() => {
-        if (isLoading || !mainRef.current) return;
+        if (!mainRef.current) return;
 
         const ctx = gsap.context(() => {
             sectionRefs.current.forEach((section, index) => {
@@ -58,7 +55,7 @@ export default function PortfolioLanding() {
         }, mainRef);
 
         return () => ctx.revert();
-    }, [isLoading]);
+    }, []);
 
     const currentTheme = mounted
         ? (theme === "system" ? systemTheme : theme)
@@ -66,23 +63,6 @@ export default function PortfolioLanding() {
 
 
     useEffect(() => {
-        const hasLoaded = sessionStorage.getItem("hasLoadedLanding");
-
-        if (hasLoaded) {
-            setIsLoading(false);
-            return;
-        }
-
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-            sessionStorage.setItem("hasLoadedLanding", "true");
-        }, 2200);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    useEffect(() => {
-        if (isLoading) return;
         const section = searchParams.get('scrollTo');
         if (!section) return;
 
@@ -90,32 +70,18 @@ export default function PortfolioLanding() {
         if (el) {
             el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-    }, [isLoading, searchParams]);
+    }, [searchParams]);
 
 
     return (
-        <>
-            <AnimatePresence mode="wait">
-                {isLoading && <LoadingScreen key="loader" />}
-            </AnimatePresence>
-
-            {!isLoading && (
-                <motion.div
-                    ref={mainRef}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="min-h-screen bg-paper dark:bg-ink font-body text-ink dark:text-smoke selection:bg-bubblegum selection:text-ink overflow-x-hidden transition-colors duration-300"
-                >
-                    <AnimatePresence mode="wait">
-                        <motion.main
-                            key="home"
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
-                            exit={{opacity: 0}}
-                            transition={{duration: 0.3}}
-                        >
-                            <HomeSchema />
+        <motion.div
+            ref={mainRef}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            className="min-h-screen bg-paper dark:bg-ink font-body text-ink dark:text-smoke selection:bg-bubblegum selection:text-ink overflow-x-hidden transition-colors duration-300"
+        >
+                        <main>
                             <Hero/>
 
                             <section
@@ -146,7 +112,7 @@ export default function PortfolioLanding() {
                                 >
                                     <Image
                                         src={currentTheme === 'dark' ? '/pittogramma_moon.webp' : '/pittogramma_sun.webp'}
-                                        alt="Decorative Element"
+                                        alt=""
                                         fill
                                         sizes="(max-width: 768px) 128px, 192px"
                                         className="object-contain drop-shadow-lg"
@@ -167,7 +133,7 @@ export default function PortfolioLanding() {
                                 >
                                     <img
                                         src={currentTheme === 'dark' ? '/moon.svg' : '/sun.svg'}
-                                        alt="Decorative Element"
+                                        alt=""
                                         className="w-full h-full object-contain drop-shadow-lg"
                                     />
                                 </motion.div>
@@ -205,11 +171,8 @@ export default function PortfolioLanding() {
                             >
                                 <ProcessFaq />
                             </section>
-                        </motion.main>
-                    </AnimatePresence>
-                    <Footer />
-                </motion.div>
-            )}
-        </>
+                        </main>
+            <Footer />
+        </motion.div>
     );
 }

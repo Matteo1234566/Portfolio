@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import LandingPageClient from './LandingPageClient';
+import HomeSchema from './sections/HomeSchema';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -7,8 +8,8 @@ export async function generateMetadata({ params }) {
   const t = await getTranslations({ locale, namespace: 'Hero' });
 
   const title = isItalian
-    ? 'DevOP | Consulenza AI, Computer Vision e Sviluppo Software a Roma'
-    : 'DevOP | AI Consulting, Computer Vision and Custom Software Development in Rome';
+    ? 'Consulenza AI, Computer Vision e Sviluppo Software a Roma'
+    : 'AI Consulting, Computer Vision and Custom Software Development in Rome';
   const description = t('description');
 
   return {
@@ -19,6 +20,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en', it: '/it', 'x-default': '/it' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title,
       description,
       type: 'website',
@@ -27,6 +29,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title,
       description,
@@ -34,6 +37,13 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function LandingPage() {
-  return <LandingPageClient />;
+export default async function LandingPage({ params }) {
+  const { locale } = await params;
+
+  return (
+    <>
+      <HomeSchema locale={locale} />
+      <LandingPageClient />
+    </>
+  );
 }
