@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { localizedUrl } from '@/lib/site';
 
 export default function AiLightsSchema() {
   const locale = useLocale();
   const t = useTranslations('AiLights');
   const faq = useTranslations('AiLights.faq');
-  const baseUrl = 'https://devop.sbs';
-  const pageUrl = `${baseUrl}/${locale}/ailights`;
+  const pageUrl = localizedUrl(locale, '/ailights');
 
   const schema = [
     {

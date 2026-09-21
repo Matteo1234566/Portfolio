@@ -1,9 +1,9 @@
 import { notFound } from 'next/navigation';
 import BlogPost from '@/app/[locale]/(site)/_blogs/[id]/page';
 import { BLOG_POSTS } from '@/app/[locale]/(site)/_blogs/blogData';
+import { SITE_URL } from '@/lib/site';
 
 const LOCALES = ['it', 'en'];
-const SITE_URL = 'https://www.devop.sbs';
 
 function getPost(id) {
   return BLOG_POSTS.find((post) => post.id === id);
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
   const url = `/${locale}/blogs/${post.id}`;
 
   return {
-    title: `${content.title} | DevOP Blog`,
+    title: `${content.title} | Blog`,
     description: content.excerpt,
     alternates: {
       canonical: url,
@@ -35,6 +35,7 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title: content.title,
       description: content.excerpt,
       type: 'article',
@@ -46,6 +47,7 @@ export async function generateMetadata({ params }) {
       tags: content.tags,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title: content.title,
       description: content.excerpt,

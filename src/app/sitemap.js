@@ -1,176 +1,58 @@
+import { BLOG_POSTS } from '@/app/[locale]/(site)/_blogs/blogData';
+import { repositories } from '@/app/[locale]/(site)/trending-repo/repoData';
+import { LOCALES, SITE_URL } from '@/lib/site';
+
+const STATIC_ROUTES = [
+  { path: '', priority: 1, changeFrequency: 'weekly' },
+  { path: '/matteo', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/simone', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/homelab-creation', priority: 0.9, changeFrequency: 'monthly' },
+  { path: '/ailights', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/mirror', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/capture', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/capture/privacy', priority: 0.4, changeFrequency: 'yearly' },
+  { path: '/screeba', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/pyquark', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/puse', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/targage', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/twosequel', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/fishertiger', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/blogs', priority: 0.8, changeFrequency: 'weekly' },
+  { path: '/trending-repo', priority: 0.8, changeFrequency: 'weekly' },
+];
+
+function languageAlternates(path) {
+  return Object.fromEntries([
+    ...LOCALES.map((locale) => [locale, `${SITE_URL}/${locale}${path}`]),
+    ['x-default', `${SITE_URL}/it${path}`],
+  ]);
+}
+
+function localizedEntries({ path, ...metadata }) {
+  const languages = languageAlternates(path);
+
+  return LOCALES.map((locale) => ({
+    url: `${SITE_URL}/${locale}${path}`,
+    alternates: { languages },
+    ...metadata,
+  }));
+}
+
 export default function sitemap() {
-  const SITE_URL = 'https://www.devop.sbs';
-  const locales = ['en', 'it'];
+  const staticEntries = STATIC_ROUTES.flatMap(localizedEntries);
 
-  const routes = [
-    { path: '', priority: 1.0, changeFrequency: 'weekly' },
-    { path: '/matteo', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/simone', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/homelab-creation', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/ailights', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/mirror', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/capture', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/capture/privacy', priority: 0.4, changeFrequency: 'yearly' },
-    { path: '/screeba', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/pyquark', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/puse', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/targage', priority: 0.7, changeFrequency: 'monthly' },
-    // { path: '/traid', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/twosequel', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/trending-repo', priority: 0.9, changeFrequency: 'weekly' },
-    { path: '/trending-repo/worldmonitor', priority: 0.8, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cl4r1t4s', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/rag-anything', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/hackingtool', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/build-your-own-x', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/curl', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/home-assistant', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/free-claude-code', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/ace-step-ui', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/ublock', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/quarkdown', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/maigret', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/pixelle-video', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/docuseal', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/scrapling', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/local-deep-research', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/dflash', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/openreel-video', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/lobehub', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/agent-skills', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/easy-vibe', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/stenoai', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/open-design', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/supertonic', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/scrcpy', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/ruview', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/supervision', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/shannon', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cli-anything', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cal-diy', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/listmonk', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/codegraph', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/medusa', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/kronos', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/paperless-ngx', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/frigate', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/twenty', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/krawl', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/heretic', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/markitdown', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/stirling-pdf', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/microsoft-activation-scripts', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/voxcpm', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/ecc', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/flowsint', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/last30days-skill', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/spec-kit', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/trivy', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/career-ops', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/tolaria', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/goose', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/whichllm', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/fluxer', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/restic', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/aisuite', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cypress', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/win11debloat', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/zvec', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/timesfm', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/libretranslate', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/asciline', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/pake', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/hyperframes', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/penpot', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/ai-website-cloner-template', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/trek', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/casaos', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/simplex-chat', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/mineru', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cupy', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/video-use', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/karukan', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/strix', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/voicebox', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/romm', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/upscayl', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/karakeep', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/meetily', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/officecli', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/photogimp', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cubesandbox', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/nanobot', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/t3code', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/project-nomad', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/unsloth', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/hallmark', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/posthog', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/deeptutor', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/protobuf', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/wigolo', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cognee', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/outlines', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/buzz', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/harper', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/pumpkin', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/superfile', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/appsmith', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/bitchat', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/hoppscotch', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/amnezia-client', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cloakbrowser', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/jenkins', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/turso', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/openship', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/ruff', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/croc', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/computer', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/text-to-cad', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/authentik', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/herdr', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/witr', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/codebase-memory-mcp', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/diagram-design', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/geolibre', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/holehe', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/mediacrawler', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/cordis', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/imgui', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/motrix', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/impeccable', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/openlogi', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/editor', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/ghost', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/book-to-skill', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/ponytail', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/hister', priority: 0.7, changeFrequency: 'monthly' },
-    { path: '/trending-repo/browser-use', priority: 0.7, changeFrequency: 'monthly' },
-  ];
+  const blogEntries = BLOG_POSTS.flatMap((post) => localizedEntries({
+    path: `/blogs/${post.id}`,
+    lastModified: post.date,
+    changeFrequency: 'yearly',
+    priority: 0.7,
+  }));
 
-  const now = new Date().toISOString();
+  const repositoryEntries = repositories.flatMap((repository) => localizedEntries({
+    path: `/trending-repo/${repository.slug}`,
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
 
-  const entries = [];
-
-  for (const locale of locales) {
-    // locale root (es. /en, /it)
-    entries.push({
-      url: `${SITE_URL}/${locale}`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 1.0,
-    });
-
-    for (const route of routes) {
-      if (route.path === '') continue;
-
-      entries.push({
-        url: `${SITE_URL}/${locale}${route.path}`,
-        lastModified: now,
-        changeFrequency: route.changeFrequency,
-        priority: route.priority,
-      });
-    }
-  }
-
-  return entries;
+  return [...staticEntries, ...blogEntries, ...repositoryEntries];
 }

@@ -1,13 +1,14 @@
 import { getTranslations } from 'next-intl/server';
 import HomeLabCreationClient from './HomeLabCreationClient';
+import { BUSINESS, localizedUrl } from '@/lib/site';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'HomeLabCreation' });
   const isItalian = locale === 'it';
   const title = isItalian
-    ? 'HomeLab Creation | Configuratore infrastruttura domestica DevOP'
-    : 'HomeLab Creation | DevOP Home Infrastructure Configurator';
+    ? 'HomeLab Creation | Configuratore infrastruttura domestica'
+    : 'HomeLab Creation | Home Infrastructure Configurator';
 
   return {
     title,
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }) {
       follow: true,
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title,
       description: t('meta_description'),
       type: 'website',
@@ -32,6 +34,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/homelab-creation`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title,
       description: t('meta_description'),
@@ -47,12 +50,12 @@ export default async function HomeLabCreationPage({ params }) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'HomeLab Creation',
-    url: `https://www.devop.sbs/${locale}/homelab-creation`,
+    url: localizedUrl(locale, '/homelab-creation'),
     serviceType: 'Home infrastructure design and deployment',
     provider: {
       '@type': 'Organization',
-      name: 'DevOP',
-      url: 'https://www.devop.sbs',
+      name: BUSINESS.name,
+      url: BUSINESS.url,
     },
     areaServed: 'Italy',
     inLanguage: locale === 'it' ? 'it' : 'en',

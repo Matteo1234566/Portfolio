@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { localizedUrl } from '@/lib/site';
 
 export default function TraidSchema() {
   const locale = useLocale();
   const t = useTranslations('Traid');
   const faq = useTranslations('Traid.faq');
-  const baseUrl = 'https://devop.sbs';
-  const pageUrl = `${baseUrl}/${locale}/traid`;
+  const pageUrl = localizedUrl(locale, '/traid');
 
   const schema = [
     {

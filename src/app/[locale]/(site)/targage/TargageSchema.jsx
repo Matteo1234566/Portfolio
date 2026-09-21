@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { localizedUrl } from '@/lib/site';
 
 export default function TargageSchema() {
   const locale = useLocale();
   const t = useTranslations('Targage');
   const faq = useTranslations('Targage.faq');
-  const baseUrl = 'https://devop.sbs';
-  const pageUrl = `${baseUrl}/${locale}/targage`;
+  const pageUrl = localizedUrl(locale, '/targage');
 
   const schema = [
     {

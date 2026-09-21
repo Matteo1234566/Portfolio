@@ -16,12 +16,19 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/trending-repo', it: '/it/trending-repo', 'x-default': '/it/trending-repo' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title,
       description,
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
       siteName: 'DevOP',
       url: `/${locale}/trending-repo`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/twitter-image'],
     },
   };
 }

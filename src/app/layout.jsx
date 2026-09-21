@@ -2,8 +2,7 @@ import { DM_Sans, Oswald } from "next/font/google";
 import "./globals.css";
 import {Providers} from "@/app/providers";
 import { getLocale } from 'next-intl/server';
-
-const SITE_URL = 'https://www.devop.sbs';
+import { SITE_URL } from '@/lib/site';
 
 const dmSans = DM_Sans({
     subsets: ["latin"],
@@ -32,9 +31,11 @@ export const metadata = {
     openGraph: {
         type: 'website',
         siteName: 'DevOP',
+        images: ['/opengraph-image'],
     },
     twitter: {
         card: 'summary_large_image',
+        images: ['/twitter-image'],
     },
 };
 

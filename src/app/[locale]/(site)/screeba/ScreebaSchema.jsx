@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { localizedUrl } from '@/lib/site';
 
 export default function ScreebaSchema() {
   const locale = useLocale();
   const t = useTranslations('Screeba');
   const faq = useTranslations('Screeba.faq');
-  const baseUrl = 'https://devop.sbs';
-  const pageUrl = `${baseUrl}/${locale}/screeba`;
+  const pageUrl = localizedUrl(locale, '/screeba');
 
   const schema = [
     {

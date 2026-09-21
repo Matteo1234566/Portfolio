@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/matteo', it: '/it/matteo', 'x-default': '/it/matteo' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title: `Matteo Cese – ${t('header.role_badge')}`,
       description: t('about.p1'),
       type: 'profile',
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/matteo`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title: `Matteo Cese – ${t('header.role_badge')}`,
       description: t('about.p1'),

@@ -17,6 +17,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/ailights', it: '/it/ailights', 'x-default': '/it/ailights' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title,
       description: t('description'),
       type: 'website',
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/ailights`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title,
       description: t('description'),

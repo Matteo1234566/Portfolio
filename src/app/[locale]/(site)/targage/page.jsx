@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/targage', it: '/it/targage', 'x-default': '/it/targage' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title: `Targage – ${t('tagline')}`,
       description: t('description'),
       type: 'website',
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/targage`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title: `Targage – ${t('tagline')}`,
       description: t('description'),

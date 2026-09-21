@@ -20,6 +20,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/fishertiger', it: '/it/fishertiger', 'x-default': '/it/fishertiger' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title,
       description: t('description'),
       type: 'website',
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/fishertiger`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title,
       description: t('description'),

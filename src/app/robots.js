@@ -1,5 +1,6 @@
+import { SITE_URL } from '@/lib/site';
+
 export default function robots() {
-  const SITE_URL = 'https://www.devop.sbs';
 
   return {
     rules: {

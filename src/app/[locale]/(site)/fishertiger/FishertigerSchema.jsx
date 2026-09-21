@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { localizedUrl } from '@/lib/site';
 
 export default function FishertigerSchema() {
   const locale = useLocale();
   const t = useTranslations('Fishertiger');
   const faq = useTranslations('Fishertiger.faq');
-  const baseUrl = 'https://devop.sbs';
-  const pageUrl = `${baseUrl}/${locale}/fishertiger`;
+  const pageUrl = localizedUrl(locale, '/fishertiger');
 
   const schema = [
     {

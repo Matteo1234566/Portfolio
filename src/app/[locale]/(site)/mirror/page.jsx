@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import MirrorPageClient from './MirrorPageClient';
+import { localizedUrl } from '@/lib/site';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -46,6 +47,7 @@ export async function generateMetadata({ params }) {
       follow: true,
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title,
       description: t('meta_description'),
       type: 'website',
@@ -54,6 +56,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/mirror`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title,
       description: t('meta_description'),
@@ -69,7 +72,7 @@ export default async function MirrorPage({ params }) {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Mirror',
-    url: `https://devop.it/${locale}/mirror`,
+    url: localizedUrl(locale, '/mirror'),
     applicationCategory: 'DataApplication',
     applicationSubCategory: 'Open Data Platform',
     operatingSystem: 'Web',

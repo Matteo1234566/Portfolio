@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import CapturePageClient from './CapturePageClient';
+import { localizedUrl } from '@/lib/site';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.magosimo.capture';
 
@@ -42,6 +43,7 @@ export async function generateMetadata({ params }) {
       follow: true,
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title: t('meta.title'),
       description: t('meta.description'),
       type: 'website',
@@ -50,6 +52,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/capture`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title: t('meta.title'),
       description: t('meta.description'),
@@ -65,7 +68,7 @@ export default async function CapturePage({ params }) {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Capture',
-    url: `/${locale}/capture`,
+    url: localizedUrl(locale, '/capture'),
     downloadUrl: PLAY_STORE_URL,
     applicationCategory: 'ProductivityApplication',
     applicationSubCategory: 'Note Taking',

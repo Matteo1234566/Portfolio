@@ -19,6 +19,7 @@ export async function generateMetadata({ params }) {
     },
     robots: { index: true, follow: true },
     openGraph: {
+      images: ['/opengraph-image'],
       title: t('title'),
       description: t('subtitle'),
       type: 'website',
@@ -27,6 +28,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/capture/privacy`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title: t('title'),
       description: t('subtitle'),

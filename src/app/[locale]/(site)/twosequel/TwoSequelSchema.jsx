@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { localizedUrl } from '@/lib/site';
 
 export default function TwoSequelSchema() {
   const locale = useLocale();
   const t = useTranslations('TwoSequel');
   const faq = useTranslations('TwoSequel.faq');
-  const baseUrl = 'https://devop.sbs';
-  const pageUrl = `${baseUrl}/${locale}/twosequel`;
+  const pageUrl = localizedUrl(locale, '/twosequel');
 
   const schema = [
     {

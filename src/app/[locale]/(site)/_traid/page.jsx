@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/traid', it: '/it/traid', 'x-default': '/it/traid' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title: `Traid – ${t('tagline')}`,
       description: t('description'),
       type: 'website',
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/traid`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title: `Traid – ${t('tagline')}`,
       description: t('description'),

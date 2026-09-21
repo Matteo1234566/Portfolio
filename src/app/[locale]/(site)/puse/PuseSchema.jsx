@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { localizedUrl } from '@/lib/site';
 
 export default function PuseSchema() {
   const locale = useLocale();
   const t = useTranslations('Puse');
   const faq = useTranslations('Puse.faq');
-  const baseUrl = 'https://devop.sbs';
-  const pageUrl = `${baseUrl}/${locale}/puse`;
+  const pageUrl = localizedUrl(locale, '/puse');
 
   const schema = [
     {

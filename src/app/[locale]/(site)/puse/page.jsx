@@ -17,6 +17,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/puse', it: '/it/puse', 'x-default': '/it/puse' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title,
       description: t('description'),
       type: 'website',
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/puse`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title,
       description: t('description'),

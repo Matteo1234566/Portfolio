@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/twosequel', it: '/it/twosequel', 'x-default': '/it/twosequel' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title: `2Sequel – ${t('tagline')}`,
       description: t('description'),
       type: 'website',
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/twosequel`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title: `2Sequel – ${t('tagline')}`,
       description: t('description'),

@@ -14,6 +14,7 @@ export async function generateMetadata({ params }) {
       languages: { en: '/en/simone', it: '/it/simone', 'x-default': '/it/simone' },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title: `Simone Zannini – ${t('header.role_badge')}`,
       description: t('about.p1'),
       type: 'profile',
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }) {
       url: `/${locale}/simone`,
     },
     twitter: {
+      images: ['/twitter-image'],
       card: 'summary_large_image',
       title: `Simone Zannini – ${t('header.role_badge')}`,
       description: t('about.p1'),

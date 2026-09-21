@@ -2,13 +2,13 @@
 
 import React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { localizedUrl } from '@/lib/site';
 
 export default function PyquarkSchema() {
   const locale = useLocale();
   const t = useTranslations('PyQuark');
   const faq = useTranslations('PyQuark.faq');
-  const baseUrl = 'https://devop.sbs';
-  const pageUrl = `${baseUrl}/${locale}/pyquark`;
+  const pageUrl = localizedUrl(locale, '/pyquark');
 
   const schema = [
     {

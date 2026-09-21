@@ -31,12 +31,19 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
+      images: ['/opengraph-image'],
       title,
       description,
       type: 'article',
       locale: isItalian ? 'it_IT' : 'en_US',
       siteName: 'DevOP',
       url: `/${locale}/trending-repo/${repository.slug}`,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: ['/twitter-image'],
     },
   };
 }
