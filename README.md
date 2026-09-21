@@ -12,7 +12,7 @@
 
 ## Il Duo
 
-**Simone Zannini** & **Matteo Cese** — co-fondatori di **4AI**.
+**Simone Zannini** & **Matteo Cese** — fondatori di **DevOP**.
 
 - **Matteo** — Full-Stack Engineer & DevOps. Architetture scalabili, infrastruttura, backend.
 - **Simone** — Deep Learning & Computer Vision. AI applicata, modelli, ricerca.

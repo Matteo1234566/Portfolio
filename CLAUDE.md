@@ -17,7 +17,7 @@ Package manager is npm — `package-lock.json` is the source of truth (ignore th
 
 ## Architecture
 
-Next.js 15 App Router portfolio for two-person freelance duo (Simone & Matteo / 4AI). JSX throughout — no TypeScript (`components.json` has `tsx: false`, no app `tsconfig`).
+Next.js 15 App Router portfolio for two-person freelance duo (Simone & Matteo / DevOP). JSX throughout — no TypeScript (`components.json` has `tsx: false`, no app `tsconfig`).
 
 ### Routing layout
 

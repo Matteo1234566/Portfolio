@@ -15,7 +15,7 @@ No test suite configured.
 
 ## Architecture
 
-Next.js 15 App Router portfolio for two-person freelance duo (Simone & Matteo / 4AI). JSX throughout — no TypeScript.
+Next.js 15 App Router portfolio for two-person freelance duo (Simone & Matteo / DevOP). JSX throughout — no TypeScript.
 
 ### Routing layout
 

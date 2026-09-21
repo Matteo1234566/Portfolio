@@ -369,7 +369,7 @@ Present sports-related projects not merely as sports websites, but as **edge AI 
 
 ### 8.3 Startup and Product Strategy (Shared Focus)
 
-Both founders have startup-building experience through **4AI**. This makes them highly credible partners for founders looking for a technical team that understands:
+Both founders have direct startup-building experience. This makes them highly credible partners for founders looking for a technical team that understands:
 
 * product validation,
 * time-to-market,
@@ -476,4 +476,3 @@ A natural continuation of this document would be to convert it into:
 1. a **homepage wireframe in markdown**,
 2. a **final homepage copy draft**, or
 3. a **technical SEO implementation checklist for Next.js**.
-
