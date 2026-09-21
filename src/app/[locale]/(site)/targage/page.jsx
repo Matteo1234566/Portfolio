@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import TargagePageClient from './TargagePageClient';
+import CaseStudySchema from '../_case-studies/CaseStudySchema';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function TargagePage() {
-  return <TargagePageClient />;
+export default async function TargagePage({ params }) {
+  const { locale } = await params;
+  return <><CaseStudySchema project="targage" locale={locale} /><TargagePageClient /></>;
 }

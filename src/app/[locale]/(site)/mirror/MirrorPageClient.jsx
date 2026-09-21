@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
+import CaseStudy from '../_case-studies/CaseStudy';
 
 const container = {
   hidden: { opacity: 0 },
@@ -326,6 +327,7 @@ export default function MirrorPage() {
           <p className="text-white/85 text-lg max-w-3xl">{t('footer.desc')}</p>
         </motion.div>
       </div>
+      <CaseStudy project="mirror" />
     </div>
   );
 }

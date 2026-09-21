@@ -24,6 +24,7 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import AiLightsSchema from './AiLightsSchema';
 import { BUSINESS } from '@/lib/site';
+import CaseStudy from '../_case-studies/CaseStudy';
 
 const DARK_THEME = {
   surface: '#101010',
@@ -481,6 +482,7 @@ export default function AiLights() {
           </div>
         </div>
       </section>
+      <CaseStudy project="ailights" />
     </main>
   );
 }

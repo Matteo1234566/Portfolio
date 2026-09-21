@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import TwoSequelPageClient from './TwoSequelPageClient';
+import CaseStudySchema from '../_case-studies/CaseStudySchema';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -31,6 +32,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function TwoSequelPage() {
-  return <TwoSequelPageClient />;
+export default async function TwoSequelPage({ params }) {
+  const { locale } = await params;
+  return <><CaseStudySchema project="twosequel" locale={locale} /><TwoSequelPageClient /></>;
 }

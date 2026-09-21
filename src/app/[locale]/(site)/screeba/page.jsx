@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import ScreebaPageClient from './ScreebaPageClient';
+import CaseStudySchema from '../_case-studies/CaseStudySchema';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function ScreebaPage() {
-  return <ScreebaPageClient />;
+export default async function ScreebaPage({ params }) {
+  const { locale } = await params;
+  return <><CaseStudySchema project="screeba" locale={locale} /><ScreebaPageClient /></>;
 }

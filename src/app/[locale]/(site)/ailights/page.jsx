@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import AiLightsClient from './AiLightsClient';
+import CaseStudySchema from '../_case-studies/CaseStudySchema';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -34,6 +35,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function AiLightsPage() {
-  return <AiLightsClient />;
+export default async function AiLightsPage({ params }) {
+  const { locale } = await params;
+  return <><CaseStudySchema project="ailights" locale={locale} /><AiLightsClient /></>;
 }

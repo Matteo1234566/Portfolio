@@ -22,6 +22,7 @@ import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import TargageInteractiveDemo from './TargageInteractiveDemo';
 import TargageSchema from './TargageSchema';
 import { BUSINESS } from '@/lib/site';
+import CaseStudy from '../_case-studies/CaseStudy';
 
 const container = {
   hidden: { opacity: 0 },
@@ -349,6 +350,7 @@ export default function TargagePage() {
           </div>
         </motion.div>
       </div>
+      <CaseStudy project="targage" />
     </div>
   );
 }

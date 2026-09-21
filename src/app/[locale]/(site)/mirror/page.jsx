@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import MirrorPageClient from './MirrorPageClient';
 import { localizedUrl } from '@/lib/site';
+import CaseStudySchema from '../_case-studies/CaseStudySchema';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -109,6 +110,7 @@ export default async function MirrorPage({ params }) {
 
   return (
     <>
+      <CaseStudySchema project="mirror" locale={locale} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}

@@ -22,6 +22,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScreebaSchema from './ScreebaSchema';
 import { BUSINESS } from '@/lib/site';
+import CaseStudy from '../_case-studies/CaseStudy';
 
 const container = {
   hidden: { opacity: 0 },
@@ -363,6 +364,7 @@ export default function ScreebaPageClient() {
           <p className="text-ink/75 dark:text-smoke/80 leading-relaxed">{t('privacy_note')}</p>
         </div>
       </div>
+      <CaseStudy project="screeba" />
     </div>
   );
 }

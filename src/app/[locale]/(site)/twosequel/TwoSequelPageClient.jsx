@@ -22,6 +22,7 @@ import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import TwoSequelSchema from './TwoSequelSchema';
 import { BUSINESS } from '@/lib/site';
+import CaseStudy from '../_case-studies/CaseStudy';
 
 const container = {
   hidden: { opacity: 0 },
@@ -409,6 +410,7 @@ export default function TwoSequelPageClient() {
           </div>
         </motion.div>
       </div>
+      <CaseStudy project="twosequel" />
     </div>
   );
 }
