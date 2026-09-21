@@ -8,6 +8,7 @@ import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import { useTranslations } from 'next-intl';
 import { BLOG_POSTS } from '@/app/[locale]/(site)/_blogs/blogData';
+import { servicePath } from '@/app/[locale]/(site)/_services/serviceData';
 
 const CATEGORY_LABELS = {
   en: {
@@ -62,7 +63,7 @@ export default function BlogPost({ params }) {
   const relatedPosts = BLOG_POSTS.filter((entry) => entry.category === post.category && entry.id !== post.id).slice(0, 2);
 
   return (
-    <article className="relative min-h-screen overflow-hidden bg-paper px-4 pb-24 pt-40 transition-colors duration-300 dark:bg-ink">
+    <main className="relative min-h-screen overflow-hidden bg-paper px-4 pb-24 pt-40 transition-colors duration-300 dark:bg-ink">
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-24 top-16 h-80 w-80 rounded-full bg-forest/12 blur-3xl dark:bg-white/5" />
         <div className="absolute -right-24 top-1/4 h-72 w-72 rounded-full bg-bubblegum/20 blur-3xl dark:bg-bubblegum/10" />
@@ -71,7 +72,7 @@ export default function BlogPost({ params }) {
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-8">
         <nav
           className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-ink/55 dark:text-smoke/65"
-          aria-label="Breadcrumb"
+          aria-label={locale === 'it' ? 'Percorso di navigazione' : 'Breadcrumb'}
         >
           <Link href={`/${locale}`} className="cursor-pointer transition-colors hover:text-bubblegum">
             DevOP
@@ -81,7 +82,7 @@ export default function BlogPost({ params }) {
             Blog
           </Link>
           <ChevronRight size={14} />
-          <span className="truncate text-ink/75 dark:text-smoke/85">{categoryLabel}</span>
+          <span aria-current="page" className="truncate text-ink/75 dark:text-smoke/85">{content.title}</span>
         </nav>
 
         <motion.div
@@ -150,6 +151,18 @@ export default function BlogPost({ params }) {
           </div>
         </motion.section>
 
+        {post.relatedService && (
+          <aside className="rounded-[1.8rem] bg-forest p-7 text-white md:flex md:items-center md:justify-between md:gap-8">
+            <div>
+              <h2 className="font-display text-3xl">{locale === 'it' ? 'Porta questo metodo nel tuo progetto' : 'Apply this method to your project'}</h2>
+              <p className="mt-2 text-white/75">{locale === 'it' ? 'Approfondisci il servizio DevOP collegato a questo tema.' : 'Explore the DevOP service connected to this topic.'}</p>
+            </div>
+            <Link href={servicePath(post.relatedService, locale)} className="mt-5 inline-flex shrink-0 items-center gap-2 rounded-full bg-bubblegum px-5 py-3 font-bold text-ink md:mt-0">
+              {locale === 'it' ? 'Vedi il servizio' : 'View the service'} <ArrowUpRight size={17} />
+            </Link>
+          </aside>
+        )}
+
         <motion.section
           initial={reduceMotion ? undefined : { opacity: 0, y: 18 }}
           animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
@@ -208,6 +221,6 @@ export default function BlogPost({ params }) {
           </section>
         )}
       </div>
-    </article>
+    </main>
   );
 }

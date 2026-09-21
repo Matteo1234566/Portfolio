@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getRepository, repositories } from '@/app/[locale]/(site)/trending-repo/repoData';
 import RepositoryPageClient from '@/app/[locale]/(site)/trending-repo/[slug]/RepositoryPageClient';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 const LOCALES = ['it', 'en'];
 
@@ -40,6 +41,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'article',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/trending-repo/${repository.slug}`,
     },
@@ -53,7 +55,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function RepositoryPage({ params }) {
-  const { slug } = await params;
-  if (!getRepository(slug)) notFound();
-  return <RepositoryPageClient repository={getRepository(slug)} />;
+  const { locale, slug } = await params;
+  const repository = getRepository(slug);
+  if (!repository) notFound();
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Trending Repo', href: `/${locale}/trending-repo` }, { name: repository.name, href: `/${locale}/trending-repo/${slug}` }]} /><RepositoryPageClient repository={repository} /></>;
 }

@@ -1,13 +1,9 @@
-'use client';
-
-import React from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { localizedUrl } from '@/lib/site';
 
-export default function TraidSchema() {
-  const locale = useLocale();
-  const t = useTranslations('Traid');
-  const faq = useTranslations('Traid.faq');
+export default async function TraidSchema({ locale }) {
+  const t = await getTranslations({ locale, namespace: 'Traid' });
+  const faq = await getTranslations({ locale, namespace: 'Traid.faq' });
   const pageUrl = localizedUrl(locale, '/traid');
 
   const schema = [

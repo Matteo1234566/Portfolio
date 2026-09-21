@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import PyquarkPageClient from './PyquarkPageClient';
+import PyquarkSchema from './PyquarkSchema';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -22,6 +24,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/pyquark`,
     },
@@ -34,6 +37,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function PyquarkPage() {
-  return <PyquarkPageClient />;
+export default async function PyquarkPage({ params }) {
+  const { locale } = await params;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'PyQuark', href: `/${locale}/pyquark` }]} /><PyquarkSchema locale={locale} /><PyquarkPageClient /></>;
 }

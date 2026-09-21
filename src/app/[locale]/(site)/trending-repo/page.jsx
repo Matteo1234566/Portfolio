@@ -1,5 +1,6 @@
 import TrendingRepoIndex from '@/app/[locale]/(site)/trending-repo/TrendingRepoIndex';
 import { Suspense } from 'react';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -22,6 +23,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/trending-repo`,
     },
@@ -34,6 +36,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function TrendingRepoPage() {
-  return <Suspense fallback={<main className="min-h-screen bg-paper dark:bg-ink" />}><TrendingRepoIndex /></Suspense>;
+export default async function TrendingRepoPage({ params }) {
+  const { locale } = await params;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Trending Repo', href: `/${locale}/trending-repo` }]} /><Suspense fallback={<main className="min-h-screen bg-paper dark:bg-ink" />}><TrendingRepoIndex /></Suspense></>;
 }

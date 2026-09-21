@@ -1,13 +1,9 @@
-'use client';
-
-import React from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { localizedUrl } from '@/lib/site';
 
-export default function PuseSchema() {
-  const locale = useLocale();
-  const t = useTranslations('Puse');
-  const faq = useTranslations('Puse.faq');
+export default async function PuseSchema({ locale }) {
+  const t = await getTranslations({ locale, namespace: 'Puse' });
+  const faq = await getTranslations({ locale, namespace: 'Puse.faq' });
   const pageUrl = localizedUrl(locale, '/puse');
 
   const schema = [
@@ -28,24 +24,6 @@ export default function PuseSchema() {
         '@type': 'Organization',
         name: 'DevOP',
       },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'DevOP',
-          item: localizedUrl(locale),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'PUSE',
-          item: pageUrl,
-        },
-      ],
     },
     {
       '@context': 'https://schema.org',

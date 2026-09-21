@@ -3,10 +3,22 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
+import { useReportWebVitals } from 'next/web-vitals';
 
 export default function Analytics() {
   const pathname = usePathname();
   const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
+
+  useReportWebVitals((metric) => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'web_vitals',
+      web_vital_name: metric.name,
+      web_vital_value: metric.name === 'CLS' ? Math.round(metric.value * 1000) : Math.round(metric.value),
+      web_vital_id: metric.id,
+      web_vital_rating: metric.rating,
+    });
+  });
 
   useEffect(() => {
     window.dataLayer = window.dataLayer || [];

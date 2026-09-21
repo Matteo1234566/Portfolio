@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import HomeLabCreationClient from './HomeLabCreationClient';
 import { BUSINESS, localizedUrl } from '@/lib/site';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -30,6 +31,7 @@ export async function generateMetadata({ params }) {
       description: t('meta_description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/homelab-creation`,
     },
@@ -71,6 +73,7 @@ export default async function HomeLabCreationPage({ params }) {
 
   return (
     <>
+      <PageBreadcrumbs locale={locale} items={[{ name: 'HomeLab Creation', href: `/${locale}/homelab-creation` }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

@@ -1,13 +1,9 @@
-'use client';
-
-import React from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { localizedUrl } from '@/lib/site';
 
-export default function ScreebaSchema() {
-  const locale = useLocale();
-  const t = useTranslations('Screeba');
-  const faq = useTranslations('Screeba.faq');
+export default async function ScreebaSchema({ locale }) {
+  const t = await getTranslations({ locale, namespace: 'Screeba' });
+  const faq = await getTranslations({ locale, namespace: 'Screeba.faq' });
   const pageUrl = localizedUrl(locale, '/screeba');
 
   const schema = [
@@ -23,24 +19,6 @@ export default function ScreebaSchema() {
         '@type': 'Organization',
         name: 'DevOP',
       },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'DevOP',
-          item: localizedUrl(locale),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'Screeba',
-          item: pageUrl,
-        },
-      ],
     },
     {
       '@context': 'https://schema.org',

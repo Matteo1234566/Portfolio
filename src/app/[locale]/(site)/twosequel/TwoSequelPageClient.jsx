@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
-import TwoSequelSchema from './TwoSequelSchema';
 import { BUSINESS } from '@/lib/site';
 import CaseStudy from '../_case-studies/CaseStudy';
 
@@ -103,8 +102,7 @@ export default function TwoSequelPageClient() {
   }));
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-paper dark:bg-ink text-ink dark:text-smoke transition-colors duration-300">
-      <TwoSequelSchema />
+    <main className="min-h-screen pt-32 pb-20 bg-paper dark:bg-ink text-ink dark:text-smoke transition-colors duration-300">
 
       {/* ── HERO ── */}
       <div className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16">
@@ -411,6 +409,6 @@ export default function TwoSequelPageClient() {
         </motion.div>
       </div>
       <CaseStudy project="twosequel" />
-    </div>
+    </main>
   );
 }

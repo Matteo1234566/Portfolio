@@ -29,7 +29,7 @@ export default function MatteoProfile() {
     const pathname = usePathname();
     const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
     return (
-        <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
+        <main className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
 
             <section className="relative pt-32 pb-20 px-4 overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/bg_matteo.webp')] dark:bg-[url('/bg_matteo_dark.webp')]">
                 <div className="absolute inset-0 bg-paper/70 dark:bg-ink/70 z-0"/>
@@ -119,6 +119,7 @@ export default function MatteoProfile() {
                                 src="/images/matteo.webp"
                                 alt="Matteo Cese"
                                 fill
+                                sizes="(min-width: 768px) 50vw, 100vw"
                                 loading="lazy"
                                 className="
                                     absolute inset-0 object-cover
@@ -301,7 +302,7 @@ export default function MatteoProfile() {
                             <a
                                 href={`mailto:${BUSINESS.email}`}
                                 className="text-white/50 hover:text-white transition-colors"
-                                aria-label="Email"
+                                aria-label={currentLocale === 'it' ? 'Invia un’email a Matteo Cese' : 'Email Matteo Cese'}
                             >
                                 <Mail size={24} />
                             </a>
@@ -311,7 +312,7 @@ export default function MatteoProfile() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-white/50 hover:text-white transition-colors"
-                                aria-label="LinkedIn"
+                                aria-label={currentLocale === 'it' ? 'Profilo LinkedIn di Matteo Cese' : 'Matteo Cese on LinkedIn'}
                             >
                                 <Linkedin size={24} />
                             </a>
@@ -319,6 +320,6 @@ export default function MatteoProfile() {
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }

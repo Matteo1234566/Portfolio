@@ -40,6 +40,7 @@ export async function generateMetadata({ params }) {
       description: content.excerpt,
       type: 'article',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url,
       publishedTime: post.date,
@@ -62,7 +63,7 @@ export default async function BlogPostPage({ params }) {
   if (!post) notFound();
 
   const content = post[locale] || post.en;
-  const schema = {
+  const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: content.title,
@@ -82,10 +83,19 @@ export default async function BlogPostPage({ params }) {
     keywords: content.tags.join(', '),
     inLanguage: locale,
   };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/${locale}/blogs` },
+      { '@type': 'ListItem', position: 3, name: content.title, item: `${SITE_URL}/${locale}/blogs/${post.id}` },
+    ],
+  };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([articleSchema, breadcrumbSchema]) }} />
       <BlogPost params={params} />
     </>
   );

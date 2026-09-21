@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import ScreebaPageClient from './ScreebaPageClient';
 import CaseStudySchema from '../_case-studies/CaseStudySchema';
+import ScreebaSchema from './ScreebaSchema';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -23,6 +25,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/screeba`,
     },
@@ -37,5 +40,5 @@ export async function generateMetadata({ params }) {
 
 export default async function ScreebaPage({ params }) {
   const { locale } = await params;
-  return <><CaseStudySchema project="screeba" locale={locale} /><ScreebaPageClient /></>;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Screeba', href: `/${locale}/screeba` }]} /><ScreebaSchema locale={locale} /><CaseStudySchema project="screeba" locale={locale} /><ScreebaPageClient /></>;
 }

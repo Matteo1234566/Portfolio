@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import FishertigerPageClient from './FishertigerPageClient';
+import FishertigerSchema from './FishertigerSchema';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -25,6 +27,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/fishertiger`,
     },
@@ -37,6 +40,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function FishertigerPage() {
-  return <FishertigerPageClient />;
+export default async function FishertigerPage({ params }) {
+  const { locale } = await params;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'fishertiger', href: `/${locale}/fishertiger` }]} /><FishertigerSchema locale={locale} /><FishertigerPageClient /></>;
 }

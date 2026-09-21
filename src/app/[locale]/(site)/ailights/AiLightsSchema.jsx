@@ -1,13 +1,9 @@
-'use client';
-
-import React from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { localizedUrl } from '@/lib/site';
 
-export default function AiLightsSchema() {
-  const locale = useLocale();
-  const t = useTranslations('AiLights');
-  const faq = useTranslations('AiLights.faq');
+export default async function AiLightsSchema({ locale }) {
+  const t = await getTranslations({ locale, namespace: 'AiLights' });
+  const faq = await getTranslations({ locale, namespace: 'AiLights.faq' });
   const pageUrl = localizedUrl(locale, '/ailights');
 
   const schema = [
@@ -23,24 +19,6 @@ export default function AiLightsSchema() {
         '@type': 'Organization',
         name: 'DevOP',
       },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'DevOP',
-          item: localizedUrl(locale),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'AiLights',
-          item: pageUrl,
-        },
-      ],
     },
     {
       '@context': 'https://schema.org',

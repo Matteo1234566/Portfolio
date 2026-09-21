@@ -1,13 +1,9 @@
-'use client';
-
-import React from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { localizedUrl } from '@/lib/site';
 
-export default function PyquarkSchema() {
-  const locale = useLocale();
-  const t = useTranslations('PyQuark');
-  const faq = useTranslations('PyQuark.faq');
+export default async function PyquarkSchema({ locale }) {
+  const t = await getTranslations({ locale, namespace: 'PyQuark' });
+  const faq = await getTranslations({ locale, namespace: 'PyQuark.faq' });
   const pageUrl = localizedUrl(locale, '/pyquark');
 
   const schema = [
@@ -28,24 +24,6 @@ export default function PyquarkSchema() {
         '@type': 'Organization',
         name: 'DevOP',
       },
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'DevOP',
-          item: localizedUrl(locale),
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: 'PyQuark',
-          item: pageUrl,
-        },
-      ],
     },
     {
       '@context': 'https://schema.org',

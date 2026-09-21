@@ -16,7 +16,6 @@ import {
 } from 'lucide-react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
-import FishertigerSchema from './FishertigerSchema';
 
 const REPO_URL = 'https://github.com/Zannael/fishertiger';
 
@@ -60,8 +59,6 @@ export default function FishertigerPageClient() {
 
   return (
     <main className="min-h-screen bg-paper dark:bg-ink text-ink dark:text-smoke transition-colors duration-300 pt-32 pb-24 overflow-x-hidden">
-      <FishertigerSchema />
-
       <section className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <motion.div

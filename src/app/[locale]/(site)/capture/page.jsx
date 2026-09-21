@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import CapturePageClient from './CapturePageClient';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 import { localizedUrl } from '@/lib/site';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.magosimo.capture';
@@ -48,6 +49,7 @@ export async function generateMetadata({ params }) {
       description: t('meta.description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/capture`,
     },
@@ -108,6 +110,7 @@ export default async function CapturePage({ params }) {
 
   return (
     <>
+      <PageBreadcrumbs locale={locale} items={[{ name: 'Capture', href: `/${locale}/capture` }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}

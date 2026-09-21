@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import AiLightsClient from './AiLightsClient';
 import CaseStudySchema from '../_case-studies/CaseStudySchema';
+import AiLightsSchema from './AiLightsSchema';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -23,6 +25,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/ailights`,
     },
@@ -37,5 +40,5 @@ export async function generateMetadata({ params }) {
 
 export default async function AiLightsPage({ params }) {
   const { locale } = await params;
-  return <><CaseStudySchema project="ailights" locale={locale} /><AiLightsClient /></>;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'AiLights', href: `/${locale}/ailights` }]} /><AiLightsSchema locale={locale} /><CaseStudySchema project="ailights" locale={locale} /><AiLightsClient /></>;
 }

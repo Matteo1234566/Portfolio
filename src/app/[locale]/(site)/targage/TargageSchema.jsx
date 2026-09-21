@@ -1,13 +1,9 @@
-'use client';
-
-import React from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { localizedUrl } from '@/lib/site';
 
-export default function TargageSchema() {
-  const locale = useLocale();
-  const t = useTranslations('Targage');
-  const faq = useTranslations('Targage.faq');
+export default async function TargageSchema({ locale }) {
+  const t = await getTranslations({ locale, namespace: 'Targage' });
+  const faq = await getTranslations({ locale, namespace: 'Targage.faq' });
   const pageUrl = localizedUrl(locale, '/targage');
 
   const schema = [

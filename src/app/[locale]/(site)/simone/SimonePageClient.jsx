@@ -28,7 +28,7 @@ export default function SimoneProfile() {
     const currentLocale = pathname.startsWith('/it') ? 'it' : 'en';
 
     return (
-        <div className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
+        <main className="bg-paper dark:bg-ink min-h-screen font-body text-ink dark:text-white">
 
             <section
                 className="relative pt-32 pb-20 px-4 overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('/simone_bg_light.webp')] dark:bg-[url('/simone_bg_dark.webp')]">
@@ -117,6 +117,7 @@ export default function SimoneProfile() {
                                 src="/images/simone.webp"
                                 alt="Simone Zannini"
                                 fill
+                                sizes="(min-width: 768px) 50vw, 100vw"
                                 loading="lazy"
                                 className="
                                     absolute inset-0 object-cover
@@ -297,7 +298,7 @@ export default function SimoneProfile() {
                             <a
                                 href={`mailto:${BUSINESS.email}`}
                                 className="text-white/50 hover:text-white transition-colors"
-                                aria-label="Email"
+                                aria-label={currentLocale === 'it' ? 'Invia un’email a Simone Zannini' : 'Email Simone Zannini'}
                             >
                                 <Mail size={24} />
                             </a>
@@ -307,7 +308,7 @@ export default function SimoneProfile() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-white/50 hover:text-white transition-colors"
-                                aria-label="LinkedIn"
+                                aria-label={currentLocale === 'it' ? 'Profilo LinkedIn di Simone Zannini' : 'Simone Zannini on LinkedIn'}
                             >
                                 <Linkedin size={24} />
                             </a>
@@ -315,6 +316,6 @@ export default function SimoneProfile() {
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </main>
     );
 }

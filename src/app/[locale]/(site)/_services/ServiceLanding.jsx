@@ -18,7 +18,14 @@ export function buildServiceMetadata(key, locale) {
         'x-default': servicePath(key, 'it'),
       },
     },
-    openGraph: { title: service.title, description: service.description, url: path, type: 'website' },
+    openGraph: {
+      title: service.title,
+      description: service.description,
+      url: path,
+      type: 'website',
+      locale: locale === 'it' ? 'it_IT' : 'en_US',
+      alternateLocale: locale === 'it' ? ['en_US'] : ['it_IT'],
+    },
   };
 }
 

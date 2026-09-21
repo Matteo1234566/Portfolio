@@ -17,7 +17,6 @@ import {
   Usb,
 } from 'lucide-react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
-import PyquarkSchema from './PyquarkSchema';
 
 const DARK_THEME = {
   surface: '#1A1C24',
@@ -149,8 +148,6 @@ export default function PyquarkPageClient() {
         '--pyq-card-border': cardBorder,
       }}
     >
-      <PyquarkSchema />
-
       <div className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <motion.div

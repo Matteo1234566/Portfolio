@@ -22,7 +22,6 @@ import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
-import AiLightsSchema from './AiLightsSchema';
 import { BUSINESS } from '@/lib/site';
 import CaseStudy from '../_case-studies/CaseStudy';
 
@@ -206,8 +205,6 @@ export default function AiLights() {
         '--ailights-card-border': cardBorder,
       }}
     >
-      <AiLightsSchema />
-
       <section className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16 mb-24">
         <div className="grid lg:grid-cols-[1.08fr_0.92fr] gap-12 items-center">
           <motion.div
@@ -290,6 +287,7 @@ export default function AiLights() {
                   src={isDark ? '/ailights_dark.webp' : '/ailights.webp'}
                   alt="AiLights sports AI platform visual"
                   fill
+                  sizes="(min-width: 1024px) 448px, (min-width: 768px) 50vw, 100vw"
                   className="object-cover select-none pointer-events-none"
                 />
               </ACard>

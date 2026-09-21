@@ -21,7 +21,6 @@ import {
 } from 'lucide-react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
-import PuseSchema from './PuseSchema';
 
 const DARK_THEME = {
   surface: '#0A1123',
@@ -145,8 +144,6 @@ export default function PusePageClient() {
         color: C.ink,
       }}
     >
-      <PuseSchema />
-
       <div className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
           <motion.div

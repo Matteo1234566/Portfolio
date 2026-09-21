@@ -1,4 +1,5 @@
 import BlogList from '@/app/[locale]/(site)/_blogs/page';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/blogs`,
     },
@@ -35,6 +37,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogsPage({ params }) {
-  return <BlogList params={params} />;
+export default async function BlogsPage({ params }) {
+  const { locale } = await params;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Blog', href: `/${locale}/blogs` }]} /><BlogList params={params} /></>;
 }

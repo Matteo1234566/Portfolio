@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import MirrorPageClient from './MirrorPageClient';
 import { localizedUrl } from '@/lib/site';
 import CaseStudySchema from '../_case-studies/CaseStudySchema';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -53,6 +54,7 @@ export async function generateMetadata({ params }) {
       description: t('meta_description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/mirror`,
     },
@@ -110,6 +112,7 @@ export default async function MirrorPage({ params }) {
 
   return (
     <>
+      <PageBreadcrumbs locale={locale} items={[{ name: 'Mirror', href: `/${locale}/mirror` }]} />
       <CaseStudySchema project="mirror" locale={locale} />
       <script
         type="application/ld+json"

@@ -27,6 +27,9 @@ export const metadata = {
   manifest: '/manifest.json',
   openGraph: { type: 'website', siteName: 'DevOP', images: ['/opengraph-image'] },
   twitter: { card: 'summary_large_image', images: ['/twitter-image'] },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export function generateStaticParams() {

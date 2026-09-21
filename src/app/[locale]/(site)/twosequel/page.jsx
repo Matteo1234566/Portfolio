@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import TwoSequelPageClient from './TwoSequelPageClient';
 import CaseStudySchema from '../_case-studies/CaseStudySchema';
+import TwoSequelSchema from './TwoSequelSchema';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -20,6 +22,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/twosequel`,
     },
@@ -34,5 +37,5 @@ export async function generateMetadata({ params }) {
 
 export default async function TwoSequelPage({ params }) {
   const { locale } = await params;
-  return <><CaseStudySchema project="twosequel" locale={locale} /><TwoSequelPageClient /></>;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: '2Sequel', href: `/${locale}/twosequel` }]} /><TwoSequelSchema locale={locale} /><CaseStudySchema project="twosequel" locale={locale} /><TwoSequelPageClient /></>;
 }

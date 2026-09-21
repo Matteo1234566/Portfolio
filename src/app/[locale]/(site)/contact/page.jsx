@@ -3,14 +3,25 @@ import Link from 'next/link';
 import ContactForm from './ContactForm';
 import { BUSINESS } from '@/lib/site';
 import { SERVICE_KEYS, getService } from '../_services/serviceData';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
   const isIt = locale === 'it';
+  const title = isIt ? 'Contatti e richiesta progetto' : 'Contact and project enquiry';
+  const description = isIt ? 'Racconta a DevOP il tuo progetto AI, computer vision o software custom.' : 'Tell DevOP about your AI, computer vision, or custom software project.';
   return {
-    title: isIt ? 'Contatti e richiesta progetto' : 'Contact and project enquiry',
-    description: isIt ? 'Racconta a DevOP il tuo progetto AI, computer vision o software custom.' : 'Tell DevOP about your AI, computer vision, or custom software project.',
+    title,
+    description,
     alternates: { canonical: `/${locale}/contact`, languages: { it: '/it/contact', en: '/en/contact', 'x-default': '/it/contact' } },
+    openGraph: {
+      title,
+      description,
+      type: 'website',
+      locale: isIt ? 'it_IT' : 'en_US',
+      alternateLocale: isIt ? ['en_US'] : ['it_IT'],
+      url: `/${locale}/contact`,
+    },
   };
 }
 
@@ -19,6 +30,8 @@ export default async function ContactPage({ params }) {
   const isIt = locale === 'it';
   const serviceOptions = SERVICE_KEYS.map((key) => ({ value: key, label: getService(key, locale).shortTitle }));
   return (
+    <>
+    <PageBreadcrumbs locale={locale} items={[{ name: isIt ? 'Contatti' : 'Contact', href: `/${locale}/contact` }]} />
     <main className="min-h-screen bg-paper px-5 pb-24 pt-36 text-ink dark:bg-ink dark:text-white">
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[.8fr_1.2fr]">
         <section>
@@ -38,5 +51,6 @@ export default async function ContactPage({ params }) {
         <Suspense fallback={<div className="min-h-[600px] rounded-[2rem] bg-white/50" />}><ContactForm locale={locale} services={serviceOptions} /></Suspense>
       </div>
     </main>
+    </>
   );
 }

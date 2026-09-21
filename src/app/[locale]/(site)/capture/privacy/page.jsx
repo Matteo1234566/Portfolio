@@ -1,5 +1,6 @@
 import { getTranslations } from 'next-intl/server';
 import CapturePrivacyClient from './CapturePrivacyClient';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -24,6 +25,7 @@ export async function generateMetadata({ params }) {
       description: t('subtitle'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/capture/privacy`,
     },
@@ -36,6 +38,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function CapturePrivacyPage() {
-  return <CapturePrivacyClient />;
+export default async function CapturePrivacyPage({ params }) {
+  const { locale } = await params;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Capture', href: `/${locale}/capture` }, { name: locale === 'it' ? 'Privacy' : 'Privacy', href: `/${locale}/capture/privacy` }]} /><CapturePrivacyClient /></>;
 }

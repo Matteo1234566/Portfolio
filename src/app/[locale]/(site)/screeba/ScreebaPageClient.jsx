@@ -20,7 +20,6 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import ScreebaSchema from './ScreebaSchema';
 import { BUSINESS } from '@/lib/site';
 import CaseStudy from '../_case-studies/CaseStudy';
 
@@ -106,9 +105,7 @@ export default function ScreebaPageClient() {
   }));
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-paper dark:bg-ink text-ink dark:text-smoke transition-colors duration-300">
-      <ScreebaSchema />
-
+    <main className="min-h-screen pt-32 pb-20 bg-paper dark:bg-ink text-ink dark:text-smoke transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16 mb-24">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
           <motion.div
@@ -365,6 +362,6 @@ export default function ScreebaPageClient() {
         </div>
       </div>
       <CaseStudy project="screeba" />
-    </div>
+    </main>
   );
 }

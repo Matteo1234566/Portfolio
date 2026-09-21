@@ -26,6 +26,7 @@ export async function generateMetadata({ params }) {
       description,
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}`,
     },

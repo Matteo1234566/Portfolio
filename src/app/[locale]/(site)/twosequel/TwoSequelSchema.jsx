@@ -1,13 +1,9 @@
-'use client';
-
-import React from 'react';
-import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import { localizedUrl } from '@/lib/site';
 
-export default function TwoSequelSchema() {
-  const locale = useLocale();
-  const t = useTranslations('TwoSequel');
-  const faq = useTranslations('TwoSequel.faq');
+export default async function TwoSequelSchema({ locale }) {
+  const t = await getTranslations({ locale, namespace: 'TwoSequel' });
+  const faq = await getTranslations({ locale, namespace: 'TwoSequel.faq' });
   const pageUrl = localizedUrl(locale, '/twosequel');
 
   const schema = [

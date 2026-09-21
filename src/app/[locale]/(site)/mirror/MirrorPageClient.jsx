@@ -98,7 +98,7 @@ export default function MirrorPage() {
   }));
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-paper dark:bg-ink text-ink dark:text-smoke transition-colors duration-300">
+    <main className="min-h-screen pt-32 pb-20 bg-paper dark:bg-ink text-ink dark:text-smoke transition-colors duration-300">
       {/* Hero */}
       <div className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16">
         <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
@@ -328,6 +328,6 @@ export default function MirrorPage() {
         </motion.div>
       </div>
       <CaseStudy project="mirror" />
-    </div>
+    </main>
   );
 }

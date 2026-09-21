@@ -18,7 +18,6 @@ import {
   TrendingUp,
   Zap,
 } from 'lucide-react';
-import TraidSchema from './TraidSchema';
 
 const DARK_THEME = {
   surface:   '#0A0A0A',
@@ -137,7 +136,6 @@ export default function TraidPageClient() {
         '--traid-border': border,
       }}
     >
-      <TraidSchema />
 
       {/* ── HERO ── */}
       <section className="max-w-6xl mx-auto px-4 mt-5 lg:mt-16">

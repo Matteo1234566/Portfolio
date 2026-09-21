@@ -1,6 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import TargagePageClient from './TargagePageClient';
 import CaseStudySchema from '../_case-studies/CaseStudySchema';
+import TargageSchema from './TargageSchema';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -20,6 +22,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/targage`,
     },
@@ -34,5 +37,5 @@ export async function generateMetadata({ params }) {
 
 export default async function TargagePage({ params }) {
   const { locale } = await params;
-  return <><CaseStudySchema project="targage" locale={locale} /><TargagePageClient /></>;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Targage', href: `/${locale}/targage` }]} /><TargageSchema locale={locale} /><CaseStudySchema project="targage" locale={locale} /><TargagePageClient /></>;
 }

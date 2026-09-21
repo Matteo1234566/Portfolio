@@ -1,5 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import PusePageClient from './PusePageClient';
+import PuseSchema from './PuseSchema';
+import PageBreadcrumbs from '@/components/PageBreadcrumbs';
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -22,6 +24,7 @@ export async function generateMetadata({ params }) {
       description: t('description'),
       type: 'website',
       locale: isItalian ? 'it_IT' : 'en_US',
+      alternateLocale: isItalian ? ['en_US'] : ['it_IT'],
       siteName: 'DevOP',
       url: `/${locale}/puse`,
     },
@@ -34,6 +37,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function PusePage() {
-  return <PusePageClient />;
+export default async function PusePage({ params }) {
+  const { locale } = await params;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'PUSE', href: `/${locale}/puse` }]} /><PuseSchema locale={locale} /><PusePageClient /></>;
 }
