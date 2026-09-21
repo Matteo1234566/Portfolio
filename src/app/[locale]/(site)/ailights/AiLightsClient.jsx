@@ -23,6 +23,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import AiLightsSchema from './AiLightsSchema';
+import { BUSINESS } from '@/lib/site';
 
 const DARK_THEME = {
   surface: '#101010',
@@ -263,7 +264,7 @@ export default function AiLights() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:hello@4aitech.it">
+              <a href={`mailto:${BUSINESS.email}`}>
                 <Button variant="primary" className="px-8 py-4 text-lg gap-2" style={{ backgroundColor: C.seed, color: '#151515', borderColor: '#151515' }}>
                   {t('cta_demo')}
                   <ArrowRight size={18} />

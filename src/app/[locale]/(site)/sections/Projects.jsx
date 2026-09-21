@@ -1,11 +1,10 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Card from '@/app/[locale]/(site)/sections/ui/Card';
-import Button from '@/app/[locale]/(site)/sections/ui/Button';
-import { ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -34,6 +33,7 @@ const item = {
 
 export default function Projects() {
   const t = useTranslations('Projects');
+  const locale = useLocale();
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const subtitleRef = useRef(null);
@@ -251,14 +251,20 @@ export default function Projects() {
             className="grid md:grid-cols-2 gap-8"
         >
           {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={index}
+                locale={locale}
+                linkLabel={t('view_case_study', { title: project.title })}
+              />
           ))}
         </motion.div>
       </div>
   );
 }
 
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, locale, linkLabel }) {
   const cardRef = useRef(null);
   const titleRef = useRef(null);
   const borderRef = useRef(null);
@@ -322,7 +328,9 @@ function ProjectCard({ project, index }) {
 
   return (
       <motion.div variants={item} className="group h-full" style={{ perspective: '1000px' }}>
-        <div 
+        <Link
+          href={`/${locale}${project.link}`}
+          aria-label={linkLabel}
           ref={(el) => {
             cardRef.current = el;
             borderRef.current = el;
@@ -346,16 +354,10 @@ function ProjectCard({ project, index }) {
                 <span className="font-mono text-xs font-bold text-forest bg-green-100 dark:bg-forest/20 dark:text-green-300 px-2 py-1 rounded uppercase">
                   {project.category}
                 </span>
-                {project.link !== "" && (
-                    <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-ink/30 dark:text-white/30 group-hover:text-ink dark:group-hover:text-white transition-colors"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
-                )}
+                <span className="inline-flex items-center gap-2 text-sm font-bold text-ink/55 dark:text-white/55 group-hover:text-bubblegum dark:group-hover:text-bubblegum transition-colors">
+                  {linkLabel}
+                  <ArrowRight size={18} aria-hidden="true" />
+                </span>
 
           </div>
 
@@ -375,7 +377,7 @@ function ProjectCard({ project, index }) {
                     <TechTag key={tech} tech={tech} delay={i * 0.1} />
                 ))}
           </div>
-        </div>
+        </Link>
       </motion.div>
   );
 }

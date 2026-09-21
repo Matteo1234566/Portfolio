@@ -4,7 +4,7 @@ import React, {useEffect, useRef} from 'react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import { ArrowDoodle } from '@/app/[locale]/(site)/sections/Doodles';
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -126,17 +126,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5, ease: 'easeOut' }}
               className="text-base md:text-lg max-w-3xl mx-auto text-ink/65 dark:text-smoke/70 mb-8 leading-relaxed"
           >
-            {t('support.start')}{' '}
-            <a
-                href="https://4aitech.it"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-bold text-ink dark:text-white hover:text-bubblegum transition-colors"
-            >
-              {t('support.link')}
-              <ExternalLink size={16} />
-            </a>
-            {' '}{t('support.end')}{' '}
+            {t('support.text')}{' '}
             <SocialPopover triggerLabel={t('support.secondaryLink')} />
             .
           </motion.div>

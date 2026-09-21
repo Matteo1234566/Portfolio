@@ -21,6 +21,7 @@ import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import TargageInteractiveDemo from './TargageInteractiveDemo';
 import TargageSchema from './TargageSchema';
+import { BUSINESS } from '@/lib/site';
 
 const container = {
   hidden: { opacity: 0 },
@@ -148,7 +149,7 @@ export default function TargagePage() {
             </div>
 
             <div className="flex flex-wrap gap-4 mt-8">
-              <a href="mailto:magosimo99@gmail.com">
+              <a href={`mailto:${BUSINESS.email}`}>
                 <Button variant="primary" className="px-7 py-4 text-base gap-2">
                   {t('cta_demo')}
                   <ArrowRight size={17} />

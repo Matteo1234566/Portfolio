@@ -21,6 +21,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import ScreebaSchema from './ScreebaSchema';
+import { BUSINESS } from '@/lib/site';
 
 const container = {
   hidden: { opacity: 0 },
@@ -143,7 +144,7 @@ export default function ScreebaPageClient() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <a href="mailto:hello@4aitech.it">
+              <a href={`mailto:${BUSINESS.email}`}>
                 <Button variant="primary" className="px-8 py-4 text-lg gap-2">
                   {t('cta_demo')}
                   <ArrowRight size={17} />

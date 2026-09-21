@@ -33,9 +33,7 @@
     },
     "description": "DevOP è il brand di Simone Zannini e Matteo Cese: due sviluppatori formati in Sapienza che trasformano conoscenza accademica, velocità da startup e disciplina in prodotti AI, piattaforme di computer vision real-time e sistemi full-stack su misura.",
     "support": {
-      "start": "Dai progetti lanciati con",
-      "link": "4AI",
-      "end": "alla ricerca su Wi-Fi sensing, NLP, forecasting su serie temporali e sport analytics, lavoriamo lungo tutto il percorso dal prototipo al deployment. Quando non stiamo sviluppando, ci trovi sui",
+      "text": "Dai prodotti lanciati alla ricerca su Wi-Fi sensing, NLP, forecasting su serie temporali e sport analytics, lavoriamo lungo tutto il percorso dal prototipo al deployment. Quando non stiamo sviluppando, ci trovi sui",
       "secondaryLink": "nostri social"
     },
     "proof": {
@@ -193,6 +191,14 @@
       "disclaimer": "I prezzi placeholder escludono consegna, tasse dove applicabili e variazioni dei fornitori. Il preventivo finale viene confermato dopo disponibilità hardware e vincoli del luogo di installazione.",
       "mobileLabel": "Totale corrente",
       "viewBreakdown": "Dettaglio"
+    },
+    "quote": {
+      "subject": "Richiesta consulenza HomeLab",
+      "intro": "Vorrei ricevere una valutazione per questa configurazione HomeLab:",
+      "closing": "Potete ricontattarmi per verificare requisiti, disponibilità e installazione?",
+      "cta": "Richiedi una consulenza",
+      "mobileCta": "Invia configurazione",
+      "note": "La configurazione selezionata verrà inserita automaticamente nell’email."
     }
   },
   "Authority": {
@@ -214,7 +220,7 @@
         "description": "Entrambi i founder hanno completato triennale e magistrale in Informatica con lode alla Sapienza Università di Roma."
       },
       "1": {
-        "value": "4AI",
+        "value": "Startup",
         "label": "Costruttori di startup",
         "description": "Abbiamo già costruito prodotti in sport analytics, trading intelligence e speech processing dentro il mondo frenetico delle startup."
       },
@@ -338,7 +344,8 @@
     "heading": "I NOSTRI",
     "heading_highlight": "PROGETTI",
     "subtitle": "“I sogni degli uomini non finiranno mai”",
-    "cta": "Visita il sito 4AI",
+    "view_case_study": "Scopri {title}",
+    "cta": "Scopri i progetti",
     "items": {
       "ailights": {
         "title": "AiLights",

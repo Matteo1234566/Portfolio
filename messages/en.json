@@ -33,9 +33,7 @@
     },
     "description": "DevOP is the brand by Simone Zannini and Matteo Cese: two Sapienza-trained developers who turn academic grounding, startup speed, and execution discipline into AI products, real-time computer vision platforms, and custom full-stack systems.",
     "support": {
-      "start": "From the projects launched through",
-      "link": "4AI",
-      "end": "to research on Wi-Fi sensing, NLP, time-series forecasting, and sports analytics, we work across the full path from prototype to deployment. When we're not building, find us on our",
+      "text": "From launched products to research on Wi-Fi sensing, NLP, time-series forecasting, and sports analytics, we work across the full path from prototype to deployment. When we're not building, find us on our",
       "secondaryLink": "socials"
     },
     "proof": {
@@ -193,6 +191,14 @@
       "disclaimer": "Placeholder prices exclude delivery, taxes where applicable, and any supplier changes. Final quote is confirmed after hardware availability and site constraints are reviewed.",
       "mobileLabel": "Current total",
       "viewBreakdown": "Breakdown"
+    },
+    "quote": {
+      "subject": "HomeLab consultation request",
+      "intro": "I would like an assessment for this HomeLab configuration:",
+      "closing": "Can you contact me to review requirements, availability, and installation?",
+      "cta": "Request a consultation",
+      "mobileCta": "Send configuration",
+      "note": "Your selected configuration will be included automatically in the email."
     }
   },
   "Authority": {
@@ -214,7 +220,7 @@
         "description": "Both founders completed bachelor’s and master’s degrees in Computer Science with honors at Sapienza University of Rome."
       },
       "1": {
-        "value": "4AI",
+        "value": "Startup",
         "label": "Startup builders",
         "description": "We already built products in sports analytics, trading intelligence, and speech processing inside the fast-paced startup world."
       },
@@ -338,7 +344,8 @@
     "heading": "OUR",
     "heading_highlight": "PROJECTS",
     "subtitle": "A man's dream will never die.",
-    "cta": "View 4AI Website",
+    "view_case_study": "Explore {title}",
+    "cta": "Explore our projects",
     "items": {
       "ailights": {
         "title": "AiLights",

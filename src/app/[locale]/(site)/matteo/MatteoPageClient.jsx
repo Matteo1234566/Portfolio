@@ -22,6 +22,7 @@ import {
 
 import { FaJava } from "react-icons/fa";
 import {usePathname} from "next/navigation";
+import { BUSINESS } from '@/lib/site';
 
 export default function MatteoProfile() {
     const t = useTranslations('MatteoProfile');
@@ -298,7 +299,7 @@ export default function MatteoProfile() {
                     >
                         <div className="flex justify-center gap-6 mb-10">
                             <a
-                                href="mailto:matteo.cese@4aitech.it"
+                                href={`mailto:${BUSINESS.email}`}
                                 className="text-white/50 hover:text-white transition-colors"
                                 aria-label="Email"
                             >

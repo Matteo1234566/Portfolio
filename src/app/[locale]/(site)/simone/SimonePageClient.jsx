@@ -20,6 +20,7 @@ import {
     SiRedis, SiRoboflow, SiNumpy
 } from "react-icons/si";
 import {usePathname} from "next/navigation";
+import { BUSINESS } from '@/lib/site';
 
 export default function SimoneProfile() {
     const t = useTranslations('SimoneProfile');
@@ -294,7 +295,7 @@ export default function SimoneProfile() {
                     >
                         <div className="flex justify-center gap-6 mb-10">
                             <a
-                                href="mailto:simone.zannini@4aitech.it"
+                                href={`mailto:${BUSINESS.email}`}
                                 className="text-white/50 hover:text-white transition-colors"
                                 aria-label="Email"
                             >

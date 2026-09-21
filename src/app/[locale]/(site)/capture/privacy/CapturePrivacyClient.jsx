@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
+import { BUSINESS } from '@/lib/site';
 import {
   ShieldCheck,
   Database,
@@ -224,7 +225,7 @@ export default function CapturePrivacyPage() {
           </h2>
           <p className="text-lg max-w-3xl mb-5 relative" style={{ color: C.muted }}>{t('contact.body')}</p>
           <a
-            href="mailto:magosimo99@gmail.com"
+            href={`mailto:${BUSINESS.email}`}
             className="inline-flex items-center gap-2 font-bold uppercase tracking-wide text-sm hover:opacity-85 transition-opacity relative"
             style={{ color: C.seed }}
           >

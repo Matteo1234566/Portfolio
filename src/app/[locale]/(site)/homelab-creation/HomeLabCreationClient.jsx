@@ -14,6 +14,7 @@ import {
   HardDrive,
   Home,
   LockKeyhole,
+  Mail,
   MonitorCog,
   Network,
   PlugZap,
@@ -27,6 +28,7 @@ import {
 } from 'lucide-react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
+import { BUSINESS } from '@/lib/site';
 
 const HARDWARE = [
   { id: 'miniPc', icon: Server, tiers: [{ id: 'basic', price: 420 }, { id: 'standard', price: 720 }, { id: 'pro', price: 1180 }] },
@@ -81,6 +83,24 @@ export default function HomeLabCreationClient() {
   const hardwareSubtotal = hardwareSelections.reduce((sum, category) => sum + category.tier.price, 0);
   const addOnsSubtotal = selectedAddOnItems.reduce((sum, addon) => sum + addon.price, 0);
   const total = hardwareSubtotal + addOnsSubtotal;
+  const quoteBody = [
+    t('quote.intro'),
+    '',
+    `${t('summary.hardware')}:`,
+    ...hardwareSelections.map((category) => (
+      `- ${t(`hardware.categories.${category.id}.title`)}: ${t(`hardware.categories.${category.id}.tiers.${category.tier.id}.name`)} (${money.format(category.tier.price)})`
+    )),
+    '',
+    `${t('summary.addons')}:`,
+    ...(selectedAddOnItems.length > 0
+      ? selectedAddOnItems.map((addon) => `- ${t(`addons.items.${addon.id}.title`)} (${money.format(addon.price)})`)
+      : [`- ${t('summary.noAddons')}`]),
+    '',
+    `${t('summary.total')}: ${money.format(total)}`,
+    '',
+    t('quote.closing'),
+  ].join('\n');
+  const quoteHref = `mailto:${BUSINESS.email}?subject=${encodeURIComponent(t('quote.subject'))}&body=${encodeURIComponent(quoteBody)}`;
 
   const toggleAddOn = (id) => {
     setSelectedAddOns((current) => (
@@ -136,7 +156,7 @@ export default function HomeLabCreationClient() {
                 {t('hero.cta')}
                 <ArrowRight size={18} aria-hidden="true" />
               </Button>
-              <a href="#summary" className="inline-flex items-center justify-center px-7 py-4 rounded-full font-display font-bold uppercase tracking-wide transition-all duration-200 bg-white dark:bg-white/10 text-ink dark:text-white hover:bg-gray-50 dark:hover:bg-white/20 shadow-soft border-2 border-transparent hover:border-ink dark:hover:border-white focus:outline-none focus:ring-2 focus:ring-bubblegum">
+              <a href="#homelab-configurator" className="inline-flex items-center justify-center px-7 py-4 rounded-full font-display font-bold uppercase tracking-wide transition-all duration-200 bg-white dark:bg-white/10 text-ink dark:text-white hover:bg-gray-50 dark:hover:bg-white/20 shadow-soft border-2 border-transparent hover:border-ink dark:hover:border-white focus:outline-none focus:ring-2 focus:ring-bubblegum">
                 {t('hero.secondaryCta')}
               </a>
             </div>
@@ -205,12 +225,13 @@ export default function HomeLabCreationClient() {
               total={total}
               money={money}
               t={t}
+              quoteHref={quoteHref}
             />
           </aside>
         </div>
       </section>
 
-      <MobileQuoteBar total={total} hardwareSubtotal={hardwareSubtotal} addOnsSubtotal={addOnsSubtotal} money={money} t={t} />
+      <MobileQuoteBar total={total} hardwareSubtotal={hardwareSubtotal} addOnsSubtotal={addOnsSubtotal} money={money} t={t} quoteHref={quoteHref} />
     </main>
   );
 }
@@ -380,7 +401,7 @@ function AddOnCard({ addon, checked, onToggle, money, t, reduceMotion }) {
   );
 }
 
-function QuoteSummary({ hardwareSelections, selectedAddOnItems, hardwareSubtotal, addOnsSubtotal, total, money, t }) {
+function QuoteSummary({ hardwareSelections, selectedAddOnItems, hardwareSubtotal, addOnsSubtotal, total, money, t, quoteHref }) {
   return (
     <Card className="relative overflow-hidden bg-white/90 dark:bg-ink/80 border-ink/10 dark:border-white/10 backdrop-blur-xl">
       <div className="absolute -top-20 -right-16 w-48 h-48 rounded-full bg-bubblegum/20 blur-3xl" />
@@ -417,6 +438,14 @@ function QuoteSummary({ hardwareSelections, selectedAddOnItems, hardwareSubtotal
             <span className="font-display text-4xl font-bold text-bubblegum">{money.format(total)}</span>
           </div>
           <p className="mt-3 text-xs leading-relaxed text-ink/50 dark:text-smoke/50">{t('summary.disclaimer')}</p>
+          <a
+            href={quoteHref}
+            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-bubblegum px-5 py-4 font-display text-lg font-bold text-white shadow-soft transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-bubblegum/40"
+          >
+            <Mail size={19} aria-hidden="true" />
+            {t('quote.cta')}
+          </a>
+          <p className="mt-3 text-center text-xs text-ink/50 dark:text-smoke/50">{t('quote.note')}</p>
         </div>
       </div>
     </Card>
@@ -444,7 +473,7 @@ function SummaryLine({ label, value }) {
   );
 }
 
-function MobileQuoteBar({ total, hardwareSubtotal, addOnsSubtotal, money, t }) {
+function MobileQuoteBar({ total, hardwareSubtotal, addOnsSubtotal, money, t, quoteHref }) {
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-ink dark:border-white/15 bg-white/95 dark:bg-ink/95 backdrop-blur-xl p-4 lg:hidden">
       <div className="max-w-6xl mx-auto">
@@ -455,9 +484,9 @@ function MobileQuoteBar({ total, hardwareSubtotal, addOnsSubtotal, money, t }) {
               {t('summary.hardware')}: {money.format(hardwareSubtotal)} · {t('summary.addons')}: {money.format(addOnsSubtotal)}
             </p>
           </div>
-          <a href="#summary" className="text-right focus:outline-none focus-visible:ring-4 focus-visible:ring-bubblegum/50 rounded-xl">
-            <span className="block font-display text-3xl font-bold text-bubblegum">{money.format(total)}</span>
-            <span className="text-xs font-bold uppercase tracking-widest text-ink dark:text-white">{t('summary.viewBreakdown')}</span>
+          <a href={quoteHref} className="rounded-xl bg-bubblegum px-4 py-2 text-right text-white shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-bubblegum/50">
+            <span className="block font-display text-2xl font-bold text-white">{money.format(total)}</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-white">{t('quote.mobileCta')}</span>
           </a>
         </div>
       </div>
