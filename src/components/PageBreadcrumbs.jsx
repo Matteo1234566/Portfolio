@@ -20,7 +20,7 @@ export default function PageBreadcrumbs({ locale, items }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <nav
         aria-label={locale === 'it' ? 'Percorso di navigazione' : 'Breadcrumb'}
-        className="absolute left-0 right-0 top-24 z-30 px-4"
+        className="absolute left-0 right-0 top-28 z-30 px-4"
       >
         <ol className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full border border-ink/10 bg-paper/90 px-4 py-2 text-xs font-bold text-ink/65 shadow-soft backdrop-blur dark:border-white/15 dark:bg-ink/90 dark:text-white/70">
           {breadcrumbs.map((item, index) => {
