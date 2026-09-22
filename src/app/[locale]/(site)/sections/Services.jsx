@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, BrainCircuit, Code2, Eye, HardDrive, Network, Rocket, ServerCog, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BrainCircuit, Code2, Eye, Rocket } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
@@ -37,48 +37,39 @@ export default function Services() {
   const services = [
     {
       id: 'ai-consulting',
-      title: currentLocale === 'it' ? 'Consulenza AI' : 'AI consulting',
-      description: currentLocale === 'it' ? 'Fattibilità, dati, architettura e prototipi misurabili per portare l’AI oltre la demo.' : 'Feasibility, data, architecture, and measurable prototypes that take AI beyond the demo.',
-      eyebrow: currentLocale === 'it' ? 'Strategia e delivery' : 'Strategy and delivery',
+      title: t('items.ai.title'),
+      description: t('items.ai.description'),
+      eyebrow: t('items.ai.eyebrow'),
       href: currentLocale === 'it' ? '/it/consulenza-ai' : '/en/ai-consulting',
-      tags: currentLocale === 'it' ? ['Audit', 'RAG e NLP', 'Roadmap'] : ['Audit', 'RAG and NLP', 'Roadmap'],
+      tags: [t('items.ai.tags.0'), t('items.ai.tags.1'), t('items.ai.tags.2')],
       icons: [BrainCircuit],
     },
     {
       id: 'computer-vision',
-      title: 'Computer vision',
-      description: currentLocale === 'it' ? 'Detection, tracking e video analytics progettati per dati e condizioni operative reali.' : 'Detection, tracking, and video analytics designed for real data and operating conditions.',
-      eyebrow: currentLocale === 'it' ? 'Immagini e video' : 'Images and video',
+      title: t('items.vision.title'),
+      description: t('items.vision.description'),
+      eyebrow: t('items.vision.eyebrow'),
       href: currentLocale === 'it' ? '/it/sviluppo-computer-vision' : '/en/computer-vision-development',
-      tags: ['Detection', 'Tracking', 'Edge AI'],
+      tags: [t('items.vision.tags.0'), t('items.vision.tags.1'), t('items.vision.tags.2')],
       icons: [Eye],
     },
     {
       id: 'custom-software',
-      title: currentLocale === 'it' ? 'Software su misura' : 'Custom software',
-      description: currentLocale === 'it' ? 'Web app, API e sistemi dati costruiti attorno ai processi che un prodotto standard non risolve.' : 'Web apps, APIs, and data systems built around workflows off-the-shelf products cannot solve.',
-      eyebrow: currentLocale === 'it' ? 'Prodotti e sistemi' : 'Products and systems',
+      title: t('items.software.title'),
+      description: t('items.software.description'),
+      eyebrow: t('items.software.eyebrow'),
       href: currentLocale === 'it' ? '/it/software-su-misura' : '/en/custom-software-development',
-      tags: ['Web app', 'API', currentLocale === 'it' ? 'Integrazioni' : 'Integrations'],
+      tags: [t('items.software.tags.0'), t('items.software.tags.1'), t('items.software.tags.2')],
       icons: [Code2],
     },
     {
       id: 'startup-ai',
-      title: currentLocale === 'it' ? 'AI per startup' : 'AI for startups',
-      description: currentLocale === 'it' ? 'Discovery e MVP per validare il rischio tecnico prima di investire nella scala.' : 'Discovery and MVPs that validate technical risk before investing in scale.',
-      eyebrow: currentLocale === 'it' ? 'Dall’ipotesi al prodotto' : 'From hypothesis to product',
+      title: t('items.startup.title'),
+      description: t('items.startup.description'),
+      eyebrow: t('items.startup.eyebrow'),
       href: currentLocale === 'it' ? '/it/ai-per-startup' : '/en/ai-development-for-startups',
-      tags: ['MVP', 'PoC', 'Handover'],
+      tags: [t('items.startup.tags.0'), t('items.startup.tags.1'), t('items.startup.tags.2')],
       icons: [Rocket],
-    },
-    {
-      id: 'homelab-creation',
-      title: t('items.homelab.title'),
-      description: t('items.homelab.description'),
-      eyebrow: t('items.homelab.eyebrow'),
-      href: `/${currentLocale}/homelab-creation`,
-      tags: [t('items.homelab.tags.0'), t('items.homelab.tags.1'), t('items.homelab.tags.2')],
-      icons: [ServerCog, Network, HardDrive, ShieldCheck],
     },
   ];
 

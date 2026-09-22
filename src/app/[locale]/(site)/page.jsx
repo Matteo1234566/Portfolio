@@ -9,8 +9,8 @@ export async function generateMetadata({ params }) {
   const t = await getTranslations({ locale, namespace: 'Hero' });
 
   const title = isItalian
-    ? 'Consulenza AI, Computer Vision e Sviluppo Software a Roma'
-    : 'AI Consulting, Computer Vision and Custom Software Development in Rome';
+    ? 'Sviluppo AI e Software su Misura'
+    : 'AI and Custom Software Development';
   const description = t('description');
 
   return {

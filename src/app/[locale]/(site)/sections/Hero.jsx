@@ -156,16 +156,16 @@ export default function Hero() {
           >
             <Button>
               <Link
-                  href={`/${currentLocale}#projects`}
+                  href={`/${currentLocale}#services`}
               >
-                {t('buttons.projects')}
+                {t('buttons.services')}
               </Link>
             </Button>
             <Link
-                href={`/${currentLocale}#technologies`}
+                href={`/${currentLocale}#projects`}
                 className="group flex items-center gap-2 font-display font-bold text-lg hover:underline decoration-wavy decoration-bubblegum underline-offset-4 text-ink dark:text-white"
             >
-              {t('buttons.technologies')}
+              {t('buttons.projects')}
               <ArrowRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
