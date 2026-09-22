@@ -32,7 +32,7 @@ export default async function ContactPage({ params }) {
   return (
     <>
     <PageBreadcrumbs locale={locale} items={[{ name: isIt ? 'Contatti' : 'Contact', href: `/${locale}/contact` }]} />
-    <main className="min-h-screen bg-paper px-5 pb-24 pt-36 text-ink dark:bg-ink dark:text-white">
+    <main className="min-h-screen bg-paper px-5 pb-24 pt-44 text-ink dark:bg-ink dark:text-white">
       <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[.8fr_1.2fr]">
         <section>
           <p className="font-bold text-forest dark:text-bubblegum">{isIt ? 'Un primo confronto, senza pitch obbligatorio' : 'A first conversation, no pitch required'}</p>
