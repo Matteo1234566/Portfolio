@@ -7,6 +7,8 @@ import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import ProfileToolkit from '@/app/[locale]/(site)/_profile/ProfileToolkit';
+import ProfileInterests from '@/app/[locale]/(site)/_profile/ProfileInterests';
 
 import {
     SiPython,
@@ -134,146 +136,43 @@ export default function MatteoProfile() {
                 </div>
             </section>
 
-            <section className="py-24 px-4">
-                <div className="max-w-6xl mx-auto">
-                    <motion.div className="mb-16">
-            <span className="text-bubblegum font-bold tracking-widest uppercase text-sm mb-2 block">
-              {t('toolkit.label')}
-            </span>
-                        <h2 className="font-display text-5xl md:text-7xl font-bold">{t('toolkit.title')}</h2>
-                    </motion.div>
+            <ProfileToolkit
+                label={t('toolkit.label')}
+                title={t('toolkit.title')}
+                groups={[
+                    {
+                        key: 'fullstack', icon: Layers, title: t('toolkit.fullstack.title'), description: t('toolkit.fullstack.description'),
+                        tech: [
+                            { icons: [FaJava, SiSpring], label: 'Java / Spring Boot' },
+                            { icons: [SiReact, SiNextdotjs], label: 'React / Next.js' },
+                            { icons: [SiDocker, SiJenkins], label: 'Docker / Jenkins' },
+                        ],
+                    },
+                    {
+                        key: 'vision', icon: Brain, title: t('toolkit.vision.title'), description: t('toolkit.vision.description'),
+                        tech: [
+                            { icons: [SiPython], label: 'Python' },
+                            { icons: [SiTensorflow, SiRoboflow], label: 'TensorFlow / YOLO' },
+                            { icons: [SiOpencv], label: 'OpenCV' },
+                        ],
+                    },
+                    {
+                        key: 'research', icon: Wifi, title: t('toolkit.research.title'), description: t('toolkit.research.description'),
+                        list: [0, 1, 2].map((i) => t(`toolkit.research.list.${i}`)),
+                    },
+                ]}
+            />
 
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <Card dark className="!bg-ink !border-white/10">
-                            <div className="mb-6 bg-blue-500/20 w-16 h-16 rounded-2xl flex items-center justify-center">
-                                <Layers className="text-blue-500" size={32} />
-                            </div>
-                            <h3 className="font-display text-2xl font-bold text-white mb-4">{t('toolkit.fullstack.title')}</h3>
-                            <p className="text-white/60 mb-6 text-sm">
-                                {t('toolkit.fullstack.description')}
-                            </p>
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-3 text-white/90">
-                                    <div className="flex gap-2 opacity-80">
-                                        <FaJava className="w-5 h-5" />
-                                        <SiSpring className="w-5 h-5" />
-                                    </div>
-                                    <span className="font-bold">Java / Spring Boot</span>
-                                </div>
-                                <div className="flex items-center gap-3 text-white/90">
-                                    <div className="flex gap-2 opacity-80">
-                                        <SiReact className="w-5 h-5" />
-                                        <SiNextdotjs className="w-5 h-5" />
-                                    </div>
-                                    <span className="font-bold">React / Next.js</span>
-                                </div>
-                                <div className="flex items-center gap-3 text-white/90">
-                                    <div className="flex gap-2 opacity-80">
-                                        <SiDocker className="w-5 h-5" />
-                                        <SiJenkins className="w-5 h-5" />
-                                    </div>
-                                    <span className="font-bold">Docker / Jenkins</span>
-                                </div>
-                            </div>
-                        </Card>
+            <ProfileInterests
+                title={t('interests.title')}
+                subtitle={t('interests.subtitle')}
+                interests={[
+                    { key: 'travel', scene: 'travel', icon: Plane, title: t('interests.travel.title'), description: t('interests.travel.description') },
+                    { key: 'cinema', scene: 'cinema', icon: Film, title: t('interests.cinema.title'), description: t('interests.cinema.description') },
+                    { key: 'learning', scene: 'curiosity', icon: Brain, title: t('interests.learning.title'), description: t('interests.learning.description') },
+                ]}
+            />
 
-                        <Card className="bg-paper border-ink/10">
-                            <div className="mb-6 bg-forest/10 w-16 h-16 rounded-2xl flex items-center justify-center">
-                                <Brain className="text-forest dark:text-white" size={32} />
-                            </div>
-                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">{t('toolkit.vision.title')}</h3>
-                            <p className="text-ink/60 dark:text-white/60 mb-6 text-sm">
-                                {t('toolkit.vision.description')}
-                            </p>
-                            <div className="space-y-4">
-                                <div className="flex items-center gap-3 text-ink dark:text-white">
-                                    <div className="flex gap-2 opacity-80">
-                                        <SiPython className="w-5 h-5" />
-                                    </div>
-                                    <span className="font-bold">Python</span>
-                                </div>
-                                <div className="flex items-center gap-3 text-ink dark:text-white">
-                                    <div className="flex gap-2 opacity-80">
-                                        <SiTensorflow className="w-5 h-5" />
-                                        <SiRoboflow className="w-5 h-5"/>
-                                    </div>
-                                    <span className="font-bold">TensorFlow / YOLO</span>
-                                </div>
-                                <div className="flex items-center gap-3 text-ink dark:text-white">
-                                    <div className="flex gap-2 opacity-80">
-                                        <SiOpencv className="w-5 h-5" />
-                                    </div>
-                                    <span className="font-bold">OpenCV</span>
-                                </div>
-                            </div>
-                        </Card>
-
-                        <Card className="bg-white border-ink/10 dark:bg-white/5">
-                            <div className="mb-6 bg-purple-500/10 w-16 h-16 rounded-2xl flex items-center justify-center">
-                                <Wifi className="text-purple-500" size={32} />
-                            </div>
-
-                            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-4">
-                                {t('toolkit.research.title')}
-                            </h3>
-
-                            <p className="text-ink/60 dark:text-white/60 mb-6 text-sm">
-                                {t('toolkit.research.description')}
-                            </p>
-
-                            <ul className="space-y-2 list-disc pl-4 text-ink/80 dark:text-white/80 font-medium">
-                                <li>{t('toolkit.research.list.0')}</li>
-                                <li>{t('toolkit.research.list.1')}</li>
-                                <li>{t('toolkit.research.list.2')}</li>
-                            </ul>
-                        </Card>
-
-                    </div>
-                </div>
-            </section>
-
-            <section className="py-24 px-4 relative overflow-hidden">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-forest/5 rounded-full blur-3xl pointer-events-none"></div>
-
-                <div className="max-w-4xl mx-auto text-center relative z-10">
-                    <h2 className="font-display text-5xl font-bold mb-12">{t('interests.title')}</h2>
-                    <p className="text-xl text-ink/70 dark:text-white/70 mb-12 max-w-2xl mx-auto italic">
-                        {t('interests.subtitle')}
-                    </p>
-
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <div className="flex flex-col items-center">
-                            <div className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
-                                <Plane size={32} />
-                            </div>
-                            <h3 className="font-bold text-xl mb-3">{t('interests.travel.title')}</h3>
-                            <p className="text-ink/60 dark:text-white/60">
-                                {t('interests.travel.description')}
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col items-center">
-                            <div className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
-                                <Film size={32} />
-                            </div>
-                            <h3 className="font-bold text-xl mb-3">{t('interests.cinema.title')}</h3>
-                            <p className="text-ink/60 dark:text-white/60">
-                                {t('interests.cinema.description')}
-                            </p>
-                        </div>
-
-                        <div className="flex flex-col items-center">
-                            <div className="w-20 h-20 bg-white dark:bg-white/10 rounded-full flex items-center justify-center mb-6 shadow-soft">
-                                <Brain size={32} />
-                            </div>
-                            <h3 className="font-bold text-xl mb-3">{t('interests.learning.title')}</h3>
-                            <p className="text-ink/60 dark:text-white/60">
-                                {t('interests.learning.description')}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
             <section className="pt-20 pb-10 text-center bg-forest text-white">
                 <h2 className="font-display text-4xl mb-2">MATTEO CESE</h2>
                 <p className="text-white/50 mb-8">{t('contact.location')}</p>

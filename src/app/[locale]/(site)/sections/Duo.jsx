@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Card from '@/app/[locale]/(site)/sections/ui/Card';
-import { Cpu, Code, Music, Search, ArrowRight } from 'lucide-react';
+import { Music, Search, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
@@ -35,7 +34,6 @@ export default function Duo() {
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
-  const cardsRef = useRef([]);
 
   const profiles = [
     {
@@ -44,8 +42,7 @@ export default function Duo() {
       role: t('simone.role'),
       description: t('simone.description'),
       stats: [t('simone.stats.0'), t('simone.stats.1'), t('simone.stats.2')],
-      iconBig: <Cpu size={120} />,
-      iconSmall: <Music size={24} className="text-ink" />,
+      iconSmall: <Music size={18} className="text-ink" />,
       smallIconColorClass: "bg-bubblegum",
       link: `/${currentLocale}/simone`
     },
@@ -55,8 +52,7 @@ export default function Duo() {
       role: t('matteo.role'),
       description: t('matteo.description'),
       stats: [t('matteo.stats.0'), t('matteo.stats.1'), t('matteo.stats.2')],
-      iconBig: <Code size={120} />,
-      iconSmall: <Search size={24} className="text-ink" />,
+      iconSmall: <Search size={18} className="text-ink" />,
       smallIconColorClass: "bg-yellow-400",
       link: `/${currentLocale}/matteo`
     }
@@ -93,44 +89,10 @@ export default function Duo() {
         }
       );
 
-      cardsRef.current.forEach((card, index) => {
-        if (!card) return;
-        
-        gsap.fromTo(card,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            delay: index * 0.2,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 85%',
-              toggleActions: 'play none none reverse'
-            }
-          }
-        );
-      });
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
-
-  const handleCardHover = (cardRef, isEntering) => {
-    if (!cardRef.current) return;
-    
-    const icon = cardRef.current.querySelector('.profile-icon');
-    const iconBg = cardRef.current.querySelector('.icon-bg');
-    
-    if (isEntering) {
-      gsap.to(icon, { scale: 1.2, duration: 0.3, ease: 'power2.out' });
-      gsap.to(iconBg, { scale: 1.1, rotation: 10, duration: 0.3, ease: 'power2.out' });
-    } else {
-      gsap.to(icon, { scale: 1, duration: 0.3, ease: 'power2.out' });
-      gsap.to(iconBg, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
-    }
-  };
 
   return (
       <div ref={sectionRef} className="max-w-6xl mx-auto px-4">
@@ -173,58 +135,45 @@ export default function Duo() {
             viewport={{ once: false, margin: "-100px" }}
             className="grid md:grid-cols-2 gap-8"
         >
-          {profiles.map((profile, index) => (
-              <motion.div
-                  key={index}
-                  variants={item}
-              >
-                <Card 
-                  ref={el => cardsRef.current[index] = el}
-                  onMouseEnter={() => handleCardHover({ current: cardsRef.current[index] }, true)}
-                  onMouseLeave={() => handleCardHover({ current: cardsRef.current[index] }, false)}
-                  className="relative overflow-hidden group text-ink dark:text-smoke h-full border-ink dark:border-white/20 hover:border-bubblegum dark:hover:border-bubblegum transition-colors cursor-pointer"
+          {profiles.map((profile) => (
+              <motion.div key={profile.id} variants={item} className="group h-full">
+                <Link
+                  href={profile.link}
+                  className="relative flex h-full flex-col overflow-hidden rounded-2xl border-2 border-smoke/20 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-bubblegum hover:shadow-2xl dark:border-white/10 dark:bg-ink/50 dark:hover:border-bubblegum"
                 >
-                  <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity text-ink dark:text-white">
-                    {profile.iconBig}
-                  </div>
-                  <div className="flex items-start justify-between mb-6">
-                    <div>
-                      <h3 className="font-display text-3xl font-bold text-ink dark:text-white group-hover:text-bubblegum transition-colors">
-                        {profile.name}
-                      </h3>
-                      <span className="inline-block bg-forest text-white text-xs font-bold px-2 py-1 rounded uppercase tracking-wider mt-1">
+                  <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-bubblegum/30 opacity-0 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-100" />
+
+                  <div className="mb-4 flex items-start justify-between p-6 pb-0">
+                    <span className="rounded bg-green-100 px-2 py-1 font-mono text-xs font-bold uppercase text-forest dark:bg-forest/20 dark:text-green-300">
                       {profile.role}
-                      </span>
-                    </div>
-                    <div className={`icon-bg w-16 h-16 ${profile.smallIconColorClass} rounded-full border-2 border-ink dark:border-white flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                      <div className="profile-icon">
-                        {profile.iconSmall}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-lg mb-6 leading-relaxed">{profile.description}</p>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex flex-wrap gap-2">
-                      {profile.stats.map(stat => (
-                          <span
-                              key={stat}
-                              className="px-3 py-1 bg-smoke dark:bg-white/10 rounded-full text-sm font-bold border border-gray-200 dark:border-white/10"
-                          >
-                      {stat}
                     </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <Link
-                        href={profile.link}
-                        className="flex items-center text-bubblegum font-bold uppercase tracking-widest text-sm group-hover:translate-x-2 transition-transform"
-                    >
+                    <span className="inline-flex items-center gap-2 text-sm font-bold text-ink/55 transition-colors group-hover:text-bubblegum dark:text-white/55">
                       {t('cta_profile')}
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
+                      <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
+                    </span>
                   </div>
-                </Card>
+
+                  <div className="mb-4 flex items-center gap-4 px-6">
+                    <h3 className="font-display text-4xl font-bold text-ink transition-colors group-hover:text-bubblegum dark:text-white">
+                      {profile.name}
+                    </h3>
+                    <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 border-ink ${profile.smallIconColorClass} transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 dark:border-white`}>
+                      {profile.iconSmall}
+                    </span>
+                  </div>
+
+                  <p className="relative mb-8 flex-grow px-6 text-lg text-ink/80 dark:text-smoke/80">
+                    {profile.description}
+                  </p>
+
+                  <div className="relative flex flex-wrap gap-2 border-t-2 border-smoke px-6 pb-6 pt-6 dark:border-white/10">
+                    {profile.stats.map((stat) => (
+                      <span key={stat} className="cursor-default text-sm font-bold text-ink/50 transition-colors hover:text-bubblegum dark:text-white/50">
+                        #{stat}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
               </motion.div>
           ))}
         </motion.div>

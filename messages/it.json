@@ -289,83 +289,47 @@
     "intro": "Lo stack viene dopo il problema. Queste sono le competenze che combiniamo più spesso per costruire una soluzione completa e verificabile.",
     "items": {
       "ai": {
+        "tag": "AI e LLM",
         "title": "AI, deep learning e LLM",
         "description": "Sviluppiamo modelli e flussi applicativi per forecasting, classificazione, retrieval e automazione di attività definite.",
-        "focus": "Quando una decisione dipende da dati, contenuti o pattern difficili da codificare con sole regole.",
         "stack": {
           "0": "PyTorch",
           "1": "TensorFlow",
           "2": "Scikit-learn",
           "3": "OpenAI API"
-        },
-        "outcomes": {
-          "0": "Pipeline di forecasting per serie temporali e dati operativi.",
-          "1": "Flussi LLM con contesto, regole applicative e criteri di valutazione.",
-          "2": "Servizi di inferenza integrati via API nelle applicazioni."
         }
       },
       "vision": {
+        "tag": "Visione",
         "title": "Computer vision e video analytics",
         "description": "Trasformiamo immagini e video in rilevamenti, tracce, eventi ed evidenze che un operatore può consultare.",
-        "focus": "Quando il sistema deve riconoscere, seguire o misurare ciò che accade nel mondo fisico.",
         "stack": {
           "0": "YOLO",
           "1": "OpenCV",
           "2": "Roboflow",
           "3": "ffmpeg"
-        },
-        "outcomes": {
-          "0": "Detection e tracking di giocatori e palla per analisi sportive.",
-          "1": "OCR, indicizzazione video e ricerca di eventi nei filmati.",
-          "2": "Inferenza, acquisizione video e dashboard collegate nello stesso flusso."
         }
       },
-      "data": {
-        "title": "Data engineering e backend",
-        "description": "Normalizziamo fonti diverse e costruiamo API, job e modelli dati su cui il prodotto può lavorare in modo coerente.",
-        "focus": "Quando dati incompleti, eterogenei o dispersi bloccano analisi e automazioni.",
+      "engineering": {
+        "tag": "Full-stack e dati",
+        "title": "Backend, full-stack e deployment",
+        "description": "Normalizziamo i dati e progettiamo API, interfaccia e infrastruttura insieme, così il prototipo non resta separato dal prodotto.",
         "stack": {
-          "0": "Python",
-          "1": "Django",
-          "2": "PostgreSQL",
-          "3": "Redis"
-        },
-        "outcomes": {
-          "0": "Preprocessing per testo, video, segnali e dati tabellari.",
-          "1": "Backend interrogabili da applicazioni, analisti e operatori.",
-          "2": "Cache, code di lavoro e integrazioni con i sistemi esistenti."
-        }
-      },
-      "architecture": {
-        "title": "Applicazioni full-stack e deployment",
-        "description": "Progettiamo interfaccia, API, storage e infrastruttura insieme, così il prototipo non resta separato dal prodotto.",
-        "focus": "Quando serve un'applicazione completa, non un modello o uno script isolato.",
-        "stack": {
-          "0": "Next.js",
-          "1": "React",
-          "2": "Docker",
-          "3": "Caddy / Nginx"
-        },
-        "outcomes": {
-          "0": "Web app e dashboard costruite attorno al lavoro degli utenti.",
-          "1": "Deployment containerizzati e procedure di rilascio ripetibili.",
-          "2": "Architetture proporzionate alla fase del prodotto e al team che le manterrà."
+          "0": "Django",
+          "1": "PostgreSQL",
+          "2": "Next.js",
+          "3": "Docker"
         }
       },
       "speech": {
+        "tag": "Speech e NLP",
         "title": "Speech, NLP e documenti",
         "description": "Costruiamo pipeline che trascrivono, segmentano e organizzano audio e testo per renderli consultabili e riutilizzabili.",
-        "focus": "Quando conversazioni e documenti contengono informazioni che oggi restano difficili da cercare.",
         "stack": {
           "0": "Whisper",
           "1": "Pipeline NLP",
           "2": "Django",
           "3": "Docker"
-        },
-        "outcomes": {
-          "0": "Trascrizione di contenuti reali, inclusi audio con più interlocutori.",
-          "1": "Segmentazione, pulizia e costruzione di archivi ricercabili.",
-          "2": "Interfacce per leggere, correggere, esportare e interrogare i contenuti."
         }
       }
     }

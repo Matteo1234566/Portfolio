@@ -43,6 +43,7 @@ export default function Projects() {
   const projects = [
     {
       id: 'ailights',
+      hidden: true,
       title: t('items.ailights.title'),
       category: t('items.ailights.category'),
       description: t('items.ailights.description'),
@@ -81,6 +82,7 @@ export default function Projects() {
     },
     {
       id: 'ai2sql',
+      hidden: true,
       title: t('items.ai2sql.title'),
       category: t('items.ai2sql.category'),
       description: t('items.ai2sql.description'),
@@ -169,7 +171,7 @@ export default function Projects() {
       ],
       link: '/targage'
     },
-  ].filter((project) => !NINTENDO_PROJECT_IDS.includes(project.id));
+  ].filter((project) => !project.hidden && !NINTENDO_PROJECT_IDS.includes(project.id));
 
   useEffect(() => {
     const ctx = gsap.context(() => {

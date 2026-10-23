@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import Card from '@/app/[locale]/(site)/sections/ui/Card';
 import { Building2, GraduationCap, Rocket, Telescope } from 'lucide-react';
 
 const icons = [GraduationCap, Rocket, Telescope, Building2];
@@ -77,48 +76,69 @@ export default function Authority() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: '-10%' }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="grid gap-4 sm:grid-cols-2"
+          className="grid overflow-hidden rounded-2xl border-2 border-ink bg-white shadow-hard dark:border-white/20 dark:bg-white/5 dark:shadow-hard-white sm:grid-cols-2"
         >
           {proof.map((item, index) => {
             const Icon = icons[index];
 
             return (
-              <Card
+              <div
                 key={item.label}
-                className="h-full border-ink/10 dark:border-white/10 bg-white/90 dark:bg-white/5"
+                className={`group relative p-6 transition-colors duration-300 hover:bg-bubblegum/5
+                  ${index % 2 === 0 ? 'sm:border-r-2' : ''} ${index < 2 ? 'border-b-2' : index === 2 ? 'border-b-2 sm:border-b-0' : ''}
+                  border-smoke/60 dark:border-white/10`}
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-bubblegum/15 text-bubblegum">
-                  <Icon size={24} />
+                <div className="mb-4 flex items-center gap-3">
+                  <Icon size={20} className="text-bubblegum transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" aria-hidden="true" />
+                  <p className="font-mono text-xs font-bold uppercase text-ink/55 dark:text-smoke/60">{item.label}</p>
                 </div>
-                <p className="font-display text-3xl font-bold text-ink dark:text-white mb-1">{item.value}</p>
-                <p className="font-bold uppercase tracking-wider text-xs text-forest dark:text-bubblegum mb-3">
-                  {item.label}
-                </p>
-                <p className="text-sm leading-relaxed text-ink/65 dark:text-smoke/75">{item.description}</p>
-              </Card>
+                <p className="mb-2 font-display text-3xl font-bold leading-tight text-ink dark:text-white">{item.value}</p>
+                <p className="text-sm leading-relaxed text-ink/65 dark:text-smoke/70">{item.description}</p>
+              </div>
             );
           })}
         </motion.div>
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-10%' }}
-        transition={{ duration: 0.6, delay: 0.15 }}
-        className="mt-16 grid gap-6 md:grid-cols-3"
-      >
-        {markets.map((market) => (
-          <Card
-            key={market.title}
-            className="h-full border-ink/10 dark:border-white/10 bg-paper dark:bg-ink"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-bubblegum mb-3">{t('marketsLabel')}</p>
-            <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-3">{market.title}</h3>
-            <p className="text-ink/70 dark:text-smoke/75 leading-relaxed">{market.description}</p>
-          </Card>
-        ))}
-      </motion.div>
+      <div className="mt-20">
+        <motion.p
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10%' }}
+          transition={{ duration: 0.5 }}
+          className="mb-6 text-sm font-bold uppercase tracking-widest text-bubblegum"
+        >
+          {t('marketsLabel')}
+        </motion.p>
+        <motion.div
+          className="relative grid gap-10 md:grid-cols-3 md:gap-0"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-10%' }}
+        >
+          <motion.span
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 h-0.5 origin-left bg-ink dark:bg-white/30"
+            variants={{ hidden: { scaleX: 0 }, show: { scaleX: 1, transition: { duration: 0.9, ease: 'circOut' } } }}
+          />
+          {markets.map((market, index) => (
+            <motion.div
+              key={market.title}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 + index * 0.12 } },
+              }}
+              className={`pt-6 md:px-8 ${index === 0 ? 'md:pl-0' : 'md:border-l-2 md:border-smoke/60 md:dark:border-white/10'} ${index === markets.length - 1 ? 'md:pr-0' : ''}`}
+            >
+              <span className="mb-3 block font-display text-5xl font-bold leading-none text-bubblegum/30">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <h3 className="mb-3 font-display text-2xl font-bold text-ink dark:text-white">{market.title}</h3>
+              <p className="leading-relaxed text-ink/70 dark:text-smoke/75">{market.description}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
     </div>
   );
 }

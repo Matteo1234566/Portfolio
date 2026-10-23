@@ -3,27 +3,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import Card from '@/app/[locale]/(site)/sections/ui/Card';
-import { AudioLines, Brain, Database, Eye, ServerCog } from 'lucide-react';
+import { AudioLines, Brain, Eye, ServerCog } from 'lucide-react';
 
 const trackIcons = {
   ai: Brain,
   vision: Eye,
-  data: Database,
-  architecture: ServerCog,
+  engineering: ServerCog,
   speech: AudioLines,
 };
 
 export default function TechnologyTracks() {
   const t = useTranslations('TechnologyTracks');
 
-  const tracks = ['ai', 'vision', 'data', 'architecture', 'speech'].map((key) => ({
+  const tracks = ['ai', 'vision', 'engineering', 'speech'].map((key) => ({
     key,
+    tag: t(`items.${key}.tag`),
     title: t(`items.${key}.title`),
     description: t(`items.${key}.description`),
-    focus: t(`items.${key}.focus`),
     stack: [0, 1, 2, 3].map((index) => t(`items.${key}.stack.${index}`)),
-    outcomes: [0, 1, 2].map((index) => t(`items.${key}.outcomes.${index}`)),
   }));
 
   return (
@@ -45,52 +42,43 @@ export default function TechnologyTracks() {
         <p className="text-lg leading-relaxed text-white/70">{t('intro')}</p>
       </motion.div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      <div className="grid gap-8 md:grid-cols-2">
         {tracks.map((track, index) => {
           const Icon = trackIcons[track.key];
 
           return (
             <motion.div
               key={track.key}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, margin: '-10%' }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
+              transition={{ type: 'spring', stiffness: 60, damping: 20, delay: index * 0.1 }}
+              className="group h-full"
             >
-              <Card dark className="h-full !bg-ink/90 !border-white/10 overflow-hidden">
-                <div className="flex items-start justify-between gap-4 mb-5">
-                  <div>
-                    <p className="text-xs font-bold uppercase tracking-[0.2em] text-bubblegum mb-3">{t('label')}</p>
-                    <h3 className="font-display text-3xl font-bold text-white mb-3">{track.title}</h3>
-                  </div>
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-bubblegum">
-                    <Icon size={26} />
-                  </div>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border-2 border-white/10 bg-ink/50 transition-all duration-300 hover:-translate-y-1 hover:border-bubblegum hover:shadow-2xl">
+                <div className="pointer-events-none absolute -right-20 -top-20 h-40 w-40 rounded-full bg-bubblegum/30 opacity-0 blur-3xl transition-all duration-500 group-hover:scale-150 group-hover:opacity-100" />
+
+                <div className="mb-4 flex items-start justify-between p-6 pb-0">
+                  <span className="rounded bg-forest/40 px-2 py-1 font-mono text-xs font-bold uppercase text-green-300">
+                    {track.tag}
+                  </span>
+                  <Icon size={22} className="text-white/40 transition-all duration-300 group-hover:-rotate-12 group-hover:scale-110 group-hover:text-bubblegum" aria-hidden="true" />
                 </div>
 
-                <p className="text-white/75 text-lg leading-relaxed mb-4">{track.description}</p>
-                <p className="text-sm uppercase tracking-[0.18em] text-white/45 mb-5">{track.focus}</p>
+                <h3 className="mb-4 px-6 font-display text-4xl font-bold text-white transition-colors group-hover:text-bubblegum">
+                  {track.title}
+                </h3>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <p className="mb-8 flex-grow px-6 text-lg text-smoke/80">{track.description}</p>
+
+                <div className="flex flex-wrap gap-2 border-t-2 border-white/10 px-6 pb-6 pt-6">
                   {track.stack.map((item) => (
-                    <span
-                      key={item}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white/80"
-                    >
-                      {item}
+                    <span key={item} className="cursor-default text-sm font-bold text-white/50 transition-colors hover:text-bubblegum">
+                      #{item}
                     </span>
                   ))}
                 </div>
-
-                <div className="space-y-3 text-white/75">
-                  {track.outcomes.map((outcome) => (
-                    <div key={outcome} className="flex items-start gap-3">
-                      <span className="mt-2 h-2 w-2 shrink-0 rounded-full bg-bubblegum" />
-                      <p className="leading-relaxed">{outcome}</p>
-                    </div>
-                  ))}
-                </div>
-              </Card>
+              </div>
             </motion.div>
           );
         })}

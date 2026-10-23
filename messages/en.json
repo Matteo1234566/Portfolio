@@ -289,83 +289,47 @@
     "intro": "The stack comes after the problem. These are the capabilities we most often combine to build a complete, testable solution.",
     "items": {
       "ai": {
+        "tag": "AI and LLMs",
         "title": "AI, deep learning, and LLMs",
         "description": "We develop models and application workflows for forecasting, classification, retrieval, and the automation of defined tasks.",
-        "focus": "When a decision depends on data, content, or patterns that cannot be captured with rules alone.",
         "stack": {
           "0": "PyTorch",
           "1": "TensorFlow",
           "2": "Scikit-learn",
           "3": "OpenAI API"
-        },
-        "outcomes": {
-          "0": "Forecasting pipelines for time series and operational data.",
-          "1": "LLM workflows with context, application rules, and evaluation criteria.",
-          "2": "Inference services connected to applications through APIs."
         }
       },
       "vision": {
+        "tag": "Vision",
         "title": "Computer vision and video analytics",
         "description": "We turn images and video into detections, tracks, events, and evidence that an operator can review.",
-        "focus": "When a system must recognise, follow, or measure what happens in the physical world.",
         "stack": {
           "0": "YOLO",
           "1": "OpenCV",
           "2": "Roboflow",
           "3": "ffmpeg"
-        },
-        "outcomes": {
-          "0": "Player and ball detection and tracking for sports analysis.",
-          "1": "OCR, video indexing, and event search across recorded footage.",
-          "2": "Inference, video capture, and dashboards connected in one workflow."
         }
       },
-      "data": {
-        "title": "Data engineering and backend",
-        "description": "We normalise different sources and build APIs, jobs, and data models that give the product a consistent foundation.",
-        "focus": "When incomplete, heterogeneous, or scattered data blocks analysis and automation.",
+      "engineering": {
+        "tag": "Full-stack and data",
+        "title": "Backend, full-stack, and deployment",
+        "description": "We normalise data and design the APIs, interface, and infrastructure together, so the prototype does not remain separate from the product.",
         "stack": {
-          "0": "Python",
-          "1": "Django",
-          "2": "PostgreSQL",
-          "3": "Redis"
-        },
-        "outcomes": {
-          "0": "Preprocessing for text, video, signals, and tabular data.",
-          "1": "Backends that applications, analysts, and operators can query.",
-          "2": "Caching, job queues, and integrations with existing systems."
-        }
-      },
-      "architecture": {
-        "title": "Full-stack applications and deployment",
-        "description": "We design the interface, APIs, storage, and infrastructure together, so the prototype does not remain separate from the product.",
-        "focus": "When the outcome must be a complete application rather than an isolated model or script.",
-        "stack": {
-          "0": "Next.js",
-          "1": "React",
-          "2": "Docker",
-          "3": "Caddy / Nginx"
-        },
-        "outcomes": {
-          "0": "Web apps and dashboards built around the users' work.",
-          "1": "Containerised deployments and repeatable release procedures.",
-          "2": "Architectures sized for the product stage and the team maintaining them."
+          "0": "Django",
+          "1": "PostgreSQL",
+          "2": "Next.js",
+          "3": "Docker"
         }
       },
       "speech": {
+        "tag": "Speech and NLP",
         "title": "Speech, NLP, and documents",
         "description": "We build pipelines that transcribe, segment, and organise audio and text so the content can be searched and reused.",
-        "focus": "When conversations and documents contain information that is currently difficult to find.",
         "stack": {
           "0": "Whisper",
           "1": "NLP Pipelines",
           "2": "Django",
           "3": "Docker"
-        },
-        "outcomes": {
-          "0": "Transcription of real-world content, including multi-speaker audio.",
-          "1": "Segmentation, cleanup, and the creation of searchable archives.",
-          "2": "Interfaces for reading, correcting, exporting, and querying content."
         }
       }
     }
