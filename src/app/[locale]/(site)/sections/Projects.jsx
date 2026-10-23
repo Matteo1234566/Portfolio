@@ -360,7 +360,7 @@ function ProjectCard({ project, locale, linkLabel }) {
                 <span className="font-mono text-xs font-bold text-forest bg-green-100 dark:bg-forest/20 dark:text-green-300 px-2 py-1 rounded uppercase">
                   {project.category}
                 </span>
-                <span className="inline-flex items-center gap-2 text-sm font-bold text-ink/55 dark:text-white/55 group-hover:text-bubblegum dark:group-hover:text-bubblegum transition-colors">
+                <span className="inline-flex items-center gap-2 text-sm font-bold text-ink/70 dark:text-white/60 group-hover:text-accent transition-colors">
                   {linkLabel}
                   <ArrowRight size={18} aria-hidden="true" />
                 </span>
@@ -424,7 +424,7 @@ function TechTag({ tech, delay }) {
   return (
       <span
         ref={tagRef}
-        className="text-sm font-bold text-ink/50 dark:text-white/50 cursor-default"
+        className="text-sm font-bold text-ink/70 dark:text-white/60 cursor-default"
       >
         #{tech}
       </span>

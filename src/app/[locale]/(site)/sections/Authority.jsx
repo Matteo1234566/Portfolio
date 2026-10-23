@@ -57,7 +57,7 @@ export default function Authority() {
           viewport={{ once: true, margin: '-10%' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-bubblegum font-bold tracking-widest uppercase text-sm mb-3 block">
+          <span className="text-accent font-bold tracking-widest uppercase text-sm mb-3 block">
             {t('label')}
           </span>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-ink dark:text-white mb-6">
@@ -89,8 +89,8 @@ export default function Authority() {
                   border-smoke/60 dark:border-white/10`}
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <Icon size={20} className="text-bubblegum transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" aria-hidden="true" />
-                  <p className="font-mono text-xs font-bold uppercase text-ink/55 dark:text-smoke/60">{item.label}</p>
+                  <Icon size={20} className="text-accent transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110" aria-hidden="true" />
+                  <p className="font-mono text-xs font-bold uppercase text-ink/70 dark:text-smoke/70">{item.label}</p>
                 </div>
                 <p className="mb-2 font-display text-3xl font-bold leading-tight text-ink dark:text-white">{item.value}</p>
                 <p className="text-sm leading-relaxed text-ink/65 dark:text-smoke/70">{item.description}</p>
@@ -106,7 +106,7 @@ export default function Authority() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-10%' }}
           transition={{ duration: 0.5 }}
-          className="mb-6 text-sm font-bold uppercase tracking-widest text-bubblegum"
+          className="mb-6 text-sm font-bold uppercase tracking-widest text-accent"
         >
           {t('marketsLabel')}
         </motion.p>
@@ -130,7 +130,7 @@ export default function Authority() {
               }}
               className={`pt-6 md:px-8 ${index === 0 ? 'md:pl-0' : 'md:border-l-2 md:border-smoke/60 md:dark:border-white/10'} ${index === markets.length - 1 ? 'md:pr-0' : ''}`}
             >
-              <span className="mb-3 block font-display text-5xl font-bold leading-none text-bubblegum/30">
+              <span className="mb-3 block font-display text-5xl font-bold leading-none text-accent/70">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <h3 className="mb-3 font-display text-2xl font-bold text-ink dark:text-white">{market.title}</h3>

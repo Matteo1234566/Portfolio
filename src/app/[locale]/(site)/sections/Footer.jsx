@@ -29,7 +29,7 @@ export default function Footer() {
     return (
         <footer
             id="footer"
-            className="bg-forest text-white pt-24 pb-12 overflow-hidden relative"
+            className="on-dark bg-forest text-white pt-24 pb-12 overflow-hidden relative border-t-2 border-white/10"
         >
             <motion.div
                 animate={{
@@ -98,7 +98,7 @@ export default function Footer() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: false }}
                     transition={{ delay: 0.3 }}
-                    className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-center items-center text-sm text-white/40 font-mono"
+                    className="border-t border-white/10 pt-12 flex flex-col md:flex-row justify-center items-center text-sm text-white/70 font-mono"
                 >
                     <p>
                         &copy; {new Date().getFullYear()} {t('copyright')}

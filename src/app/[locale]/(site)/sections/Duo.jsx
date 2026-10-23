@@ -147,14 +147,14 @@ export default function Duo() {
                     <span className="rounded bg-green-100 px-2 py-1 font-mono text-xs font-bold uppercase text-forest dark:bg-forest/20 dark:text-green-300">
                       {profile.role}
                     </span>
-                    <span className="inline-flex items-center gap-2 text-sm font-bold text-ink/55 transition-colors group-hover:text-bubblegum dark:text-white/55">
+                    <span className="inline-flex items-center gap-2 text-sm font-bold text-ink/70 transition-colors group-hover:text-accent dark:text-white/60">
                       {t('cta_profile')}
                       <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
                     </span>
                   </div>
 
                   <div className="mb-4 flex items-center gap-4 px-6">
-                    <h3 className="font-display text-4xl font-bold text-ink transition-colors group-hover:text-bubblegum dark:text-white">
+                    <h3 className="font-display text-4xl font-bold text-ink transition-colors group-hover:text-accent dark:text-white">
                       {profile.name}
                     </h3>
                     <span className={`grid h-10 w-10 shrink-0 place-items-center rounded-full border-2 border-ink ${profile.smallIconColorClass} transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110 dark:border-white`}>
@@ -168,7 +168,7 @@ export default function Duo() {
 
                   <div className="relative flex flex-wrap gap-2 border-t-2 border-smoke px-6 pb-6 pt-6 dark:border-white/10">
                     {profile.stats.map((stat) => (
-                      <span key={stat} className="cursor-default text-sm font-bold text-ink/50 transition-colors hover:text-bubblegum dark:text-white/50">
+                      <span key={stat} className="cursor-default text-sm font-bold text-ink/70 transition-colors hover:text-accent dark:text-white/60">
                         #{stat}
                       </span>
                     ))}

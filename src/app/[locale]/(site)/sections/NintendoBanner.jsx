@@ -45,10 +45,10 @@ export default function NintendoBanner() {
               <span className="rounded bg-white px-2 py-1 font-mono text-xs font-bold uppercase text-nintendo">
                 {t('label')}
               </span>
-              <span className="font-mono text-xs font-bold uppercase tracking-wider text-white/75">
+              <span className="font-mono text-xs font-bold uppercase tracking-wider text-white">
                 {t('count', { count: NINTENDO_PROJECTS.length })}
               </span>
-              <span className="hidden text-sm text-white/80 lg:inline">{t('description')}</span>
+              <span className="hidden text-sm text-white lg:inline">{t('description')}</span>
             </div>
             <span className="inline-flex shrink-0 items-center gap-2 rounded-full border-2 border-ink bg-white px-5 py-2 font-display text-sm font-bold uppercase tracking-wide text-ink shadow-hard transition-transform duration-200 group-hover:-translate-y-0.5">
               {t('cta')}

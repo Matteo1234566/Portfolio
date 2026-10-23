@@ -124,7 +124,7 @@ export default function PortfolioLanding() {
                             <section
                                 id="services"
                                 ref={el => sectionRefs.current[2] = el}
-                                className="py-24 bg-forest text-white relative"
+                                className="py-24 bg-mist dark:bg-forest text-ink dark:text-white relative transition-colors duration-300"
                             >
                                 <motion.div
                                     animate={{y: [0, 10, 0], rotate: [-12, -10, -12]}}
@@ -143,7 +143,7 @@ export default function PortfolioLanding() {
                             <section
                                 id="technologies"
                                 ref={el => sectionRefs.current[3] = el}
-                                className="py-24 bg-forest text-white relative border-t border-white/10"
+                                className="py-24 bg-mist dark:bg-forest text-ink dark:text-white relative border-t-2 border-ink/5 dark:border-white/10 transition-colors duration-300"
                             >
                                 <TechnologyTracks />
                             </section>
@@ -167,7 +167,7 @@ export default function PortfolioLanding() {
                             <section
                                 id="faq"
                                 ref={el => sectionRefs.current[6] = el}
-                                className="py-24 bg-smoke/40 dark:bg-white/5 transition-colors duration-300"
+                                className="py-24 bg-mist dark:bg-forest transition-colors duration-300"
                             >
                                 <ProcessFaq />
                             </section>

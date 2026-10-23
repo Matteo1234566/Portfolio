@@ -34,7 +34,7 @@ export default function ProcessFaq() {
           viewport={{ once: true, margin: '-10%' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-bubblegum font-bold tracking-widest uppercase text-sm mb-3 block">
+          <span className="text-accent font-bold tracking-widest uppercase text-sm mb-3 block">
             {t('label')}
           </span>
           <h2 className="font-display text-5xl md:text-7xl font-bold leading-[0.95] text-ink dark:text-white mb-5">
@@ -67,7 +67,7 @@ export default function ProcessFaq() {
                 </span>
                 <div className="pt-1">
                   <p className="sr-only">{item.step}</p>
-                  <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-2 transition-colors group-hover:text-bubblegum">{item.title}</h3>
+                  <h3 className="font-display text-2xl font-bold text-ink dark:text-white mb-2 transition-colors group-hover:text-accent">{item.title}</h3>
                   <p className="text-ink/70 dark:text-smoke/75 leading-relaxed">{item.description}</p>
                 </div>
               </motion.li>
@@ -82,7 +82,7 @@ export default function ProcessFaq() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="lg:sticky lg:top-32"
         >
-          <p className="mb-4 text-sm font-bold uppercase tracking-widest text-bubblegum">FAQ</p>
+          <p className="mb-4 text-sm font-bold uppercase tracking-widest text-accent">FAQ</p>
           <div className="overflow-hidden rounded-2xl border-2 border-ink bg-white shadow-hard dark:border-white/20 dark:bg-white/5 dark:shadow-hard-white">
             {faq.map((item, index) => {
               const isOpen = openIndex === index;
@@ -97,7 +97,7 @@ export default function ProcessFaq() {
                       onClick={() => setOpenIndex(isOpen ? -1 : index)}
                       className="group flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left focus:outline-none focus-visible:bg-bubblegum/10"
                     >
-                      <span className={`font-display text-xl md:text-2xl font-bold transition-colors ${isOpen ? 'text-bubblegum' : 'text-ink group-hover:text-bubblegum dark:text-white'}`}>
+                      <span className={`font-display text-xl md:text-2xl font-bold transition-colors ${isOpen ? 'text-accent' : 'text-ink group-hover:text-accent dark:text-white'}`}>
                         {item.question}
                       </span>
                       <span
