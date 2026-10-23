@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import { ArrowUpRight, Github } from 'lucide-react';
 import { motion } from 'framer-motion';
+import RepoRadar from '@/app/[locale]/(site)/sections/RepoRadar';
 
 export default function TrendingRepo() {
   const locale = useLocale();
@@ -18,7 +19,7 @@ export default function TrendingRepo() {
         transition={{ duration: 0.6 }}
         className="relative overflow-hidden on-dark rounded-[2rem] border-2 border-ink bg-forest p-6 text-white shadow-hard dark:border-white md:p-10"
       >
-        <div className="pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full border-[24px] border-bubblegum/20" />
+        <RepoRadar className="absolute -right-16 -top-16 hidden w-80 md:block" />
         <div className="pointer-events-none absolute -bottom-24 left-1/3 h-48 w-48 rounded-full border-[18px] border-white/10" />
 
         <div className="relative grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">

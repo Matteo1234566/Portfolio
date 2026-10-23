@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import DuoMerge from '@/app/[locale]/(site)/sections/DuoMerge';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -127,6 +128,12 @@ export default function Duo() {
             </motion.blockquote>
 
         </div>
+
+        <DuoMerge
+          leftName={t('simone.name').split(' ')[0]}
+          rightName={t('matteo.name').split(' ')[0]}
+          label="DevOP"
+        />
 
         <motion.div
             variants={container}

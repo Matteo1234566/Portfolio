@@ -1,4 +1,5 @@
 'use client';
+import ScreebaSignature from './ScreebaSignature';
 
 import React, { useState } from 'react';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
@@ -157,6 +158,7 @@ export default function ScreebaPageClient() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full"
           >
+            <ScreebaSignature />
             <Card className="bg-white dark:bg-white/5 border-2 border-ink/5 dark:border-white/10 shadow-2xl relative overflow-hidden">
               <div className="border-b border-ink/5 dark:border-white/5 p-4 flex justify-between items-center bg-smoke/30 dark:bg-black/20">
                 <span className="font-mono text-xs font-bold uppercase tracking-widest opacity-50">

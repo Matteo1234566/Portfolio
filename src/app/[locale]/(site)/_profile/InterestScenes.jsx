@@ -267,8 +267,8 @@ export function CuriosityScene({ play, label }) {
         return (
           <motion.line
             key={i}
-            x1={100 + Math.cos(a) * 30} y1={52 + Math.sin(a) * 30}
-            x2={100 + Math.cos(a) * 40} y2={52 + Math.sin(a) * 40}
+            x1={Math.round(100 + Math.cos(a) * 30)} y1={Math.round(52 + Math.sin(a) * 30)}
+            x2={Math.round(100 + Math.cos(a) * 40)} y2={Math.round(52 + Math.sin(a) * 40)}
             stroke="#facc15" strokeWidth="3" strokeLinecap="round"
             initial={{ opacity: 0.6 }}
             {...loop(play, { opacity: [0, 1, 0] }, { duration: 2.4, delay: i * 0.1 })}
