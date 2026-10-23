@@ -46,13 +46,13 @@ export default function TwoSequelPageClient() {
   const pillars = [
     {
       id: 'access',
-      icon: <Users size={28} className="text-bubblegum" />,
+      icon: <Users size={28} className="text-accent" />,
       title: t('pillars.access.title'),
       desc: t('pillars.access.desc'),
     },
     {
       id: 'security',
-      icon: <ShieldCheck size={28} className="text-forest dark:text-bubblegum" />,
+      icon: <ShieldCheck size={28} className="text-forest dark:text-accent" />,
       title: t('pillars.security.title'),
       desc: t('pillars.security.desc'),
     },
@@ -67,11 +67,11 @@ export default function TwoSequelPageClient() {
   const pipeline = [
     {
       id: 'intent',
-      icon: <MessageSquareCode size={28} className="text-bubblegum" />,
+      icon: <MessageSquareCode size={28} className="text-accent" />,
     },
     {
       id: 'sql',
-      icon: <CircuitBoard size={28} className="text-forest dark:text-bubblegum" />,
+      icon: <CircuitBoard size={28} className="text-forest dark:text-accent" />,
     },
     {
       id: 'execution',
@@ -79,7 +79,7 @@ export default function TwoSequelPageClient() {
     },
     {
       id: 'output',
-      icon: <Zap size={28} className="text-bubblegum" />,
+      icon: <Zap size={28} className="text-accent" />,
     },
   ].map(({ id, icon }) => ({
     id,
@@ -112,7 +112,7 @@ export default function TwoSequelPageClient() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-bubblegum text-sm font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-accent text-sm font-bold uppercase tracking-widest mb-6">
               <Database size={14} className="animate-pulse" />
               <span>{t('badge')}</span>
             </div>
@@ -128,7 +128,7 @@ export default function TwoSequelPageClient() {
               {t('description')}
             </p>
 
-            <p className="text-base md:text-lg text-ink/60 dark:text-smoke/65 leading-relaxed max-w-2xl mt-5">
+            <p className="text-base md:text-lg text-ink/70 dark:text-smoke/65 leading-relaxed max-w-2xl mt-5">
               {t('supporting')}
             </p>
 
@@ -164,13 +164,13 @@ export default function TwoSequelPageClient() {
               <div className="absolute -bottom-24 -left-24 w-52 h-52 rounded-full bg-forest/20 dark:bg-white/10 blur-3xl" />
 
               <div className="relative space-y-4">
-                <p className="text-xs uppercase tracking-[0.2em] font-bold text-ink/50 dark:text-smoke/50">
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-ink/70 dark:text-smoke/70">
                   {t('heroCard.eyebrow')}
                 </p>
 
                 {/* Natural language input */}
                 <div className="rounded-2xl border border-ink/10 dark:border-white/10 bg-paper/80 dark:bg-white/5 p-4">
-                  <div className="flex items-center gap-2 mb-2 text-forest dark:text-bubblegum">
+                  <div className="flex items-center gap-2 mb-2 text-forest dark:text-accent">
                     <MessageSquareCode size={15} />
                     <p className="text-xs font-bold uppercase tracking-[0.16em]">{t('heroCard.queryLabel')}</p>
                   </div>
@@ -181,7 +181,7 @@ export default function TwoSequelPageClient() {
 
                 {/* Generated SQL */}
                 <div className="rounded-2xl border border-bubblegum/20 bg-bubblegum/5 p-4">
-                  <div className="flex items-center gap-2 mb-2 text-bubblegum">
+                  <div className="flex items-center gap-2 mb-2 text-accent">
                     <CircuitBoard size={15} />
                     <p className="text-xs font-bold uppercase tracking-[0.16em]">{t('heroCard.sqlLabel')}</p>
                   </div>
@@ -192,7 +192,7 @@ export default function TwoSequelPageClient() {
 
                 {/* Adaptive output */}
                 <div className="rounded-2xl border border-ink/10 dark:border-white/10 bg-paper/80 dark:bg-white/5 p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-ink/50 dark:text-smoke/50 mb-2">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-ink/70 dark:text-smoke/70 mb-2">
                     {t('heroCard.outputLabel')}
                   </p>
                   <p className="text-sm font-semibold text-ink dark:text-white">
@@ -203,7 +203,7 @@ export default function TwoSequelPageClient() {
                 {/* Status bar */}
                 <div className="rounded-xl border border-bubblegum/20 bg-bubblegum/10 px-3 py-2 flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-bubblegum animate-pulse" />
-                  <span className="text-xs font-bold text-bubblegum">{t('heroCard.accuracyLabel')}</span>
+                  <span className="text-xs font-bold text-accent">{t('heroCard.accuracyLabel')}</span>
                 </div>
               </div>
             </Card>
@@ -290,14 +290,14 @@ export default function TwoSequelPageClient() {
             <Card key={id} className="h-full border-ink/10 dark:border-white/10 bg-white/85 dark:bg-white/5">
               <div className="w-14 h-14 rounded-2xl bg-smoke dark:bg-white/10 flex items-center justify-center mb-5">
                 {id === 'business'
-                  ? <Users size={28} className="text-bubblegum" />
-                  : <ServerCog size={28} className="text-forest dark:text-bubblegum" />
+                  ? <Users size={28} className="text-accent" />
+                  : <ServerCog size={28} className="text-forest dark:text-accent" />
                 }
               </div>
               <h2 className="font-display text-3xl font-bold mb-2 text-ink dark:text-white">
                 {t(`audiences.${id}.title`)}
               </h2>
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-bubblegum mb-4">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-accent mb-4">
                 {t(`audiences.${id}.roles`)}
               </p>
               <p className="text-ink/70 dark:text-smoke/75 leading-relaxed">
@@ -316,7 +316,7 @@ export default function TwoSequelPageClient() {
           viewport={{ once: true, margin: '-10%' }}
         >
           <Card className="h-full border-ink/10 dark:border-white/10 bg-white/85 dark:bg-white/5">
-            <div className="flex items-center gap-3 mb-5 text-bubblegum">
+            <div className="flex items-center gap-3 mb-5 text-accent">
               <Database size={22} />
               <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('compat_title')}</p>
             </div>
@@ -341,16 +341,16 @@ export default function TwoSequelPageClient() {
           transition={{ delay: 0.08 }}
         >
           <Card className="h-full border-ink/10 dark:border-white/10 bg-white/85 dark:bg-white/5">
-            <div className="flex items-center gap-3 mb-5 text-bubblegum">
+            <div className="flex items-center gap-3 mb-5 text-accent">
               <Lock size={22} />
               <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('pillars.security.title')}</p>
             </div>
             <p className="text-ink/70 dark:text-smoke/75 leading-relaxed mb-6">{t('pillars.security.desc')}</p>
             <div className="space-y-3">
               {[
-                { icon: <ShieldCheck size={16} className="mt-0.5 shrink-0 text-bubblegum" />, text: 'Field-level access controls per user role' },
-                { icon: <Lock size={16} className="mt-0.5 shrink-0 text-bubblegum" />, text: 'Native data masking for sensitive columns' },
-                { icon: <FileSearch size={16} className="mt-0.5 shrink-0 text-bubblegum" />, text: 'Explainable query tracing & audit trail' },
+                { icon: <ShieldCheck size={16} className="mt-0.5 shrink-0 text-accent" />, text: 'Field-level access controls per user role' },
+                { icon: <Lock size={16} className="mt-0.5 shrink-0 text-accent" />, text: 'Native data masking for sensitive columns' },
+                { icon: <FileSearch size={16} className="mt-0.5 shrink-0 text-accent" />, text: 'Explainable query tracing & audit trail' },
               ].map(({ icon, text }) => (
                 <div key={text} className="flex items-start gap-3 rounded-2xl border border-ink/10 dark:border-white/10 bg-paper/70 dark:bg-ink p-4">
                   {icon}
@@ -368,7 +368,7 @@ export default function TwoSequelPageClient() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-forest text-white p-8 md:p-10"
+          className="on-dark rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-forest text-white p-8 md:p-10"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">{t('value_title')}</h2>
           <div className="grid md:grid-cols-3 gap-5">
@@ -391,7 +391,7 @@ export default function TwoSequelPageClient() {
           className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-paper dark:bg-ink p-8 md:p-10"
         >
           <div className="max-w-3xl mb-8">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('faqEyebrow')}</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-accent mb-3">{t('faqEyebrow')}</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">{t('faqTitle')}</h2>
             <p className="text-ink/70 dark:text-smoke/75 leading-relaxed">{t('faqDescription')}</p>
           </div>

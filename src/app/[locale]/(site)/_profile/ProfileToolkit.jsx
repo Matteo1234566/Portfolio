@@ -26,13 +26,13 @@ export default function ProfileToolkit({ label, title, groups }) {
           viewport={{ once: true }}
           className="mb-10"
         >
-          <span className="text-bubblegum font-bold tracking-widest uppercase text-sm mb-2 block">{label}</span>
+          <span className="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">{label}</span>
           <h2 className="font-display text-5xl md:text-7xl font-bold">{title}</h2>
         </motion.div>
       </div>
 
       {/* Infinite logo strip with every tool listed in the cards below */}
-      <div className="relative mb-14 -mx-4 border-y-2 border-ink bg-forest py-4 dark:border-white/10" aria-hidden="true">
+      <div className="on-dark relative mb-14 -mx-4 border-y-2 border-ink bg-forest py-4 dark:border-white/10" aria-hidden="true">
         <motion.div
           className="flex w-max gap-10"
           animate={reduceMotion ? undefined : { x: ['0%', '-50%'] }}
@@ -40,7 +40,7 @@ export default function ProfileToolkit({ label, title, groups }) {
         >
           {[...marquee, ...marquee].map((tech, i) => (
             <span key={`${tech.label}-${i}`} className="flex shrink-0 items-center gap-3 font-display text-xl font-bold uppercase tracking-wide text-white/85">
-              <span className="flex gap-1.5 text-bubblegum">
+              <span className="flex gap-1.5 text-accent">
                 {tech.icons.map((Icon, j) => <Icon key={j} className="h-5 w-5" />)}
               </span>
               {tech.label}
@@ -68,7 +68,7 @@ export default function ProfileToolkit({ label, title, groups }) {
                   <span className="rounded bg-green-100 px-2 py-1 font-mono text-xs font-bold uppercase text-forest dark:bg-forest/20 dark:text-green-300">
                     {String(index + 1).padStart(2, '0')} / {String(groups.length).padStart(2, '0')}
                   </span>
-                  <Icon size={24} className="text-ink/40 transition-all duration-300 group-hover:-rotate-12 group-hover:scale-110 group-hover:text-bubblegum dark:text-white/40" aria-hidden="true" />
+                  <Icon size={24} className="text-ink/70 transition-all duration-300 group-hover:-rotate-12 group-hover:scale-110 group-hover:text-accent dark:text-white/60" aria-hidden="true" />
                 </div>
 
                 <h3 className="mb-3 px-6 font-display text-3xl font-bold text-ink transition-colors group-hover:text-bubblegum dark:text-white">
@@ -82,7 +82,7 @@ export default function ProfileToolkit({ label, title, groups }) {
                       {group.tech.map((tech) => (
                         <li
                           key={tech.label}
-                          className="inline-flex items-center gap-2 rounded-full border-2 border-ink/10 px-3 py-1.5 text-sm font-bold text-ink/80 transition-colors hover:border-bubblegum hover:text-bubblegum dark:border-white/10 dark:text-white/80"
+                          className="inline-flex items-center gap-2 rounded-full border-2 border-ink/10 px-3 py-1.5 text-sm font-bold text-ink/80 transition-colors hover:border-bubblegum hover:text-accent dark:border-white/10 dark:text-white/80"
                         >
                           {tech.icons.map((TechIcon, j) => <TechIcon key={j} className="h-4 w-4" aria-hidden="true" />)}
                           {tech.label}
@@ -94,7 +94,7 @@ export default function ProfileToolkit({ label, title, groups }) {
                     <ol className="space-y-3">
                       {group.list.map((entry, i) => (
                         <li key={entry} className="flex items-start gap-3 text-sm font-bold text-ink/80 dark:text-white/80">
-                          <span className="font-mono text-bubblegum">{String(i + 1).padStart(2, '0')}</span>
+                          <span className="font-mono text-accent">{String(i + 1).padStart(2, '0')}</span>
                           {entry}
                         </li>
                       ))}

@@ -79,10 +79,10 @@ export default function ContactForm({ locale, services }) {
       </label>
       <input name="website" tabIndex="-1" autoComplete="off" className="hidden" aria-hidden="true" />
       {error && <p role="alert" className="mt-4 font-bold text-red-700 dark:text-red-300">{error}</p>}
-      <button type="submit" className="mt-7 w-full rounded-full bg-bubblegum px-7 py-4 text-lg font-bold text-ink focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-forest">
+      <button type="submit" className="mt-7 w-full rounded-full bg-indigo-600 px-7 py-4 text-lg font-bold text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-forest">
         {isIt ? 'Prepara la richiesta via email' : 'Prepare the request by email'}
       </button>
-      <p className="mt-4 text-center text-sm text-ink/60 dark:text-white/60">{isIt ? 'Risposta prevista entro 2 giorni lavorativi.' : 'Expected reply within 2 working days.'}</p>
+      <p className="mt-4 text-center text-sm text-ink/70 dark:text-white/60">{isIt ? 'Risposta prevista entro 2 giorni lavorativi.' : 'Expected reply within 2 working days.'}</p>
     </form>
   );
 }

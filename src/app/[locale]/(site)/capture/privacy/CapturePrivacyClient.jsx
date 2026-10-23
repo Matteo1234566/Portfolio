@@ -29,7 +29,7 @@ const DARK_THEME = {
   ink: '#F4EEE3',
   muted: '#B8AD9B',
   success: '#7FBC8C',
-  warning: '#B76432',
+  warning: '#CC7845',
   info: '#85A9C7',
 };
 
@@ -38,12 +38,12 @@ const LIGHT_THEME = {
   card: '#EEE6D9',
   active: '#E2D9CC',
   highlight: '#D8CEBF',
-  seed: '#C89B5B',
+  seed: '#795728',
   ink: '#131315',
   muted: 'rgba(19,19,21,0.72)',
-  success: '#7FBC8C',
-  warning: '#B76432',
-  info: '#85A9C7',
+  success: '#376941',
+  warning: '#8D4D27',
+  info: '#3C6282',
 };
 
 const container = {

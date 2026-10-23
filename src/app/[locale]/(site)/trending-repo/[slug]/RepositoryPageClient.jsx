@@ -19,18 +19,18 @@ export default function RepositoryPageClient({ repository }) {
 
   return (
     <main className="min-h-screen bg-paper font-body text-ink transition-colors duration-300 dark:bg-ink dark:text-smoke">
-      <section className="bg-forest px-4 pb-20 pt-32 text-white md:pb-28 md:pt-40">
+      <section className="on-dark bg-forest px-4 pb-20 pt-32 text-white md:pb-28 md:pt-40">
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="mx-auto max-w-6xl"
         >
-          <Link href={`/${locale}/trending-repo`} className="mb-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/65 transition-colors hover:text-bubblegum">
+          <Link href={`/${locale}/trending-repo`} className="mb-10 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.16em] text-white/65 transition-colors hover:text-accent">
             <ArrowLeft size={18} aria-hidden="true" />
             {t('backToIndex')}
           </Link>
-          <div className="mb-5 flex flex-wrap items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-bubblegum">
+          <div className="mb-5 flex flex-wrap items-center gap-3 text-sm font-bold uppercase tracking-[0.18em] text-accent">
             <Github size={22} aria-hidden="true" />
             <span>{repository.owner}</span>
             <span className="text-white/40" aria-hidden="true">/</span>
@@ -39,7 +39,7 @@ export default function RepositoryPageClient({ repository }) {
           <h1 className="max-w-4xl font-display text-6xl font-bold leading-[0.9] md:text-8xl">{t('title', { name: repository.name })}</h1>
           <p className="mt-7 max-w-3xl text-xl leading-relaxed text-white/75 md:text-2xl">{description}</p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <a href={repository.githubUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-3 rounded-full border-2 border-ink bg-bubblegum px-6 py-3 font-display font-bold uppercase tracking-wide text-ink shadow-hard-white transition-all duration-200 hover:-translate-y-1 hover:bg-white focus:outline-none focus:ring-2 focus:ring-bubblegum focus:ring-offset-2 focus:ring-offset-forest">
+            <a href={repository.githubUrl} target="_blank" rel="noreferrer" className="group inline-flex items-center gap-3 rounded-full border-2 border-ink bg-indigo-600 px-6 py-3 font-display font-bold uppercase tracking-wide text-white shadow-hard-white transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:text-ink focus:outline-none focus:ring-2 focus:ring-bubblegum focus:ring-offset-2 focus:ring-offset-forest">
               <Github size={20} aria-hidden="true" />
               {t('githubCta')}
               <ArrowUpRight size={19} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
@@ -62,7 +62,7 @@ export default function RepositoryPageClient({ repository }) {
           transition={{ duration: 0.5 }}
           className="rounded-[2rem] border-2 border-ink bg-white p-6 shadow-hard dark:border-white/20 dark:bg-white/5 md:p-10"
         >
-          <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-bubblegum">{t('whyLabel')}</p>
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-accent">{t('whyLabel')}</p>
           <h2 className="mb-5 font-display text-4xl font-bold md:text-5xl">{whyTitle}</h2>
           <p className="text-lg leading-relaxed text-ink/70 dark:text-smoke/70">{whyDescription}</p>
 
@@ -78,8 +78,8 @@ export default function RepositoryPageClient({ repository }) {
         </motion.article>
 
         <aside className="space-y-6">
-          <div className="rounded-[2rem] border-2 border-ink bg-forest p-6 text-white shadow-hard md:p-8">
-            <p className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-bubblegum">{t('detailsLabel')}</p>
+          <div className="on-dark rounded-[2rem] border-2 border-ink bg-forest p-6 text-white shadow-hard md:p-8">
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-accent">{t('detailsLabel')}</p>
             <dl className="space-y-5">
               <div><dt className="text-sm text-white/50">{t('author')}</dt><dd className="mt-1 text-xl font-bold">{repository.owner}</dd></div>
               <div><dt className="text-sm text-white/50">{t('language')}</dt><dd className="mt-1 text-xl font-bold">{repository.language}</dd></div>
@@ -87,7 +87,7 @@ export default function RepositoryPageClient({ repository }) {
             </dl>
           </div>
           <div className="rounded-[2rem] border-2 border-ink bg-white p-6 shadow-soft dark:border-white/20 dark:bg-white/5 md:p-8">
-            <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-ink/50 dark:text-smoke/50">{t('stackLabel')}</p>
+            <p className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-ink/70 dark:text-smoke/70">{t('stackLabel')}</p>
             <div className="flex flex-wrap gap-2">
               {repository.stack.map((item) => <span key={item} className="rounded-full border border-ink/15 px-3 py-2 text-sm font-bold dark:border-white/15">{item}</span>)}
             </div>

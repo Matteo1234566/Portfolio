@@ -127,7 +127,7 @@ export default function HomeLabCreationClient() {
             animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-bubblegum text-sm font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-accent text-sm font-bold uppercase tracking-widest mb-6">
               <Sparkles size={14} className={reduceMotion ? '' : 'animate-pulse'} aria-hidden="true" />
               <span>{t('badge')}</span>
             </div>
@@ -145,7 +145,7 @@ export default function HomeLabCreationClient() {
 
             <div className="flex flex-wrap gap-3 mt-7">
               {[0, 1, 2].map((index) => (
-                <span key={index} className="rounded-full border border-ink/10 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-ink/60 dark:text-smoke/70">
+                <span key={index} className="rounded-full border border-ink/10 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-ink/70 dark:text-smoke/70">
                   {t(`hero.chips.${index}`)}
                 </span>
               ))}
@@ -243,8 +243,8 @@ function ConfiguratorVisual({ t, reduceMotion, total }) {
       <div className="absolute -bottom-28 -left-24 w-72 h-72 rounded-full bg-forest/20 dark:bg-white/10 blur-3xl" />
       <div className="relative grid gap-4">
         <div className="flex items-center justify-between">
-          <p className="text-xs uppercase tracking-[0.22em] font-bold text-ink/50 dark:text-smoke/60">{t('visual.label')}</p>
-          <span className="rounded-full bg-bubblegum text-white px-3 py-1 text-xs font-bold">{total}</span>
+          <p className="text-xs uppercase tracking-[0.22em] font-bold text-ink/70 dark:text-smoke/60">{t('visual.label')}</p>
+          <span className="rounded-full bg-indigo-600 text-white px-3 py-1 text-xs font-bold">{total}</span>
         </div>
 
         <div className="relative min-h-[360px] rounded-[1.75rem] border-2 border-ink/10 dark:border-white/10 bg-paper/80 dark:bg-white/5 p-5 overflow-hidden">
@@ -253,12 +253,12 @@ function ConfiguratorVisual({ t, reduceMotion, total }) {
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute right-6 top-6 h-24 w-24 rounded-[1.5rem] border-2 border-ink dark:border-white bg-white dark:bg-ink shadow-hard dark:shadow-hard-white grid place-items-center"
           >
-            <Server size={42} className="text-bubblegum" aria-hidden="true" />
+            <Server size={42} className="text-accent" aria-hidden="true" />
           </motion.div>
           <motion.div
             animate={reduceMotion ? undefined : { y: [0, 10, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute left-7 top-24 h-20 w-32 rounded-2xl border-2 border-ink dark:border-white bg-forest text-white shadow-hard dark:shadow-hard-white grid place-items-center"
+            className="on-dark absolute left-7 top-24 h-20 w-32 rounded-2xl border-2 border-ink dark:border-white bg-forest text-white shadow-hard dark:shadow-hard-white grid place-items-center"
           >
             <Router size={36} aria-hidden="true" />
           </motion.div>
@@ -288,7 +288,7 @@ function ConfiguratorVisual({ t, reduceMotion, total }) {
 function SectionHeading({ eyebrow, title, description }) {
   return (
     <div>
-      <p className="text-bubblegum font-bold tracking-widest uppercase text-sm mb-2">{eyebrow}</p>
+      <p className="text-accent font-bold tracking-widest uppercase text-sm mb-2">{eyebrow}</p>
       <h2 className="font-display text-4xl md:text-6xl font-bold text-ink dark:text-white leading-tight">{title}</h2>
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink/65 dark:text-smoke/70">{description}</p>
     </div>
@@ -308,12 +308,12 @@ function HardwareCategory({ category, selectedTier, isOpen, onToggleOpen, onSele
           aria-expanded={isOpen}
         >
           <span className="flex items-center gap-4">
-            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-forest text-white dark:bg-white/10 dark:text-bubblegum">
+            <span className="grid h-12 w-12 place-items-center rounded-2xl bg-forest text-white dark:bg-white/10 dark:text-accent">
               <Icon size={24} aria-hidden="true" />
             </span>
             <span>
               <span className="block font-display text-2xl font-bold text-ink dark:text-white">{t(`hardware.categories.${category.id}.title`)}</span>
-              <span className="block text-sm text-ink/55 dark:text-smoke/60">{t(`hardware.categories.${category.id}.description`)}</span>
+              <span className="block text-sm text-ink/70 dark:text-smoke/60">{t(`hardware.categories.${category.id}.description`)}</span>
             </span>
           </span>
           <ChevronDown className={`shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
@@ -346,9 +346,9 @@ function HardwareCategory({ category, selectedTier, isOpen, onToggleOpen, onSele
                     >
                       <span className="flex items-start justify-between gap-3">
                         <span className="font-display text-2xl font-bold text-ink dark:text-white">{t(`hardware.categories.${category.id}.tiers.${tier.id}.name`)}</span>
-                        {active && <Check size={20} className="text-bubblegum" aria-hidden="true" />}
+                        {active && <Check size={20} className="text-accent" aria-hidden="true" />}
                       </span>
-                      <span className="mt-2 block text-sm leading-relaxed text-ink/60 dark:text-smoke/65">{t(`hardware.categories.${category.id}.tiers.${tier.id}.spec`)}</span>
+                      <span className="mt-2 block text-sm leading-relaxed text-ink/70 dark:text-smoke/65">{t(`hardware.categories.${category.id}.tiers.${tier.id}.spec`)}</span>
                       <span className="mt-4 block font-display text-2xl font-bold text-bubblegum">{money.format(tier.price)}</span>
                     </button>
                   );
@@ -380,12 +380,12 @@ function AddOnCard({ addon, checked, onToggle, money, t, reduceMotion }) {
       }`}
     >
       <span className="flex items-start justify-between gap-4">
-        <span className="grid h-12 w-12 place-items-center rounded-2xl bg-forest text-white dark:bg-white/10 dark:text-bubblegum transition-transform duration-200 group-hover:-translate-y-1">
+        <span className="grid h-12 w-12 place-items-center rounded-2xl bg-forest text-white dark:bg-white/10 dark:text-accent transition-transform duration-200 group-hover:-translate-y-1">
           <Icon size={23} aria-hidden="true" />
         </span>
         <span className="flex items-center gap-2">
           {addon.suggested && (
-            <span className="rounded-full bg-forest/10 dark:bg-bubblegum/15 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-forest dark:text-bubblegum">
+            <span className="rounded-full bg-forest/10 dark:bg-bubblegum/15 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-forest dark:text-accent">
               {t('addons.suggested')}
             </span>
           )}
@@ -395,7 +395,7 @@ function AddOnCard({ addon, checked, onToggle, money, t, reduceMotion }) {
         </span>
       </span>
       <span className="mt-5 block font-display text-2xl font-bold text-ink dark:text-white">{t(`addons.items.${addon.id}.title`)}</span>
-      <span className="mt-2 block text-sm leading-relaxed text-ink/60 dark:text-smoke/65">{t(`addons.items.${addon.id}.description`)}</span>
+      <span className="mt-2 block text-sm leading-relaxed text-ink/70 dark:text-smoke/65">{t(`addons.items.${addon.id}.description`)}</span>
       <span className="mt-5 block font-display text-2xl font-bold text-bubblegum">+ {money.format(addon.price)}</span>
     </motion.button>
   );
@@ -406,9 +406,9 @@ function QuoteSummary({ hardwareSelections, selectedAddOnItems, hardwareSubtotal
     <Card className="relative overflow-hidden bg-white/90 dark:bg-ink/80 border-ink/10 dark:border-white/10 backdrop-blur-xl">
       <div className="absolute -top-20 -right-16 w-48 h-48 rounded-full bg-bubblegum/20 blur-3xl" />
       <div className="relative">
-        <p className="text-xs font-bold uppercase tracking-[0.22em] text-bubblegum mb-2">{t('summary.eyebrow')}</p>
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-accent mb-2">{t('summary.eyebrow')}</p>
         <h2 className="font-display text-4xl font-bold text-ink dark:text-white mb-2">{t('summary.title')}</h2>
-        <p className="text-sm text-ink/55 dark:text-smoke/60 mb-6">{t('summary.note')}</p>
+        <p className="text-sm text-ink/70 dark:text-smoke/60 mb-6">{t('summary.note')}</p>
 
         <div className="space-y-4 max-h-[46vh] overflow-auto pr-1">
           <SummaryBlock title={t('summary.hardware')} value={money.format(hardwareSubtotal)}>
@@ -423,7 +423,7 @@ function QuoteSummary({ hardwareSelections, selectedAddOnItems, hardwareSubtotal
 
           <SummaryBlock title={t('summary.addons')} value={money.format(addOnsSubtotal)}>
             {selectedAddOnItems.length === 0 ? (
-              <p className="text-sm text-ink/50 dark:text-smoke/50">{t('summary.noAddons')}</p>
+              <p className="text-sm text-ink/70 dark:text-smoke/70">{t('summary.noAddons')}</p>
             ) : (
               selectedAddOnItems.map((addon) => (
                 <SummaryLine key={addon.id} label={t(`addons.items.${addon.id}.title`)} value={money.format(addon.price)} />
@@ -437,15 +437,15 @@ function QuoteSummary({ hardwareSelections, selectedAddOnItems, hardwareSubtotal
             <span className="font-display text-3xl font-bold text-ink dark:text-white">{t('summary.total')}</span>
             <span className="font-display text-4xl font-bold text-bubblegum">{money.format(total)}</span>
           </div>
-          <p className="mt-3 text-xs leading-relaxed text-ink/50 dark:text-smoke/50">{t('summary.disclaimer')}</p>
+          <p className="mt-3 text-xs leading-relaxed text-ink/70 dark:text-smoke/70">{t('summary.disclaimer')}</p>
           <a
             href={quoteHref}
-            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-bubblegum px-5 py-4 font-display text-lg font-bold text-white shadow-soft transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-bubblegum/40"
+            className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-indigo-600 px-5 py-4 font-display text-lg font-bold text-white shadow-soft transition-transform hover:-translate-y-0.5 focus:outline-none focus-visible:ring-4 focus-visible:ring-bubblegum/40"
           >
             <Mail size={19} aria-hidden="true" />
             {t('quote.cta')}
           </a>
-          <p className="mt-3 text-center text-xs text-ink/50 dark:text-smoke/50">{t('quote.note')}</p>
+          <p className="mt-3 text-center text-xs text-ink/70 dark:text-smoke/70">{t('quote.note')}</p>
         </div>
       </div>
     </Card>
@@ -467,7 +467,7 @@ function SummaryBlock({ title, value, children }) {
 function SummaryLine({ label, value }) {
   return (
     <div className="flex items-start justify-between gap-4 text-sm">
-      <span className="text-ink/60 dark:text-smoke/65">{label}</span>
+      <span className="text-ink/70 dark:text-smoke/65">{label}</span>
       <span className="font-bold text-ink dark:text-white whitespace-nowrap">{value}</span>
     </div>
   );
@@ -479,12 +479,12 @@ function MobileQuoteBar({ total, hardwareSubtotal, addOnsSubtotal, money, t, quo
       <div className="max-w-6xl mx-auto">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-bubblegum">{t('summary.mobileLabel')}</p>
-            <p className="text-xs text-ink/55 dark:text-smoke/60">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">{t('summary.mobileLabel')}</p>
+            <p className="text-xs text-ink/70 dark:text-smoke/60">
               {t('summary.hardware')}: {money.format(hardwareSubtotal)} · {t('summary.addons')}: {money.format(addOnsSubtotal)}
             </p>
           </div>
-          <a href={quoteHref} className="rounded-xl bg-bubblegum px-4 py-2 text-right text-white shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-bubblegum/50">
+          <a href={quoteHref} className="rounded-xl bg-indigo-600 px-4 py-2 text-right text-white shadow-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-bubblegum/50">
             <span className="block font-display text-2xl font-bold text-white">{money.format(total)}</span>
             <span className="text-xs font-bold uppercase tracking-widest text-white">{t('quote.mobileCta')}</span>
           </a>

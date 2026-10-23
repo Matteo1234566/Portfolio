@@ -82,7 +82,7 @@ export default function NotFoundHero() {
                 >
                     <span className="relative z-10">404</span>
                     <motion.span
-                        className="absolute top-0 left-0 -ml-1 text-bubblegum opacity-70 z-0 mix-blend-multiply dark:mix-blend-screen"
+                        className="absolute top-0 left-0 -ml-1 text-accent opacity-70 z-0 mix-blend-multiply dark:mix-blend-screen"
                         animate={{ x: [-2, 2, -1, 0] }}
                         transition={{ repeat: Infinity, duration: 0.2, repeatType: "mirror" }}
                     >
@@ -122,7 +122,7 @@ export default function NotFoundHero() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.6 }}
-                    className="w-full max-w-md bg-ink text-green-400 font-mono text-xs md:text-sm p-4 rounded-lg shadow-xl mb-10 text-left border border-white/10 relative overflow-hidden group"
+                    className="on-dark w-full max-w-md bg-ink text-green-400 font-mono text-xs md:text-sm p-4 rounded-lg shadow-xl mb-10 text-left border border-white/10 relative overflow-hidden group"
                 >
                     <div className="flex gap-2 mb-3 border-b border-white/10 pb-2">
                         <div className="w-3 h-3 rounded-full bg-red-500"></div>
@@ -130,10 +130,10 @@ export default function NotFoundHero() {
                         <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     </div>
                     <div className="space-y-1 opacity-80">
-                        <p><span className="text-bubblegum">$</span> systemctl status page-module</p>
+                        <p><span className="text-accent">$</span> systemctl status page-module</p>
                         <p className="text-white">Loaded: loaded (/etc/simone-matteo/pages)</p>
                         <p className="text-red-400">Active: failed (Result: exit-code)</p>
-                        <p><span className="text-bubblegum">$</span> ai-agent --find-content</p>
+                        <p><span className="text-accent">$</span> ai-agent --find-content</p>
                         <p className="animate-pulse">Error: Content hallucination detected...</p>
                     </div>
                 </motion.div>

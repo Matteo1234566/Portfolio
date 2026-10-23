@@ -51,7 +51,7 @@ export default function SimoneProfile() {
                         transition={{delay: 0.2}}
                         className="font-display text-7xl md:text-9xl font-bold uppercase leading-[0.9] mb-4"
                     >
-                        Simone <br/> <span className="text-bubblegum">Zannini</span>
+                        Simone <br/> <span className="text-accent">Zannini</span>
                     </motion.h1>
 
                     <motion.div
@@ -61,7 +61,7 @@ export default function SimoneProfile() {
                         className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-12"
                     >
             <span
-                className="bg-forest text-white px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm md:text-base">
+                className="on-dark bg-forest text-white px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm md:text-base">
               {t('header.role_badge')}
             </span>
                     </motion.div>
@@ -86,14 +86,14 @@ export default function SimoneProfile() {
                     >
                         <h2 className="font-display text-5xl font-bold mb-8">
                             {t('about.title_start')} <br/> <span
-                            className="text-bubblegum">{t('about.title_highlight')}</span>
+                            className="text-accent">{t('about.title_highlight')}</span>
                         </h2>
                         <div className="space-y-6 text-lg leading-relaxed text-ink/80 dark:text-smoke">
                             <p>
                                 {t.rich('about.p1', {
                                     strong: (chunks) => <strong className="text-ink dark:text-white">{chunks}</strong>,
                                     highlight: (chunks) => (
-                                        <span className="bg-bubblegum/20 px-2 py-0.5 rounded text-bubblegum font-bold">
+                                        <span className="bg-bubblegum/20 px-2 py-0.5 rounded text-accent font-bold">
                                             {chunks}
                                         </span>
                                     )
@@ -114,7 +114,7 @@ export default function SimoneProfile() {
                         className="relative"
                     >
                         <Card
-                            className="!p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
+                            className="on-dark !p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
                             <Image
                                 src="/images/simone.webp"
                                 alt="Simone Zannini"
@@ -172,7 +172,7 @@ export default function SimoneProfile() {
                 ]}
             />
 
-            <section className="pt-20 pb-10 text-center bg-forest text-white">
+            <section className="on-dark pt-20 pb-10 text-center bg-forest text-white">
                 <h2 className="font-display text-4xl mb-2">SIMONE ZANNINI</h2>
                 <p className="text-white/50 mb-8">{t('contact.location')}</p>
                 <div className="flex justify-center gap-4">
@@ -187,7 +187,7 @@ export default function SimoneProfile() {
                     </a>
                 </div>
             </section>
-            <div className="bg-forest text-white pb-12 overflow-hidden relative">
+            <div className="on-dark bg-forest text-white pb-12 overflow-hidden relative">
                 <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
                     <motion.div
                         initial={{ opacity: 0 }}

@@ -49,7 +49,7 @@ export default function MatteoProfile() {
                         transition={{ delay: 0.2 }}
                         className="font-display text-7xl md:text-9xl font-bold uppercase leading-[0.9] mb-4"
                     >
-                        Matteo <br/> <span className="text-bubblegum">Cese</span>
+                        Matteo <br/> <span className="text-accent">Cese</span>
                     </motion.h1>
 
                     <motion.div
@@ -58,7 +58,7 @@ export default function MatteoProfile() {
                         transition={{ delay: 0.4 }}
                         className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8 mb-12"
                     >
-            <span className="bg-forest text-white px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm md:text-base">
+            <span className="on-dark bg-forest text-white px-4 py-2 rounded-full font-bold uppercase tracking-wider text-sm md:text-base">
               {t('header.role_badge')}
             </span>
 
@@ -71,7 +71,7 @@ export default function MatteoProfile() {
                         className="text-2xl md:text-4xl font-display text-ink/80 dark:text-white/80 border-l-4 border-forest dark:border-bubblegum pl-6 py-2 italic max-w-3xl"
                     >
                         {t('header.quote')}
-                        <span className="block text-lg font-body text-ink/50 dark:text-white/50 mt-2 not-italic">
+                        <span className="block text-lg font-body text-ink/70 dark:text-white/60 mt-2 not-italic">
             </span>
                     </motion.blockquote>
                 </div>
@@ -85,14 +85,14 @@ export default function MatteoProfile() {
                         viewport={{ once: true }}
                     >
                         <h2 className="font-display text-5xl font-bold mb-8">
-                            {t('about.title_start')} <br/> <span className="text-bubblegum">{t('about.title_highlight')}</span>
+                            {t('about.title_start')} <br/> <span className="text-accent">{t('about.title_highlight')}</span>
                         </h2>
                         <div className="space-y-6 text-lg leading-relaxed text-ink/80 dark:text-smoke">
                             <p>
                                 {t.rich('about.p1', {
                                     strong: (chunks) => <strong className="text-ink dark:text-white">{chunks}</strong>,
                                     highlight: (chunks) => (
-                                        <span className="bg-bubblegum/20 px-2 py-0.5 rounded text-bubblegum font-bold">
+                                        <span className="bg-bubblegum/20 px-2 py-0.5 rounded text-accent font-bold">
                                             {chunks}
                                         </span>
                                     )
@@ -116,7 +116,7 @@ export default function MatteoProfile() {
                         transition={{ type: "spring", stiffness: 80, damping: 18 }}
                         className="relative"
                     >
-                        <Card className="!p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
+                        <Card className="on-dark !p-0 overflow-hidden bg-forest relative aspect-square md:aspect-[4/5] flex items-center justify-center group">
                             <Image
                                 src="/images/matteo.webp"
                                 alt="Matteo Cese"
@@ -173,7 +173,7 @@ export default function MatteoProfile() {
                 ]}
             />
 
-            <section className="pt-20 pb-10 text-center bg-forest text-white">
+            <section className="on-dark pt-20 pb-10 text-center bg-forest text-white">
                 <h2 className="font-display text-4xl mb-2">MATTEO CESE</h2>
                 <p className="text-white/50 mb-8">{t('contact.location')}</p>
                 <div className="flex justify-center gap-4">
@@ -188,7 +188,7 @@ export default function MatteoProfile() {
                     </a>
                 </div>
             </section>
-            <div className="bg-forest text-white pb-12 overflow-hidden relative">
+            <div className="on-dark bg-forest text-white pb-12 overflow-hidden relative">
                 <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
                     <motion.div
                         initial={{ opacity: 0 }}

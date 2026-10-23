@@ -59,7 +59,7 @@ function InterestCard({ interest }) {
   return (
     <motion.div ref={ref} variants={item} className="group h-full">
       <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border-2 border-smoke/20 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-bubblegum hover:shadow-2xl dark:border-white/10 dark:bg-ink/50 dark:hover:border-bubblegum">
-        <div className="relative h-44 overflow-hidden border-b-2 border-ink bg-forest dark:border-white/10">
+        <div className="on-dark relative h-44 overflow-hidden border-b-2 border-ink bg-forest dark:border-white/10">
           <div
             className="absolute inset-0 opacity-[0.12]"
             style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '16px 16px' }}
@@ -71,7 +71,7 @@ function InterestCard({ interest }) {
 
         <div className="flex flex-grow flex-col p-6">
           <div className="mb-3 flex items-center gap-3">
-            <Icon size={20} className="text-bubblegum transition-transform duration-300 group-hover:-rotate-12" aria-hidden="true" />
+            <Icon size={20} className="text-accent transition-transform duration-300 group-hover:-rotate-12" aria-hidden="true" />
             <h3 className="font-display text-2xl font-bold text-ink transition-colors group-hover:text-bubblegum dark:text-white">
               {interest.title}
             </h3>

@@ -49,13 +49,13 @@ export default function TargagePage() {
   const pillars = [
     {
       id: 'efficiency',
-      icon: <ChartNoAxesCombined size={28} className="text-bubblegum" />,
+      icon: <ChartNoAxesCombined size={28} className="text-accent" />,
       title: t('pillars.efficiency.title'),
       desc: t('pillars.efficiency.desc'),
     },
     {
       id: 'legal',
-      icon: <Scale size={28} className="text-forest dark:text-bubblegum" />,
+      icon: <Scale size={28} className="text-forest dark:text-accent" />,
       title: t('pillars.legal.title'),
       desc: t('pillars.legal.desc'),
     },
@@ -70,13 +70,13 @@ export default function TargagePage() {
   const pipeline = [
     {
       id: 'ingestion',
-      icon: <Camera size={28} className="text-bubblegum" />,
+      icon: <Camera size={28} className="text-accent" />,
       title: t('pipeline.ingestion.title'),
       desc: t('pipeline.ingestion.desc'),
     },
     {
       id: 'detection',
-      icon: <Radar size={28} className="text-forest dark:text-bubblegum" />,
+      icon: <Radar size={28} className="text-forest dark:text-accent" />,
       title: t('pipeline.detection.title'),
       desc: t('pipeline.detection.desc'),
     },
@@ -88,7 +88,7 @@ export default function TargagePage() {
     },
     {
       id: 'retrieval',
-      icon: <FileSearch size={28} className="text-bubblegum" />,
+      icon: <FileSearch size={28} className="text-accent" />,
       title: t('pipeline.retrieval.title'),
       desc: t('pipeline.retrieval.desc'),
     },
@@ -116,7 +116,7 @@ export default function TargagePage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-bubblegum text-sm font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-accent text-sm font-bold uppercase tracking-widest mb-6">
               <Search size={14} className="animate-pulse" />
               <span>{t('badge')}</span>
             </div>
@@ -132,7 +132,7 @@ export default function TargagePage() {
               {t('description')}
             </p>
 
-            <p className="text-base md:text-lg text-ink/60 dark:text-smoke/65 leading-relaxed max-w-2xl mt-5">
+            <p className="text-base md:text-lg text-ink/70 dark:text-smoke/65 leading-relaxed max-w-2xl mt-5">
               {t('supporting')}
             </p>
 
@@ -167,19 +167,19 @@ export default function TargagePage() {
               <div className="absolute -bottom-24 -left-24 w-52 h-52 rounded-full bg-forest/20 dark:bg-white/10 blur-3xl" />
 
               <div className="relative space-y-4">
-                <p className="text-xs uppercase tracking-[0.2em] font-bold text-ink/50 dark:text-smoke/50">
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-ink/70 dark:text-smoke/70">
                   {t('heroCard.eyebrow')}
                 </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="rounded-2xl border border-ink/10 dark:border-white/10 bg-paper/80 dark:bg-white/5 p-4">
-                    <div className="flex items-center gap-2 mb-3 text-bubblegum">
+                    <div className="flex items-center gap-2 mb-3 text-accent">
                       <BrainCircuit size={18} />
                       <p className="text-xs font-bold uppercase tracking-[0.18em]">{t('heroCard.brainTitle')}</p>
                     </div>
                     <p className="text-sm leading-relaxed text-ink/70 dark:text-smoke/75">{t('heroCard.brainDescription')}</p>
                   </div>
                   <div className="rounded-2xl border border-ink/10 dark:border-white/10 bg-paper/80 dark:bg-white/5 p-4">
-                    <div className="flex items-center gap-2 mb-3 text-forest dark:text-bubblegum">
+                    <div className="flex items-center gap-2 mb-3 text-forest dark:text-accent">
                       <LockKeyhole size={18} />
                       <p className="text-xs font-bold uppercase tracking-[0.18em]">{t('heroCard.securityTitle')}</p>
                     </div>
@@ -188,7 +188,7 @@ export default function TargagePage() {
                 </div>
 
                 <div className="rounded-2xl border border-bubblegum/20 bg-bubblegum/10 p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-bubblegum mb-2">{t('heroCard.outcomeLabel')}</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent mb-2">{t('heroCard.outcomeLabel')}</p>
                   <p className="font-display text-2xl text-ink dark:text-white">{t('heroCard.outcomeTitle')}</p>
                   <p className="text-ink/70 dark:text-smoke/75 mt-2 leading-relaxed">{t('heroCard.outcomeDescription')}</p>
                 </div>
@@ -261,7 +261,7 @@ export default function TargagePage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-forest text-white p-8 md:p-10"
+          className="on-dark rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-forest text-white p-8 md:p-10"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8">{t('value_title')}</h2>
           <div className="grid md:grid-cols-3 gap-5">
@@ -282,7 +282,7 @@ export default function TargagePage() {
           viewport={{ once: true, margin: '-10%' }}
         >
           <Card className="h-full border-ink/10 dark:border-white/10 bg-white/85 dark:bg-white/5">
-            <div className="flex items-center gap-3 mb-5 text-bubblegum">
+            <div className="flex items-center gap-3 mb-5 text-accent">
               <ServerCog size={22} />
               <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('compatibility.eyebrow')}</p>
             </div>
@@ -308,7 +308,7 @@ export default function TargagePage() {
           transition={{ delay: 0.08 }}
         >
           <Card className="h-full border-ink/10 dark:border-white/10 bg-white/85 dark:bg-white/5">
-            <div className="flex items-center gap-3 mb-5 text-bubblegum">
+            <div className="flex items-center gap-3 mb-5 text-accent">
               <LockKeyhole size={22} />
               <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('compliance.eyebrow')}</p>
             </div>
@@ -317,7 +317,7 @@ export default function TargagePage() {
             <div className="space-y-3">
               {compliance.map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-2xl border border-ink/10 dark:border-white/10 bg-paper/70 dark:bg-ink p-4">
-                  <CircleAlert size={18} className="mt-0.5 shrink-0 text-bubblegum" />
+                  <CircleAlert size={18} className="mt-0.5 shrink-0 text-accent" />
                   <p className="text-ink/75 dark:text-smoke/80 leading-relaxed">{item}</p>
                 </div>
               ))}
@@ -334,7 +334,7 @@ export default function TargagePage() {
           className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-paper dark:bg-ink p-8 md:p-10"
         >
           <div className="max-w-3xl mb-8">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('faqEyebrow')}</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-accent mb-3">{t('faqEyebrow')}</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">{t('faqTitle')}</h2>
             <p className="text-ink/70 dark:text-smoke/75 leading-relaxed">{t('faqDescription')}</p>
           </div>

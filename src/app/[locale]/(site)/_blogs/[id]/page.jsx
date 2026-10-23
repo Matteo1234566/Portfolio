@@ -71,14 +71,14 @@ export default function BlogPost({ params }) {
 
       <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col gap-8">
         <nav
-          className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-ink/55 dark:text-smoke/65"
+          className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.12em] text-ink/70 dark:text-smoke/65"
           aria-label={locale === 'it' ? 'Percorso di navigazione' : 'Breadcrumb'}
         >
-          <Link href={`/${locale}`} className="cursor-pointer transition-colors hover:text-bubblegum">
+          <Link href={`/${locale}`} className="cursor-pointer transition-colors hover:text-accent">
             DevOP
           </Link>
           <ChevronRight size={14} />
-          <Link href={`/${locale}/blogs`} className="cursor-pointer transition-colors hover:text-bubblegum">
+          <Link href={`/${locale}/blogs`} className="cursor-pointer transition-colors hover:text-accent">
             Blog
           </Link>
           <ChevronRight size={14} />
@@ -93,7 +93,7 @@ export default function BlogPost({ params }) {
           <div className="mb-6 flex flex-wrap items-center gap-3">
             <Link
               href={`/${locale}/blogs`}
-              className="inline-flex cursor-pointer items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-ink/60 transition-colors hover:text-bubblegum dark:text-smoke/70"
+              className="inline-flex cursor-pointer items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-ink/70 transition-colors hover:text-accent dark:text-smoke/70"
             >
               <ArrowLeft size={15} />
               {t('back')}
@@ -109,15 +109,15 @@ export default function BlogPost({ params }) {
 
           <div className="mt-8 flex flex-wrap items-center gap-5 border-t border-ink/10 pt-5 text-sm text-ink/65 dark:border-white/10 dark:text-smoke/70">
             <span className="inline-flex items-center gap-2">
-              <User size={16} className="text-forest dark:text-bubblegum" />
+              <User size={16} className="text-forest dark:text-accent" />
               {post.author}
             </span>
             <span className="inline-flex items-center gap-2">
-              <Calendar size={16} className="text-forest dark:text-bubblegum" />
+              <Calendar size={16} className="text-forest dark:text-accent" />
               {formatDate(post.date, locale)}
             </span>
             <span className="inline-flex items-center gap-2">
-              <Clock3 size={16} className="text-forest dark:text-bubblegum" />
+              <Clock3 size={16} className="text-forest dark:text-accent" />
               {post.readTime} {t('min_read')}
             </span>
           </div>
@@ -130,10 +130,10 @@ export default function BlogPost({ params }) {
           className="overflow-hidden rounded-[2rem] border-2 border-ink/15 dark:border-white/20"
         >
           <div className={`relative bg-gradient-to-br ${post.accent} px-8 py-10 md:px-10 md:py-12`}>
-            <div className="absolute inset-0 bg-[linear-gradient(140deg,rgba(15,23,42,0.68),rgba(15,23,42,0.25))]" />
+            <div className="absolute inset-0 bg-[linear-gradient(140deg,rgba(15,23,42,0.8),rgba(15,23,42,0.55))]" />
             <div className="relative grid gap-8 md:grid-cols-[1.2fr_1fr]">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/80">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-white">
                   {locale === 'it' ? 'Sintesi rapida' : 'Quick brief'}
                 </p>
                 <h2 className="mt-3 font-display text-3xl leading-tight text-white md:text-4xl">
@@ -142,7 +142,7 @@ export default function BlogPost({ params }) {
               </div>
               <ul className="space-y-3">
                 {content.highlights.map((item) => (
-                  <li key={item} className="rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white/90 backdrop-blur-sm">
+                  <li key={item} className="rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm text-white backdrop-blur-sm">
                     {item}
                   </li>
                 ))}
@@ -152,12 +152,12 @@ export default function BlogPost({ params }) {
         </motion.section>
 
         {post.relatedService && (
-          <aside className="rounded-[1.8rem] bg-forest p-7 text-white md:flex md:items-center md:justify-between md:gap-8">
+          <aside className="on-dark rounded-[1.8rem] bg-forest p-7 text-white md:flex md:items-center md:justify-between md:gap-8">
             <div>
               <h2 className="font-display text-3xl">{locale === 'it' ? 'Porta questo metodo nel tuo progetto' : 'Apply this method to your project'}</h2>
               <p className="mt-2 text-white/75">{locale === 'it' ? 'Approfondisci il servizio DevOP collegato a questo tema.' : 'Explore the DevOP service connected to this topic.'}</p>
             </div>
-            <Link href={servicePath(post.relatedService, locale)} className="mt-5 inline-flex shrink-0 items-center gap-2 rounded-full bg-bubblegum px-5 py-3 font-bold text-ink md:mt-0">
+            <Link href={servicePath(post.relatedService, locale)} className="mt-5 inline-flex shrink-0 items-center gap-2 rounded-full bg-indigo-600 px-5 py-3 font-bold text-white md:mt-0">
               {locale === 'it' ? 'Vedi il servizio' : 'View the service'} <ArrowUpRight size={17} />
             </Link>
           </aside>
@@ -178,7 +178,7 @@ export default function BlogPost({ params }) {
 
         <section className="rounded-[1.8rem] border-2 border-dashed border-ink/15 bg-white/70 p-7 dark:border-white/20 dark:bg-white/5">
           <div className="mb-4 flex items-center gap-2 text-ink dark:text-white">
-            <Tag size={18} className="text-bubblegum" />
+            <Tag size={18} className="text-accent" />
             <h2 className="font-display text-2xl">{t('tags_label')}</h2>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -205,7 +205,7 @@ export default function BlogPost({ params }) {
                 return (
                   <Link key={related.id} href={`/${locale}/blogs/${related.id}`} className="group block h-full">
                     <Card className="flex h-full cursor-pointer flex-col justify-between gap-4 border-ink/15 bg-white/80 p-6 transition-colors duration-200 hover:border-bubblegum dark:border-white/20 dark:bg-white/5">
-                      <p className="text-xs uppercase tracking-[0.13em] text-ink/55 dark:text-smoke/65">{formatDate(related.date, locale)}</p>
+                      <p className="text-xs uppercase tracking-[0.13em] text-ink/70 dark:text-smoke/65">{formatDate(related.date, locale)}</p>
                       <h3 className="font-display text-2xl leading-tight text-ink transition-colors duration-200 group-hover:text-bubblegum dark:text-white">
                         {relatedContent.title}
                       </h3>

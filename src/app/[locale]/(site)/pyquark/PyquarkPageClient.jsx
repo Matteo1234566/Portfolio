@@ -25,19 +25,21 @@ const DARK_THEME = {
   seed: '#20BF20',
   ink: '#F5EFDF',
   muted: '#D2C9BC',
-  subtle: '#797C77',
-  accent: '#737B85',
+  subtle: '#9C9E9A',
+  accent: '#979EA5',
+  onSeed: '#000000',
 };
 
 const LIGHT_THEME = {
   surface: '#F5EFDF',
   card: '#FFFFFF',
   active: '#D2C9BC',
-  seed: '#20BF20',
+  seed: '#106110',
   ink: '#000000',
   muted: '#333338',
-  subtle: '#797C77',
-  accent: '#737B85',
+  subtle: '#535552',
+  accent: '#4E545B',
+  onSeed: '#FFFFFF',
 };
 
 const container = {
@@ -209,7 +211,7 @@ export default function PyquarkPageClient() {
 
             <div className="flex flex-wrap gap-4 mt-8">
               <a href="https://github.com/Zannael/PyQuark" target="_blank" rel="noopener noreferrer">
-                <Button variant="primary" className="px-7 py-4 text-base gap-2" style={{ backgroundColor: C.seed, color: '#000000', borderColor: '#000000' }}>
+                <Button variant="primary" className="px-7 py-4 text-base gap-2" style={{ backgroundColor: C.seed, color: C.onSeed, borderColor: '#000000' }}>
                   <Github size={18} />
                   {t('cta_repo')}
                 </Button>

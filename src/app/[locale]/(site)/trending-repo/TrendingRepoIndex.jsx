@@ -37,7 +37,7 @@ export default function TrendingRepoIndex() {
 
   return (
     <main className="min-h-screen bg-paper font-body text-ink transition-colors duration-300 dark:bg-ink dark:text-smoke">
-      <section className="relative overflow-hidden bg-forest px-4 pb-20 pt-32 text-white md:pb-28 md:pt-40">
+      <section className="on-dark relative overflow-hidden bg-forest px-4 pb-20 pt-32 text-white md:pb-28 md:pt-40">
         <div className="pointer-events-none absolute -right-20 top-24 h-64 w-64 rounded-full border-[28px] border-bubblegum/20" />
         <div className="pointer-events-none absolute bottom-[-8rem] left-[-4rem] h-64 w-64 rounded-full border-[20px] border-white/10" />
         <motion.div
@@ -46,12 +46,12 @@ export default function TrendingRepoIndex() {
           transition={{ duration: 0.6 }}
           className="relative mx-auto max-w-6xl"
         >
-          <Link href={`/${locale}`} className="mb-8 inline-flex items-center text-sm font-bold uppercase tracking-[0.18em] text-white/60 transition-colors hover:text-bubblegum">
+          <Link href={`/${locale}`} className="mb-8 inline-flex items-center text-sm font-bold uppercase tracking-[0.18em] text-white/60 transition-colors hover:text-accent">
             {t('backHome')}
           </Link>
-          <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-bubblegum">{t('label')}</p>
+          <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-accent">{t('label')}</p>
           <h1 className="max-w-4xl font-display text-6xl font-bold leading-[0.9] md:text-8xl">
-            {t('title.start')} <span className="text-bubblegum italic">{t('title.highlight')}</span>
+            {t('title.start')} <span className="text-accent italic">{t('title.highlight')}</span>
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/75 md:text-xl">{t('intro')}</p>
         </motion.div>
@@ -61,7 +61,7 @@ export default function TrendingRepoIndex() {
         <div className="mb-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <label className="relative block max-w-2xl">
             <span className="sr-only">{t('searchLabel')}</span>
-            <Search className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-ink/50 dark:text-smoke/50" size={22} aria-hidden="true" />
+            <Search className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-ink/70 dark:text-smoke/70" size={22} aria-hidden="true" />
             <input
               type="search"
               value={query}
@@ -70,7 +70,7 @@ export default function TrendingRepoIndex() {
               className="w-full rounded-full border-2 border-ink bg-white px-14 py-4 text-lg outline-none transition-shadow placeholder:text-ink/45 focus:ring-4 focus:ring-bubblegum/40 dark:border-white/30 dark:bg-white/5 dark:placeholder:text-smoke/45"
             />
           </label>
-          <p className="text-sm font-bold uppercase tracking-[0.16em] text-ink/50 dark:text-smoke/50">
+          <p className="text-sm font-bold uppercase tracking-[0.16em] text-ink/70 dark:text-smoke/70">
             {t('count', { count: filteredRepositories.length })}
           </p>
         </div>
@@ -108,7 +108,7 @@ export default function TrendingRepoIndex() {
             >
               <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
                 <div className="max-w-3xl">
-                  <div className="mb-4 flex flex-wrap items-center gap-3 text-sm font-bold uppercase tracking-[0.16em] text-ink/50 dark:text-smoke/50">
+                  <div className="mb-4 flex flex-wrap items-center gap-3 text-sm font-bold uppercase tracking-[0.16em] text-ink/70 dark:text-smoke/70">
                     <span className="inline-flex items-center gap-2"><Github size={18} aria-hidden="true" />{repository.owner}</span>
                     <span aria-hidden="true">/</span>
                     <span>{repository.language}</span>
@@ -116,10 +116,10 @@ export default function TrendingRepoIndex() {
                   <h2 className="mb-3 font-display text-4xl font-bold md:text-5xl">{repository.name}</h2>
                   <p className="mb-6 text-lg leading-relaxed text-ink/70 dark:text-smoke/70">{repository.content?.[locale]?.description ?? t(`repositories.${repository.slug}.description`)}</p>
                   <div className="flex flex-wrap gap-2">
-                    {repository.tags.map((tag) => <span key={tag} className="rounded-full bg-forest/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-forest dark:bg-white/10 dark:text-bubblegum">{t(`tags.${tag}`)}</span>)}
+                    {repository.tags.map((tag) => <span key={tag} className="rounded-full bg-forest/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-forest dark:bg-white/10 dark:text-accent">{t(`tags.${tag}`)}</span>)}
                   </div>
                 </div>
-                <Link href={`/${locale}/trending-repo/${repository.slug}`} className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-2 border-ink bg-bubblegum px-6 py-3 font-display font-bold uppercase tracking-wide text-ink shadow-hard transition-all duration-200 hover:-translate-y-1 hover:bg-white dark:border-white">
+                <Link href={`/${locale}/trending-repo/${repository.slug}`} className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-full border-2 border-ink bg-indigo-600 px-6 py-3 font-display font-bold uppercase tracking-wide text-white shadow-hard transition-all duration-200 hover:-translate-y-1 hover:bg-white hover:text-ink dark:border-white">
                   {t('readArticle')}
                   <ArrowUpRight size={19} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" aria-hidden="true" />
                 </Link>
@@ -130,7 +130,7 @@ export default function TrendingRepoIndex() {
 
         {!filteredRepositories.length && (
           <div className="rounded-[2rem] border-2 border-dashed border-ink/30 px-6 py-16 text-center dark:border-white/30">
-            <X className="mx-auto mb-4 text-bubblegum" size={32} aria-hidden="true" />
+            <X className="mx-auto mb-4 text-accent" size={32} aria-hidden="true" />
             <h2 className="font-display text-3xl font-bold">{t('emptyTitle')}</h2>
             <p className="mx-auto mt-3 max-w-md text-ink/65 dark:text-smoke/65">{t('emptyDescription')}</p>
           </div>

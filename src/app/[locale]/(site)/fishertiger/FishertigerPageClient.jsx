@@ -66,7 +66,7 @@ export default function FishertigerPageClient() {
             animate={reduceMotion ? undefined : { opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-bubblegum text-sm font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-accent text-sm font-bold uppercase tracking-widest mb-6">
               <Trophy size={14} className={reduceMotion ? '' : 'animate-pulse'} aria-hidden="true" />
               <span>{t('badge')}</span>
             </div>
@@ -87,7 +87,7 @@ export default function FishertigerPageClient() {
               {[0, 1, 2, 3].map((index) => (
                 <span
                   key={index}
-                  className="rounded-full border border-ink/10 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-ink/60 dark:text-smoke/70"
+                  className="rounded-full border border-ink/10 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-ink/70 dark:text-smoke/70"
                 >
                   {t(`chips.${index}`)}
                 </span>
@@ -119,7 +119,7 @@ export default function FishertigerPageClient() {
               <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-bubblegum/20 blur-3xl" />
               <div className="absolute -bottom-24 -left-24 w-60 h-60 rounded-full bg-forest/20 dark:bg-white/10 blur-3xl" />
               <div className="relative space-y-4">
-                <p className="text-xs uppercase tracking-[0.22em] font-bold text-ink/50 dark:text-smoke/60">
+                <p className="text-xs uppercase tracking-[0.22em] font-bold text-ink/70 dark:text-smoke/60">
                   {t('visual.label')}
                 </p>
 
@@ -145,7 +145,7 @@ export default function FishertigerPageClient() {
 
       <section id="capabilities" className="max-w-6xl mx-auto px-4 mt-24 scroll-mt-28">
         <div className="max-w-3xl mb-10">
-          <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3 text-bubblegum">{t('capabilitiesLabel')}</p>
+          <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3 text-accent">{t('capabilitiesLabel')}</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-ink dark:text-white">{t('capabilitiesTitle')}</h2>
           <p className="text-lg leading-relaxed text-ink/65 dark:text-smoke/70">{t('capabilitiesSubtitle')}</p>
         </div>
@@ -162,7 +162,7 @@ export default function FishertigerPageClient() {
             return (
               <motion.div key={entry.id} variants={reduceMotion ? undefined : item}>
                 <Card className="h-full bg-white/80 dark:bg-ink/60 border-ink/10 dark:border-white/10">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 bg-forest text-white dark:bg-white/10 dark:text-bubblegum">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 bg-forest text-white dark:bg-white/10 dark:text-accent">
                     <Icon size={26} aria-hidden="true" />
                   </div>
                   <h3 className="font-display text-2xl md:text-3xl font-bold mb-3 text-ink dark:text-white">
@@ -180,7 +180,7 @@ export default function FishertigerPageClient() {
 
       <section className="max-w-6xl mx-auto px-4 mt-16 grid gap-6 lg:grid-cols-[1fr_1fr]">
         <Card className="h-full bg-white/80 dark:bg-ink/60 border-ink/10 dark:border-white/10">
-          <div className="flex items-center gap-3 mb-4 text-bubblegum">
+          <div className="flex items-center gap-3 mb-4 text-accent">
             <Users size={20} aria-hidden="true" />
             <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('model.label')}</p>
           </div>
@@ -189,7 +189,7 @@ export default function FishertigerPageClient() {
           <ul className="space-y-3">
             {modelPoints.map((point) => (
               <li key={point} className="flex items-start gap-3 rounded-xl border border-ink/10 dark:border-white/10 bg-paper/70 dark:bg-white/5 p-4">
-                <Sparkles size={16} className="mt-1 shrink-0 text-bubblegum" aria-hidden="true" />
+                <Sparkles size={16} className="mt-1 shrink-0 text-accent" aria-hidden="true" />
                 <span className="leading-relaxed text-ink/70 dark:text-smoke/75">{point}</span>
               </li>
             ))}
@@ -197,7 +197,7 @@ export default function FishertigerPageClient() {
         </Card>
 
         <Card className="h-full bg-white/80 dark:bg-ink/60 border-ink/10 dark:border-white/10">
-          <div className="flex items-center gap-3 mb-4 text-bubblegum">
+          <div className="flex items-center gap-3 mb-4 text-accent">
             <Lock size={20} aria-hidden="true" />
             <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('privacy.label')}</p>
           </div>
@@ -206,7 +206,7 @@ export default function FishertigerPageClient() {
           <ul className="space-y-3">
             {privacyPoints.map((point) => (
               <li key={point} className="flex items-start gap-3 rounded-xl border border-ink/10 dark:border-white/10 bg-paper/70 dark:bg-white/5 p-4">
-                <ShieldCheck size={16} className="mt-1 shrink-0 text-bubblegum" aria-hidden="true" />
+                <ShieldCheck size={16} className="mt-1 shrink-0 text-accent" aria-hidden="true" />
                 <span className="leading-relaxed text-ink/70 dark:text-smoke/75">{point}</span>
               </li>
             ))}
@@ -217,7 +217,7 @@ export default function FishertigerPageClient() {
       <section className="max-w-6xl mx-auto px-4 mt-16">
         <Card className="p-8 md:p-10 bg-white/80 dark:bg-ink/60 border-ink/10 dark:border-white/10">
           <div className="max-w-3xl mb-8">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3 text-bubblegum">{t('faqLabel')}</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3 text-accent">{t('faqLabel')}</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 text-ink dark:text-white">{t('faqTitle')}</h2>
             <p className="text-lg leading-relaxed text-ink/65 dark:text-smoke/70">{t('faqSubtitle')}</p>
           </div>
@@ -237,7 +237,7 @@ export default function FishertigerPageClient() {
           initial={reduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          className="rounded-3xl border-2 border-ink dark:border-white/15 p-8 md:p-10 bg-forest text-white"
+          className="on-dark rounded-3xl border-2 border-ink dark:border-white/15 p-8 md:p-10 bg-forest text-white"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-3">{t('footer.title')}</h2>
           <p className="text-lg max-w-3xl text-white/85">{t('footer.desc')}</p>

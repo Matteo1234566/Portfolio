@@ -58,5 +58,5 @@ export default async function RepositoryPage({ params }) {
   const { locale, slug } = await params;
   const repository = getRepository(slug);
   if (!repository) notFound();
-  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Trending Repo', href: `/${locale}/trending-repo` }, { name: repository.name, href: `/${locale}/trending-repo/${slug}` }]} /><RepositoryPageClient repository={repository} /></>;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Trending Repo', href: `/${locale}/trending-repo` }, { name: repository.name, href: `/${locale}/trending-repo/${slug}` }]} tone="light" /><RepositoryPageClient repository={repository} /></>;
 }

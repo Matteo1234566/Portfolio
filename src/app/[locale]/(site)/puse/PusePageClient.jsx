@@ -31,6 +31,7 @@ const DARK_THEME = {
   ink: '#FAFAFA',
   muted: '#CBD4EB',
   subtle: '#96A4C7',
+  primaryText: '#5E85F9',
 };
 
 const LIGHT_THEME = {
@@ -42,6 +43,7 @@ const LIGHT_THEME = {
   ink: '#18223A',
   muted: '#314165',
   subtle: '#5E6E93',
+  primaryText: '#1C53F6',
 };
 
 const container = {
@@ -80,7 +82,7 @@ export default function PusePageClient() {
   const capabilities = [
     {
       id: 'party',
-      icon: <Gamepad2 size={28} style={{ color: C.primary }} />,
+      icon: <Gamepad2 size={28} style={{ color: C.primaryText }} />,
       title: t('capabilities.party.title'),
       desc: t('capabilities.party.desc'),
     },
@@ -98,7 +100,7 @@ export default function PusePageClient() {
     },
     {
       id: 'checksum',
-      icon: <ShieldCheck size={28} style={{ color: C.primary }} />,
+      icon: <ShieldCheck size={28} style={{ color: C.primaryText }} />,
       title: t('capabilities.checksum.title'),
       desc: t('capabilities.checksum.desc'),
     },
@@ -107,7 +109,7 @@ export default function PusePageClient() {
   const flow = [
     {
       id: 'upload',
-      icon: <Upload size={24} style={{ color: C.primary }} />,
+      icon: <Upload size={24} style={{ color: C.primaryText }} />,
       title: t('flow.upload.title'),
       desc: t('flow.upload.desc'),
     },
@@ -119,7 +121,7 @@ export default function PusePageClient() {
     },
     {
       id: 'validate',
-      icon: <ShieldCheck size={24} style={{ color: C.primary }} />,
+      icon: <ShieldCheck size={24} style={{ color: C.primaryText }} />,
       title: t('flow.validate.title'),
       desc: t('flow.validate.desc'),
     },
@@ -153,7 +155,7 @@ export default function PusePageClient() {
           >
             <div
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-bold uppercase tracking-widest mb-6"
-              style={{ backgroundColor: `${C.primary}14`, color: C.primary }}
+              style={{ backgroundColor: `${C.primary}14`, color: C.primaryText }}
             >
               <Gamepad2 size={14} className="animate-pulse" />
               <span>{t('badge')}</span>
@@ -179,7 +181,7 @@ export default function PusePageClient() {
               </h1>
             </div>
 
-            <p className="text-2xl md:text-3xl font-display font-bold mb-5" style={{ color: C.primary }}>
+            <p className="text-2xl md:text-3xl font-display font-bold mb-5" style={{ color: C.primaryText }}>
               {t('heroSubtitle')}
             </p>
 
@@ -261,7 +263,7 @@ export default function PusePageClient() {
                 <div className="rounded-2xl border p-5 space-y-2" style={{ borderColor: cardBorder, backgroundColor: C.active }}>
                   {[0, 1, 2].map((index) => (
                     <p key={index} className="text-sm flex items-start gap-2" style={{ color: C.muted }}>
-                      <CircleCheck size={15} className="mt-0.5 shrink-0" style={{ color: C.primary }} />
+                      <CircleCheck size={15} className="mt-0.5 shrink-0" style={{ color: C.primaryText }} />
                       <span>{t(`heroCard.trust.${index}`)}</span>
                     </p>
                   ))}
@@ -274,7 +276,7 @@ export default function PusePageClient() {
 
       <div className="max-w-6xl mx-auto px-4 mt-24">
         <div className="max-w-3xl mb-10">
-          <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3" style={{ color: C.primary }}>{t('capabilitiesLabel')}</p>
+          <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3" style={{ color: C.primaryText }}>{t('capabilitiesLabel')}</p>
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: C.ink }}>{t('capabilitiesTitle')}</h2>
           <p className="text-lg leading-relaxed" style={{ color: C.muted }}>{t('capabilitiesSubtitle')}</p>
         </div>
@@ -306,7 +308,7 @@ export default function PusePageClient() {
       <div className="max-w-6xl mx-auto px-4 mt-16">
         <Card className="p-8 md:p-10" style={{ borderColor: cardBorder, backgroundColor: C.card }}>
           <div className="max-w-3xl mb-8">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3" style={{ color: C.primary }}>{t('flowLabel')}</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3" style={{ color: C.primaryText }}>{t('flowLabel')}</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: C.ink }}>{t('flowTitle')}</h2>
             <p className="text-lg leading-relaxed" style={{ color: C.muted }}>{t('flowSubtitle')}</p>
           </div>
@@ -324,7 +326,7 @@ export default function PusePageClient() {
 
       <div className="max-w-6xl mx-auto px-4 mt-16 grid gap-6 lg:grid-cols-[1fr_1fr]">
         <Card className="h-full" style={{ borderColor: cardBorder, backgroundColor: C.card }}>
-          <div className="flex items-center gap-3 mb-4" style={{ color: C.primary }}>
+          <div className="flex items-center gap-3 mb-4" style={{ color: C.primaryText }}>
             <Database size={20} />
             <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('compatLabel')}</p>
           </div>
@@ -333,7 +335,7 @@ export default function PusePageClient() {
           <div className="space-y-3">
             {[0, 1, 2, 3].map((index) => (
               <div key={index} className="flex items-start gap-3 rounded-xl border p-4" style={{ borderColor: cardBorder, backgroundColor: C.active }}>
-                <CircleCheck size={18} className="mt-0.5 shrink-0" style={{ color: C.primary }} />
+                <CircleCheck size={18} className="mt-0.5 shrink-0" style={{ color: C.primaryText }} />
                 <p className="leading-relaxed" style={{ color: C.muted }}>{t(`compatItems.${index}`)}</p>
               </div>
             ))}
@@ -341,7 +343,7 @@ export default function PusePageClient() {
         </Card>
 
         <Card className="h-full" style={{ borderColor: cardBorder, backgroundColor: C.card }}>
-          <div className="flex items-center gap-3 mb-4" style={{ color: C.primary }}>
+          <div className="flex items-center gap-3 mb-4" style={{ color: C.primaryText }}>
             <Timer size={20} />
             <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('limitationsLabel')}</p>
           </div>
@@ -360,7 +362,7 @@ export default function PusePageClient() {
 
       <div className="max-w-6xl mx-auto px-4 mt-16">
         <Card className="p-8 md:p-10" style={{ borderColor: cardBorder, backgroundColor: C.card }}>
-          <div className="flex items-center gap-3 mb-4" style={{ color: C.primary }}>
+          <div className="flex items-center gap-3 mb-4" style={{ color: C.primaryText }}>
             <ShieldCheck size={20} />
             <p className="text-xs uppercase tracking-[0.2em] font-bold">{t('positioningLabel')}</p>
           </div>
@@ -369,7 +371,7 @@ export default function PusePageClient() {
           <div className="space-y-3">
             {[0, 1, 2].map((index) => (
               <div key={index} className="flex items-start gap-3 rounded-xl border p-4" style={{ borderColor: cardBorder, backgroundColor: C.active }}>
-                <CircleCheck size={18} className="mt-0.5 shrink-0" style={{ color: C.primary }} />
+                <CircleCheck size={18} className="mt-0.5 shrink-0" style={{ color: C.primaryText }} />
                 <p className="leading-relaxed" style={{ color: C.muted }}>{t(`positioningPoints.${index}`)}</p>
               </div>
             ))}
@@ -380,7 +382,7 @@ export default function PusePageClient() {
       <div className="max-w-6xl mx-auto px-4 mt-16">
         <Card className="p-8 md:p-10" style={{ borderColor: cardBorder, backgroundColor: C.card }}>
           <div className="max-w-3xl mb-8">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3" style={{ color: C.primary }}>{t('faqLabel')}</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold mb-3" style={{ color: C.primaryText }}>{t('faqLabel')}</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4" style={{ color: C.ink }}>{t('faqTitle')}</h2>
             <p className="text-lg leading-relaxed" style={{ color: C.muted }}>{t('faqSubtitle')}</p>
           </div>

@@ -49,11 +49,11 @@ export default function NintendoPageClient() {
           >
             <Link
               href={`/${locale}?scrollTo=projects`}
-              className="mb-8 inline-flex items-center text-sm font-bold uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-white"
+              className="mb-8 inline-flex items-center text-sm font-bold uppercase tracking-[0.18em] text-white transition-colors hover:underline"
             >
               {t('page.backHome')}
             </Link>
-            <p className="mb-10 text-sm font-bold uppercase tracking-[0.2em] text-white/85">{t('page.label')}</p>
+            <p className="mb-10 text-sm font-bold uppercase tracking-[0.2em] text-white">{t('page.label')}</p>
           </motion.div>
 
           <h1 className="sr-only">{`${t('banner.title_top')} ${t('banner.title_bottom')}`}</h1>
@@ -63,7 +63,7 @@ export default function NintendoPageClient() {
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.4 }}
-            className="mx-auto mt-12 max-w-2xl text-center text-lg leading-relaxed text-white/85 md:text-xl"
+            className="mx-auto mt-12 max-w-2xl text-center text-lg leading-relaxed text-white md:text-xl"
           >
             {t('page.intro')}
           </motion.p>
@@ -86,7 +86,7 @@ export default function NintendoPageClient() {
               />
             </span>
           </h2>
-          <p className="font-mono text-xs font-bold uppercase tracking-wider text-ink/50 dark:text-smoke/50">
+          <p className="font-mono text-xs font-bold uppercase tracking-wider text-ink/70 dark:text-smoke/70">
             {t('banner.count', { count: NINTENDO_PROJECTS.length })}
           </p>
         </div>
@@ -115,7 +115,7 @@ export default function NintendoPageClient() {
           <ComingSoonCard title={t('page.comingTitle')} description={t('page.comingDescription')} />
         </motion.div>
 
-        <p className="mt-16 text-center text-xs text-ink/45 dark:text-smoke/45">{t('page.disclaimer')}</p>
+        <p className="mt-16 text-center text-xs text-ink/70 dark:text-smoke/70">{t('page.disclaimer')}</p>
       </section>
     </main>
   );
@@ -133,16 +133,16 @@ function NintendoProjectCard({ href, title, category, description, techStack, li
         <div className="absolute inset-x-0 top-0 h-1.5 origin-left scale-x-0 bg-nintendo transition-transform duration-500 group-hover:scale-x-100" />
 
         <div className="mb-4 flex items-start justify-between p-6 pb-0">
-          <span className="rounded bg-nintendo/10 px-2 py-1 font-mono text-xs font-bold uppercase text-nintendo dark:bg-nintendo/20 dark:text-red-300">
+          <span className="rounded bg-nintendo/10 px-2 py-1 font-mono text-xs font-bold uppercase text-nintendo-dark dark:bg-nintendo/20 dark:text-red-300">
             {category}
           </span>
-          <span className="inline-flex items-center gap-2 text-sm font-bold text-ink/55 transition-colors group-hover:text-nintendo dark:text-white/55 dark:group-hover:text-red-300">
+          <span className="inline-flex items-center gap-2 text-sm font-bold text-ink/70 transition-colors group-hover:text-nintendo-dark dark:text-white/60 dark:group-hover:text-red-300">
             {linkLabel}
             <ArrowRight size={18} aria-hidden="true" />
           </span>
         </div>
 
-        <h3 className="mb-4 px-6 font-display text-4xl font-bold text-ink transition-colors group-hover:text-nintendo dark:text-white dark:group-hover:text-red-300">
+        <h3 className="mb-4 px-6 font-display text-4xl font-bold text-ink transition-colors group-hover:text-nintendo-dark dark:text-white dark:group-hover:text-red-300">
           {title}
         </h3>
 
@@ -150,7 +150,7 @@ function NintendoProjectCard({ href, title, category, description, techStack, li
 
         <div className="flex flex-wrap gap-2 border-t-2 border-smoke px-6 pb-6 pt-6 dark:border-white/10">
           {techStack.map((tech) => (
-            <span key={tech} className="cursor-default text-sm font-bold text-ink/50 transition-colors hover:text-nintendo dark:text-white/50">
+            <span key={tech} className="cursor-default text-sm font-bold text-ink/70 transition-colors hover:text-nintendo dark:text-white/60">
               #{tech}
             </span>
           ))}

@@ -59,13 +59,13 @@ export default function ScreebaPageClient() {
   const steps = [
     {
       id: 'upload',
-      icon: <UploadCloud size={32} className="text-bubblegum" />,
+      icon: <UploadCloud size={32} className="text-accent" />,
       title: t('steps.upload.title'),
       desc: t('steps.upload.desc'),
     },
     {
       id: 'process',
-      icon: <Sparkles size={32} className="text-forest dark:text-bubblegum" />,
+      icon: <Sparkles size={32} className="text-forest dark:text-accent" />,
       title: t('steps.process.title'),
       desc: t('steps.process.desc'),
     },
@@ -80,13 +80,13 @@ export default function ScreebaPageClient() {
   const users = [
     {
       id: 'students',
-      icon: <GraduationCap size={24} className="text-bubblegum" />,
+      icon: <GraduationCap size={24} className="text-accent" />,
       title: t('users.students.title'),
       desc: t('users.students.desc'),
     },
     {
       id: 'university',
-      icon: <Library size={24} className="text-forest dark:text-bubblegum" />,
+      icon: <Library size={24} className="text-forest dark:text-accent" />,
       title: t('users.university.title'),
       desc: t('users.university.desc'),
     },
@@ -113,7 +113,7 @@ export default function ScreebaPageClient() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-bubblegum text-sm font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-accent text-sm font-bold uppercase tracking-widest mb-6">
               <Sparkles size={14} />
               <span>{t('eyebrow')}</span>
             </div>
@@ -126,7 +126,7 @@ export default function ScreebaPageClient() {
               {t('description')}
             </p>
 
-            <p className="text-base md:text-lg text-ink/60 dark:text-smoke/65 mb-8 leading-relaxed max-w-3xl">
+            <p className="text-base md:text-lg text-ink/70 dark:text-smoke/65 mb-8 leading-relaxed max-w-3xl">
               {t('supporting')}
             </p>
 
@@ -208,7 +208,7 @@ export default function ScreebaPageClient() {
                         className="flex items-center justify-between bg-white dark:bg-ink p-3 rounded-lg shadow-sm border border-ink/5"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="bg-bubblegum/10 p-2 rounded text-bubblegum">
+                          <div className="bg-bubblegum/10 p-2 rounded text-accent">
                             <FileAudio size={24} />
                           </div>
                           <div className="text-left">
@@ -254,7 +254,7 @@ export default function ScreebaPageClient() {
                   {isUploading ? t('demo.btn_loading') : t('demo.btn_action')}
                 </Button>
 
-                <div className="flex items-start gap-2 text-xs text-ink/50 dark:text-white/40 bg-orange-50 dark:bg-orange-900/10 p-3 rounded-lg border border-orange-100 dark:border-orange-500/20">
+                <div className="flex items-start gap-2 text-xs text-ink/70 dark:text-white/60 bg-orange-50 dark:bg-orange-900/10 p-3 rounded-lg border border-orange-100 dark:border-orange-500/20">
                   <AlertTriangle size={14} className="mt-0.5 text-orange-500 shrink-0" />
                   <p>{t('demo.quality_warning')}</p>
                 </div>
@@ -285,11 +285,11 @@ export default function ScreebaPageClient() {
         </motion.div>
       </div>
 
-      <div className="bg-forest text-white py-20 relative overflow-hidden">
+      <div className="on-dark bg-forest text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
         <div className="max-w-6xl mx-auto px-4 relative z-10">
           <div className="max-w-3xl mb-10">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('users_label')}</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-accent mb-3">{t('users_label')}</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">{t('users_title')}</h2>
             <p className="text-white/75 text-lg leading-relaxed">{t('users_subtitle')}</p>
           </div>
@@ -307,13 +307,13 @@ export default function ScreebaPageClient() {
 
       <div className="max-w-6xl mx-auto px-4 py-20 grid gap-6 lg:grid-cols-[1fr_1fr]">
         <Card className="h-full border-ink/10 dark:border-white/10 bg-white/85 dark:bg-white/5">
-          <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('quality_label')}</p>
+          <p className="text-xs uppercase tracking-[0.2em] font-bold text-accent mb-3">{t('quality_label')}</p>
           <h2 className="font-display text-4xl font-bold text-ink dark:text-white mb-4">{t('quality_title')}</h2>
           <p className="text-ink/70 dark:text-smoke/75 leading-relaxed mb-5">{t('quality_description')}</p>
           <div className="space-y-3">
             {[0, 1, 2].map((index) => (
               <div key={index} className="flex items-start gap-3 rounded-xl border border-ink/10 dark:border-white/10 bg-paper dark:bg-ink p-4">
-                <CircleCheck size={18} className="mt-0.5 shrink-0 text-bubblegum" />
+                <CircleCheck size={18} className="mt-0.5 shrink-0 text-accent" />
                 <p className="text-ink/75 dark:text-smoke/80 leading-relaxed">{t(`quality.items.${index}`)}</p>
               </div>
             ))}
@@ -321,11 +321,11 @@ export default function ScreebaPageClient() {
         </Card>
 
         <Card className="h-full border-ink/10 dark:border-white/10 bg-white/85 dark:bg-white/5">
-          <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('output_label')}</p>
+          <p className="text-xs uppercase tracking-[0.2em] font-bold text-accent mb-3">{t('output_label')}</p>
           <h2 className="font-display text-4xl font-bold text-ink dark:text-white mb-4">{t('output_title')}</h2>
           <p className="text-ink/70 dark:text-smoke/75 leading-relaxed mb-5">{t('output_description')}</p>
           <div className="rounded-2xl border border-ink/10 dark:border-white/10 bg-paper dark:bg-ink p-5">
-            <p className="text-xs uppercase tracking-[0.18em] font-bold text-ink/50 dark:text-smoke/50 mb-3">{t('output.preview_label')}</p>
+            <p className="text-xs uppercase tracking-[0.18em] font-bold text-ink/70 dark:text-smoke/70 mb-3">{t('output.preview_label')}</p>
             <h3 className="font-display text-2xl text-ink dark:text-white mb-3">{t('output.preview_title')}</h3>
             <ul className="space-y-2 text-ink/75 dark:text-smoke/80">
               {[0, 1, 2].map((index) => (
@@ -342,7 +342,7 @@ export default function ScreebaPageClient() {
       <div className="max-w-6xl mx-auto px-4 pb-24">
         <div className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-paper dark:bg-ink p-8 md:p-10">
           <div className="max-w-3xl mb-8">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('faq_label')}</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-accent mb-3">{t('faq_label')}</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">{t('faq_title')}</h2>
             <p className="text-lg text-ink/70 dark:text-smoke/75 leading-relaxed">{t('faq_subtitle')}</p>
           </div>
@@ -357,7 +357,7 @@ export default function ScreebaPageClient() {
         </div>
 
         <div className="mt-10 rounded-2xl border border-bubblegum/25 bg-bubblegum/10 p-5 flex items-start gap-3">
-          <ShieldCheck className="mt-1 text-bubblegum shrink-0" size={18} />
+          <ShieldCheck className="mt-1 text-accent shrink-0" size={18} />
           <p className="text-ink/75 dark:text-smoke/80 leading-relaxed">{t('privacy_note')}</p>
         </div>
       </div>

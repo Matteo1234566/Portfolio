@@ -140,15 +140,15 @@ export default function BlogList({ params }) {
             <div className="grid grid-cols-3 gap-3">
               <div className="rounded-2xl border border-ink/10 bg-paper p-3 text-center dark:border-white/15 dark:bg-white/5">
                 <p className="font-display text-2xl text-ink dark:text-white">{posts.length}</p>
-                <p className="text-xs uppercase tracking-[0.14em] text-ink/55 dark:text-smoke/65">{localizedUi.postCountSuffix}</p>
+                <p className="text-xs uppercase tracking-[0.14em] text-ink/70 dark:text-smoke/65">{localizedUi.postCountSuffix}</p>
               </div>
               <div className="rounded-2xl border border-ink/10 bg-paper p-3 text-center dark:border-white/15 dark:bg-white/5">
                 <p className="font-display text-2xl text-ink dark:text-white">3</p>
-                <p className="text-xs uppercase tracking-[0.14em] text-ink/55 dark:text-smoke/65">{localizedUi.categories}</p>
+                <p className="text-xs uppercase tracking-[0.14em] text-ink/70 dark:text-smoke/65">{localizedUi.categories}</p>
               </div>
               <div className="rounded-2xl border border-ink/10 bg-paper p-3 text-center dark:border-white/15 dark:bg-white/5">
                 <p className="font-display text-2xl text-ink dark:text-white">2023</p>
-                <p className="text-xs uppercase tracking-[0.14em] text-ink/55 dark:text-smoke/65">Archive</p>
+                <p className="text-xs uppercase tracking-[0.14em] text-ink/70 dark:text-smoke/65">Archive</p>
               </div>
             </div>
           </div>
@@ -213,10 +213,10 @@ export default function BlogList({ params }) {
                         <div
                           className={`absolute inset-0 bg-gradient-to-br ${featuredPost.accent} opacity-90 transition-opacity duration-300 group-hover:opacity-100`}
                         />
-                        <div className="absolute inset-0 bg-[linear-gradient(160deg,rgba(15,23,42,0.65),rgba(15,23,42,0.25))]" />
+                        <div className="absolute inset-0 bg-[linear-gradient(160deg,rgba(15,23,42,0.8),rgba(15,23,42,0.55))]" />
                         <div className="relative flex h-full min-h-64 flex-col justify-between text-white">
                           <div className="space-y-4">
-                            <p className="font-body text-xs uppercase tracking-[0.18em] text-white/80">{localizedUi.latest}</p>
+                            <p className="font-body text-xs uppercase tracking-[0.18em] text-white">{localizedUi.latest}</p>
                             <h2 className="font-display text-3xl leading-tight md:text-5xl">{featuredPost.content.title}</h2>
                           </div>
                           <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/85">
@@ -233,7 +233,7 @@ export default function BlogList({ params }) {
                         <div className="space-y-6">
                           <p className="text-base leading-relaxed text-ink/75 dark:text-smoke/80">{featuredPost.content.excerpt}</p>
                           <div>
-                            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-ink/60 dark:text-smoke/70">{localizedUi.highlights}</p>
+                            <p className="mb-3 text-xs font-bold uppercase tracking-[0.16em] text-ink/70 dark:text-smoke/70">{localizedUi.highlights}</p>
                             <ul className="space-y-2">
                               {featuredPost.content.highlights.slice(0, 3).map((highlight) => (
                                 <li key={highlight} className="text-sm text-ink/75 dark:text-smoke/78">
@@ -244,7 +244,7 @@ export default function BlogList({ params }) {
                           </div>
                         </div>
 
-                        <span className="mt-8 inline-flex items-center gap-2 self-start rounded-full border border-ink/20 bg-paper px-4 py-2 text-xs font-bold uppercase tracking-[0.13em] text-ink transition-colors duration-200 group-hover:border-bubblegum group-hover:text-bubblegum dark:border-white/25 dark:bg-white/10 dark:text-white">
+                        <span className="mt-8 inline-flex items-center gap-2 self-start rounded-full border border-ink/20 bg-paper px-4 py-2 text-xs font-bold uppercase tracking-[0.13em] text-ink transition-colors duration-200 group-hover:border-bubblegum group-hover:text-accent dark:border-white/25 dark:bg-white/10 dark:text-white">
                           {t('card.read_more')}
                           <ArrowUpRight size={15} />
                         </span>
@@ -273,7 +273,7 @@ export default function BlogList({ params }) {
                               <Icon size={14} />
                               {categoryLabels[post.category]}
                             </span>
-                            <span className="text-xs uppercase tracking-[0.12em] text-ink/45 dark:text-smoke/55">
+                            <span className="text-xs uppercase tracking-[0.12em] text-ink/70 dark:text-smoke/70">
                               {formatDate(post.date, locale)}
                             </span>
                           </div>
@@ -286,10 +286,10 @@ export default function BlogList({ params }) {
                           </div>
 
                           <div className="mt-auto flex items-center justify-between border-t border-ink/10 pt-4 dark:border-white/10">
-                            <span className="text-xs font-bold uppercase tracking-[0.14em] text-ink/55 dark:text-smoke/65">
+                            <span className="text-xs font-bold uppercase tracking-[0.14em] text-ink/70 dark:text-smoke/65">
                               {post.readTime} {locale === 'it' ? 'min lettura' : 'min read'}
                             </span>
-                            <span className="inline-flex items-center gap-1 text-sm font-bold text-ink transition-colors duration-200 group-hover:text-bubblegum dark:text-white">
+                            <span className="inline-flex items-center gap-1 text-sm font-bold text-ink transition-colors duration-200 group-hover:text-accent dark:text-white">
                               {t('card.read_more')}
                               <ArrowUpRight size={16} />
                             </span>

@@ -38,5 +38,5 @@ export async function generateMetadata({ params }) {
 
 export default async function TrendingRepoPage({ params }) {
   const { locale } = await params;
-  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Trending Repo', href: `/${locale}/trending-repo` }]} /><Suspense fallback={<main className="min-h-screen bg-paper dark:bg-ink" />}><TrendingRepoIndex /></Suspense></>;
+  return <><PageBreadcrumbs locale={locale} items={[{ name: 'Trending Repo', href: `/${locale}/trending-repo` }]} tone="light" /><Suspense fallback={<main className="min-h-screen bg-paper dark:bg-ink" />}><TrendingRepoIndex /></Suspense></>;
 }

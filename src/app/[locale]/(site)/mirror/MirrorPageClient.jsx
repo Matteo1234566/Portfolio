@@ -47,13 +47,13 @@ export default function MirrorPage() {
   const phases = [
     {
       id: 'docs',
-      icon: <BookOpen size={28} className="text-bubblegum" />,
+      icon: <BookOpen size={28} className="text-accent" />,
       title: t('phases.docs.title'),
       desc: t('phases.docs.desc'),
     },
     {
       id: 'postman',
-      icon: <Workflow size={28} className="text-forest dark:text-bubblegum" />,
+      icon: <Workflow size={28} className="text-forest dark:text-accent" />,
       title: t('phases.postman.title'),
       desc: t('phases.postman.desc'),
     },
@@ -68,13 +68,13 @@ export default function MirrorPage() {
   const features = [
     {
       id: 'browse',
-      icon: <Database size={28} className="text-bubblegum" />,
+      icon: <Database size={28} className="text-accent" />,
       title: t('features.browse.title'),
       desc: t('features.browse.desc'),
     },
     {
       id: 'visualize',
-      icon: <BarChart3 size={28} className="text-forest dark:text-bubblegum" />,
+      icon: <BarChart3 size={28} className="text-forest dark:text-accent" />,
       title: t('features.visualize.title'),
       desc: t('features.visualize.desc'),
     },
@@ -86,7 +86,7 @@ export default function MirrorPage() {
     },
     {
       id: 'explain',
-      icon: <Sparkles size={28} className="text-bubblegum" />,
+      icon: <Sparkles size={28} className="text-accent" />,
       title: t('features.explain.title'),
       desc: t('features.explain.desc'),
     },
@@ -107,7 +107,7 @@ export default function MirrorPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-bubblegum text-sm font-bold uppercase tracking-widest mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-forest/10 text-forest dark:text-accent text-sm font-bold uppercase tracking-widest mb-6">
               <Search size={14} className="animate-pulse" />
               <span>{t('badge')}</span>
             </div>
@@ -123,7 +123,7 @@ export default function MirrorPage() {
               {t('description')}
             </p>
 
-            <p className="text-base text-ink/55 dark:text-smoke/55 leading-relaxed max-w-2xl mt-4">
+            <p className="text-base text-ink/70 dark:text-smoke/70 leading-relaxed max-w-2xl mt-4">
               {t('supporting')}
             </p>
 
@@ -151,7 +151,7 @@ export default function MirrorPage() {
               <div className="absolute -bottom-24 -left-24 w-52 h-52 rounded-full bg-forest/20 dark:bg-white/10 blur-3xl" />
 
               <div className="relative">
-                <p className="text-xs uppercase tracking-[0.2em] font-bold text-ink/50 dark:text-smoke/50 mb-4">
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-ink/70 dark:text-smoke/70 mb-4">
                   {t('phases_label')}
                 </p>
 
@@ -186,14 +186,14 @@ export default function MirrorPage() {
         >
           <div className="grid md:grid-cols-2 gap-10 items-start mb-8">
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] font-bold text-red-400 mb-3">{t('problem_label')}</p>
+              <p className="text-xs uppercase tracking-[0.2em] font-bold text-red-600 dark:text-red-400 mb-3">{t('problem_label')}</p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-ink dark:text-white mb-4">
                 {t('problem_title')}
               </h2>
               <p className="text-ink/70 dark:text-smoke/70 leading-relaxed">{t('problem_desc')}</p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('gap_label')}</p>
+              <p className="text-xs uppercase tracking-[0.2em] font-bold text-accent mb-3">{t('gap_label')}</p>
               <h2 className="font-display text-3xl md:text-4xl font-bold text-ink dark:text-white mb-4">
                 {t('gap_title')}
               </h2>
@@ -293,7 +293,7 @@ export default function MirrorPage() {
       <div className="max-w-6xl mx-auto px-4 mt-16 pb-4">
         <div className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-paper dark:bg-ink p-8 md:p-10">
           <div className="max-w-3xl mb-8">
-            <p className="text-xs uppercase tracking-[0.2em] font-bold text-bubblegum mb-3">{t('faq_label')}</p>
+            <p className="text-xs uppercase tracking-[0.2em] font-bold text-accent mb-3">{t('faq_label')}</p>
             <h2 className="font-display text-4xl md:text-5xl font-bold text-ink dark:text-white mb-4">
               {t('faq_title')}
             </h2>
@@ -321,7 +321,7 @@ export default function MirrorPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
-          className="rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-gradient-to-r from-forest to-bubblegum text-white p-8 md:p-10"
+          className="on-dark rounded-3xl border-2 border-ink/10 dark:border-white/10 bg-gradient-to-r from-forest to-bubblegum text-white p-8 md:p-10"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-3">{t('footer.title')}</h2>
           <p className="text-white/85 text-lg max-w-3xl">{t('footer.desc')}</p>
