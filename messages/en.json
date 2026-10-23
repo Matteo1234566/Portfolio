@@ -1833,7 +1833,7 @@
     "heroTitle": "PUSE",
     "heroSubtitle": "Pokémon Unbound Save Editor edit saves locally, export safely",
     "description": "PUSE is a Pokémon Unbound save editor that runs frontend-first in your browser. You can edit party, PC boxes, bag data and money values, then export clean .sav or .srm files with checksum recalculation.",
-    "supporting": "PyQuark is the dedicated editor for users who need precision and control in Pokémon Unbound, surpassing the limits of generic tools. Local mode guarantees maximum privacy and speed, while backend mode offers a stable environment for development and debugging workflows.",
+    "supporting": "PUSE is the dedicated editor for users who need precision and control in Pokémon Unbound, surpassing the limits of generic tools. Local mode guarantees maximum privacy and speed, while backend mode offers a stable environment for development and debugging workflows.",
     "cta_repo": "View Repository",
     "cta_live": "Open Live App",
     "chips": {
@@ -1856,7 +1856,7 @@
     },
     "capabilitiesLabel": "Core capabilities",
     "capabilitiesTitle": "What PUSE edits reliably",
-    "capabilitiesSubtitle": "Discover PyQuark capabilities at a glance: a complete and detailed overview to instantly verify whether it fits your technical needs.",
+    "capabilitiesSubtitle": "Discover PUSE capabilities at a glance: a complete and detailed overview to instantly verify whether it fits your technical needs.",
     "capabilities": {
       "party": {
         "title": "Party editing",
@@ -1877,7 +1877,7 @@
     },
     "flowLabel": "How it works",
     "flowTitle": "From save upload to clean export",
-    "flowSubtitle": "Maximum operational efficiency: a guided and intuitive path to manage every stage of your workflow with PyQuark, reducing setup time and maximizing results.",
+    "flowSubtitle": "Maximum operational efficiency: a guided and intuitive path to manage every stage of your workflow with PUSE, reducing setup time and maximizing results.",
     "flow": {
       "upload": {
         "title": "Upload .sav or .srm",

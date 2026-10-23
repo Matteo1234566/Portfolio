@@ -1,4 +1,5 @@
 'use client';
+import PuseSignature from './PuseSignature';
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -234,6 +235,7 @@ export default function PusePageClient() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
+            <PuseSignature />
             <Card
               className="relative overflow-hidden backdrop-blur-xl"
               style={{ borderColor: cardBorder, backgroundColor: C.card }}

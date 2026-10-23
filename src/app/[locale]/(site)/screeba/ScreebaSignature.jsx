@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import SignaturePanel from '@/components/SignaturePanel';
 
 // Hero signature: a two-speaker waveform is "read" by a playhead and becomes a speaker-coloured transcript.
 const LOOP = 5;
@@ -18,24 +18,10 @@ const ROWS = [
 const segEnd = [9 / BARS, 18 / BARS, 1].map((p) => p * 0.8); // playhead covers the wave in 80% of the loop
 
 export default function ScreebaSignature() {
-  const reduceMotion = useReducedMotion();
-  const ref = useRef(null);
-  const inView = useInView(ref, { amount: 0.4 });
-  const play = inView && !reduceMotion;
 
   return (
-    <div ref={ref} className="on-dark mb-6 overflow-hidden rounded-2xl border-2 border-ink bg-forest shadow-hard dark:border-white/10 dark:shadow-none" aria-hidden="true">
-      <div className="flex items-center justify-between border-b border-white/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-white/70">
-        <span>Live transcript</span>
-        <span className="flex items-center gap-2">
-          <motion.span
-            className="h-2 w-2 rounded-full bg-red-500"
-            animate={play ? { opacity: [1, 0.2, 1] } : undefined}
-            transition={{ duration: 1.2, repeat: Infinity }}
-          />
-          REC
-        </span>
-      </div>
+    <SignaturePanel label="Live transcript" status="REC">
+      {({ play, still: reduceMotion }) => (
       <svg viewBox="0 0 400 120" className="block w-full">
         {/* waveform */}
         {Array.from({ length: BARS }, (_, i) => {
@@ -99,6 +85,7 @@ export default function ScreebaSignature() {
           );
         })}
       </svg>
-    </div>
+      )}
+    </SignaturePanel>
   );
 }

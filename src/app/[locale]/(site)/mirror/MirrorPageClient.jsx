@@ -1,4 +1,5 @@
 'use client';
+import MirrorSignature from './MirrorSignature';
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -146,6 +147,7 @@ export default function MirrorPage() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
+            <MirrorSignature />
             <Card className="relative overflow-hidden border-forest/20 dark:border-white/10 bg-white/70 dark:bg-ink/60 backdrop-blur-xl">
               <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full bg-bubblegum/20 blur-3xl" />
               <div className="absolute -bottom-24 -left-24 w-52 h-52 rounded-full bg-forest/20 dark:bg-white/10 blur-3xl" />

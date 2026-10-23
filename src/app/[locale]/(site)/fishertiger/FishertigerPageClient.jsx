@@ -1,4 +1,5 @@
 'use client';
+import FishertigerSignature from './FishertigerSignature';
 
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -115,6 +116,7 @@ export default function FishertigerPageClient() {
             animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
+            <FishertigerSignature />
             <Card className="relative overflow-hidden border-forest/20 dark:border-white/10 bg-white/75 dark:bg-ink/60 backdrop-blur-xl">
               <div className="absolute -top-24 -right-24 w-56 h-56 rounded-full bg-bubblegum/20 blur-3xl" />
               <div className="absolute -bottom-24 -left-24 w-60 h-60 rounded-full bg-forest/20 dark:bg-white/10 blur-3xl" />

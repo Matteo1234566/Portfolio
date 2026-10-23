@@ -1,4 +1,5 @@
 'use client';
+import PyquarkSignature from './PyquarkSignature';
 
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -224,6 +225,7 @@ export default function PyquarkPageClient() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
+            <PyquarkSignature />
             <QCard className="relative overflow-hidden">
               <div className="absolute -top-24 -right-24 w-48 h-48 rounded-full blur-3xl" style={{ backgroundColor: `${C.seed}33` }} />
               <div className="absolute -bottom-24 -left-24 w-52 h-52 rounded-full blur-3xl" style={{ backgroundColor: `${C.accent}33` }} />

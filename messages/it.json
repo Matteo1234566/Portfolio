@@ -1828,7 +1828,7 @@
     "heroTitle": "PUSE",
     "heroSubtitle": "Pokémon Unbound Save Editor modifica salvataggi in locale, export sicuro",
     "description": "PUSE è un save editor per Pokemon Unbound che gira frontend-first nel browser. Puoi modificare party, box PC, dati della borsa e denaro, poi esportare file .sav o .srm puliti con checksum ricalcolato.",
-    "supporting": "PyQuark è l'editor dedicato per chi cerca precisione e controllo su Pokémon Unbound, superando i limiti dei tool generici. La modalità locale garantisce massima privacy e velocità di esecuzione, mentre la modalità backend offre un ambiente stabile per le operazioni di sviluppo e debugging.",
+    "supporting": "PUSE è l'editor dedicato per chi cerca precisione e controllo su Pokémon Unbound, superando i limiti dei tool generici. La modalità locale garantisce massima privacy e velocità di esecuzione, mentre la modalità backend offre un ambiente stabile per le operazioni di sviluppo e debugging.",
     "cta_repo": "Apri repository",
     "cta_live": "Apri app live",
     "chips": {
@@ -1851,7 +1851,7 @@
     },
     "capabilitiesLabel": "Capacità principali",
     "capabilitiesTitle": "Cosa modifica PUSE in modo affidabile",
-    "capabilitiesSubtitle": "Scopri subito le potenzialità di PyQuark: una panoramica completa e dettagliata delle funzionalità per verificare istantaneamente la compatibilità con le tue esigenze tecniche.",
+    "capabilitiesSubtitle": "Scopri subito le potenzialità di PUSE: una panoramica completa e dettagliata delle funzionalità per verificare istantaneamente la compatibilità con le tue esigenze tecniche.",
     "capabilities": {
       "party": {
         "title": "Editing party",
@@ -1872,7 +1872,7 @@
     },
     "flowLabel": "Come funziona",
     "flowTitle": "Dal caricamento al file pulito",
-    "flowSubtitle": "Massima efficienza operativa: un percorso guidato e intuitivo per gestire ogni fase del tuo lavoro con PyQuark, riducendo i tempi di configurazione e massimizzando i risultati.",
+    "flowSubtitle": "Massima efficienza operativa: un percorso guidato e intuitivo per gestire ogni fase del tuo lavoro con PUSE, riducendo i tempi di configurazione e massimizzando i risultati.",
     "flow": {
       "upload": {
         "title": "Carica .sav o .srm",

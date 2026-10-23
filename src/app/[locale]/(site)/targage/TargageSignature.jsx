@@ -1,7 +1,7 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useInView, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import SignaturePanel from '@/components/SignaturePanel';
 
 // Hero signature: scan the frame, close the detection box onto the plate, read it character by character.
 const LOOP = 5.5;
@@ -21,25 +21,11 @@ const CORNERS = [
 const T = { scanEnd: 0.26, locked: 0.4, readEnd: 0.6, hold: 0.9 };
 
 export default function TargageSignature() {
-  const reduceMotion = useReducedMotion();
-  const ref = useRef(null);
-  const inView = useInView(ref, { amount: 0.4 });
-  const play = inView && !reduceMotion;
   const loop = (times) => ({ duration: LOOP, times, repeat: Infinity, ease: 'easeInOut' });
 
   return (
-    <div ref={ref} className="on-dark mb-6 overflow-hidden rounded-2xl border-2 border-ink bg-forest shadow-hard dark:border-white/10 dark:shadow-none" aria-hidden="true">
-      <div className="flex items-center justify-between border-b border-white/10 px-4 py-2 font-mono text-[11px] font-bold uppercase tracking-widest text-white/70">
-        <span>Cam 02 · OCR</span>
-        <span className="flex items-center gap-2">
-          <motion.span
-            className="h-2 w-2 rounded-full bg-red-500"
-            animate={play ? { opacity: [1, 0.2, 1] } : undefined}
-            transition={{ duration: 1.2, repeat: Infinity }}
-          />
-          Live
-        </span>
-      </div>
+    <SignaturePanel label="Cam 02 · OCR" status="Live">
+      {({ play, still: reduceMotion }) => (
       <svg viewBox="0 0 400 200" className="block w-full">
         {/* road */}
         <rect x="0" y="150" width="400" height="50" fill="#0f172a" opacity="0.6" />
@@ -111,6 +97,7 @@ export default function TargageSignature() {
           </text>
         </motion.g>
       </svg>
-    </div>
+      )}
+    </SignaturePanel>
   );
 }

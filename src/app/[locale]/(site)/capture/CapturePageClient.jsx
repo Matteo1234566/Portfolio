@@ -1,4 +1,5 @@
 'use client';
+import CaptureSignature from './CaptureSignature';
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
@@ -252,6 +253,7 @@ export default function CapturePageClient() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
+            <CaptureSignature />
             <div
               className="relative rounded-3xl p-6 border overflow-hidden"
               style={{ backgroundColor: C.card, borderColor: panelBorder }}
