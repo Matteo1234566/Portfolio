@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import { useLocale, useTranslations } from 'next-intl';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import NintendoBanner from '@/app/[locale]/(site)/sections/NintendoBanner';
+import { NINTENDO_PROJECT_IDS } from '@/app/[locale]/(site)/nintendo/nintendoProjects';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -167,7 +169,7 @@ export default function Projects() {
       ],
       link: '/targage'
     },
-  ];
+  ].filter((project) => !NINTENDO_PROJECT_IDS.includes(project.id));
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -242,6 +244,8 @@ export default function Projects() {
             })}
           </motion.p>
         </div>
+
+        <NintendoBanner />
 
         <motion.div
             variants={container}

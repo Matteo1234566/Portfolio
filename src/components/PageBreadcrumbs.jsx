@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { localizedUrl } from '@/lib/site';
 
-export default function PageBreadcrumbs({ locale, items }) {
+// `tone="light"` renders white text for pages whose hero sits on a saturated background.
+export default function PageBreadcrumbs({ locale, items, tone = 'default' }) {
   const homeLabel = 'DevOP';
   const breadcrumbs = [{ name: homeLabel, href: `/${locale}` }, ...items];
   const schema = {
@@ -23,7 +24,7 @@ export default function PageBreadcrumbs({ locale, items }) {
           aria-label={locale === 'it' ? 'Percorso di navigazione' : 'Breadcrumb'}
           className="absolute left-0 right-0 top-40 z-30"
         >
-          <ol className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-2 gap-y-1 px-5 text-sm text-ink/60 dark:text-white/60">
+          <ol className={`mx-auto flex max-w-6xl flex-wrap items-center gap-x-2 gap-y-1 px-5 text-sm ${tone === 'light' ? 'text-white' : 'text-ink/60 dark:text-white/60'}`}>
             {breadcrumbs.map((item, index) => {
               const current = index === breadcrumbs.length - 1;
               return (

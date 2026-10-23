@@ -487,6 +487,30 @@
       }
     }
   },
+  "Nintendo": {
+    "banner": {
+      "label": "Nintendo Lab",
+      "title_top": "Progetti",
+      "title_bottom": "Nintendo",
+      "description": "Strumenti homebrew, editor di salvataggi e server USB per l'ecosistema Switch.",
+      "count": "{count, plural, one {# progetto} other {# progetti}}",
+      "cta": "Entra nel lab",
+      "aria": "Apri la pagina dei progetti Nintendo"
+    },
+    "page": {
+      "metaTitle": "Progetti Nintendo | Strumenti homebrew e utility per Switch",
+      "metaDescription": "I nostri progetti open source legati a Nintendo: server USB per Goldleaf e DBI, editor di salvataggi e altri strumenti homebrew per l'ecosistema Switch.",
+      "breadcrumb": "Progetti Nintendo",
+      "backHome": "Torna ai progetti",
+      "label": "Nintendo Lab",
+      "intro": "Uno spazio dedicato a tutto ciò che costruiamo attorno all'ecosistema Nintendo: utility homebrew, file server ed editor di salvataggi nati da side project ed esigenze reali.",
+      "sectionTitle": "Nello",
+      "sectionHighlight": "slot cartuccia",
+      "comingTitle": "Altre cartucce in caricamento",
+      "comingDescription": "Nuovi progetti Nintendo sono in sviluppo e arriveranno presto qui.",
+      "disclaimer": "Progetti indipendenti, non affiliati, sponsorizzati o approvati da Nintendo. Nintendo, Nintendo Switch e Joy-Con sono marchi di Nintendo."
+    }
+  },
   "TrendingRepo": {
     "label": "Radar open source",
     "title": {

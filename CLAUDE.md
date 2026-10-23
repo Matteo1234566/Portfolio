@@ -78,6 +78,7 @@ Custom Tailwind colors (defined in `tailwind.config.js`):
 - `ink` `#0f172a` — dark text / dark background
 - `paper` `#f8fafc` — light background
 - `smoke` `#cbd5e1` — muted text
+- `nintendo` `#e60012` / `nintendo-dark` `#8f000b` — Nintendo banner + `/nintendo` page only (projects listed in `nintendo/nintendoProjects.js`, filtered out of the main Projects grid)
 
 Custom shadows: `shadow-soft`, `shadow-hard`, `shadow-hard-white`.
 

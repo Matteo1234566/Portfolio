@@ -12,6 +12,8 @@ export default {
                 ink: "#0f172a",
                 paper: "#f8fafc",
                 smoke: "#cbd5e1",
+                nintendo: "#e60012",
+                "nintendo-dark": "#8f000b",
             },
             fontFamily: {
                 display: ["var(--font-oswald)"],

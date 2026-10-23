@@ -487,6 +487,30 @@
       }
     }
   },
+  "Nintendo": {
+    "banner": {
+      "label": "Nintendo Lab",
+      "title_top": "Nintendo",
+      "title_bottom": "Projects",
+      "description": "Homebrew tools, save editors and USB servers for the Switch ecosystem.",
+      "count": "{count, plural, one {# project} other {# projects}}",
+      "cta": "Enter the lab",
+      "aria": "Open the Nintendo projects page"
+    },
+    "page": {
+      "metaTitle": "Nintendo Projects | Homebrew tools and Switch utilities",
+      "metaDescription": "Our Nintendo-related open source projects: USB file servers for Goldleaf and DBI, save editors and other homebrew tools for the Switch ecosystem.",
+      "breadcrumb": "Nintendo Projects",
+      "backHome": "Back to projects",
+      "label": "Nintendo Lab",
+      "intro": "A dedicated corner for everything we build around the Nintendo ecosystem: homebrew utilities, file servers and save editors born from side projects and real needs.",
+      "sectionTitle": "In the",
+      "sectionHighlight": "cartridge slot",
+      "comingTitle": "More cartridges loading",
+      "comingDescription": "New Nintendo projects are in development and will land here soon.",
+      "disclaimer": "Independent projects, not affiliated with, sponsored or endorsed by Nintendo. Nintendo, Nintendo Switch and Joy-Con are trademarks of Nintendo."
+    }
+  },
   "TrendingRepo": {
     "label": "Open-source radar",
     "title": {

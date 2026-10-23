@@ -14,6 +14,7 @@ const STATIC_ROUTES = [
   { path: '/screeba', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/pyquark', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/puse', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/nintendo', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/targage', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/twosequel', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/fishertiger', priority: 0.8, changeFrequency: 'monthly' },
