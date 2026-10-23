@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Home, AlertTriangle } from 'lucide-react';
+import { Home } from 'lucide-react';
+import JoyconSearch from '@/components/JoyconSearch';
 import { useTranslations } from 'next-intl';
 import Button from "@/app/[locale]/(site)/sections/ui/Button";
 
@@ -59,8 +60,8 @@ export default function NotFoundHero() {
 
                 {/* ICONA ANIMATA */}
                 <motion.div
-                    initial={{ rotate: 0, scale: 0.8 }}
-                    animate={{ rotate: [0, -10, 10, -5, 5, 0], scale: 1 }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
                     transition={{
                         delay: 0.5,
                         duration: 0.8,
@@ -69,7 +70,7 @@ export default function NotFoundHero() {
                     className="mb-6 relative"
                 >
                     <div className="absolute inset-0 bg-bubblegum blur-2xl opacity-20 animate-pulse"></div>
-                    <AlertTriangle size={80} className="text-ink dark:text-white relative z-10" />
+                    <div className="relative z-10"><JoyconSearch /></div>
                 </motion.div>
 
                 {/* 404 GLITCH TEXT */}

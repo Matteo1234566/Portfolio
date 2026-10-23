@@ -18,16 +18,15 @@ import {
   MonitorCog,
   Network,
   PlugZap,
-  Router,
   Server,
   Shield,
   ShieldCheck,
   Sparkles,
   ToggleLeft,
-  Zap,
 } from 'lucide-react';
 import Button from '@/app/[locale]/(site)/sections/ui/Button';
 import Card from '@/app/[locale]/(site)/sections/ui/Card';
+import HomelabRack from './HomelabRack';
 import { BUSINESS } from '@/lib/site';
 
 const HARDWARE = [
@@ -167,7 +166,7 @@ export default function HomeLabCreationClient() {
             animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
           >
-            <ConfiguratorVisual t={t} reduceMotion={reduceMotion} total={money.format(total)} />
+            <ConfiguratorVisual t={t} total={money.format(total)} selectedHardware={selectedHardware} />
           </motion.div>
         </div>
       </section>
@@ -236,7 +235,7 @@ export default function HomeLabCreationClient() {
   );
 }
 
-function ConfiguratorVisual({ t, reduceMotion, total }) {
+function ConfiguratorVisual({ t, total, selectedHardware }) {
   return (
     <Card className="relative overflow-hidden border-forest/20 dark:border-white/10 bg-white/75 dark:bg-ink/60 backdrop-blur-xl">
       <div className="absolute -top-28 -right-24 w-64 h-64 rounded-full bg-bubblegum/20 blur-3xl" />
@@ -247,39 +246,11 @@ function ConfiguratorVisual({ t, reduceMotion, total }) {
           <span className="rounded-full bg-indigo-600 text-white px-3 py-1 text-xs font-bold">{total}</span>
         </div>
 
-        <div className="relative min-h-[360px] rounded-[1.75rem] border-2 border-ink/10 dark:border-white/10 bg-paper/80 dark:bg-white/5 p-5 overflow-hidden">
-          <motion.div
-            animate={reduceMotion ? undefined : { y: [0, -8, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute right-6 top-6 h-24 w-24 rounded-[1.5rem] border-2 border-ink dark:border-white bg-white dark:bg-ink shadow-hard dark:shadow-hard-white grid place-items-center"
-          >
-            <Server size={42} className="text-accent" aria-hidden="true" />
-          </motion.div>
-          <motion.div
-            animate={reduceMotion ? undefined : { y: [0, 10, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-            className="on-dark absolute left-7 top-24 h-20 w-32 rounded-2xl border-2 border-ink dark:border-white bg-forest text-white shadow-hard dark:shadow-hard-white grid place-items-center"
-          >
-            <Router size={36} aria-hidden="true" />
-          </motion.div>
-          <motion.div
-            animate={reduceMotion ? undefined : { rotate: [-2, 2, -2] }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute bottom-10 right-8 h-32 w-40 rounded-[1.75rem] border-2 border-ink dark:border-white bg-white dark:bg-ink shadow-hard dark:shadow-hard-white p-4"
-          >
-            <div className="flex gap-2 h-full">
-              {[0, 1, 2].map((index) => (
-                <span key={index} className="flex-1 rounded-xl bg-smoke/70 dark:bg-white/10 border border-ink/10 dark:border-white/10" />
-              ))}
-            </div>
-          </motion.div>
-          <div className="absolute bottom-20 left-9 h-16 w-24 rounded-2xl border-2 border-ink dark:border-white bg-yellow-300 shadow-hard grid place-items-center text-ink">
-            <Zap size={30} aria-hidden="true" />
-          </div>
-          <div className="absolute inset-x-10 top-1/2 h-px bg-bubblegum/50" />
-          <div className="absolute left-1/2 top-[35%] h-24 w-px bg-bubblegum/50" />
-          <div className="absolute left-1/3 bottom-[32%] h-20 w-px bg-bubblegum/50" />
-        </div>
+        <HomelabRack
+          selection={selectedHardware}
+          labelFor={(id) => t(`hardware.categories.${id}.title`)}
+          tierLabelFor={(id) => t(`hardware.categories.${id}.tiers.${selectedHardware[id]}.name`)}
+        />
       </div>
     </Card>
   );

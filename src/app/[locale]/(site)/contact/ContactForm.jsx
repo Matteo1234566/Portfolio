@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { BUSINESS } from '@/lib/site';
+import { PlaneTakeoff } from '@/components/PaperPlane';
 
 function track(name, detail) {
   window.dataLayer = window.dataLayer || [];
@@ -16,6 +17,7 @@ export default function ContactForm({ locale, services }) {
   const searchParams = useSearchParams();
   const initialService = searchParams.get('service') || '';
   const [error, setError] = useState('');
+  const [planeOrigin, setPlaneOrigin] = useState(null);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -46,13 +48,23 @@ export default function ContactForm({ locale, services }) {
 
     track('lead_submit', { service, locale, method: 'email' });
     window.location.href = `mailto:${BUSINESS.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.setTimeout(() => router.push(`/${locale}/thank-you?method=email`), 600);
+
+    // Paper plane take-off from the submit button, then the thank-you page (where it lands).
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const button = event.nativeEvent.submitter || event.currentTarget.querySelector('button[type="submit"]');
+    if (!reduceMotion && button) {
+      const rect = button.getBoundingClientRect();
+      setPlaneOrigin({ x: rect.left + rect.width / 2, y: rect.top + rect.height / 2 });
+    }
+    window.setTimeout(() => router.push(`/${locale}/thank-you?method=email`), reduceMotion ? 600 : 1200);
   }
 
   const inputClass = 'mt-2 w-full rounded-2xl border-2 border-ink bg-white px-4 py-3 text-ink outline-none focus:ring-4 focus:ring-bubblegum dark:border-white/70';
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[2rem] border-2 border-ink bg-white p-6 shadow-hard dark:border-white dark:bg-white/5 dark:shadow-hard-white md:p-10">
+    <>
+    <PlaneTakeoff origin={planeOrigin} />
+    <form onSubmit={handleSubmit} className={`rounded-[2rem] border-2 border-ink bg-white p-6 shadow-hard transition-opacity duration-500 dark:border-white dark:bg-white/5 dark:shadow-hard-white md:p-10 ${planeOrigin ? 'opacity-60' : ''}`}>
       <div className="grid gap-6 sm:grid-cols-2">
         <label className="font-bold">{isIt ? 'Nome e cognome' : 'Full name'}<input className={inputClass} name="name" autoComplete="name" required /></label>
         <label className="font-bold">Email<input className={inputClass} name="email" type="email" autoComplete="email" required /></label>
@@ -84,5 +96,6 @@ export default function ContactForm({ locale, services }) {
       </button>
       <p className="mt-4 text-center text-sm text-ink/70 dark:text-white/60">{isIt ? 'Risposta prevista entro 2 giorni lavorativi.' : 'Expected reply within 2 working days.'}</p>
     </form>
+    </>
   );
 }
