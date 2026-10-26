@@ -184,6 +184,9 @@ Autore: YusufB5
 Repo: Pake
 Autore: tw93
 
+Repo: twenty
+Autore: twentyhq
+
 Repo: hyperframes
 Autore: heygen-com
 
@@ -442,6 +445,9 @@ Autore: localsend
 Repo: worktrunk
 Autore: max-sixty
 
+Repo: ghidra
+Autore: NationalSecurityAgency
+
 Repo: anki
 Autore: ankitects
 
@@ -471,7 +477,6 @@ Autore: mobile-next
 
 Repo: PipePipe
 Autore: InfinityLoop1308
-
 Repo: PageIndex
 Autore: VectifyAI
 
@@ -482,7 +487,7 @@ Repo: yoinks
 Autore: pablostanley
 
 Repo: rizzo-pii
-Autore: Rizzo-AI-Academy
+Autore: Rizzo-AI-Academy/
 
 Repo: pokeemerald
 Autore: pret
@@ -529,8 +534,14 @@ Autore: dani-garcia
 Repo: jasna
 Autore: Kruk2
 
+Repo: uptime-kuma
+Autore: louislam
+
 Repo: os-taxonomy
 Autore: withmarbleapp
+
+Repo: broadcom-wps
+Autore: qkaiser
 
 Repo: claude-howto
 Autore: luongnv89
@@ -546,9 +557,3 @@ Autore: pollen-robotics
 
 Repo: postiz-app
 Autore: gitroomhq
-
-Repo: broadcom-wps
-Autore: qkaiser
-
-Repo: uptime-kuma
-Autore: louislam
