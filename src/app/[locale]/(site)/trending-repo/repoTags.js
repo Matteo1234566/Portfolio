@@ -11,6 +11,7 @@ export const REPO_TAGS = [
   'media',
   'design',
   'education',
+  'gaming',
 ];
 
 export const REPO_TAG_LABELS = {
@@ -26,4 +27,5 @@ export const REPO_TAG_LABELS = {
   media: 'Media',
   design: 'Design',
   education: 'Education',
+  gaming: 'Gaming',
 };
