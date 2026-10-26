@@ -43,4 +43,5 @@ next-env.d.ts
 skills/
 AGENTS.md
 *.txt
+!/repos.txt
 /readmes/

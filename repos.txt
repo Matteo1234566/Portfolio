@@ -1,0 +1,554 @@
+Repo: CL4R1T4S
+Autore: elder-plinius
+
+Repo: worldmonitor
+Autore: koala73
+
+Repo: RAG-Anything
+Autore: HKUDS
+
+Repo: hackingtool
+Autore: Z4nzu
+
+Repo: build-your-own-x
+Autore: codecrafters-io
+
+Repo: curl
+Autore: curl
+
+Repo: core
+Autore: home-assistant
+
+Repo: free-claude-code
+Autore: Alishahryar1
+
+Repo: ace-step-ui
+Autore: fspecii
+
+Repo: ublock
+Autore: gorhill
+
+Repo: quarkdown
+Autore: iamgio
+
+Repo: maigret
+Autore: soxoj
+
+Repo: Pixelle-Video
+Autore: AIDC-AI
+
+Repo: docuseal
+Autore: docusealco
+
+Repo: Scrapling
+Autore: d4vinci
+
+Repo: local-deep-research
+Autore: LearningCircuit
+
+Repo: DFlash
+Autore: z-lab
+
+Repo: openreel-video
+Autore: Augani
+
+Repo: lobehub
+Autore: LobeHub
+
+Repo: agent-skills
+Autore: addyosmani
+
+Repo: easy-vibe
+Autore: datawhalechina
+
+Repo: stenoai
+Autore: ruzin
+
+Repo: open-design
+Autore: nexu-io
+
+Repo: supertonic
+Autore: supertone-inc
+
+Repo: scrcpy
+Autore: Genymobile
+
+Repo: RuView
+Autore: ruvnet
+
+Repo: supervision
+Autore: Roboflow
+
+Repo: Shannon
+Autore: KeygraphHQ
+
+Repo: CLI-Anything
+Autore: HKUDS
+
+Repo: cal.diy
+Autore: calcom
+
+Repo: listmonk
+Autore: knadh
+
+Repo: codegraph
+Autore: colbymchenry
+
+Repo: medusa
+Autore: medusajs
+
+Repo: Kronos
+Autore: shiyu-coder
+
+Repo: paperless-ngx
+Autore: paperless-ngx
+
+Repo: frigate
+Autore: blakeblackshear
+
+Repo: twenty
+Autore: twentyhq
+
+Repo: Krawl
+Autore: BlessedRebuS
+
+Repo: heretic
+Autore: p-e-w
+
+Repo: markitdown
+Autore: microsoft
+
+Repo: Stirling-PDF
+Autore: Stirling-Tools
+
+Repo: microsoft-activation-scripts
+Autore: massgravel
+
+Repo: VoxCPM
+Autore: OpenBMB
+
+Repo: ECC
+Autore: affaan-m
+
+Repo: flowsint
+Autore: reconurge
+
+Repo: last30days-skill
+Autore: mvanhorn
+
+Repo: spec-kit
+Autore: github
+
+Repo: trivy
+Autore: aquasecurity
+
+Repo: career-ops
+Autore: santifer
+
+Repo: tolaria
+Autore: refactoringhq
+
+Repo: goose
+Autore: aaif-goose
+
+Repo: whichllm
+Autore: Andyyyy64
+
+Repo: fluxer
+Autore: fluxerapp
+
+Repo: restic
+Autore: restic
+
+Repo: aisuite
+Autore: andrewyng
+
+Repo: cypress
+Autore: cypress-io
+
+Repo: Win11Debloat
+Autore: Raphire
+
+Repo: zvec
+Autore: alibaba
+
+Repo: timesfm
+Autore: google-research
+
+Repo: LibreTranslate
+Autore: LibreTranslate
+
+Repo: ASCILINE
+Autore: YusufB5
+
+Repo: Pake
+Autore: tw93
+
+Repo: hyperframes
+Autore: heygen-com
+
+Repo: Penpot
+Autore: penpot
+
+Repo: ai-website-cloner-template
+Autore: JCodesMore
+
+Repo: TREK
+Autore: mauriceboe
+
+Repo: CasaOS
+Autore: IceWhaleTech
+
+Repo: simplex-chat
+Autore: simplex-chat
+
+Repo: MinerU
+Autore: opendatalab
+
+Repo: cupy
+Autore: cupy
+
+Repo: video-use
+Autore: browser-use
+
+Repo: karukan
+Autore: togatoga
+
+Repo: strix
+Autore: usestrix
+
+Repo: voicebox
+Autore: jamiepine
+
+Repo: romm
+Autore: rommapp
+
+Repo: upscayl
+Autore: upscayl
+
+Repo: karakeep
+Autore: karakeep-app
+
+Repo: meetily
+Autore: Zackriya-Solutions
+
+Repo: OfficeCLI
+Autore: iOfficeAI
+
+Repo: PhotoGIMP
+Autore: Diolinux
+
+Repo: CubeSandbox
+Autore: TencentCloud
+
+Repo: nanobot
+Autore: HKUDS
+
+Repo: t3code
+Autore: pingdotgg
+
+Repo: project-nomad
+Autore: Crosstalk-Solutions
+
+Repo: unsloth
+Autore: unslothai
+
+Repo: hallmark
+Autore: Nutlope
+
+Repo: posthog
+Autore: PostHog
+
+Repo: DeepTutor
+Autore: HKUDS
+
+Repo: protobuf
+Autore: protocolbuffers
+
+Repo: wigolo
+Autore: KnockOutEZ
+
+Repo: cognee
+Autore: topoteretes
+
+Repo: robbyant
+Autore: Robbyant
+
+Repo: outlines
+Autore: dottxt-ai
+
+Repo: buzz
+Autore: block
+
+Repo: harper
+Autore: Automattic
+
+Repo: Pumpkin
+Autore: Pumpkin-MC
+
+Repo: superfile
+Autore: yorukot
+
+Repo: appsmith
+Autore: appsmithorg
+
+Repo: bitchat
+Autore: permissionlesstech
+
+Repo: hoppscotch
+Autore: hoppscotch
+
+Repo: amnezia-client
+Autore: amnezia-vpn
+
+Repo: CloakBrowser
+Autore: CloakHQ
+
+Repo: jenkins
+Autore: jenkinsci
+
+Repo: turso
+Autore: tursodatabase
+
+Repo: openship
+Autore: oblien
+
+Repo: ruff
+Autore: astral-sh
+
+Repo: croc
+Autore: schollz
+
+Repo: computer
+Autore: cloudflare
+
+Repo: text-to-cad
+Autore: earthtojake
+
+Repo: authentik
+Autore: goauthentik
+
+Repo: herdr
+Autore: ogulcancelik
+
+Repo: witr
+Autore: pranshuparmar
+
+Repo: codebase-memory-mcp
+Autore: DeusData
+
+Repo: diagram-design
+Autore: cathrynlavery
+
+Repo: GeoLibre
+Autore: opengeos
+
+Repo: holehe
+Autore: megadose
+
+Repo: MediaCrawler
+Autore: NanmiCoder
+
+Repo: cordis
+Autore: Shigma
+
+Repo: imgui
+Autore: ocornut
+
+Repo: Motrix
+Autore: agalwood
+
+Repo: impeccable
+Autore: pbakaus
+
+Repo: OpenLogi
+Autore: AprilNEA
+
+Repo: editor
+Autore: pascalorg
+
+Repo: Ghost
+Autore: TryGhost
+
+Repo: book-to-skill
+Autore: virgiliojr94
+
+Repo: ponytail
+Autore: DietrichGebert
+
+Repo: hister
+Autore: asciimoo
+
+Repo: browser-use
+Autore: browser-use
+
+Repo: gods-eye-view
+Autore: bilawalsidhu
+
+Repo: ghidra
+Autore: NationalSecurityAgency
+
+Repo: htmx
+Autore: bigskysoftware
+
+Repo: pdf-inspector
+Autore: firecrawl
+
+Repo: invidious
+Autore: iv-org
+
+Repo: TypeWords
+Autore: zyronon
+
+Repo: fmt
+Autore: fmtlib
+
+Repo: screenshot-to-code
+Autore: abi
+
+Repo: FckSignups
+Autore: BraveOPotato
+
+Repo: magnitude
+Autore: magnitudedev
+
+Repo: stremio-web
+Autore: Stremio
+
+Repo: escrcpy
+Autore: viarotel-org
+
+Repo: i-have-adhd
+Autore: ayghri
+
+Repo: teamai-cli
+Autore: Tencent
+
+Repo: NuvioMobile
+Autore: NuvioMedia
+
+Repo: iloader
+Autore: nab138
+
+Repo: SmartTube
+Autore: yuliskov
+
+Repo: colibri
+Autore: JustVugg
+
+Repo: localsend
+Autore: localsend
+
+Repo: worktrunk
+Autore: max-sixty
+
+Repo: anki
+Autore: ankitects
+
+Repo: cline
+Autore: cline
+
+Repo: docling
+Autore: docling-project
+
+Repo: cua
+Autore: trycua
+
+Repo: mvt
+Autore: mvt-project
+
+Repo: OpenStock
+Autore: Open-Dev-Society
+
+Repo: lap
+Autore: julyx10
+
+Repo: openbao
+Autore: openbao
+
+Repo: mobile-mcp
+Autore: mobile-next
+
+Repo: PipePipe
+Autore: InfinityLoop1308
+
+Repo: PageIndex
+Autore: VectifyAI
+
+Repo: GhostTrack
+Autore: HunxByts
+
+Repo: yoinks
+Autore: pablostanley
+
+Repo: rizzo-pii
+Autore: Rizzo-AI-Academy
+
+Repo: pokeemerald
+Autore: pret
+
+Repo: openGym
+Autore: DuarteSantos8
+
+Repo: AnyPS5
+Autore: boykopovar
+
+Repo: PkHeX
+Autore: kwsch
+
+Repo: artcraft
+Autore: storytold
+
+Repo: sogen
+Autore: momo5502
+
+Repo: ppt-master
+Autore: hugohe3
+
+Repo: xxHash
+Autore: Cyan4973
+
+Repo: rea
+Autore: morluto
+
+Repo: takumi
+Autore: kane50613
+
+Repo: tiny11builder
+Autore: ntdevlabs
+
+Repo: Tov
+Autore: richiemcilroy
+
+Repo: paperclip
+Autore: paperclipai
+
+Repo: Vaultwarden
+Autore: dani-garcia
+
+Repo: jasna
+Autore: Kruk2
+
+Repo: os-taxonomy
+Autore: withmarbleapp
+
+Repo: claude-howto
+Autore: luongnv89
+
+Repo: Claude-Red
+Autore: SnailSploit
+
+Repo: OpenShell
+Autore: NVIDIA
+
+Repo: microduck
+Autore: pollen-robotics
+
+Repo: postiz-app
+Autore: gitroomhq
+
+Repo: broadcom-wps
+Autore: qkaiser
+
+Repo: uptime-kuma
+Autore: louislam
