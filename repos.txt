@@ -557,3 +557,40 @@ Autore: pollen-robotics
 
 Repo: postiz-app
 Autore: gitroomhq
+
+Repo: rustdesk
+Autore: RustDesk Team
+
+Repo: macro
+Autore: macro-inc
+
+Repo: octobox
+Autore: octobox
+
+Repo: browser
+Autore: lightpanda-io
+
+Repo: nxnative
+Autore: seedds
+
+Repo: Handy
+Autore: cjpais
+
+Repo: ebook2audiobook
+Autore: DrewThomasson
+
+Repo: floci
+Autore: floci-io
+
+Repo: DiscImageStudio
+Autore: JiaFeiMiao-K-Cat
+
+Repo: lz4
+Autore: lz4
+
+Repo: cleanyourtv
+Autore: Gathin23
+
+Repo: prometheus
+Autore: prometheus
+
