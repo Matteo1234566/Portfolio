@@ -9,11 +9,10 @@ export default function RepositoryPageClient({ repository }) {
   const locale = useLocale();
   const t = useTranslations('TrendingRepoDetail');
   const shouldReduceMotion = useReducedMotion();
-  const content = repository.content?.[locale];
-  const description = content?.description ?? t(`repositories.${repository.slug}.description`);
-  const whyTitle = content?.whyTitle ?? t(`repositories.${repository.slug}.whyTitle`);
-  const whyDescription = content?.whyDescription ?? t(`repositories.${repository.slug}.whyDescription`);
-  const highlights = content?.highlights ?? repository.highlights.map((highlight, index) => (
+  const description = t(`repositories.${repository.slug}.description`);
+  const whyTitle = t(`repositories.${repository.slug}.whyTitle`);
+  const whyDescription = t(`repositories.${repository.slug}.whyDescription`);
+  const highlights = repository.highlights.map((highlight, index) => (
     t.has(`repositories.${repository.slug}.highlights.${index}`) ? t(`repositories.${repository.slug}.highlights.${index}`) : highlight
   ));
 
