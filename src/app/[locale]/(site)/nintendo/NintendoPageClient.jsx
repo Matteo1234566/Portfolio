@@ -165,7 +165,7 @@ function ComingSoonCard({ title, description }) {
   return (
     <motion.div
       variants={item}
-      className="flex h-full min-h-[18rem] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-nintendo/40 px-6 py-12 text-center md:col-span-2"
+      className={`flex h-full min-h-[18rem] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-nintendo/40 px-6 py-12 text-center ${NINTENDO_PROJECTS.length % 2 === 0 ? 'md:col-span-2' : ''}`}
     >
       <div className="mb-5 flex gap-2" aria-hidden="true">
         {[0, 1, 2].map((i) => (

@@ -3,6 +3,7 @@
 export const NINTENDO_PROJECTS = [
   { id: 'pyquark', link: '/pyquark', techCount: 4 },
   { id: 'puse', link: '/puse', techCount: 4 },
+  { id: 'tauros', link: '/tauros', techCount: 4 },
 ];
 
 export const NINTENDO_PROJECT_IDS = NINTENDO_PROJECTS.map((project) => project.id);

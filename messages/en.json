@@ -448,6 +448,28 @@
           "2": "Video Indexing",
           "3": "JSON Search"
         }
+      },
+      "tauros": {
+        "title": "Tauros",
+        "category": "ROM Hack Workbench",
+        "description": "All-in-one Pokémon ROM hack editor in Rust and Tauri: common semantic model, domain MCP tools, swappable decomp connectors, and integrated mGBA.",
+        "techStack": {
+          "0": "Rust",
+          "1": "Tauri",
+          "2": "MCP",
+          "3": "libmgba"
+        }
+      },
+      "logpose": {
+        "title": "Logpose",
+        "category": "Developer Tool",
+        "description": "Local-first Tauri desktop board that scans side projects at zero token cost, scores Git staleness and mess, and recalls Claude Code & Codex context.",
+        "techStack": {
+          "0": "Rust",
+          "1": "Tauri 2",
+          "2": "SvelteKit",
+          "3": "SQLite"
+        }
       }
     }
   },
@@ -2086,6 +2108,386 @@
       "desc": "With an intuitive interface, specific capabilities, and a secure workflow, PUSE is the most reliable and immediate way to manage your saves with professional precision.",
       "link_repo": "Open repository",
       "link_live": "Visit GitHub Pages"
+    }
+  },
+  "Tauros": {
+    "badge": "Rust · Tauri · MCP · mGBA",
+    "tagline": "All-in-one Pokémon ROM hack workbench built for agents & verification",
+    "description": "Tauros unifies a common semantic model, domain tools exposed over MCP, swappable decompilation connectors, and an embedded mGBA core inside a single Rust + Tauri desktop architecture.",
+    "supporting": "Instead of splitting work across separate map editors, script compilers, and standalone emulators, Tauros designs one closed loop—from intent to build to RAM-verified preview—while keeping Nintendo assets and decomp clones strictly outside the repository.",
+    "chips": {
+      "0": "7-crate Rust workspace",
+      "1": "Domain MCP (rmcp)",
+      "2": "Unmodified libmgba 0.10.5",
+      "3": "Hardened Docker GBA build"
+    },
+    "cta_repo": "View Repository",
+    "cta_architecture": "Explore Architecture",
+    "heroCard": {
+      "label": "Project state & architecture",
+      "status": "Phase 0 Verified",
+      "workspaceTitle": "7-Crate Layered Workspace",
+      "workspaceDesc": "Enforced downward dependency graph across model, connector-gen3, emu, mgba-sys, mcp, agent-bridge, and app.",
+      "loopTitle": "Agent -> Build -> Verify -> Preview",
+      "loopDesc": "Domain MCP tools edit the semantic model behind automatic git snapshots, compile in an offline container, and assert game state from mGBA RAM.",
+      "verified": {
+        "0": "Docker toolchain image built (devkitARM GCC 15.2.0, Poryscript 3.6.1, Porytiles 2.0.0) & base pokeemerald.gba + .sym hashed",
+        "1": "Static libmgba 0.10.5 prototype ran 120 frames, read BPEE at 0x080000AC, and passed savestate roundtrip",
+        "2": "Static engine limits audited at pokeemerald-expansion 1.16.4 and counterfactual verification spec format designed"
+      }
+    },
+    "capabilitiesLabel": "Core Architecture",
+    "capabilitiesTitle": "Four pillars behind one unified ROM hack loop",
+    "capabilitiesSubtitle": "Every layer separates game-agnostic editing logic from concrete decompilation formats and emulator backends.",
+    "capabilities": {
+      "model": {
+        "title": "Common Semantic Model",
+        "desc": "Defines Trainer, Party, Map, Event, Scene, Species, and Flag once in Rust so upper tools and agents stay portable as connectors expand beyond Gen 3."
+      },
+      "mcp": {
+        "title": "Domain MCP & Swappable Agents",
+        "desc": "Exposes structured operations like create_trainer, place_npc, and run_verification via rmcp over stdio for Claude Code, Codex, Gemini CLI, or an in-app sidecar."
+      },
+      "emu": {
+        "title": "Integrated libmgba Core",
+        "desc": "Statically links unmodified mGBA 0.10.5 via tauros-mgba-sys for headless frame stepping, framebuffer capture, savestates, and direct RAM probing without Lua glue."
+      },
+      "toolchain": {
+        "title": "Hardened Docker & Git Snapshots",
+        "desc": "Compiles projects in an offline, read-only, non-root container (--network none, --cap-drop ALL) while guarding every write with an automatic local git commit."
+      }
+    },
+    "workbench": {
+      "eyebrow": "Interactive Technical Breakdown",
+      "title": "Inspect the layers, counterfactuals, and engine limits",
+      "description": "Explore the specifications and Phase 0 measurements already verified inside the Tauros repository.",
+      "tabs": {
+        "layers": "5-Layer Stack",
+        "verify": "Counterfactual Verification",
+        "limits": "Measured Engine Limits"
+      },
+      "contractLabel": "Layer boundary & rule",
+      "specNote": "Inert JSON spec rule (VER-001): the emulator driver samples RAM without ever seeing assertions, and judgement happens externally only after counterfactuals fail.",
+      "layers": {
+        "0": {
+          "badge": "Layer 1",
+          "title": "Tauri Desktop Workbench",
+          "crate": "crates/app",
+          "summary": "Unifies the map/scene editors, streaming agent chat, offline voice transcription, change-history undo, and live mGBA preview inside one window.",
+          "contract": "Only talks down to the agent bridge, model, and emulator views—never parses raw C or assembly files directly. (Tauri shell scheduled for Phase 2 / 5.)"
+        },
+        "1": {
+          "badge": "Layer 2",
+          "title": "Agents & Domain MCP Server",
+          "crate": "crates/mcp · agent-bridge",
+          "summary": "Hosts the in-process rmcp server with domain tools (create_trainer, place_npc, add_scene, build, run_verification) plus a vendor-neutral agent adapter.",
+          "contract": "No free-form file edits: every tool validates inputs against the model and returns evaluator reports rather than trusting driver opinions."
+        },
+        "2": {
+          "badge": "Layer 3",
+          "title": "Common Semantic Model",
+          "crate": "crates/model",
+          "summary": "Holds the canonical Rust representations of trainers, parties, maps, events, scripts, species, and flags shared across all generations.",
+          "contract": "Strict upward-isolation enforced by tests/test_layers.py via cargo metadata: model may never depend on emu or concrete connectors."
+        },
+        "3": {
+          "badge": "Layer 4",
+          "title": "Swappable Decomp Connectors",
+          "crate": "crates/connector-gen3",
+          "summary": "Lossless Porymap JSON/layout roundtrips, Poryscript compilation, Porytiles asset checks, and isolated Docker builds for pokeemerald-expansion 1.16.4.",
+          "contract": "Enforces a mandatory git commit snapshot before any write and disables push URLs on local game projects so nothing is ever pushed upstream."
+        },
+        "4": {
+          "badge": "Layer 5",
+          "title": "Emulator Connectors",
+          "crate": "crates/emu · mgba-sys",
+          "summary": "Wraps static libmgba 0.10.5 (GBA, GB, GBC) behind an abstract emulator trait so future DS support via melonDS can plug in cleanly.",
+          "contract": "Only tauros-emu may depend on tauros-mgba-sys; raw pointers and FFI bindings stay encapsulated behind safe Rust interfaces."
+        }
+      },
+      "counterfactuals": {
+        "0": {
+          "key": "real_run",
+          "verdict": "PROVEN",
+          "title": "Target build passes & all counterfactuals fail",
+          "detail": "The ROM + .sym hash pair matches, probes dereference moving save-block pointers on every sample, assertions hold, and every counterfactual run fails for its expected reason."
+        },
+        "1": {
+          "key": "shift",
+          "verdict": "MUST FAIL",
+          "title": "Shifted probe base addresses",
+          "detail": "Moves every probe base by a fixed offset within the same RAM region. If assertions still pass, the spec was reading garbage or too weak and is rejected as INCONCLUSIVE."
+        },
+        "2": {
+          "key": "wrong_value",
+          "verdict": "MUST FAIL",
+          "title": "Nudged expected outcome values",
+          "detail": "Perturbs exact expected values (for example nudging B_OUTCOME_LOST by 1) to prove assertions are tight enough to catch plausible near-misses."
+        },
+        "3": {
+          "key": "base_rom",
+          "verdict": "MUST FAIL",
+          "title": "Unmodified pinned base ROM",
+          "detail": "Runs the exact same inert spec against the unmodified pokeemerald.gba baseline to prove the hack change—not the starting state—produced the behavior."
+        },
+        "4": {
+          "key": "cold_boot",
+          "verdict": "MUST FAIL",
+          "title": "Power-on cold boot instead of savestate",
+          "detail": "For savestate-anchored specs, restarts from power-on to verify the test genuinely depends on the resumed scene state rather than passing trivially."
+        }
+      },
+      "limits": {
+        "0": {
+          "metric": "Max Map Size",
+          "value": "(w+15)×(h+14) ≤ 10240",
+          "source": "include/fieldmap.h:15-25 · src/fieldmap.c:170-174",
+          "note": "Checked statically before build because the engine assigns width/height and returns silently, leaving MAPGRID_UNDEFINED."
+        },
+        "1": {
+          "metric": "Active NPCs on Screen",
+          "value": "15 NPCs (16 slots - player)",
+          "source": "include/constants/global.h:95 · overworld.h:61",
+          "note": "OBJECT_EVENTS_COUNT is 16 with one slot reserved for the player; up to 64 object event templates are allowed per map."
+        },
+        "2": {
+          "metric": "Sprite OBJ Palettes",
+          "value": "16 slots (tag overflow -> slot 15)",
+          "source": "src/sprite.c:255, 1640-1668",
+          "note": "When full, the engine evicts overworld encounters first; if still exhausted, sprites silently render with slot 15."
+        },
+        "3": {
+          "metric": "Primary Tileset Capacity",
+          "value": "512 / 512 tiles & metatiles",
+          "source": "include/fieldmap.h:8-14 · primary/general",
+          "note": "Confirmed full in gTileset_General (6 of 13 primary palettes used), requiring pre-build VRAM/palette validation."
+        },
+        "4": {
+          "metric": "Metatile Behaviors",
+          "value": "240 defined · 240–254 appendable",
+          "source": "include/constants/metatile_behaviors.h",
+          "note": "Audited across all 134 metatile_attributes.bin files: 25 MB_UNUSED_* names are dead in data and 15 IDs remain free."
+        }
+      }
+    },
+    "foundationsLabel": "Current State",
+    "foundationsTitle": "Verified in Phase 0 & roadmap ahead",
+    "foundationsDescription": "Tauros is built bottom-up with strict verification gates: foundations are tested today while phases 1–6 implement the connectors, UI, and graphics pipeline.",
+    "foundationsItems": {
+      "0": "Done (FND-001): 7-crate Rust workspace on Rust 1.94.1 with automated dependency-layer enforcement (tests/test_layers.py).",
+      "1": "Done (DEC-002): Static libmgba 0.10.5 build verified with 120-frame ROM boot, BPEE cartridge read, and savestate reload.",
+      "2": "Done (FND-002 / G3-007): Hardened Docker GBA toolchain + hashed pokeemerald.gba/.sym pair and static expansion 1.16.4 limit audit.",
+      "3": "Planned (Phases 1–6): Lossless Gen 3 connector, rmcp domain tools, multi-vendor agent sidecar, Tauri visual editor, and Porytiles asset pipeline."
+    },
+    "guardrailsLabel": "Clean-Room & Licensing",
+    "guardrailsTitle": "Isolation, privacy & community guardrails",
+    "guardrailsDescription": "Designed from day one to stay clean for open-source distribution and respectful of ROM hacking community rules.",
+    "guardrailsItems": {
+      "0": "Zero Nintendo assets in git: decomp bases, ROMs, saves, and tools live exclusively under $TAUROS_DATA with pre-commit rejection of .gba files and submodules.",
+      "1": "Never pushes upstream: local game projects have remote push URLs disabled so forks never send automated commits to pret or expansion repos.",
+      "2": "MPL-2.0 / LGPL-2.1 / BSD-3 ready: static linking of unmodified mGBA 0.10.5 (with blip_buf and inih) is documented for open-source binary compliance.",
+      "3": "Honest agent provenance: external content is treated as untrusted data, and open decisions cover explicit AI vs. hand-made asset labeling."
+    },
+    "connectorsLabel": "Multi-Gen Roadmap",
+    "connectorsTitle": "Gen 3 first, designed for Gen 1–2 and DS",
+    "connectorsSubtitle": "Because upper layers only speak the semantic model, new generations plug in at Layer 4 & Layer 5.",
+    "connectors": {
+      "gen3": {
+        "status": "Active Target",
+        "title": "Gen 3 · GBA",
+        "targets": "pokeemerald-expansion · Porymap · Poryscript · Porytiles",
+        "desc": "First connector target: C decomp bases with JSON map layouts, Poryscript scenes, and mGBA preview."
+      },
+      "gen12": {
+        "status": "Planned",
+        "title": "Gen 1–2 · GB / GBC",
+        "targets": "pokered · pokecrystal · .asm macros · Polished Map",
+        "desc": "Shares the 2D-map abstraction and mGBA's GB/GBC core while adapting connector parsing to assembly macros."
+      },
+      "ds": {
+        "status": "Future",
+        "title": "Gen 4 · Nintendo DS",
+        "targets": "pokeplatinum · pokeheartgold · NARC · melonDS",
+        "desc": "Per-trainer JSON maps cleanly onto the semantic model; 3D maps and melonDS plug in behind dedicated Layer 4/5 traits."
+      }
+    },
+    "creditsLabel": "Credits & Prior Art",
+    "creditsTitle": "Standing on open community research",
+    "creditsDescription": "Tauros reimplements ideas from scratch in Rust with zero copied code while crediting poryrom (MIT) for verification discipline and engine limits, porygon (Apache-2.0) for domain MCP design, and mgba-rs (MIT) for static cmake + bindgen integration patterns.",
+    "faqLabel": "FAQ",
+    "faqTitle": "Questions about Tauros",
+    "faqSubtitle": "Scope, current development stage, agent compatibility, and licensing boundaries.",
+    "faq": {
+      "0": {
+        "question": "Is Tauros already a finished desktop editor?",
+        "answer": "Not yet—it is currently in active Phase 0/foundation development. The 7-crate Rust workspace, hardened Docker GBA toolchain, static libmgba 0.10.5 prototype, engine-limit audit, and verification spec format are complete; the Tauri UI and connectors are next on the roadmap."
+      },
+      "1": {
+        "question": "Why build a desktop app instead of a chat-only plugin?",
+        "answer": "Chat-only agents lack visual context. Tauros pairs domain MCP tools with an integrated mGBA preview, map/tileset editing, and RAM-based verification inside a single workbench."
+      },
+      "2": {
+        "question": "Which AI coding agents can drive Tauros?",
+        "answer": "External MCP clients—Claude Code, Codex, Gemini CLI, and Antigravity—can connect over stdio without Tauros handling their credentials. An embedded TypeScript sidecar with a swappable agent bridge is also planned."
+      },
+      "3": {
+        "question": "Does the repository include any Pokémon ROMs or Nintendo assets?",
+        "answer": "No. Pre-commit checks block ROMs, saves, and nested repos. Users fetch pinned decomp bases and tools locally under $TAUROS_DATA on their own machine."
+      }
+    },
+    "footer": {
+      "title": "Built layer by layer for deterministic ROM hacking",
+      "desc": "Follow the Rust workspace, roadmap task graph, and verification architecture directly on GitHub.",
+      "link_repo": "Open Tauros on GitHub"
+    }
+  },
+  "Logpose": {
+    "badge": "Rust · Tauri 2 · SvelteKit 5",
+    "tagline": "Never lose track of where you left a side project",
+    "description": "Logpose scans your local project roots and shows every repository on one Kanban board: how long it has been idle, what is left uncommitted or unpushed, and what your last Claude Code or Codex session was doing.",
+    "supporting": "Discovery, Git hygiene scoring, file timestamps, and agent session logs all run offline straight from disk at zero token cost—only on-demand project summaries invoke your local CLI subscription and cache the result in SQLite.",
+    "chips": {
+      "0": "Zero-token disk scan",
+      "1": "Claude Code & Codex logs",
+      "2": "Git staleness & mess score",
+      "3": "Trash-first safe removal"
+    },
+    "cta_repo": "View Repository",
+    "cta_releases": "Linux Releases",
+    "heroCard": {
+      "label": "Local-first execution model",
+      "localTitle": "Zero-Token Local Scan",
+      "localDesc": "logpose-core reads .git state, mtime, CLAUDE.md, AGENTS.md, and session transcripts directly on disk with zero network calls.",
+      "synthTitle": "Cached On-Demand Synthesis",
+      "synthDesc": "When requested, runs claude -p or codex exec on your existing CLI login, validates strict JSON Schema output, and caches until files change.",
+      "trust": {
+        "0": "Nothing leaves your machine unless you trigger a project summary",
+        "1": "One-click launch into your editor, file manager, or pre-seeded agent terminal",
+        "2": "Optional tray watcher, weekly digest notification, and headless CLI"
+      }
+    },
+    "capabilitiesLabel": "Core Capabilities",
+    "capabilitiesTitle": "From scattered folders to a calm engineering board",
+    "capabilitiesSubtitle": "Built to surface forgotten work, unfinished rebases, and context across parallel side projects.",
+    "capabilities": {
+      "discovery": {
+        "title": "Multi-Signal Discovery",
+        "desc": "Finds projects via .git, CLAUDE.md, AGENTS.md, and working directories logged by ~/.claude or ~/.codex, grouping nested sub-repos under their parent."
+      },
+      "scoring": {
+        "title": "Staleness & Mess Scoring",
+        "desc": "Classifies projects into Fresh (<3d), Cooling (3–14d), Stale (14–60d), and Dormant (>60d), paired with a 0–100 mess score for dirty files, unpushed commits, stashes, and mid-way rebases."
+      },
+      "board": {
+        "title": "5-Column Kanban & Detail Drawer",
+        "desc": "Drag-and-drop board across Now (soft WIP limit of 3), Next, Paused, Maintenance, and Archived—complete with recent commits, sessions, and parking notes."
+      },
+      "removal": {
+        "title": "Safe Project Cleanup",
+        "desc": "Audits folder sizes, Docker leftovers (Certain vs. Probable containers, volumes, images), and session logs, moving folders to the desktop Trash instead of deleting permanently."
+      }
+    },
+    "demo": {
+      "eyebrow": "Interactive Board Preview",
+      "title": "Inspect staleness, mess score, and cached agent context",
+      "description": "Select a scanned project to see how Logpose combines Git hygiene signals with structured Claude Code / Codex synthesis.",
+      "gitLabel": "Git & Activity Signal (0 tokens)",
+      "synthLabel": "Validated Synthesis Output",
+      "items": {
+        "0": {
+          "name": "tauros",
+          "column": "Now",
+          "bucket": "Fresh",
+          "days": "today",
+          "messLabel": "Clean",
+          "messScore": "6",
+          "agent": "Claude Code · 2 sessions today",
+          "gitSummary": "main · 1 uncommitted file · 0 unpushed · clean worktree history",
+          "lastGoal": "Lock down Phase 0 verification spec schema and static pokeemerald-expansion 1.16.4 limit checks.",
+          "nextSteps": {
+            "0": "Implement MOD-001 semantic model traits in crates/model",
+            "1": "Add G3-001 automatic git snapshot guard before connector writes"
+          },
+          "confidence": "confidence: high"
+        },
+        "1": {
+          "name": "puse-backend",
+          "column": "Next",
+          "bucket": "Cooling",
+          "days": "8d",
+          "messLabel": "Tidy up",
+          "messScore": "34",
+          "agent": "Codex · last run 8d ago",
+          "gitSummary": "feat/box-export · 6 uncommitted files · 2 unpushed commits · 1 stash",
+          "lastGoal": "Add PC box bulk-export endpoint with checksum verification test coverage.",
+          "nextSteps": {
+            "0": "Commit or drop the 1 leftover stash before merging feat/box-export",
+            "1": "Push the 2 local commits after running pytest on checksum fixtures"
+          },
+          "confidence": "confidence: high"
+        },
+        "2": {
+          "name": "shader-sandbox",
+          "column": "Paused",
+          "bucket": "Stale",
+          "days": "27d",
+          "messLabel": "Abandoned mid-way",
+          "messScore": "68",
+          "agent": "Claude Code · last run 27d ago",
+          "gitSummary": "rebase in progress · 11 uncommitted files (27d old) · no upstream",
+          "lastGoal": "Experiment with WGSL post-processing pass before leaving a rebase unresolved.",
+          "nextSteps": {
+            "0": "Resolve or abort the half-finished rebase before touching new shaders",
+            "1": "Archive or remove via Trash-first planner if experiment is complete"
+          },
+          "confidence": "confidence: medium"
+        }
+      }
+    },
+    "stackLabel": "Rust + SvelteKit Architecture",
+    "stackTitle": "Lean core library, desktop app & CLI",
+    "stackDescription": "GUI-free scanning logic lives in logpose-core so both the Tauri 2 desktop shell and the headless CLI share identical behavior.",
+    "stackItems": {
+      "0": "Workspace crates: logpose-core (discovery, git, logs, scoring, stats, SQLite store), logpose-cli, and app/src-tauri.",
+      "1": "Workspace lint enforces unsafe_code = forbid across all Rust crates with compact dev/release build profiles.",
+      "2": "Headless CLI: logpose scan [--json] [--persist] [--config PATH] prints sorted staleness and mess tables in milliseconds.",
+      "3": "Packaged for Linux (.deb, .rpm, AppImage) with config in ~/.config/logpose/config.toml and data in ~/.local/share/logpose/."
+    },
+    "safetyLabel": "Privacy & Cleanup Guardrails",
+    "safetyTitle": "Zero surprise uploads or destructive deletes",
+    "safetyDescription": "Designed to respect local files, existing CLI credentials, and Docker environments.",
+    "safetyItems": {
+      "0": "100% local scan: git status, file timestamps, and ~/.claude / ~/.codex logs never leave your disk.",
+      "1": "Strict synthesis validation: agent JSON responses are schema-checked (max lengths, required fields) before caching.",
+      "2": "Trash-first project removal: folders go to the OS Trash rather than rm -rf, preserving recoverability.",
+      "3": "Docker-aware cleanup: separates Certain compose matches from Probable ones and aborts before touching files if a step fails."
+    },
+    "faqLabel": "FAQ",
+    "faqTitle": "Questions about Logpose",
+    "faqSubtitle": "Supported agents, token usage, platforms, and how removal works.",
+    "faq": {
+      "0": {
+        "question": "Does Logpose spend AI tokens every time it scans?",
+        "answer": "No. Project discovery, git scanning, staleness/mess scoring, session parsing, and stats all run locally on disk at zero token cost. Tokens are only used when you explicitly trigger a project summary."
+      },
+      "1": {
+        "question": "Which AI coding agents are supported?",
+        "answer": "Logpose reads local session logs from Claude Code (~/.claude) and Codex (~/.codex), honors CLAUDE_CONFIG_DIR / CODEX_HOME, and runs claude -p or codex exec for cached summaries."
+      },
+      "2": {
+        "question": "What platforms have prebuilt releases?",
+        "answer": "Linux builds (.deb, .rpm, and AppImage) are published on GitHub Releases. The codebase includes macOS and Windows paths, though Linux is currently the tested release target."
+      },
+      "3": {
+        "question": "Is removing a project destructive?",
+        "answer": "Logpose previews everything tied to the project—folder size, Docker containers/volumes/images, and agent logs—and moves the folder to the desktop Trash instead of permanently deleting it."
+      }
+    },
+    "footer": {
+      "title": "Keep parallel projects calm and resumable",
+      "desc": "Explore the Rust + SvelteKit source code, run the CLI scanner, or grab the latest Linux release on GitHub.",
+      "link_repo": "Open repository",
+      "link_releases": "Browse Releases"
     }
   },
   "Targage": {

@@ -448,6 +448,28 @@
           "2": "Video Indexing",
           "3": "JSON Search"
         }
+      },
+      "tauros": {
+        "title": "Tauros",
+        "category": "ROM Hack Workbench",
+        "description": "Editor Pokémon ROM hack all-in-one in Rust e Tauri: modello semantico comune, tool MCP di dominio, connettori decomp intercambiabili e mGBA integrato.",
+        "techStack": {
+          "0": "Rust",
+          "1": "Tauri",
+          "2": "MCP",
+          "3": "libmgba"
+        }
+      },
+      "logpose": {
+        "title": "Logpose",
+        "category": "Developer Tool",
+        "description": "Board desktop locale in Tauri che scansiona i side project a zero token, calcola staleness e disordine Git e recupera il contesto di Claude Code e Codex.",
+        "techStack": {
+          "0": "Rust",
+          "1": "Tauri 2",
+          "2": "SvelteKit",
+          "3": "SQLite"
+        }
       }
     }
   },
@@ -2081,6 +2103,386 @@
       "desc": "Grazie a un'interfaccia intuitiva, funzionalità specifiche e un workflow sicuro, PUSE è la soluzione più affidabile e immediata per gestire i tuoi salvataggi con precisione professionale.",
       "link_repo": "Apri repository",
       "link_live": "Visita GitHub Pages"
+    }
+  },
+  "Tauros": {
+    "badge": "Rust · Tauri · MCP · mGBA",
+    "tagline": "Workbench all-in-one per ROM hack Pokémon guidato da agenti e verifica",
+    "description": "Tauros unisce un modello semantico comune, tool di dominio esposti via MCP, connettori decomp intercambiabili e un core mGBA integrato dentro un'unica architettura desktop in Rust + Tauri.",
+    "supporting": "Invece di frammentare il lavoro tra editor di mappe, compilatori di script ed emulatori esterni, Tauros progetta un ciclo chiuso—dall'intento alla build fino alla preview verificata in RAM—mantenendo asset Nintendo e cloni decomp rigorosamente fuori dal repository.",
+    "chips": {
+      "0": "Workspace Rust da 7 crate",
+      "1": "MCP di dominio (rmcp)",
+      "2": "libmgba 0.10.5 non modificato",
+      "3": "Build GBA Docker isolata"
+    },
+    "cta_repo": "Apri repository",
+    "cta_architecture": "Esplora architettura",
+    "heroCard": {
+      "label": "Stato del progetto e architettura",
+      "status": "Fase 0 Verificata",
+      "workspaceTitle": "Workspace a 7 Crate Stratificati",
+      "workspaceDesc": "Grafo delle dipendenze controllato verso il basso tra model, connector-gen3, emu, mgba-sys, mcp, agent-bridge e app.",
+      "loopTitle": "Agente -> Build -> Verifica -> Preview",
+      "loopDesc": "I tool MCP modificano il modello semantico dietro snapshot git automatici, compilano in container offline e verificano lo stato direttamente dalla RAM di mGBA.",
+      "verified": {
+        "0": "Immagine toolchain Docker compilata (devkitARM GCC 15.2.0, Poryscript 3.6.1, Porytiles 2.0.0) con ROM base pokeemerald.gba + .sym hashata",
+        "1": "Prototipo statico libmgba 0.10.5 testato per 120 frame con lettura codice BPEE a 0x080000AC e roundtrip savestate",
+        "2": "Limiti statici dell'engine misurati su pokeemerald-expansion 1.16.4 e formato di verifica con controfattuali definito"
+      }
+    },
+    "capabilitiesLabel": "Architettura Core",
+    "capabilitiesTitle": "Quattro pilastri per un unico ciclo di ROM hacking",
+    "capabilitiesSubtitle": "Ogni livello separa la logica di editing indipendente dal gioco dai formati concreti delle decomp e dai backend di emulazione.",
+    "capabilities": {
+      "model": {
+        "title": "Modello Semantico Comune",
+        "desc": "Definisce Trainer, Party, Map, Event, Scene, Species e Flag in Rust una sola volta, così UI e agenti restano portabili oltre la Gen 3."
+      },
+      "mcp": {
+        "title": "MCP di Dominio & Agenti Intercambiabili",
+        "desc": "Espone operazioni strutturate come create_trainer, place_npc e run_verification via rmcp su stdio per Claude Code, Codex, Gemini CLI o sidecar in-app."
+      },
+      "emu": {
+        "title": "Core libmgba Integrato",
+        "desc": "Collega staticamente mGBA 0.10.5 non modificato tramite tauros-mgba-sys per esecuzione headless, cattura framebuffer, savestate e lettura diretta della RAM senza Lua."
+      },
+      "toolchain": {
+        "title": "Toolchain Docker & Snapshot Git",
+        "desc": "Compila in un container offline, read-only e non-root (--network none, --cap-drop ALL) proteggendo ogni scrittura con un commit git locale automatico."
+      }
+    },
+    "workbench": {
+      "eyebrow": "Analisi Tecnica Interattiva",
+      "title": "Esplora i livelli, i controfattuali e i limiti dell'engine",
+      "description": "Ispeziona le specifiche e le misurazioni della Fase 0 già verificate nel repository di Tauros.",
+      "tabs": {
+        "layers": "Stack a 5 Livelli",
+        "verify": "Verifica Controfattuale",
+        "limits": "Limiti Engine Misurati"
+      },
+      "contractLabel": "Confine del livello e regola",
+      "specNote": "Regola delle spec JSON inerti (VER-001): il driver dell'emulatore campiona la RAM senza vedere le asserzioni, e il giudizio avviene all'esterno solo dopo il fallimento dei controfattuali.",
+      "layers": {
+        "0": {
+          "badge": "Livello 1",
+          "title": "App Desktop Tauri",
+          "crate": "crates/app",
+          "summary": "Unifica editor di mappe e scene, chat agente in streaming, trascrizione vocale locale, cronologia con undo e preview mGBA nella stessa finestra.",
+          "contract": "Comunica solo verso il basso con agent-bridge, model e viste emulatore: non manipola mai file C o assembly grezzi. (Shell Tauri prevista in Fase 2 / 5.)"
+        },
+        "1": {
+          "badge": "Livello 2",
+          "title": "Agenti e Server MCP di Dominio",
+          "crate": "crates/mcp · agent-bridge",
+          "summary": "Ospita il server rmcp in-process con tool di dominio (create_trainer, place_npc, add_scene, build, run_verification) più un adapter multi-provider.",
+          "contract": "Nessuna modifica libera ai file: ogni tool valida gli input sul modello e restituisce report del valutatore esterno invece di fidarsi del driver."
+        },
+        "2": {
+          "badge": "Livello 3",
+          "title": "Modello Semantico Comune",
+          "crate": "crates/model",
+          "summary": "Contiene i tipi canonici in Rust per allenatori, team, mappe, eventi, script, specie e flag condivisi tra tutte le generazioni.",
+          "contract": "Isolamento rigoroso verificato da tests/test_layers.py tramite cargo metadata: model non può mai dipendere da emu o dai connettori."
+        },
+        "3": {
+          "badge": "Livello 4",
+          "title": "Connettori Decomp Intercambiabili",
+          "crate": "crates/connector-gen3",
+          "summary": "Roundtrip lossless di JSON/layout Porymap, compilazione Poryscript, controlli Porytiles e build Docker isolate per pokeemerald-expansion 1.16.4.",
+          "contract": "Impone uno snapshot git prima di ogni scrittura e disabilita gli URL di push sui progetti locali per non inviare mai nulla agli upstream."
+        },
+        "4": {
+          "badge": "Livello 5",
+          "title": "Connettori Emulatore",
+          "crate": "crates/emu · mgba-sys",
+          "summary": "Incapsula libmgba 0.10.5 statico (GBA, GB, GBC) dietro un trait astratto così da poter collegare melonDS per il supporto DS futuro.",
+          "contract": "Solo tauros-emu può dipendere da tauros-mgba-sys; puntatori raw e binding FFI restano confinati dietro interfacce Rust sicure."
+        }
+      },
+      "counterfactuals": {
+        "0": {
+          "key": "real_run",
+          "verdict": "PROVEN",
+          "title": "La build target passa e ogni controfattuale fallisce",
+          "detail": "La coppia hash ROM + .sym corrisponde, le probe dereferenziano i puntatori dinamici ad ogni campione, le asserzioni reggono e tutti i controfattuali falliscono per il motivo atteso."
+        },
+        "1": {
+          "key": "shift",
+          "verdict": "DEVE FALLIRE",
+          "title": "Indirizzi base delle probe spostati",
+          "detail": "Sposta ogni indirizzo base di un offset fisso nella stessa regione RAM. Se le asserzioni passano ancora, la spec leggeva dati casuali ed è marcata INCONCLUSIVE."
+        },
+        "2": {
+          "key": "wrong_value",
+          "verdict": "DEVE FALLIRE",
+          "title": "Valori attesi alterati di poco",
+          "detail": "Modifica leggermente i valori esatti attesi (ad es. B_OUTCOME_LOST spostato di 1) per provare che le asserzioni siano abbastanza strette da rilevare errori vicini."
+        },
+        "3": {
+          "key": "base_rom",
+          "verdict": "DEVE FALLIRE",
+          "title": "ROM base non modificata",
+          "detail": "Esegue la stessa spec inerte contro la pokeemerald.gba di riferimento per dimostrare che è la modifica introdotta—e non lo stato iniziale—a produrre il risultato."
+        },
+        "4": {
+          "key": "cold_boot",
+          "verdict": "DEVE FALLIRE",
+          "title": "Avvio a freddo invece del savestate",
+          "detail": "Per le spec ancorate a un savestate, riparte dall'accensione per verificare che il test dipenda davvero dallo stato della scena ripresa."
+        }
+      },
+      "limits": {
+        "0": {
+          "metric": "Dimensione Max Mappa",
+          "value": "(w+15)×(h+14) ≤ 10240",
+          "source": "include/fieldmap.h:15-25 · src/fieldmap.c:170-174",
+          "note": "Verificato staticamente prima della build perché l'engine imposta w/h e ritorna in silenzio lasciando MAPGRID_UNDEFINED."
+        },
+        "1": {
+          "metric": "NPC Attivi su Schermo",
+          "value": "15 NPC (16 slot - player)",
+          "source": "include/constants/global.h:95 · overworld.h:61",
+          "note": "OBJECT_EVENTS_COUNT è 16 con uno slot riservato al giocatore; fino a 64 template di eventi oggetto per mappa."
+        },
+        "2": {
+          "metric": "Palette Sprite OBJ",
+          "value": "16 slot (overflow -> slot 15)",
+          "source": "src/sprite.c:255, 1640-1668",
+          "note": "Quando piene, l'engine rimuove prima gli encounter overworld; se ancora esaurite, lo sprite usa in silenzio lo slot 15."
+        },
+        "3": {
+          "metric": "Capacità Tileset Primario",
+          "value": "512 / 512 tile e metatile",
+          "source": "include/fieldmap.h:8-14 · primary/general",
+          "note": "Confermato saturo in gTileset_General (6 palette primarie su 13 usate): richiede validazione VRAM/palette pre-build."
+        },
+        "4": {
+          "metric": "Comportamenti Metatile",
+          "value": "240 definiti · 240–254 liberi",
+          "source": "include/constants/metatile_behaviors.h",
+          "note": "Scansione su 134 file metatile_attributes.bin: 25 nomi MB_UNUSED_* sono inutilizzati nei dati e 15 ID restano appendibili."
+        }
+      }
+    },
+    "foundationsLabel": "Stato Attuale",
+    "foundationsTitle": "Verificato in Fase 0 e roadmap futura",
+    "foundationsDescription": "Tauros cresce dal basso con verifiche deterministiche: le fondamenta sono testate oggi mentre le fasi 1–6 implementano connettori, UI e pipeline grafica.",
+    "foundationsItems": {
+      "0": "Fatto (FND-001): workspace Rust da 7 crate su Rust 1.94.1 con controllo automatico dei confini tra layer (tests/test_layers.py).",
+      "1": "Fatto (DEC-002): build statica di libmgba 0.10.5 verificata con boot ROM di 120 frame, lettura BPEE e ricarica savestate.",
+      "2": "Fatto (FND-002 / G3-007): toolchain Docker GBA isolata + coppia hashata pokeemerald.gba/.sym e audit statico su expansion 1.16.4.",
+      "3": "Pianificato (Fasi 1–6): connettore Gen 3 lossless, tool rmcp di dominio, sidecar agenti multi-provider, editor Tauri e pipeline Porytiles."
+    },
+    "guardrailsLabel": "Clean-Room & Licenze",
+    "guardrailsTitle": "Isolamento, privacy e regole della community",
+    "guardrailsDescription": "Progettato fin dall'inizio per restare pulito in ottica open-source e rispettare le regole delle community di ROM hacking.",
+    "guardrailsItems": {
+      "0": "Zero asset Nintendo in git: basi decomp, ROM, salvataggi e tool vivono solo in $TAUROS_DATA con pre-commit che rifiuta file .gba e submodule.",
+      "1": "Nessun push upstream: i progetti locali disabilitano gli URL di push sui remote così nessun fork invia commit automatici verso pret o expansion.",
+      "2": "Pronto per MPL-2.0 / LGPL-2.1 / BSD-3: il linking statico di mGBA 0.10.5 non modificato (con blip_buf e inih) è tracciato per conformità binaria.",
+      "3": "Provenienza trasparente: i contenuti esterni sono trattati come dati non fidati, con tracciamento aperto per distinguere asset generati e ritocchi manuali."
+    },
+    "connectorsLabel": "Roadmap Multi-Gen",
+    "connectorsTitle": "Gen 3 subito, pronto per Gen 1–2 e DS",
+    "connectorsSubtitle": "Poiché i livelli superiori parlano solo il modello semantico, nuove generazioni si collegano ai Livelli 4 e 5.",
+    "connectors": {
+      "gen3": {
+        "status": "Target Attivo",
+        "title": "Gen 3 · GBA",
+        "targets": "pokeemerald-expansion · Porymap · Poryscript · Porytiles",
+        "desc": "Primo connettore: basi decomp in C con layout mappe JSON, scene Poryscript e preview mGBA."
+      },
+      "gen12": {
+        "status": "Pianificato",
+        "title": "Gen 1–2 · GB / GBC",
+        "targets": "pokered · pokecrystal · macro .asm · Polished Map",
+        "desc": "Condivide l'astrazione delle mappe 2D e il core GB/GBC di mGBA adattando il parsing alle macro assembly."
+      },
+      "ds": {
+        "status": "Futuro",
+        "title": "Gen 4 · Nintendo DS",
+        "targets": "pokeplatinum · pokeheartgold · NARC · melonDS",
+        "desc": "I JSON per singolo allenatore mappano bene sul modello semantico; mappe 3D e melonDS entrano dietro i trait dei Livelli 4 e 5."
+      }
+    },
+    "creditsLabel": "Crediti e Prior Art",
+    "creditsTitle": "Costruito sulla ricerca aperta della community",
+    "creditsDescription": "Tauros reimplementa le idee da zero in Rust senza copiare codice, riconoscendo poryrom (MIT) per il metodo di verifica e i limiti dell'engine, porygon (Apache-2.0) per il design MCP di dominio e mgba-rs (MIT) per i pattern cmake + bindgen.",
+    "faqLabel": "FAQ",
+    "faqTitle": "Domande su Tauros",
+    "faqSubtitle": "Perimetro, stato attuale dello sviluppo, compatibilità con gli agenti e confini di licenza.",
+    "faq": {
+      "0": {
+        "question": "Tauros è già un editor desktop finito?",
+        "answer": "Non ancora: è nella fase attiva di fondamenta (Fase 0). Il workspace Rust a 7 crate, la toolchain Docker GBA, il prototipo statico libmgba 0.10.5, l'audit dei limiti engine e il formato delle spec di verifica sono completi; UI Tauri e connettori seguono nella roadmap."
+      },
+      "1": {
+        "question": "Perché costruire un'app desktop invece di un plugin solo chat?",
+        "answer": "Gli agenti solo chat non hanno contesto visivo. Tauros unisce tool MCP di dominio, preview mGBA integrata, editing mappe/tileset e verifica in RAM dentro un unico workbench."
+      },
+      "2": {
+        "question": "Quali agenti AI possono pilotare Tauros?",
+        "answer": "Client MCP esterni—Claude Code, Codex, Gemini CLI e Antigravity—possono collegarsi via stdio senza che Tauros gestisca credenziali. È inoltre previsto un sidecar TypeScript integrato con bridge intercambiabile."
+      },
+      "3": {
+        "question": "Il repository contiene ROM Pokémon o asset Nintendo?",
+        "answer": "No. I controlli pre-commit bloccano ROM, salvataggi e repository annidati. Gli utenti scaricano basi decomp e tool in locale sotto $TAUROS_DATA sulla propria macchina."
+      }
+    },
+    "footer": {
+      "title": "Costruito strato per strato per un ROM hacking deterministico",
+      "desc": "Segui il workspace Rust, il grafo della roadmap e l'architettura di verifica direttamente su GitHub.",
+      "link_repo": "Apri Tauros su GitHub"
+    }
+  },
+  "Logpose": {
+    "badge": "Rust · Tauri 2 · SvelteKit 5",
+    "tagline": "Non perdere mai il filo dei tuoi side project",
+    "description": "Logpose scansiona le cartelle dei tuoi progetti in locale e li raccoglie in un'unica board Kanban: da quanto tempo sono fermi, cosa resta da committare o pushare e cosa stavi facendo nell'ultima sessione di Claude Code o Codex.",
+    "supporting": "Discovery, calcolo di staleness e disordine Git, timestamp dei file e log delle sessioni agente girano tutti offline da disco a costo zero token: solo i riepiloghi su richiesta invocano la tua CLI locale salvando il risultato in SQLite.",
+    "chips": {
+      "0": "Scansione locale a zero token",
+      "1": "Log Claude Code & Codex",
+      "2": "Staleness & mess score Git",
+      "3": "Rimozione sicura nel Cestino"
+    },
+    "cta_repo": "Apri repository",
+    "cta_releases": "Release Linux",
+    "heroCard": {
+      "label": "Modello di esecuzione local-first",
+      "localTitle": "Scansione Locale a Zero Token",
+      "localDesc": "logpose-core legge stato .git, mtime, CLAUDE.md, AGENTS.md e trascrizioni delle sessioni direttamente su disco senza chiamate di rete.",
+      "synthTitle": "Sintesi Cacheable su Richiesta",
+      "synthDesc": "Quando richiesta, esegue claude -p o codex exec usando il tuo login CLI esistente, valida il JSON Schema e mette in cache finché il progetto non cambia.",
+      "trust": {
+        "0": "Nulla lascia la tua macchina salvo i riepiloghi avviati esplicitamente da te",
+        "1": "Apri con un clic l'editor, il file manager o un terminale agente già contestualizzato",
+        "2": "Modalità tray opzionale, digest settimanale e CLI headless"
+      }
+    },
+    "capabilitiesLabel": "Funzionalità Core",
+    "capabilitiesTitle": "Da cartelle sparse a una board chiara e riprendibile",
+    "capabilitiesSubtitle": "Pensato per far emergere lavoro dimenticato, rebase lasciati a metà e contesto tra progetti paralleli.",
+    "capabilities": {
+      "discovery": {
+        "title": "Discovery Multi-Segnale",
+        "desc": "Individua progetti tramite .git, CLAUDE.md, AGENTS.md e working directory presenti in ~/.claude o ~/.codex, raggruppando i repo annidati sotto il progetto padre."
+      },
+      "scoring": {
+        "title": "Scoring Staleness & Disordine",
+        "desc": "Classifica in Fresh (<3g), Cooling (3–14g), Stale (14–60g) e Dormant (>60g), abbinando un mess score 0–100 tra file non committati, commit non pushati, stash e rebase aperti."
+      },
+      "board": {
+        "title": "Board Kanban a 5 Colonne",
+        "desc": "Drag-and-drop tra Now (limite WIP consigliato di 3), Next, Paused, Maintenance e Archived, con pannello di dettaglio su commit recenti, sessioni e note."
+      },
+      "removal": {
+        "title": "Pulizia Progetti Sicura",
+        "desc": "Analizza dimensioni su disco, residui Docker (match Certain vs Probable per container, volumi e immagini) e log sessione, spostando la cartella nel Cestino invece di eliminarla."
+      }
+    },
+    "demo": {
+      "eyebrow": "Anteprima Board Interattiva",
+      "title": "Esplora staleness, mess score e contesto agente in cache",
+      "description": "Seleziona un progetto scansionato per vedere come Logpose combina i segnali Git con la sintesi strutturata di Claude Code / Codex.",
+      "gitLabel": "Segnali Git e Attività (0 token)",
+      "synthLabel": "Output di Sintesi Validato",
+      "items": {
+        "0": {
+          "name": "tauros",
+          "column": "Now",
+          "bucket": "Fresh",
+          "days": "oggi",
+          "messLabel": "Clean",
+          "messScore": "6",
+          "agent": "Claude Code · 2 sessioni oggi",
+          "gitSummary": "main · 1 file non committato · 0 non pushati · worktree pulito",
+          "lastGoal": "Definire lo schema delle spec di verifica Fase 0 e i limiti statici di pokeemerald-expansion 1.16.4.",
+          "nextSteps": {
+            "0": "Implementare i trait del modello semantico MOD-001 in crates/model",
+            "1": "Aggiungere la guardia snapshot git G3-001 prima delle scritture dei connettori"
+          },
+          "confidence": "confidence: high"
+        },
+        "1": {
+          "name": "puse-backend",
+          "column": "Next",
+          "bucket": "Cooling",
+          "days": "8g",
+          "messLabel": "Tidy up",
+          "messScore": "34",
+          "agent": "Codex · ultima sessione 8g fa",
+          "gitSummary": "feat/box-export · 6 file modificati · 2 commit locali · 1 stash",
+          "lastGoal": "Aggiungere endpoint per export massivo dei box PC con test sul ricalcolo checksum.",
+          "nextSteps": {
+            "0": "Committare o scartare lo stash residuo prima del merge di feat/box-export",
+            "1": "Pushare i 2 commit locali dopo aver rieseguito pytest sulle fixture checksum"
+          },
+          "confidence": "confidence: high"
+        },
+        "2": {
+          "name": "shader-sandbox",
+          "column": "Paused",
+          "bucket": "Stale",
+          "days": "27g",
+          "messLabel": "Abandoned mid-way",
+          "messScore": "68",
+          "agent": "Claude Code · ultima sessione 27g fa",
+          "gitSummary": "rebase in corso · 11 file non committati (27g) · nessun upstream",
+          "lastGoal": "Sperimentare un pass di post-processing WGSL prima di lasciare un rebase interrotto.",
+          "nextSteps": {
+            "0": "Risolvere o annullare il rebase lasciato a metà prima di toccare altri shader",
+            "1": "Archiviare o rimuovere via Cestino se l'esperimento è concluso"
+          },
+          "confidence": "confidence: medium"
+        }
+      }
+    },
+    "stackLabel": "Architettura Rust + SvelteKit",
+    "stackTitle": "Libreria core snella, app desktop e CLI",
+    "stackDescription": "La logica di scansione priva di dipendenze grafiche vive in logpose-core così l'app Tauri 2 e la CLI condividono esattamente lo stesso motore.",
+    "stackItems": {
+      "0": "Crate workspace: logpose-core (discovery, git, log, scoring, stats, store SQLite), logpose-cli e app/src-tauri.",
+      "1": "Workspace lint con unsafe_code = forbid su tutti i crate Rust e profili ottimizzati per dev e release.",
+      "2": "CLI headless: logpose scan [--json] [--persist] [--config PATH] stampa la tabella ordinata in millisecondi.",
+      "3": "Pacchetti Linux (.deb, .rpm, AppImage) con config in ~/.config/logpose/config.toml e dati in ~/.local/share/logpose/."
+    },
+    "safetyLabel": "Privacy e Sicurezza Operativa",
+    "safetyTitle": "Zero invii imprevisti o cancellazioni irreversibili",
+    "safetyDescription": "Progettato per rispettare file locali, credenziali CLI esistenti e ambienti Docker.",
+    "safetyItems": {
+      "0": "Scansione 100% locale: stato git, timestamp e log ~/.claude / ~/.codex restano sul tuo disco.",
+      "1": "Validazione rigorosa delle sintesi: l'output JSON dell'agente è validato via schema prima del salvataggio in cache.",
+      "2": "Rimozione nel Cestino: le cartelle vengono spostate nel Cestino di sistema anziché eliminate con rm -rf.",
+      "3": "Pulizia Docker consapevole: distingue match Certain da Probable e si ferma prima di toccare la cartella se uno step fallisce."
+    },
+    "faqLabel": "FAQ",
+    "faqTitle": "Domande su Logpose",
+    "faqSubtitle": "Agenti supportati, consumo token, piattaforme e funzionamento della rimozione.",
+    "faq": {
+      "0": {
+        "question": "Logpose consuma token AI ad ogni scansione?",
+        "answer": "No. Discovery, scansione git, calcolo di staleness/disordine, parsing delle sessioni e statistiche girano interamente su disco a zero token. I token vengono usati solo quando richiedi esplicitamente la sintesi di un progetto."
+      },
+      "1": {
+        "question": "Quali agenti AI sono supportati?",
+        "answer": "Logpose legge i log locali di Claude Code (~/.claude) e Codex (~/.codex), rispetta CLAUDE_CONFIG_DIR / CODEX_HOME ed esegue claude -p o codex exec per generare le sintesi."
+      },
+      "2": {
+        "question": "Per quali piattaforme esistono build pronte?",
+        "answer": "Le release Linux (.deb, .rpm e AppImage) sono pubblicate su GitHub Releases. Il codice include già i percorsi per macOS e Windows, ma Linux è attualmente il target testato."
+      },
+      "3": {
+        "question": "La rimozione di un progetto è distruttiva?",
+        "answer": "Logpose mostra in anteprima tutto ciò che appartiene al progetto—dimensione cartella, container/volumi/immagini Docker e log delle sessioni—e sposta la cartella nel Cestino invece di cancellarla definitivamente."
+      }
+    },
+    "footer": {
+      "title": "Mantieni i tuoi side project ordinati e facili da riprendere",
+      "desc": "Esplora il codice sorgente Rust + SvelteKit, prova lo scanner CLI o scarica l'ultima release Linux su GitHub.",
+      "link_repo": "Apri repository",
+      "link_releases": "Vedi le Release"
     }
   },
   "Targage": {

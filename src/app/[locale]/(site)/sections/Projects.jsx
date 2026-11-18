@@ -159,6 +159,19 @@ export default function Projects() {
       link: '/puse'
     },
     {
+      id: 'tauros',
+      title: t('items.tauros.title'),
+      category: t('items.tauros.category'),
+      description: t('items.tauros.description'),
+      techStack: [
+        t('items.tauros.techStack.0'),
+        t('items.tauros.techStack.1'),
+        t('items.tauros.techStack.2'),
+        t('items.tauros.techStack.3')
+      ],
+      link: '/tauros'
+    },
+    {
       id: 'targage',
       title: t('items.targage.title'),
       category: t('items.targage.category'),
@@ -170,6 +183,19 @@ export default function Projects() {
         t('items.targage.techStack.3')
       ],
       link: '/targage'
+    },
+    {
+      id: 'logpose',
+      title: t('items.logpose.title'),
+      category: t('items.logpose.category'),
+      description: t('items.logpose.description'),
+      techStack: [
+        t('items.logpose.techStack.0'),
+        t('items.logpose.techStack.1'),
+        t('items.logpose.techStack.2'),
+        t('items.logpose.techStack.3')
+      ],
+      link: '/logpose'
     },
   ].filter((project) => !project.hidden && !NINTENDO_PROJECT_IDS.includes(project.id));
 
